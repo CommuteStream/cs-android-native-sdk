@@ -202,9 +202,9 @@ public final class Csnmessages {
   }
 
   /**
-   * Protobuf enum {@code google.protobuf.AdInteractionKind}
+   * Protobuf enum {@code google.protobuf.ComponentInteractionKind}
    */
-  public enum AdInteractionKind
+  public enum ComponentInteractionKind
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>Tap = 0;</code>
@@ -231,26 +231,26 @@ public final class Csnmessages {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static AdInteractionKind valueOf(int value) {
+    public static ComponentInteractionKind valueOf(int value) {
       return forNumber(value);
     }
 
-    public static AdInteractionKind forNumber(int value) {
+    public static ComponentInteractionKind forNumber(int value) {
       switch (value) {
         case 0: return Tap;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AdInteractionKind>
+    public static com.google.protobuf.Internal.EnumLiteMap<ComponentInteractionKind>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        AdInteractionKind> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AdInteractionKind>() {
-            public AdInteractionKind findValueByNumber(int number) {
-              return AdInteractionKind.forNumber(number);
+        ComponentInteractionKind> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ComponentInteractionKind>() {
+            public ComponentInteractionKind findValueByNumber(int number) {
+              return ComponentInteractionKind.forNumber(number);
             }
           };
 
@@ -267,9 +267,9 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.getDescriptor().getEnumTypes().get(2);
     }
 
-    private static final AdInteractionKind[] VALUES = values();
+    private static final ComponentInteractionKind[] VALUES = values();
 
-    public static AdInteractionKind valueOf(
+    public static ComponentInteractionKind valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -283,15 +283,1180 @@ public final class Csnmessages {
 
     private final int value;
 
-    private AdInteractionKind(int value) {
+    private ComponentInteractionKind(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.protobuf.AdInteractionKind)
+    // @@protoc_insertion_point(enum_scope:google.protobuf.ComponentInteractionKind)
   }
 
-  public interface StopOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.Stop)
+  public interface TransitAgencyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.TransitAgency)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    java.lang.String getAgencyId();
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgencyIdBytes();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.TransitAgency}
+   */
+  public  static final class TransitAgency extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.TransitAgency)
+      TransitAgencyOrBuilder {
+    // Use TransitAgency.newBuilder() to construct.
+    private TransitAgency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransitAgency() {
+      agencyId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private TransitAgency(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              agencyId_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder.class);
+    }
+
+    public static final int AGENCY_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object agencyId_;
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    public java.lang.String getAgencyId() {
+      java.lang.Object ref = agencyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agencyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgencyIdBytes() {
+      java.lang.Object ref = agencyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agencyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAgencyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agencyId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAgencyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agencyId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency) obj;
+
+      boolean result = true;
+      result = result && getAgencyId()
+          .equals(other.getAgencyId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AGENCY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAgencyId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.TransitAgency}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.TransitAgency)
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        agencyId_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency(this);
+        result.agencyId_ = agencyId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.getDefaultInstance()) return this;
+        if (!other.getAgencyId().isEmpty()) {
+          agencyId_ = other.agencyId_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object agencyId_ = "";
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public java.lang.String getAgencyId() {
+        java.lang.Object ref = agencyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agencyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgencyIdBytes() {
+        java.lang.Object ref = agencyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          agencyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder setAgencyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder clearAgencyId() {
+        
+        agencyId_ = getDefaultInstance().getAgencyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder setAgencyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.TransitAgency)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.TransitAgency)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransitAgency>
+        PARSER = new com.google.protobuf.AbstractParser<TransitAgency>() {
+      public TransitAgency parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TransitAgency(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransitAgency> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransitAgency> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TransitRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.TransitRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    java.lang.String getAgencyId();
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgencyIdBytes();
+
+    /**
+     * <code>string route_id = 2;</code>
+     */
+    java.lang.String getRouteId();
+    /**
+     * <code>string route_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRouteIdBytes();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.TransitRoute}
+   */
+  public  static final class TransitRoute extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.TransitRoute)
+      TransitRouteOrBuilder {
+    // Use TransitRoute.newBuilder() to construct.
+    private TransitRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransitRoute() {
+      agencyId_ = "";
+      routeId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private TransitRoute(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              agencyId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              routeId_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder.class);
+    }
+
+    public static final int AGENCY_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object agencyId_;
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    public java.lang.String getAgencyId() {
+      java.lang.Object ref = agencyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agencyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string agency_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgencyIdBytes() {
+      java.lang.Object ref = agencyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agencyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROUTE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object routeId_;
+    /**
+     * <code>string route_id = 2;</code>
+     */
+    public java.lang.String getRouteId() {
+      java.lang.Object ref = routeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string route_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRouteIdBytes() {
+      java.lang.Object ref = routeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAgencyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agencyId_);
+      }
+      if (!getRouteIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, routeId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAgencyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agencyId_);
+      }
+      if (!getRouteIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, routeId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute) obj;
+
+      boolean result = true;
+      result = result && getAgencyId()
+          .equals(other.getAgencyId());
+      result = result && getRouteId()
+          .equals(other.getRouteId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AGENCY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAgencyId().hashCode();
+      hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.TransitRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.TransitRoute)
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        agencyId_ = "";
+
+        routeId_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute(this);
+        result.agencyId_ = agencyId_;
+        result.routeId_ = routeId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.getDefaultInstance()) return this;
+        if (!other.getAgencyId().isEmpty()) {
+          agencyId_ = other.agencyId_;
+          onChanged();
+        }
+        if (!other.getRouteId().isEmpty()) {
+          routeId_ = other.routeId_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object agencyId_ = "";
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public java.lang.String getAgencyId() {
+        java.lang.Object ref = agencyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agencyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgencyIdBytes() {
+        java.lang.Object ref = agencyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          agencyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder setAgencyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder clearAgencyId() {
+        
+        agencyId_ = getDefaultInstance().getAgencyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string agency_id = 1;</code>
+       */
+      public Builder setAgencyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object routeId_ = "";
+      /**
+       * <code>string route_id = 2;</code>
+       */
+      public java.lang.String getRouteId() {
+        java.lang.Object ref = routeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string route_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRouteIdBytes() {
+        java.lang.Object ref = routeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          routeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string route_id = 2;</code>
+       */
+      public Builder setRouteId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        routeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string route_id = 2;</code>
+       */
+      public Builder clearRouteId() {
+        
+        routeId_ = getDefaultInstance().getRouteId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string route_id = 2;</code>
+       */
+      public Builder setRouteIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        routeId_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.TransitRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.TransitRoute)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransitRoute>
+        PARSER = new com.google.protobuf.AbstractParser<TransitRoute>() {
+      public TransitRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TransitRoute(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransitRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransitRoute> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TransitStopOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.TransitStop)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -325,17 +1490,17 @@ public final class Csnmessages {
         getStopIdBytes();
   }
   /**
-   * Protobuf type {@code google.protobuf.Stop}
+   * Protobuf type {@code google.protobuf.TransitStop}
    */
-  public  static final class Stop extends
+  public  static final class TransitStop extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.Stop)
-      StopOrBuilder {
-    // Use Stop.newBuilder() to construct.
-    private Stop(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:google.protobuf.TransitStop)
+      TransitStopOrBuilder {
+    // Use TransitStop.newBuilder() to construct.
+    private TransitStop(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Stop() {
+    private TransitStop() {
       agencyId_ = "";
       routeId_ = "";
       stopId_ = "";
@@ -346,7 +1511,7 @@ public final class Csnmessages {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private Stop(
+    private TransitStop(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -397,14 +1562,14 @@ public final class Csnmessages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Stop_descriptor;
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Stop_fieldAccessorTable
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.class, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder.class);
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder.class);
     }
 
     public static final int AGENCY_ID_FIELD_NUMBER = 1;
@@ -556,10 +1721,10 @@ public final class Csnmessages {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.Stop)) {
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitStop)) {
         return super.equals(obj);
       }
-      com.commutestream.nativeads.protobuf.Csnmessages.Stop other = (com.commutestream.nativeads.protobuf.Csnmessages.Stop) obj;
+      com.commutestream.nativeads.protobuf.Csnmessages.TransitStop other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitStop) obj;
 
       boolean result = true;
       result = result && getAgencyId()
@@ -589,58 +1754,69 @@ public final class Csnmessages {
       return hash;
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(byte[] data)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(java.io.InputStream input)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseDelimitedFrom(java.io.InputStream input)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseDelimitedFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -652,7 +1828,7 @@ public final class Csnmessages {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Stop prototype) {
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -667,25 +1843,25 @@ public final class Csnmessages {
       return builder;
     }
     /**
-     * Protobuf type {@code google.protobuf.Stop}
+     * Protobuf type {@code google.protobuf.TransitStop}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.Stop)
-        com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.protobuf.TransitStop)
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Stop_descriptor;
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Stop_fieldAccessorTable
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.Stop.class, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder.class);
+                com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder.class);
       }
 
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.Stop.newBuilder()
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -713,23 +1889,23 @@ public final class Csnmessages {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Stop_descriptor;
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance();
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.getDefaultInstance();
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.Stop result = buildPartial();
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitStop result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.Stop result = new com.commutestream.nativeads.protobuf.Csnmessages.Stop(this);
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitStop result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitStop(this);
         result.agencyId_ = agencyId_;
         result.routeId_ = routeId_;
         result.stopId_ = stopId_;
@@ -764,16 +1940,16 @@ public final class Csnmessages {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Stop) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Stop)other);
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitStop) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitStop)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.Stop other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.getDefaultInstance()) return this;
         if (!other.getAgencyId().isEmpty()) {
           agencyId_ = other.agencyId_;
           onChanged();
@@ -798,11 +1974,11 @@ public final class Csnmessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.Stop parsedMessage = null;
+        com.commutestream.nativeads.protobuf.Csnmessages.TransitStop parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.Stop) e.getUnfinishedMessage();
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.TransitStop) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1029,1147 +2205,39 @@ public final class Csnmessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.protobuf.Stop)
+      // @@protoc_insertion_point(builder_scope:google.protobuf.TransitStop)
     }
 
-    // @@protoc_insertion_point(class_scope:google.protobuf.Stop)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.Stop DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.protobuf.TransitStop)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.TransitStop DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.Stop();
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.TransitStop();
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.Stop getDefaultInstance() {
+    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Stop>
-        PARSER = new com.google.protobuf.AbstractParser<Stop>() {
-      public Stop parsePartialFrom(
+    private static final com.google.protobuf.Parser<TransitStop>
+        PARSER = new com.google.protobuf.AbstractParser<TransitStop>() {
+      public TransitStop parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Stop(input, extensionRegistry);
+          return new TransitStop(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Stop> parser() {
+    public static com.google.protobuf.Parser<TransitStop> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Stop> getParserForType() {
+    public com.google.protobuf.Parser<TransitStop> getParserForType() {
       return PARSER;
     }
 
-    public com.commutestream.nativeads.protobuf.Csnmessages.Stop getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface StopComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.StopComponent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string component_id = 1;</code>
-     */
-    java.lang.String getComponentId();
-    /**
-     * <code>string component_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getComponentIdBytes();
-
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    boolean hasStopTuple();
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple();
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder();
-
-    /**
-     * <code>string agencyName = 3;</code>
-     */
-    java.lang.String getAgencyName();
-    /**
-     * <code>string agencyName = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getAgencyNameBytes();
-
-    /**
-     * <code>string routeName = 4;</code>
-     */
-    java.lang.String getRouteName();
-    /**
-     * <code>string routeName = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getRouteNameBytes();
-
-    /**
-     * <code>string stopName = 5;</code>
-     */
-    java.lang.String getStopName();
-    /**
-     * <code>string stopName = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getStopNameBytes();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.StopComponent}
-   */
-  public  static final class StopComponent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.StopComponent)
-      StopComponentOrBuilder {
-    // Use StopComponent.newBuilder() to construct.
-    private StopComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StopComponent() {
-      componentId_ = "";
-      agencyName_ = "";
-      routeName_ = "";
-      stopName_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private StopComponent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              componentId_ = s;
-              break;
-            }
-            case 18: {
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder subBuilder = null;
-              if (stopTuple_ != null) {
-                subBuilder = stopTuple_.toBuilder();
-              }
-              stopTuple_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Stop.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stopTuple_);
-                stopTuple_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              agencyName_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              routeName_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              stopName_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopComponent_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopComponent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder.class);
-    }
-
-    public static final int COMPONENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object componentId_;
-    /**
-     * <code>string component_id = 1;</code>
-     */
-    public java.lang.String getComponentId() {
-      java.lang.Object ref = componentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        componentId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string component_id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getComponentIdBytes() {
-      java.lang.Object ref = componentId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        componentId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STOP_TUPLE_FIELD_NUMBER = 2;
-    private com.commutestream.nativeads.protobuf.Csnmessages.Stop stopTuple_;
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    public boolean hasStopTuple() {
-      return stopTuple_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple() {
-      return stopTuple_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-    }
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder() {
-      return getStopTuple();
-    }
-
-    public static final int AGENCYNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object agencyName_;
-    /**
-     * <code>string agencyName = 3;</code>
-     */
-    public java.lang.String getAgencyName() {
-      java.lang.Object ref = agencyName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        agencyName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string agencyName = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAgencyNameBytes() {
-      java.lang.Object ref = agencyName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        agencyName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROUTENAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object routeName_;
-    /**
-     * <code>string routeName = 4;</code>
-     */
-    public java.lang.String getRouteName() {
-      java.lang.Object ref = routeName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        routeName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string routeName = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRouteNameBytes() {
-      java.lang.Object ref = routeName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        routeName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STOPNAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object stopName_;
-    /**
-     * <code>string stopName = 5;</code>
-     */
-    public java.lang.String getStopName() {
-      java.lang.Object ref = stopName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        stopName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string stopName = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStopNameBytes() {
-      java.lang.Object ref = stopName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        stopName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getComponentIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, componentId_);
-      }
-      if (stopTuple_ != null) {
-        output.writeMessage(2, getStopTuple());
-      }
-      if (!getAgencyNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agencyName_);
-      }
-      if (!getRouteNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, routeName_);
-      }
-      if (!getStopNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopName_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getComponentIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, componentId_);
-      }
-      if (stopTuple_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getStopTuple());
-      }
-      if (!getAgencyNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agencyName_);
-      }
-      if (!getRouteNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, routeName_);
-      }
-      if (!getStopNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopName_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.StopComponent)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.StopComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.StopComponent) obj;
-
-      boolean result = true;
-      result = result && getComponentId()
-          .equals(other.getComponentId());
-      result = result && (hasStopTuple() == other.hasStopTuple());
-      if (hasStopTuple()) {
-        result = result && getStopTuple()
-            .equals(other.getStopTuple());
-      }
-      result = result && getAgencyName()
-          .equals(other.getAgencyName());
-      result = result && getRouteName()
-          .equals(other.getRouteName());
-      result = result && getStopName()
-          .equals(other.getStopName());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getComponentId().hashCode();
-      if (hasStopTuple()) {
-        hash = (37 * hash) + STOP_TUPLE_FIELD_NUMBER;
-        hash = (53 * hash) + getStopTuple().hashCode();
-      }
-      hash = (37 * hash) + AGENCYNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getAgencyName().hashCode();
-      hash = (37 * hash) + ROUTENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getRouteName().hashCode();
-      hash = (37 * hash) + STOPNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getStopName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.StopComponent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.StopComponent}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.StopComponent)
-        com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopComponent_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopComponent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        componentId_ = "";
-
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = null;
-        } else {
-          stopTuple_ = null;
-          stopTupleBuilder_ = null;
-        }
-        agencyName_ = "";
-
-        routeName_ = "";
-
-        stopName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopComponent_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopComponent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.StopComponent(this);
-        result.componentId_ = componentId_;
-        if (stopTupleBuilder_ == null) {
-          result.stopTuple_ = stopTuple_;
-        } else {
-          result.stopTuple_ = stopTupleBuilder_.build();
-        }
-        result.agencyName_ = agencyName_;
-        result.routeName_ = routeName_;
-        result.stopName_ = stopName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.StopComponent) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.StopComponent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.StopComponent other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.getDefaultInstance()) return this;
-        if (!other.getComponentId().isEmpty()) {
-          componentId_ = other.componentId_;
-          onChanged();
-        }
-        if (other.hasStopTuple()) {
-          mergeStopTuple(other.getStopTuple());
-        }
-        if (!other.getAgencyName().isEmpty()) {
-          agencyName_ = other.agencyName_;
-          onChanged();
-        }
-        if (!other.getRouteName().isEmpty()) {
-          routeName_ = other.routeName_;
-          onChanged();
-        }
-        if (!other.getStopName().isEmpty()) {
-          stopName_ = other.stopName_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopComponent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.StopComponent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object componentId_ = "";
-      /**
-       * <code>string component_id = 1;</code>
-       */
-      public java.lang.String getComponentId() {
-        java.lang.Object ref = componentId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          componentId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string component_id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getComponentIdBytes() {
-        java.lang.Object ref = componentId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          componentId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string component_id = 1;</code>
-       */
-      public Builder setComponentId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string component_id = 1;</code>
-       */
-      public Builder clearComponentId() {
-        
-        componentId_ = getDefaultInstance().getComponentId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string component_id = 1;</code>
-       */
-      public Builder setComponentIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.Stop stopTuple_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> stopTupleBuilder_;
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public boolean hasStopTuple() {
-        return stopTupleBuilder_ != null || stopTuple_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple() {
-        if (stopTupleBuilder_ == null) {
-          return stopTuple_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-        } else {
-          return stopTupleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public Builder setStopTuple(com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopTupleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          stopTuple_ = value;
-          onChanged();
-        } else {
-          stopTupleBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public Builder setStopTuple(
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder builderForValue) {
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = builderForValue.build();
-          onChanged();
-        } else {
-          stopTupleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public Builder mergeStopTuple(com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopTupleBuilder_ == null) {
-          if (stopTuple_ != null) {
-            stopTuple_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.newBuilder(stopTuple_).mergeFrom(value).buildPartial();
-          } else {
-            stopTuple_ = value;
-          }
-          onChanged();
-        } else {
-          stopTupleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public Builder clearStopTuple() {
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = null;
-          onChanged();
-        } else {
-          stopTuple_ = null;
-          stopTupleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder getStopTupleBuilder() {
-        
-        onChanged();
-        return getStopTupleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder() {
-        if (stopTupleBuilder_ != null) {
-          return stopTupleBuilder_.getMessageOrBuilder();
-        } else {
-          return stopTuple_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
-          getStopTupleFieldBuilder() {
-        if (stopTupleBuilder_ == null) {
-          stopTupleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder>(
-                  getStopTuple(),
-                  getParentForChildren(),
-                  isClean());
-          stopTuple_ = null;
-        }
-        return stopTupleBuilder_;
-      }
-
-      private java.lang.Object agencyName_ = "";
-      /**
-       * <code>string agencyName = 3;</code>
-       */
-      public java.lang.String getAgencyName() {
-        java.lang.Object ref = agencyName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          agencyName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string agencyName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAgencyNameBytes() {
-        java.lang.Object ref = agencyName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          agencyName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string agencyName = 3;</code>
-       */
-      public Builder setAgencyName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        agencyName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string agencyName = 3;</code>
-       */
-      public Builder clearAgencyName() {
-        
-        agencyName_ = getDefaultInstance().getAgencyName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string agencyName = 3;</code>
-       */
-      public Builder setAgencyNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        agencyName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object routeName_ = "";
-      /**
-       * <code>string routeName = 4;</code>
-       */
-      public java.lang.String getRouteName() {
-        java.lang.Object ref = routeName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          routeName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string routeName = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRouteNameBytes() {
-        java.lang.Object ref = routeName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          routeName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string routeName = 4;</code>
-       */
-      public Builder setRouteName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        routeName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string routeName = 4;</code>
-       */
-      public Builder clearRouteName() {
-        
-        routeName_ = getDefaultInstance().getRouteName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string routeName = 4;</code>
-       */
-      public Builder setRouteNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        routeName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object stopName_ = "";
-      /**
-       * <code>string stopName = 5;</code>
-       */
-      public java.lang.String getStopName() {
-        java.lang.Object ref = stopName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          stopName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string stopName = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStopNameBytes() {
-        java.lang.Object ref = stopName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          stopName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string stopName = 5;</code>
-       */
-      public Builder setStopName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        stopName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string stopName = 5;</code>
-       */
-      public Builder clearStopName() {
-        
-        stopName_ = getDefaultInstance().getStopName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string stopName = 5;</code>
-       */
-      public Builder setStopNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        stopName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.StopComponent)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.StopComponent)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.StopComponent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.StopComponent();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StopComponent>
-        PARSER = new com.google.protobuf.AbstractParser<StopComponent>() {
-      public StopComponent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StopComponent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StopComponent> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StopComponent> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getDefaultInstanceForType() {
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2359,6 +2427,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Location parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Location parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.Location parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3006,6 +3085,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3793,6 +3883,17 @@ public final class Csnmessages {
     }
 
     public static com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -4198,9 +4299,17 @@ public final class Csnmessages {
         getTitleBytes();
 
     /**
-     * <code>bytes color = 5;</code>
+     * <code>.google.protobuf.Colors colors = 5;</code>
      */
-    com.google.protobuf.ByteString getColor();
+    boolean hasColors();
+    /**
+     * <code>.google.protobuf.Colors colors = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors();
+    /**
+     * <code>.google.protobuf.Colors colors = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder();
   }
   /**
    * Protobuf type {@code google.protobuf.ActionComponent}
@@ -4218,7 +4327,6 @@ public final class Csnmessages {
       kind_ = 0;
       url_ = "";
       title_ = "";
-      color_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -4270,8 +4378,16 @@ public final class Csnmessages {
               break;
             }
             case 42: {
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder subBuilder = null;
+              if (colors_ != null) {
+                subBuilder = colors_.toBuilder();
+              }
+              colors_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Colors.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(colors_);
+                colors_ = subBuilder.buildPartial();
+              }
 
-              color_ = input.readBytes();
               break;
             }
           }
@@ -4390,13 +4506,25 @@ public final class Csnmessages {
       }
     }
 
-    public static final int COLOR_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString color_;
+    public static final int COLORS_FIELD_NUMBER = 5;
+    private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
     /**
-     * <code>bytes color = 5;</code>
+     * <code>.google.protobuf.Colors colors = 5;</code>
      */
-    public com.google.protobuf.ByteString getColor() {
-      return color_;
+    public boolean hasColors() {
+      return colors_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Colors colors = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
+      return colors_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+    }
+    /**
+     * <code>.google.protobuf.Colors colors = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
+      return getColors();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4423,8 +4551,8 @@ public final class Csnmessages {
       if (!getTitleBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, title_);
       }
-      if (!color_.isEmpty()) {
-        output.writeBytes(5, color_);
+      if (colors_ != null) {
+        output.writeMessage(5, getColors());
       }
     }
 
@@ -4447,9 +4575,9 @@ public final class Csnmessages {
       if (!getTitleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, title_);
       }
-      if (!color_.isEmpty()) {
+      if (colors_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, color_);
+          .computeMessageSize(5, getColors());
       }
       memoizedSize = size;
       return size;
@@ -4474,8 +4602,11 @@ public final class Csnmessages {
           .equals(other.getUrl());
       result = result && getTitle()
           .equals(other.getTitle());
-      result = result && getColor()
-          .equals(other.getColor());
+      result = result && (hasColors() == other.hasColors());
+      if (hasColors()) {
+        result = result && getColors()
+            .equals(other.getColors());
+      }
       return result;
     }
 
@@ -4495,13 +4626,26 @@ public final class Csnmessages {
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
-      hash = (37 * hash) + COLOR_FIELD_NUMBER;
-      hash = (53 * hash) + getColor().hashCode();
+      if (hasColors()) {
+        hash = (37 * hash) + COLORS_FIELD_NUMBER;
+        hash = (53 * hash) + getColors().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4623,8 +4767,12 @@ public final class Csnmessages {
 
         title_ = "";
 
-        color_ = com.google.protobuf.ByteString.EMPTY;
-
+        if (colorsBuilder_ == null) {
+          colors_ = null;
+        } else {
+          colors_ = null;
+          colorsBuilder_ = null;
+        }
         return this;
       }
 
@@ -4651,7 +4799,11 @@ public final class Csnmessages {
         result.kind_ = kind_;
         result.url_ = url_;
         result.title_ = title_;
-        result.color_ = color_;
+        if (colorsBuilder_ == null) {
+          result.colors_ = colors_;
+        } else {
+          result.colors_ = colorsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4707,8 +4859,8 @@ public final class Csnmessages {
           title_ = other.title_;
           onChanged();
         }
-        if (other.getColor() != com.google.protobuf.ByteString.EMPTY) {
-          setColor(other.getColor());
+        if (other.hasColors()) {
+          mergeColors(other.getColors());
         }
         onChanged();
         return this;
@@ -4944,33 +5096,121 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.google.protobuf.ByteString color_ = com.google.protobuf.ByteString.EMPTY;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> colorsBuilder_;
       /**
-       * <code>bytes color = 5;</code>
+       * <code>.google.protobuf.Colors colors = 5;</code>
        */
-      public com.google.protobuf.ByteString getColor() {
-        return color_;
+      public boolean hasColors() {
+        return colorsBuilder_ != null || colors_ != null;
       }
       /**
-       * <code>bytes color = 5;</code>
+       * <code>.google.protobuf.Colors colors = 5;</code>
        */
-      public Builder setColor(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        color_ = value;
-        onChanged();
+      public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
+        if (colorsBuilder_ == null) {
+          return colors_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+        } else {
+          return colorsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      public Builder setColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
+        if (colorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colors_ = value;
+          onChanged();
+        } else {
+          colorsBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>bytes color = 5;</code>
+       * <code>.google.protobuf.Colors colors = 5;</code>
        */
-      public Builder clearColor() {
+      public Builder setColors(
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder builderForValue) {
+        if (colorsBuilder_ == null) {
+          colors_ = builderForValue.build();
+          onChanged();
+        } else {
+          colorsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      public Builder mergeColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
+        if (colorsBuilder_ == null) {
+          if (colors_ != null) {
+            colors_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.newBuilder(colors_).mergeFrom(value).buildPartial();
+          } else {
+            colors_ = value;
+          }
+          onChanged();
+        } else {
+          colorsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      public Builder clearColors() {
+        if (colorsBuilder_ == null) {
+          colors_ = null;
+          onChanged();
+        } else {
+          colors_ = null;
+          colorsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder getColorsBuilder() {
         
-        color_ = getDefaultInstance().getColor();
         onChanged();
-        return this;
+        return getColorsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
+        if (colorsBuilder_ != null) {
+          return colorsBuilder_.getMessageOrBuilder();
+        } else {
+          return colors_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> 
+          getColorsFieldBuilder() {
+        if (colorsBuilder_ == null) {
+          colorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder>(
+                  getColors(),
+                  getParentForChildren(),
+                  isClean());
+          colors_ = null;
+        }
+        return colorsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5016,1140 +5256,6 @@ public final class Csnmessages {
     }
 
     public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TransitTitleComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.TransitTitleComponent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 component_id = 1;</code>
-     */
-    long getComponentId();
-
-    /**
-     * <code>string title = 2;</code>
-     */
-    java.lang.String getTitle();
-    /**
-     * <code>string title = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getTitleBytes();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.TransitTitleComponent}
-   */
-  public  static final class TransitTitleComponent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.TransitTitleComponent)
-      TransitTitleComponentOrBuilder {
-    // Use TransitTitleComponent.newBuilder() to construct.
-    private TransitTitleComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TransitTitleComponent() {
-      componentId_ = 0L;
-      title_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private TransitTitleComponent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              componentId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitTitleComponent_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitTitleComponent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder.class);
-    }
-
-    public static final int COMPONENT_ID_FIELD_NUMBER = 1;
-    private long componentId_;
-    /**
-     * <code>uint64 component_id = 1;</code>
-     */
-    public long getComponentId() {
-      return componentId_;
-    }
-
-    public static final int TITLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object title_;
-    /**
-     * <code>string title = 2;</code>
-     */
-    public java.lang.String getTitle() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        title_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string title = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTitleBytes() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        title_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (componentId_ != 0L) {
-        output.writeUInt64(1, componentId_);
-      }
-      if (!getTitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (componentId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, componentId_);
-      }
-      if (!getTitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent) obj;
-
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getTitle()
-          .equals(other.getTitle());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getComponentId());
-      hash = (37 * hash) + TITLE_FIELD_NUMBER;
-      hash = (53 * hash) + getTitle().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.TransitTitleComponent}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.TransitTitleComponent)
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitTitleComponent_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitTitleComponent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        componentId_ = 0L;
-
-        title_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitTitleComponent_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent(this);
-        result.componentId_ = componentId_;
-        result.title_ = title_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.getDefaultInstance()) return this;
-        if (other.getComponentId() != 0L) {
-          setComponentId(other.getComponentId());
-        }
-        if (!other.getTitle().isEmpty()) {
-          title_ = other.title_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long componentId_ ;
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public long getComponentId() {
-        return componentId_;
-      }
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public Builder setComponentId(long value) {
-        
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public Builder clearComponentId() {
-        
-        componentId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object title_ = "";
-      /**
-       * <code>string title = 2;</code>
-       */
-      public java.lang.String getTitle() {
-        java.lang.Object ref = title_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          title_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string title = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTitleBytes() {
-        java.lang.Object ref = title_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          title_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string title = 2;</code>
-       */
-      public Builder setTitle(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        title_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string title = 2;</code>
-       */
-      public Builder clearTitle() {
-        
-        title_ = getDefaultInstance().getTitle();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string title = 2;</code>
-       */
-      public Builder setTitleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        title_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.TransitTitleComponent)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.TransitTitleComponent)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TransitTitleComponent>
-        PARSER = new com.google.protobuf.AbstractParser<TransitTitleComponent>() {
-      public TransitTitleComponent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TransitTitleComponent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TransitTitleComponent> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TransitTitleComponent> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TransitSubtitleComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.TransitSubtitleComponent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 component_id = 1;</code>
-     */
-    long getComponentId();
-
-    /**
-     * <code>string subtitle = 2;</code>
-     */
-    java.lang.String getSubtitle();
-    /**
-     * <code>string subtitle = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getSubtitleBytes();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.TransitSubtitleComponent}
-   */
-  public  static final class TransitSubtitleComponent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.TransitSubtitleComponent)
-      TransitSubtitleComponentOrBuilder {
-    // Use TransitSubtitleComponent.newBuilder() to construct.
-    private TransitSubtitleComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TransitSubtitleComponent() {
-      componentId_ = 0L;
-      subtitle_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private TransitSubtitleComponent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              componentId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subtitle_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitSubtitleComponent_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitSubtitleComponent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder.class);
-    }
-
-    public static final int COMPONENT_ID_FIELD_NUMBER = 1;
-    private long componentId_;
-    /**
-     * <code>uint64 component_id = 1;</code>
-     */
-    public long getComponentId() {
-      return componentId_;
-    }
-
-    public static final int SUBTITLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object subtitle_;
-    /**
-     * <code>string subtitle = 2;</code>
-     */
-    public java.lang.String getSubtitle() {
-      java.lang.Object ref = subtitle_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subtitle_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string subtitle = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSubtitleBytes() {
-      java.lang.Object ref = subtitle_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subtitle_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (componentId_ != 0L) {
-        output.writeUInt64(1, componentId_);
-      }
-      if (!getSubtitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subtitle_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (componentId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, componentId_);
-      }
-      if (!getSubtitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subtitle_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent) obj;
-
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getSubtitle()
-          .equals(other.getSubtitle());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getComponentId());
-      hash = (37 * hash) + SUBTITLE_FIELD_NUMBER;
-      hash = (53 * hash) + getSubtitle().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.TransitSubtitleComponent}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.TransitSubtitleComponent)
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitSubtitleComponent_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitSubtitleComponent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        componentId_ = 0L;
-
-        subtitle_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitSubtitleComponent_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent(this);
-        result.componentId_ = componentId_;
-        result.subtitle_ = subtitle_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.getDefaultInstance()) return this;
-        if (other.getComponentId() != 0L) {
-          setComponentId(other.getComponentId());
-        }
-        if (!other.getSubtitle().isEmpty()) {
-          subtitle_ = other.subtitle_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long componentId_ ;
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public long getComponentId() {
-        return componentId_;
-      }
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public Builder setComponentId(long value) {
-        
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 component_id = 1;</code>
-       */
-      public Builder clearComponentId() {
-        
-        componentId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object subtitle_ = "";
-      /**
-       * <code>string subtitle = 2;</code>
-       */
-      public java.lang.String getSubtitle() {
-        java.lang.Object ref = subtitle_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          subtitle_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string subtitle = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSubtitleBytes() {
-        java.lang.Object ref = subtitle_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          subtitle_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string subtitle = 2;</code>
-       */
-      public Builder setSubtitle(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        subtitle_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string subtitle = 2;</code>
-       */
-      public Builder clearSubtitle() {
-        
-        subtitle_ = getDefaultInstance().getSubtitle();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string subtitle = 2;</code>
-       */
-      public Builder setSubtitleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        subtitle_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.TransitSubtitleComponent)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.TransitSubtitleComponent)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TransitSubtitleComponent>
-        PARSER = new com.google.protobuf.AbstractParser<TransitSubtitleComponent>() {
-      public TransitSubtitleComponent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TransitSubtitleComponent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TransitSubtitleComponent> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TransitSubtitleComponent> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6334,6 +5440,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6860,6 +5977,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7428,6 +6556,17 @@ public final class Csnmessages {
     }
 
     public static com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -7995,6 +7134,17 @@ public final class Csnmessages {
     }
 
     public static com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -8352,29 +7502,601 @@ public final class Csnmessages {
 
   }
 
+  public interface ColorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.Color)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 red = 1;</code>
+     */
+    int getRed();
+
+    /**
+     * <code>uint32 green = 2;</code>
+     */
+    int getGreen();
+
+    /**
+     * <code>uint32 blue = 3;</code>
+     */
+    int getBlue();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.Color}
+   */
+  public  static final class Color extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.Color)
+      ColorOrBuilder {
+    // Use Color.newBuilder() to construct.
+    private Color(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Color() {
+      red_ = 0;
+      green_ = 0;
+      blue_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Color(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              red_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              green_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              blue_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.class, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder.class);
+    }
+
+    public static final int RED_FIELD_NUMBER = 1;
+    private int red_;
+    /**
+     * <code>uint32 red = 1;</code>
+     */
+    public int getRed() {
+      return red_;
+    }
+
+    public static final int GREEN_FIELD_NUMBER = 2;
+    private int green_;
+    /**
+     * <code>uint32 green = 2;</code>
+     */
+    public int getGreen() {
+      return green_;
+    }
+
+    public static final int BLUE_FIELD_NUMBER = 3;
+    private int blue_;
+    /**
+     * <code>uint32 blue = 3;</code>
+     */
+    public int getBlue() {
+      return blue_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (red_ != 0) {
+        output.writeUInt32(1, red_);
+      }
+      if (green_ != 0) {
+        output.writeUInt32(2, green_);
+      }
+      if (blue_ != 0) {
+        output.writeUInt32(3, blue_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (red_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, red_);
+      }
+      if (green_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, green_);
+      }
+      if (blue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, blue_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.Color)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.Color other = (com.commutestream.nativeads.protobuf.Csnmessages.Color) obj;
+
+      boolean result = true;
+      result = result && (getRed()
+          == other.getRed());
+      result = result && (getGreen()
+          == other.getGreen());
+      result = result && (getBlue()
+          == other.getBlue());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RED_FIELD_NUMBER;
+      hash = (53 * hash) + getRed();
+      hash = (37 * hash) + GREEN_FIELD_NUMBER;
+      hash = (53 * hash) + getGreen();
+      hash = (37 * hash) + BLUE_FIELD_NUMBER;
+      hash = (53 * hash) + getBlue();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Color prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.Color}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.Color)
+        com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.Color.class, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.Color.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        red_ = 0;
+
+        green_ = 0;
+
+        blue_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.Color result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.Color result = new com.commutestream.nativeads.protobuf.Csnmessages.Color(this);
+        result.red_ = red_;
+        result.green_ = green_;
+        result.blue_ = blue_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Color) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Color)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.Color other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance()) return this;
+        if (other.getRed() != 0) {
+          setRed(other.getRed());
+        }
+        if (other.getGreen() != 0) {
+          setGreen(other.getGreen());
+        }
+        if (other.getBlue() != 0) {
+          setBlue(other.getBlue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.Color parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.Color) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int red_ ;
+      /**
+       * <code>uint32 red = 1;</code>
+       */
+      public int getRed() {
+        return red_;
+      }
+      /**
+       * <code>uint32 red = 1;</code>
+       */
+      public Builder setRed(int value) {
+        
+        red_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 red = 1;</code>
+       */
+      public Builder clearRed() {
+        
+        red_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int green_ ;
+      /**
+       * <code>uint32 green = 2;</code>
+       */
+      public int getGreen() {
+        return green_;
+      }
+      /**
+       * <code>uint32 green = 2;</code>
+       */
+      public Builder setGreen(int value) {
+        
+        green_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 green = 2;</code>
+       */
+      public Builder clearGreen() {
+        
+        green_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int blue_ ;
+      /**
+       * <code>uint32 blue = 3;</code>
+       */
+      public int getBlue() {
+        return blue_;
+      }
+      /**
+       * <code>uint32 blue = 3;</code>
+       */
+      public Builder setBlue(int value) {
+        
+        blue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 blue = 3;</code>
+       */
+      public Builder clearBlue() {
+        
+        blue_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.Color)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.Color)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.Color DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.Color();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Color getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Color>
+        PARSER = new com.google.protobuf.AbstractParser<Color>() {
+      public Color parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Color(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Color> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Color> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.Color getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ColorsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.protobuf.Colors)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string background = 1;</code>
+     * <code>.google.protobuf.Color background = 1;</code>
      */
-    java.lang.String getBackground();
+    boolean hasBackground();
     /**
-     * <code>string background = 1;</code>
+     * <code>.google.protobuf.Color background = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getBackgroundBytes();
+    com.commutestream.nativeads.protobuf.Csnmessages.Color getBackground();
+    /**
+     * <code>.google.protobuf.Color background = 1;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getBackgroundOrBuilder();
 
     /**
-     * <code>string foreground = 2;</code>
+     * <code>.google.protobuf.Color foreground = 2;</code>
      */
-    java.lang.String getForeground();
+    boolean hasForeground();
     /**
-     * <code>string foreground = 2;</code>
+     * <code>.google.protobuf.Color foreground = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getForegroundBytes();
+    com.commutestream.nativeads.protobuf.Csnmessages.Color getForeground();
+    /**
+     * <code>.google.protobuf.Color foreground = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getForegroundOrBuilder();
   }
   /**
    * Protobuf type {@code google.protobuf.Colors}
@@ -8388,8 +8110,6 @@ public final class Csnmessages {
       super(builder);
     }
     private Colors() {
-      background_ = "";
-      foreground_ = "";
     }
 
     @java.lang.Override
@@ -8418,15 +8138,29 @@ public final class Csnmessages {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder subBuilder = null;
+              if (background_ != null) {
+                subBuilder = background_.toBuilder();
+              }
+              background_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Color.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(background_);
+                background_ = subBuilder.buildPartial();
+              }
 
-              background_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder subBuilder = null;
+              if (foreground_ != null) {
+                subBuilder = foreground_.toBuilder();
+              }
+              foreground_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Color.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(foreground_);
+                foreground_ = subBuilder.buildPartial();
+              }
 
-              foreground_ = s;
               break;
             }
           }
@@ -8453,71 +8187,45 @@ public final class Csnmessages {
     }
 
     public static final int BACKGROUND_FIELD_NUMBER = 1;
-    private volatile java.lang.Object background_;
+    private com.commutestream.nativeads.protobuf.Csnmessages.Color background_;
     /**
-     * <code>string background = 1;</code>
+     * <code>.google.protobuf.Color background = 1;</code>
      */
-    public java.lang.String getBackground() {
-      java.lang.Object ref = background_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        background_ = s;
-        return s;
-      }
+    public boolean hasBackground() {
+      return background_ != null;
     }
     /**
-     * <code>string background = 1;</code>
+     * <code>.google.protobuf.Color background = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getBackgroundBytes() {
-      java.lang.Object ref = background_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        background_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.commutestream.nativeads.protobuf.Csnmessages.Color getBackground() {
+      return background_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : background_;
+    }
+    /**
+     * <code>.google.protobuf.Color background = 1;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getBackgroundOrBuilder() {
+      return getBackground();
     }
 
     public static final int FOREGROUND_FIELD_NUMBER = 2;
-    private volatile java.lang.Object foreground_;
+    private com.commutestream.nativeads.protobuf.Csnmessages.Color foreground_;
     /**
-     * <code>string foreground = 2;</code>
+     * <code>.google.protobuf.Color foreground = 2;</code>
      */
-    public java.lang.String getForeground() {
-      java.lang.Object ref = foreground_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        foreground_ = s;
-        return s;
-      }
+    public boolean hasForeground() {
+      return foreground_ != null;
     }
     /**
-     * <code>string foreground = 2;</code>
+     * <code>.google.protobuf.Color foreground = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getForegroundBytes() {
-      java.lang.Object ref = foreground_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        foreground_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.commutestream.nativeads.protobuf.Csnmessages.Color getForeground() {
+      return foreground_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : foreground_;
+    }
+    /**
+     * <code>.google.protobuf.Color foreground = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getForegroundOrBuilder() {
+      return getForeground();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8532,11 +8240,11 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBackgroundBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, background_);
+      if (background_ != null) {
+        output.writeMessage(1, getBackground());
       }
-      if (!getForegroundBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, foreground_);
+      if (foreground_ != null) {
+        output.writeMessage(2, getForeground());
       }
     }
 
@@ -8545,11 +8253,13 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBackgroundBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, background_);
+      if (background_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBackground());
       }
-      if (!getForegroundBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, foreground_);
+      if (foreground_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getForeground());
       }
       memoizedSize = size;
       return size;
@@ -8567,10 +8277,16 @@ public final class Csnmessages {
       com.commutestream.nativeads.protobuf.Csnmessages.Colors other = (com.commutestream.nativeads.protobuf.Csnmessages.Colors) obj;
 
       boolean result = true;
-      result = result && getBackground()
-          .equals(other.getBackground());
-      result = result && getForeground()
-          .equals(other.getForeground());
+      result = result && (hasBackground() == other.hasBackground());
+      if (hasBackground()) {
+        result = result && getBackground()
+            .equals(other.getBackground());
+      }
+      result = result && (hasForeground() == other.hasForeground());
+      if (hasForeground()) {
+        result = result && getForeground()
+            .equals(other.getForeground());
+      }
       return result;
     }
 
@@ -8581,15 +8297,30 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BACKGROUND_FIELD_NUMBER;
-      hash = (53 * hash) + getBackground().hashCode();
-      hash = (37 * hash) + FOREGROUND_FIELD_NUMBER;
-      hash = (53 * hash) + getForeground().hashCode();
+      if (hasBackground()) {
+        hash = (37 * hash) + BACKGROUND_FIELD_NUMBER;
+        hash = (53 * hash) + getBackground().hashCode();
+      }
+      if (hasForeground()) {
+        hash = (37 * hash) + FOREGROUND_FIELD_NUMBER;
+        hash = (53 * hash) + getForeground().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Colors parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Colors parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.Colors parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8703,10 +8434,18 @@ public final class Csnmessages {
       }
       public Builder clear() {
         super.clear();
-        background_ = "";
-
-        foreground_ = "";
-
+        if (backgroundBuilder_ == null) {
+          background_ = null;
+        } else {
+          background_ = null;
+          backgroundBuilder_ = null;
+        }
+        if (foregroundBuilder_ == null) {
+          foreground_ = null;
+        } else {
+          foreground_ = null;
+          foregroundBuilder_ = null;
+        }
         return this;
       }
 
@@ -8729,8 +8468,16 @@ public final class Csnmessages {
 
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.Colors result = new com.commutestream.nativeads.protobuf.Csnmessages.Colors(this);
-        result.background_ = background_;
-        result.foreground_ = foreground_;
+        if (backgroundBuilder_ == null) {
+          result.background_ = background_;
+        } else {
+          result.background_ = backgroundBuilder_.build();
+        }
+        if (foregroundBuilder_ == null) {
+          result.foreground_ = foreground_;
+        } else {
+          result.foreground_ = foregroundBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -8772,13 +8519,11 @@ public final class Csnmessages {
 
       public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.Colors other) {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance()) return this;
-        if (!other.getBackground().isEmpty()) {
-          background_ = other.background_;
-          onChanged();
+        if (other.hasBackground()) {
+          mergeBackground(other.getBackground());
         }
-        if (!other.getForeground().isEmpty()) {
-          foreground_ = other.foreground_;
-          onChanged();
+        if (other.hasForeground()) {
+          mergeForeground(other.getForeground());
         }
         onChanged();
         return this;
@@ -8806,142 +8551,238 @@ public final class Csnmessages {
         return this;
       }
 
-      private java.lang.Object background_ = "";
+      private com.commutestream.nativeads.protobuf.Csnmessages.Color background_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> backgroundBuilder_;
       /**
-       * <code>string background = 1;</code>
+       * <code>.google.protobuf.Color background = 1;</code>
        */
-      public java.lang.String getBackground() {
-        java.lang.Object ref = background_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          background_ = s;
-          return s;
+      public boolean hasBackground() {
+        return backgroundBuilder_ != null || background_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Color background = 1;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color getBackground() {
+        if (backgroundBuilder_ == null) {
+          return background_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : background_;
         } else {
-          return (java.lang.String) ref;
+          return backgroundBuilder_.getMessage();
         }
       }
       /**
-       * <code>string background = 1;</code>
+       * <code>.google.protobuf.Color background = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getBackgroundBytes() {
-        java.lang.Object ref = background_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          background_ = b;
-          return b;
+      public Builder setBackground(com.commutestream.nativeads.protobuf.Csnmessages.Color value) {
+        if (backgroundBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          background_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          backgroundBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
-       * <code>string background = 1;</code>
+       * <code>.google.protobuf.Color background = 1;</code>
        */
       public Builder setBackground(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        background_ = value;
-        onChanged();
+          com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder builderForValue) {
+        if (backgroundBuilder_ == null) {
+          background_ = builderForValue.build();
+          onChanged();
+        } else {
+          backgroundBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string background = 1;</code>
+       * <code>.google.protobuf.Color background = 1;</code>
+       */
+      public Builder mergeBackground(com.commutestream.nativeads.protobuf.Csnmessages.Color value) {
+        if (backgroundBuilder_ == null) {
+          if (background_ != null) {
+            background_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.newBuilder(background_).mergeFrom(value).buildPartial();
+          } else {
+            background_ = value;
+          }
+          onChanged();
+        } else {
+          backgroundBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Color background = 1;</code>
        */
       public Builder clearBackground() {
-        
-        background_ = getDefaultInstance().getBackground();
-        onChanged();
+        if (backgroundBuilder_ == null) {
+          background_ = null;
+          onChanged();
+        } else {
+          background_ = null;
+          backgroundBuilder_ = null;
+        }
+
         return this;
       }
       /**
-       * <code>string background = 1;</code>
+       * <code>.google.protobuf.Color background = 1;</code>
        */
-      public Builder setBackgroundBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder getBackgroundBuilder() {
         
-        background_ = value;
         onChanged();
-        return this;
+        return getBackgroundFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Color background = 1;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getBackgroundOrBuilder() {
+        if (backgroundBuilder_ != null) {
+          return backgroundBuilder_.getMessageOrBuilder();
+        } else {
+          return background_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : background_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Color background = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> 
+          getBackgroundFieldBuilder() {
+        if (backgroundBuilder_ == null) {
+          backgroundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder>(
+                  getBackground(),
+                  getParentForChildren(),
+                  isClean());
+          background_ = null;
+        }
+        return backgroundBuilder_;
       }
 
-      private java.lang.Object foreground_ = "";
+      private com.commutestream.nativeads.protobuf.Csnmessages.Color foreground_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> foregroundBuilder_;
       /**
-       * <code>string foreground = 2;</code>
+       * <code>.google.protobuf.Color foreground = 2;</code>
        */
-      public java.lang.String getForeground() {
-        java.lang.Object ref = foreground_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          foreground_ = s;
-          return s;
+      public boolean hasForeground() {
+        return foregroundBuilder_ != null || foreground_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Color foreground = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color getForeground() {
+        if (foregroundBuilder_ == null) {
+          return foreground_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : foreground_;
         } else {
-          return (java.lang.String) ref;
+          return foregroundBuilder_.getMessage();
         }
       }
       /**
-       * <code>string foreground = 2;</code>
+       * <code>.google.protobuf.Color foreground = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getForegroundBytes() {
-        java.lang.Object ref = foreground_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          foreground_ = b;
-          return b;
+      public Builder setForeground(com.commutestream.nativeads.protobuf.Csnmessages.Color value) {
+        if (foregroundBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          foreground_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          foregroundBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
-       * <code>string foreground = 2;</code>
+       * <code>.google.protobuf.Color foreground = 2;</code>
        */
       public Builder setForeground(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        foreground_ = value;
-        onChanged();
+          com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder builderForValue) {
+        if (foregroundBuilder_ == null) {
+          foreground_ = builderForValue.build();
+          onChanged();
+        } else {
+          foregroundBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string foreground = 2;</code>
+       * <code>.google.protobuf.Color foreground = 2;</code>
+       */
+      public Builder mergeForeground(com.commutestream.nativeads.protobuf.Csnmessages.Color value) {
+        if (foregroundBuilder_ == null) {
+          if (foreground_ != null) {
+            foreground_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.newBuilder(foreground_).mergeFrom(value).buildPartial();
+          } else {
+            foreground_ = value;
+          }
+          onChanged();
+        } else {
+          foregroundBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Color foreground = 2;</code>
        */
       public Builder clearForeground() {
-        
-        foreground_ = getDefaultInstance().getForeground();
-        onChanged();
+        if (foregroundBuilder_ == null) {
+          foreground_ = null;
+          onChanged();
+        } else {
+          foreground_ = null;
+          foregroundBuilder_ = null;
+        }
+
         return this;
       }
       /**
-       * <code>string foreground = 2;</code>
+       * <code>.google.protobuf.Color foreground = 2;</code>
        */
-      public Builder setForegroundBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder getForegroundBuilder() {
         
-        foreground_ = value;
         onChanged();
-        return this;
+        return getForegroundFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Color foreground = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder getForegroundOrBuilder() {
+        if (foregroundBuilder_ != null) {
+          return foregroundBuilder_.getMessageOrBuilder();
+        } else {
+          return foreground_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance() : foreground_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Color foreground = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> 
+          getForegroundFieldBuilder() {
+        if (foregroundBuilder_ == null) {
+          foregroundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder>(
+                  getForeground(),
+                  getParentForChildren(),
+                  isClean());
+          foreground_ = null;
+        }
+        return foregroundBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9000,6 +8841,26 @@ public final class Csnmessages {
      * <code>uint64 component_id = 1;</code>
      */
     long getComponentId();
+
+    /**
+     * <code>string title = 2;</code>
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>string title = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>string subtitle = 3;</code>
+     */
+    java.lang.String getSubtitle();
+    /**
+     * <code>string subtitle = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubtitleBytes();
   }
   /**
    * Protobuf type {@code google.protobuf.SecondaryActionComponent}
@@ -9014,6 +8875,8 @@ public final class Csnmessages {
     }
     private SecondaryActionComponent() {
       componentId_ = 0L;
+      title_ = "";
+      subtitle_ = "";
     }
 
     @java.lang.Override
@@ -9044,6 +8907,18 @@ public final class Csnmessages {
             case 8: {
 
               componentId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              title_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subtitle_ = s;
               break;
             }
           }
@@ -9078,6 +8953,74 @@ public final class Csnmessages {
       return componentId_;
     }
 
+    public static final int TITLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object title_;
+    /**
+     * <code>string title = 2;</code>
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string title = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBTITLE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object subtitle_;
+    /**
+     * <code>string subtitle = 3;</code>
+     */
+    public java.lang.String getSubtitle() {
+      java.lang.Object ref = subtitle_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subtitle_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subtitle = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubtitleBytes() {
+      java.lang.Object ref = subtitle_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subtitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -9093,6 +9036,12 @@ public final class Csnmessages {
       if (componentId_ != 0L) {
         output.writeUInt64(1, componentId_);
       }
+      if (!getTitleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+      }
+      if (!getSubtitleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subtitle_);
+      }
     }
 
     public int getSerializedSize() {
@@ -9103,6 +9052,12 @@ public final class Csnmessages {
       if (componentId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, componentId_);
+      }
+      if (!getTitleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+      }
+      if (!getSubtitleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subtitle_);
       }
       memoizedSize = size;
       return size;
@@ -9122,6 +9077,10 @@ public final class Csnmessages {
       boolean result = true;
       result = result && (getComponentId()
           == other.getComponentId());
+      result = result && getTitle()
+          .equals(other.getTitle());
+      result = result && getSubtitle()
+          .equals(other.getSubtitle());
       return result;
     }
 
@@ -9135,11 +9094,26 @@ public final class Csnmessages {
       hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getComponentId());
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + SUBTITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getSubtitle().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9255,6 +9229,10 @@ public final class Csnmessages {
         super.clear();
         componentId_ = 0L;
 
+        title_ = "";
+
+        subtitle_ = "";
+
         return this;
       }
 
@@ -9278,6 +9256,8 @@ public final class Csnmessages {
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent(this);
         result.componentId_ = componentId_;
+        result.title_ = title_;
+        result.subtitle_ = subtitle_;
         onBuilt();
         return result;
       }
@@ -9321,6 +9301,14 @@ public final class Csnmessages {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance()) return this;
         if (other.getComponentId() != 0L) {
           setComponentId(other.getComponentId());
+        }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          onChanged();
+        }
+        if (!other.getSubtitle().isEmpty()) {
+          subtitle_ = other.subtitle_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -9373,6 +9361,144 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>string title = 2;</code>
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string title = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string title = 2;</code>
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        title_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 2;</code>
+       */
+      public Builder clearTitle() {
+        
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 2;</code>
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        title_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object subtitle_ = "";
+      /**
+       * <code>string subtitle = 3;</code>
+       */
+      public java.lang.String getSubtitle() {
+        java.lang.Object ref = subtitle_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subtitle_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subtitle = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSubtitleBytes() {
+        java.lang.Object ref = subtitle_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subtitle_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subtitle = 3;</code>
+       */
+      public Builder setSubtitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        subtitle_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subtitle = 3;</code>
+       */
+      public Builder clearSubtitle() {
+        
+        subtitle_ = getDefaultInstance().getSubtitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subtitle = 3;</code>
+       */
+      public Builder setSubtitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        subtitle_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -9422,6 +9548,447 @@ public final class Csnmessages {
 
   }
 
+  public interface ViewComponentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.ViewComponent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 component_id = 1;</code>
+     */
+    long getComponentId();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.ViewComponent}
+   */
+  public  static final class ViewComponent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.ViewComponent)
+      ViewComponentOrBuilder {
+    // Use ViewComponent.newBuilder() to construct.
+    private ViewComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ViewComponent() {
+      componentId_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ViewComponent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              componentId_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder.class);
+    }
+
+    public static final int COMPONENT_ID_FIELD_NUMBER = 1;
+    private long componentId_;
+    /**
+     * <code>uint64 component_id = 1;</code>
+     */
+    public long getComponentId() {
+      return componentId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (componentId_ != 0L) {
+        output.writeUInt64(1, componentId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (componentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, componentId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent) obj;
+
+      boolean result = true;
+      result = result && (getComponentId()
+          == other.getComponentId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getComponentId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.ViewComponent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.ViewComponent)
+        com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.class, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        componentId_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent(this);
+        result.componentId_ = componentId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance()) return this;
+        if (other.getComponentId() != 0L) {
+          setComponentId(other.getComponentId());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long componentId_ ;
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public long getComponentId() {
+        return componentId_;
+      }
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public Builder setComponentId(long value) {
+        
+        componentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public Builder clearComponentId() {
+        
+        componentId_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.ViewComponent)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.ViewComponent)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ViewComponent>
+        PARSER = new com.google.protobuf.AbstractParser<ViewComponent>() {
+      public ViewComponent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ViewComponent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ViewComponent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ViewComponent> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NativeAdOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.protobuf.NativeAd)
       com.google.protobuf.MessageOrBuilder {
@@ -9437,134 +10004,137 @@ public final class Csnmessages {
     long getAdId();
 
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>uint64 version_id = 3;</code>
+     */
+    long getVersionId();
+
+    /**
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     boolean hasColors();
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors();
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder();
 
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> 
+        getActionsList();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index);
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    int getActionsCount();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+        getActionsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+        int index);
+
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    boolean hasView();
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView();
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder();
+
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     boolean hasSecondaryActionScreen();
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen();
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder();
 
     /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    boolean hasTransitTitle();
-    /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getTransitTitle();
-    /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder getTransitTitleOrBuilder();
-
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    boolean hasTransitSubtitle();
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getTransitSubtitle();
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder getTransitSubtitleOrBuilder();
-
-    /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     boolean hasLogo();
     /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo();
     /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder();
 
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     boolean hasHeadline();
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline();
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder();
 
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     boolean hasBody();
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody();
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder();
 
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     boolean hasAdvertiser();
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser();
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder();
 
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     boolean hasLocation();
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation();
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder();
-
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    boolean hasStop();
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getStop();
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder getStopOrBuilder();
 
     /**
      * <code>.google.protobuf.HeroComponent hero = 13;</code>
@@ -9578,30 +10148,6 @@ public final class Csnmessages {
      * <code>.google.protobuf.HeroComponent hero = 13;</code>
      */
     com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder getHeroOrBuilder();
-
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> 
-        getActionsList();
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index);
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    int getActionsCount();
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
-        getActionsOrBuilderList();
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code google.protobuf.NativeAd}
@@ -9617,6 +10163,7 @@ public final class Csnmessages {
     private NativeAd() {
       requestId_ = 0L;
       adId_ = 0L;
+      versionId_ = 0L;
       actions_ = java.util.Collections.emptyList();
     }
 
@@ -9655,7 +10202,12 @@ public final class Csnmessages {
               adId_ = input.readUInt64();
               break;
             }
-            case 26: {
+            case 24: {
+
+              versionId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
               com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder subBuilder = null;
               if (colors_ != null) {
                 subBuilder = colors_.toBuilder();
@@ -9668,7 +10220,29 @@ public final class Csnmessages {
 
               break;
             }
-            case 34: {
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              actions_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder subBuilder = null;
+              if (view_ != null) {
+                subBuilder = view_.toBuilder();
+              }
+              view_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(view_);
+                view_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
               com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder subBuilder = null;
               if (secondaryActionScreen_ != null) {
                 subBuilder = secondaryActionScreen_.toBuilder();
@@ -9681,33 +10255,7 @@ public final class Csnmessages {
 
               break;
             }
-            case 42: {
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder subBuilder = null;
-              if (transitTitle_ != null) {
-                subBuilder = transitTitle_.toBuilder();
-              }
-              transitTitle_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transitTitle_);
-                transitTitle_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder subBuilder = null;
-              if (transitSubtitle_ != null) {
-                subBuilder = transitSubtitle_.toBuilder();
-              }
-              transitSubtitle_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transitSubtitle_);
-                transitSubtitle_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
+            case 66: {
               com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder subBuilder = null;
               if (logo_ != null) {
                 subBuilder = logo_.toBuilder();
@@ -9720,7 +10268,7 @@ public final class Csnmessages {
 
               break;
             }
-            case 66: {
+            case 74: {
               com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder subBuilder = null;
               if (headline_ != null) {
                 subBuilder = headline_.toBuilder();
@@ -9733,7 +10281,7 @@ public final class Csnmessages {
 
               break;
             }
-            case 74: {
+            case 82: {
               com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder subBuilder = null;
               if (body_ != null) {
                 subBuilder = body_.toBuilder();
@@ -9746,7 +10294,7 @@ public final class Csnmessages {
 
               break;
             }
-            case 82: {
+            case 90: {
               com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder subBuilder = null;
               if (advertiser_ != null) {
                 subBuilder = advertiser_.toBuilder();
@@ -9759,7 +10307,7 @@ public final class Csnmessages {
 
               break;
             }
-            case 90: {
+            case 98: {
               com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder subBuilder = null;
               if (location_ != null) {
                 subBuilder = location_.toBuilder();
@@ -9768,19 +10316,6 @@ public final class Csnmessages {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(location_);
                 location_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder subBuilder = null;
-              if (stop_ != null) {
-                subBuilder = stop_.toBuilder();
-              }
-              stop_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stop_);
-                stop_ = subBuilder.buildPartial();
               }
 
               break;
@@ -9798,15 +10333,6 @@ public final class Csnmessages {
 
               break;
             }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-                actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              actions_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.parser(), extensionRegistry));
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9815,7 +10341,7 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
         }
         makeExtensionsImmutable();
@@ -9852,214 +10378,216 @@ public final class Csnmessages {
       return adId_;
     }
 
-    public static final int COLORS_FIELD_NUMBER = 3;
+    public static final int VERSION_ID_FIELD_NUMBER = 3;
+    private long versionId_;
+    /**
+     * <code>uint64 version_id = 3;</code>
+     */
+    public long getVersionId() {
+      return versionId_;
+    }
+
+    public static final int COLORS_FIELD_NUMBER = 4;
     private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     public boolean hasColors() {
       return colors_ != null;
     }
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
       return colors_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
     }
     /**
-     * <code>.google.protobuf.Colors colors = 3;</code>
+     * <code>.google.protobuf.Colors colors = 4;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
       return getColors();
     }
 
-    public static final int SECONDARY_ACTION_SCREEN_FIELD_NUMBER = 4;
+    public static final int ACTIONS_FIELD_NUMBER = 5;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_;
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+        int index) {
+      return actions_.get(index);
+    }
+
+    public static final int VIEW_FIELD_NUMBER = 6;
+    private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_;
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    public boolean hasView() {
+      return view_ != null;
+    }
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView() {
+      return view_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+    }
+    /**
+     * <code>.google.protobuf.ViewComponent view = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder() {
+      return getView();
+    }
+
+    public static final int SECONDARY_ACTION_SCREEN_FIELD_NUMBER = 7;
     private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_;
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     public boolean hasSecondaryActionScreen() {
       return secondaryActionScreen_ != null;
     }
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen() {
       return secondaryActionScreen_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance() : secondaryActionScreen_;
     }
     /**
-     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder() {
       return getSecondaryActionScreen();
     }
 
-    public static final int TRANSIT_TITLE_FIELD_NUMBER = 5;
-    private com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent transitTitle_;
-    /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    public boolean hasTransitTitle() {
-      return transitTitle_ != null;
-    }
-    /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getTransitTitle() {
-      return transitTitle_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.getDefaultInstance() : transitTitle_;
-    }
-    /**
-     * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder getTransitTitleOrBuilder() {
-      return getTransitTitle();
-    }
-
-    public static final int TRANSIT_SUBTITLE_FIELD_NUMBER = 6;
-    private com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent transitSubtitle_;
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    public boolean hasTransitSubtitle() {
-      return transitSubtitle_ != null;
-    }
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getTransitSubtitle() {
-      return transitSubtitle_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.getDefaultInstance() : transitSubtitle_;
-    }
-    /**
-     * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder getTransitSubtitleOrBuilder() {
-      return getTransitSubtitle();
-    }
-
-    public static final int LOGO_FIELD_NUMBER = 7;
+    public static final int LOGO_FIELD_NUMBER = 8;
     private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_;
     /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     public boolean hasLogo() {
       return logo_ != null;
     }
     /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo() {
       return logo_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.getDefaultInstance() : logo_;
     }
     /**
-     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     * <code>.google.protobuf.LogoComponent logo = 8;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder() {
       return getLogo();
     }
 
-    public static final int HEADLINE_FIELD_NUMBER = 8;
+    public static final int HEADLINE_FIELD_NUMBER = 9;
     private com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent headline_;
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     public boolean hasHeadline() {
       return headline_ != null;
     }
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline() {
       return headline_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.getDefaultInstance() : headline_;
     }
     /**
-     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder() {
       return getHeadline();
     }
 
-    public static final int BODY_FIELD_NUMBER = 9;
+    public static final int BODY_FIELD_NUMBER = 10;
     private com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent body_;
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     public boolean hasBody() {
       return body_ != null;
     }
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody() {
       return body_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.getDefaultInstance() : body_;
     }
     /**
-     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     * <code>.google.protobuf.BodyComponent body = 10;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder() {
       return getBody();
     }
 
-    public static final int ADVERTISER_FIELD_NUMBER = 10;
+    public static final int ADVERTISER_FIELD_NUMBER = 11;
     private com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent advertiser_;
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     public boolean hasAdvertiser() {
       return advertiser_ != null;
     }
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser() {
       return advertiser_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.getDefaultInstance() : advertiser_;
     }
     /**
-     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder() {
       return getAdvertiser();
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 11;
+    public static final int LOCATION_FIELD_NUMBER = 12;
     private com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent location_;
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     public boolean hasLocation() {
       return location_ != null;
     }
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation() {
       return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.getDefaultInstance() : location_;
     }
     /**
-     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     * <code>.google.protobuf.LocationComponent location = 12;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder() {
       return getLocation();
-    }
-
-    public static final int STOP_FIELD_NUMBER = 12;
-    private com.commutestream.nativeads.protobuf.Csnmessages.StopComponent stop_;
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    public boolean hasStop() {
-      return stop_ != null;
-    }
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getStop() {
-      return stop_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.getDefaultInstance() : stop_;
-    }
-    /**
-     * <code>.google.protobuf.StopComponent stop = 12;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder getStopOrBuilder() {
-      return getStop();
     }
 
     public static final int HERO_FIELD_NUMBER = 13;
@@ -10083,41 +10611,6 @@ public final class Csnmessages {
       return getHero();
     }
 
-    public static final int ACTIONS_FIELD_NUMBER = 14;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_;
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
-      return actions_;
-    }
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
-        getActionsOrBuilderList() {
-      return actions_;
-    }
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    public int getActionsCount() {
-      return actions_.size();
-    }
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
-      return actions_.get(index);
-    }
-    /**
-     * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
-        int index) {
-      return actions_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -10136,41 +10629,38 @@ public final class Csnmessages {
       if (adId_ != 0L) {
         output.writeUInt64(2, adId_);
       }
+      if (versionId_ != 0L) {
+        output.writeUInt64(3, versionId_);
+      }
       if (colors_ != null) {
-        output.writeMessage(3, getColors());
+        output.writeMessage(4, getColors());
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(5, actions_.get(i));
+      }
+      if (view_ != null) {
+        output.writeMessage(6, getView());
       }
       if (secondaryActionScreen_ != null) {
-        output.writeMessage(4, getSecondaryActionScreen());
-      }
-      if (transitTitle_ != null) {
-        output.writeMessage(5, getTransitTitle());
-      }
-      if (transitSubtitle_ != null) {
-        output.writeMessage(6, getTransitSubtitle());
+        output.writeMessage(7, getSecondaryActionScreen());
       }
       if (logo_ != null) {
-        output.writeMessage(7, getLogo());
+        output.writeMessage(8, getLogo());
       }
       if (headline_ != null) {
-        output.writeMessage(8, getHeadline());
+        output.writeMessage(9, getHeadline());
       }
       if (body_ != null) {
-        output.writeMessage(9, getBody());
+        output.writeMessage(10, getBody());
       }
       if (advertiser_ != null) {
-        output.writeMessage(10, getAdvertiser());
+        output.writeMessage(11, getAdvertiser());
       }
       if (location_ != null) {
-        output.writeMessage(11, getLocation());
-      }
-      if (stop_ != null) {
-        output.writeMessage(12, getStop());
+        output.writeMessage(12, getLocation());
       }
       if (hero_ != null) {
         output.writeMessage(13, getHero());
-      }
-      for (int i = 0; i < actions_.size(); i++) {
-        output.writeMessage(14, actions_.get(i));
       }
     }
 
@@ -10187,53 +10677,49 @@ public final class Csnmessages {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, adId_);
       }
+      if (versionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, versionId_);
+      }
       if (colors_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getColors());
+          .computeMessageSize(4, getColors());
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, actions_.get(i));
+      }
+      if (view_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getView());
       }
       if (secondaryActionScreen_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getSecondaryActionScreen());
-      }
-      if (transitTitle_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getTransitTitle());
-      }
-      if (transitSubtitle_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getTransitSubtitle());
+          .computeMessageSize(7, getSecondaryActionScreen());
       }
       if (logo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getLogo());
+          .computeMessageSize(8, getLogo());
       }
       if (headline_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getHeadline());
+          .computeMessageSize(9, getHeadline());
       }
       if (body_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getBody());
+          .computeMessageSize(10, getBody());
       }
       if (advertiser_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getAdvertiser());
+          .computeMessageSize(11, getAdvertiser());
       }
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getLocation());
-      }
-      if (stop_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getStop());
+          .computeMessageSize(12, getLocation());
       }
       if (hero_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getHero());
-      }
-      for (int i = 0; i < actions_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, actions_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -10255,25 +10741,24 @@ public final class Csnmessages {
           == other.getRequestId());
       result = result && (getAdId()
           == other.getAdId());
+      result = result && (getVersionId()
+          == other.getVersionId());
       result = result && (hasColors() == other.hasColors());
       if (hasColors()) {
         result = result && getColors()
             .equals(other.getColors());
       }
+      result = result && getActionsList()
+          .equals(other.getActionsList());
+      result = result && (hasView() == other.hasView());
+      if (hasView()) {
+        result = result && getView()
+            .equals(other.getView());
+      }
       result = result && (hasSecondaryActionScreen() == other.hasSecondaryActionScreen());
       if (hasSecondaryActionScreen()) {
         result = result && getSecondaryActionScreen()
             .equals(other.getSecondaryActionScreen());
-      }
-      result = result && (hasTransitTitle() == other.hasTransitTitle());
-      if (hasTransitTitle()) {
-        result = result && getTransitTitle()
-            .equals(other.getTransitTitle());
-      }
-      result = result && (hasTransitSubtitle() == other.hasTransitSubtitle());
-      if (hasTransitSubtitle()) {
-        result = result && getTransitSubtitle()
-            .equals(other.getTransitSubtitle());
       }
       result = result && (hasLogo() == other.hasLogo());
       if (hasLogo()) {
@@ -10300,18 +10785,11 @@ public final class Csnmessages {
         result = result && getLocation()
             .equals(other.getLocation());
       }
-      result = result && (hasStop() == other.hasStop());
-      if (hasStop()) {
-        result = result && getStop()
-            .equals(other.getStop());
-      }
       result = result && (hasHero() == other.hasHero());
       if (hasHero()) {
         result = result && getHero()
             .equals(other.getHero());
       }
-      result = result && getActionsList()
-          .equals(other.getActionsList());
       return result;
     }
 
@@ -10328,21 +10806,24 @@ public final class Csnmessages {
       hash = (37 * hash) + AD_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAdId());
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionId());
       if (hasColors()) {
         hash = (37 * hash) + COLORS_FIELD_NUMBER;
         hash = (53 * hash) + getColors().hashCode();
       }
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      if (hasView()) {
+        hash = (37 * hash) + VIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getView().hashCode();
+      }
       if (hasSecondaryActionScreen()) {
         hash = (37 * hash) + SECONDARY_ACTION_SCREEN_FIELD_NUMBER;
         hash = (53 * hash) + getSecondaryActionScreen().hashCode();
-      }
-      if (hasTransitTitle()) {
-        hash = (37 * hash) + TRANSIT_TITLE_FIELD_NUMBER;
-        hash = (53 * hash) + getTransitTitle().hashCode();
-      }
-      if (hasTransitSubtitle()) {
-        hash = (37 * hash) + TRANSIT_SUBTITLE_FIELD_NUMBER;
-        hash = (53 * hash) + getTransitSubtitle().hashCode();
       }
       if (hasLogo()) {
         hash = (37 * hash) + LOGO_FIELD_NUMBER;
@@ -10364,23 +10845,26 @@ public final class Csnmessages {
         hash = (37 * hash) + LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getLocation().hashCode();
       }
-      if (hasStop()) {
-        hash = (37 * hash) + STOP_FIELD_NUMBER;
-        hash = (53 * hash) + getStop().hashCode();
-      }
       if (hasHero()) {
         hash = (37 * hash) + HERO_FIELD_NUMBER;
         hash = (53 * hash) + getHero().hashCode();
-      }
-      if (getActionsCount() > 0) {
-        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getActionsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.NativeAd parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.NativeAd parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.NativeAd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10499,29 +10983,31 @@ public final class Csnmessages {
 
         adId_ = 0L;
 
+        versionId_ = 0L;
+
         if (colorsBuilder_ == null) {
           colors_ = null;
         } else {
           colors_ = null;
           colorsBuilder_ = null;
         }
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          actionsBuilder_.clear();
+        }
+        if (viewBuilder_ == null) {
+          view_ = null;
+        } else {
+          view_ = null;
+          viewBuilder_ = null;
+        }
         if (secondaryActionScreenBuilder_ == null) {
           secondaryActionScreen_ = null;
         } else {
           secondaryActionScreen_ = null;
           secondaryActionScreenBuilder_ = null;
-        }
-        if (transitTitleBuilder_ == null) {
-          transitTitle_ = null;
-        } else {
-          transitTitle_ = null;
-          transitTitleBuilder_ = null;
-        }
-        if (transitSubtitleBuilder_ == null) {
-          transitSubtitle_ = null;
-        } else {
-          transitSubtitle_ = null;
-          transitSubtitleBuilder_ = null;
         }
         if (logoBuilder_ == null) {
           logo_ = null;
@@ -10553,23 +11039,11 @@ public final class Csnmessages {
           location_ = null;
           locationBuilder_ = null;
         }
-        if (stopBuilder_ == null) {
-          stop_ = null;
-        } else {
-          stop_ = null;
-          stopBuilder_ = null;
-        }
         if (heroBuilder_ == null) {
           hero_ = null;
         } else {
           hero_ = null;
           heroBuilder_ = null;
-        }
-        if (actionsBuilder_ == null) {
-          actions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
-        } else {
-          actionsBuilder_.clear();
         }
         return this;
       }
@@ -10597,25 +11071,30 @@ public final class Csnmessages {
         int to_bitField0_ = 0;
         result.requestId_ = requestId_;
         result.adId_ = adId_;
+        result.versionId_ = versionId_;
         if (colorsBuilder_ == null) {
           result.colors_ = colors_;
         } else {
           result.colors_ = colorsBuilder_.build();
         }
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        if (viewBuilder_ == null) {
+          result.view_ = view_;
+        } else {
+          result.view_ = viewBuilder_.build();
+        }
         if (secondaryActionScreenBuilder_ == null) {
           result.secondaryActionScreen_ = secondaryActionScreen_;
         } else {
           result.secondaryActionScreen_ = secondaryActionScreenBuilder_.build();
-        }
-        if (transitTitleBuilder_ == null) {
-          result.transitTitle_ = transitTitle_;
-        } else {
-          result.transitTitle_ = transitTitleBuilder_.build();
-        }
-        if (transitSubtitleBuilder_ == null) {
-          result.transitSubtitle_ = transitSubtitle_;
-        } else {
-          result.transitSubtitle_ = transitSubtitleBuilder_.build();
         }
         if (logoBuilder_ == null) {
           result.logo_ = logo_;
@@ -10642,24 +11121,10 @@ public final class Csnmessages {
         } else {
           result.location_ = locationBuilder_.build();
         }
-        if (stopBuilder_ == null) {
-          result.stop_ = stop_;
-        } else {
-          result.stop_ = stopBuilder_.build();
-        }
         if (heroBuilder_ == null) {
           result.hero_ = hero_;
         } else {
           result.hero_ = heroBuilder_.build();
-        }
-        if (actionsBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) == 0x00002000)) {
-            actions_ = java.util.Collections.unmodifiableList(actions_);
-            bitField0_ = (bitField0_ & ~0x00002000);
-          }
-          result.actions_ = actions_;
-        } else {
-          result.actions_ = actionsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -10709,17 +11174,43 @@ public final class Csnmessages {
         if (other.getAdId() != 0L) {
           setAdId(other.getAdId());
         }
+        if (other.getVersionId() != 0L) {
+          setVersionId(other.getVersionId());
+        }
         if (other.hasColors()) {
           mergeColors(other.getColors());
         }
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              actionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getActionsFieldBuilder() : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        if (other.hasView()) {
+          mergeView(other.getView());
+        }
         if (other.hasSecondaryActionScreen()) {
           mergeSecondaryActionScreen(other.getSecondaryActionScreen());
-        }
-        if (other.hasTransitTitle()) {
-          mergeTransitTitle(other.getTransitTitle());
-        }
-        if (other.hasTransitSubtitle()) {
-          mergeTransitSubtitle(other.getTransitSubtitle());
         }
         if (other.hasLogo()) {
           mergeLogo(other.getLogo());
@@ -10736,37 +11227,8 @@ public final class Csnmessages {
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
         }
-        if (other.hasStop()) {
-          mergeStop(other.getStop());
-        }
         if (other.hasHero()) {
           mergeHero(other.getHero());
-        }
-        if (actionsBuilder_ == null) {
-          if (!other.actions_.isEmpty()) {
-            if (actions_.isEmpty()) {
-              actions_ = other.actions_;
-              bitField0_ = (bitField0_ & ~0x00002000);
-            } else {
-              ensureActionsIsMutable();
-              actions_.addAll(other.actions_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.actions_.isEmpty()) {
-            if (actionsBuilder_.isEmpty()) {
-              actionsBuilder_.dispose();
-              actionsBuilder_ = null;
-              actions_ = other.actions_;
-              bitField0_ = (bitField0_ & ~0x00002000);
-              actionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getActionsFieldBuilder() : null;
-            } else {
-              actionsBuilder_.addAllMessages(other.actions_);
-            }
-          }
         }
         onChanged();
         return this;
@@ -10847,17 +11309,43 @@ public final class Csnmessages {
         return this;
       }
 
+      private long versionId_ ;
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public long getVersionId() {
+        return versionId_;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder setVersionId(long value) {
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> colorsBuilder_;
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public boolean hasColors() {
         return colorsBuilder_ != null || colors_ != null;
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
         if (colorsBuilder_ == null) {
@@ -10867,7 +11355,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public Builder setColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
         if (colorsBuilder_ == null) {
@@ -10883,7 +11371,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public Builder setColors(
           com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder builderForValue) {
@@ -10897,7 +11385,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public Builder mergeColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
         if (colorsBuilder_ == null) {
@@ -10915,7 +11403,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public Builder clearColors() {
         if (colorsBuilder_ == null) {
@@ -10929,7 +11417,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder getColorsBuilder() {
         
@@ -10937,7 +11425,7 @@ public final class Csnmessages {
         return getColorsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
         if (colorsBuilder_ != null) {
@@ -10948,7 +11436,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.Colors colors = 3;</code>
+       * <code>.google.protobuf.Colors colors = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> 
@@ -10964,17 +11452,374 @@ public final class Csnmessages {
         return colorsBuilder_;
       }
 
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_ =
+        java.util.Collections.emptyList();
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>(actions_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> actionsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder setActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder setActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder addActions(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder addActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder addActions(
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder addActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder getActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder> 
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder>(
+                  actions_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder> viewBuilder_;
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public boolean hasView() {
+        return viewBuilder_ != null || view_ != null;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView() {
+        if (viewBuilder_ == null) {
+          return view_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+        } else {
+          return viewBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public Builder setView(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent value) {
+        if (viewBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          view_ = value;
+          onChanged();
+        } else {
+          viewBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public Builder setView(
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder builderForValue) {
+        if (viewBuilder_ == null) {
+          view_ = builderForValue.build();
+          onChanged();
+        } else {
+          viewBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public Builder mergeView(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent value) {
+        if (viewBuilder_ == null) {
+          if (view_ != null) {
+            view_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.newBuilder(view_).mergeFrom(value).buildPartial();
+          } else {
+            view_ = value;
+          }
+          onChanged();
+        } else {
+          viewBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public Builder clearView() {
+        if (viewBuilder_ == null) {
+          view_ = null;
+          onChanged();
+        } else {
+          view_ = null;
+          viewBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder getViewBuilder() {
+        
+        onChanged();
+        return getViewFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder() {
+        if (viewBuilder_ != null) {
+          return viewBuilder_.getMessageOrBuilder();
+        } else {
+          return view_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder> 
+          getViewFieldBuilder() {
+        if (viewBuilder_ == null) {
+          viewBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder>(
+                  getView(),
+                  getParentForChildren(),
+                  isClean());
+          view_ = null;
+        }
+        return viewBuilder_;
+      }
+
       private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder> secondaryActionScreenBuilder_;
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public boolean hasSecondaryActionScreen() {
         return secondaryActionScreenBuilder_ != null || secondaryActionScreen_ != null;
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen() {
         if (secondaryActionScreenBuilder_ == null) {
@@ -10984,7 +11829,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public Builder setSecondaryActionScreen(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent value) {
         if (secondaryActionScreenBuilder_ == null) {
@@ -11000,7 +11845,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public Builder setSecondaryActionScreen(
           com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder builderForValue) {
@@ -11014,7 +11859,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public Builder mergeSecondaryActionScreen(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent value) {
         if (secondaryActionScreenBuilder_ == null) {
@@ -11032,7 +11877,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public Builder clearSecondaryActionScreen() {
         if (secondaryActionScreenBuilder_ == null) {
@@ -11046,7 +11891,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder getSecondaryActionScreenBuilder() {
         
@@ -11054,7 +11899,7 @@ public final class Csnmessages {
         return getSecondaryActionScreenFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder() {
         if (secondaryActionScreenBuilder_ != null) {
@@ -11065,7 +11910,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 4;</code>
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder> 
@@ -11081,251 +11926,17 @@ public final class Csnmessages {
         return secondaryActionScreenBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent transitTitle_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder> transitTitleBuilder_;
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public boolean hasTransitTitle() {
-        return transitTitleBuilder_ != null || transitTitle_ != null;
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent getTransitTitle() {
-        if (transitTitleBuilder_ == null) {
-          return transitTitle_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.getDefaultInstance() : transitTitle_;
-        } else {
-          return transitTitleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public Builder setTransitTitle(com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent value) {
-        if (transitTitleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          transitTitle_ = value;
-          onChanged();
-        } else {
-          transitTitleBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public Builder setTransitTitle(
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder builderForValue) {
-        if (transitTitleBuilder_ == null) {
-          transitTitle_ = builderForValue.build();
-          onChanged();
-        } else {
-          transitTitleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public Builder mergeTransitTitle(com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent value) {
-        if (transitTitleBuilder_ == null) {
-          if (transitTitle_ != null) {
-            transitTitle_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.newBuilder(transitTitle_).mergeFrom(value).buildPartial();
-          } else {
-            transitTitle_ = value;
-          }
-          onChanged();
-        } else {
-          transitTitleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public Builder clearTransitTitle() {
-        if (transitTitleBuilder_ == null) {
-          transitTitle_ = null;
-          onChanged();
-        } else {
-          transitTitle_ = null;
-          transitTitleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder getTransitTitleBuilder() {
-        
-        onChanged();
-        return getTransitTitleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder getTransitTitleOrBuilder() {
-        if (transitTitleBuilder_ != null) {
-          return transitTitleBuilder_.getMessageOrBuilder();
-        } else {
-          return transitTitle_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.getDefaultInstance() : transitTitle_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.TransitTitleComponent transit_title = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder> 
-          getTransitTitleFieldBuilder() {
-        if (transitTitleBuilder_ == null) {
-          transitTitleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitTitleComponentOrBuilder>(
-                  getTransitTitle(),
-                  getParentForChildren(),
-                  isClean());
-          transitTitle_ = null;
-        }
-        return transitTitleBuilder_;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent transitSubtitle_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder> transitSubtitleBuilder_;
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public boolean hasTransitSubtitle() {
-        return transitSubtitleBuilder_ != null || transitSubtitle_ != null;
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent getTransitSubtitle() {
-        if (transitSubtitleBuilder_ == null) {
-          return transitSubtitle_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.getDefaultInstance() : transitSubtitle_;
-        } else {
-          return transitSubtitleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public Builder setTransitSubtitle(com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent value) {
-        if (transitSubtitleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          transitSubtitle_ = value;
-          onChanged();
-        } else {
-          transitSubtitleBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public Builder setTransitSubtitle(
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder builderForValue) {
-        if (transitSubtitleBuilder_ == null) {
-          transitSubtitle_ = builderForValue.build();
-          onChanged();
-        } else {
-          transitSubtitleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public Builder mergeTransitSubtitle(com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent value) {
-        if (transitSubtitleBuilder_ == null) {
-          if (transitSubtitle_ != null) {
-            transitSubtitle_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.newBuilder(transitSubtitle_).mergeFrom(value).buildPartial();
-          } else {
-            transitSubtitle_ = value;
-          }
-          onChanged();
-        } else {
-          transitSubtitleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public Builder clearTransitSubtitle() {
-        if (transitSubtitleBuilder_ == null) {
-          transitSubtitle_ = null;
-          onChanged();
-        } else {
-          transitSubtitle_ = null;
-          transitSubtitleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder getTransitSubtitleBuilder() {
-        
-        onChanged();
-        return getTransitSubtitleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder getTransitSubtitleOrBuilder() {
-        if (transitSubtitleBuilder_ != null) {
-          return transitSubtitleBuilder_.getMessageOrBuilder();
-        } else {
-          return transitSubtitle_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.getDefaultInstance() : transitSubtitle_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.TransitSubtitleComponent transit_subtitle = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder> 
-          getTransitSubtitleFieldBuilder() {
-        if (transitSubtitleBuilder_ == null) {
-          transitSubtitleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitSubtitleComponentOrBuilder>(
-                  getTransitSubtitle(),
-                  getParentForChildren(),
-                  isClean());
-          transitSubtitle_ = null;
-        }
-        return transitSubtitleBuilder_;
-      }
-
       private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder> logoBuilder_;
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public boolean hasLogo() {
         return logoBuilder_ != null || logo_ != null;
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo() {
         if (logoBuilder_ == null) {
@@ -11335,7 +11946,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public Builder setLogo(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent value) {
         if (logoBuilder_ == null) {
@@ -11351,7 +11962,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public Builder setLogo(
           com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder builderForValue) {
@@ -11365,7 +11976,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public Builder mergeLogo(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent value) {
         if (logoBuilder_ == null) {
@@ -11383,7 +11994,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public Builder clearLogo() {
         if (logoBuilder_ == null) {
@@ -11397,7 +12008,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder getLogoBuilder() {
         
@@ -11405,7 +12016,7 @@ public final class Csnmessages {
         return getLogoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder() {
         if (logoBuilder_ != null) {
@@ -11416,7 +12027,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       * <code>.google.protobuf.LogoComponent logo = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder> 
@@ -11436,13 +12047,13 @@ public final class Csnmessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder> headlineBuilder_;
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public boolean hasHeadline() {
         return headlineBuilder_ != null || headline_ != null;
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline() {
         if (headlineBuilder_ == null) {
@@ -11452,7 +12063,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public Builder setHeadline(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent value) {
         if (headlineBuilder_ == null) {
@@ -11468,7 +12079,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public Builder setHeadline(
           com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder builderForValue) {
@@ -11482,7 +12093,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public Builder mergeHeadline(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent value) {
         if (headlineBuilder_ == null) {
@@ -11500,7 +12111,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public Builder clearHeadline() {
         if (headlineBuilder_ == null) {
@@ -11514,7 +12125,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder getHeadlineBuilder() {
         
@@ -11522,7 +12133,7 @@ public final class Csnmessages {
         return getHeadlineFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder() {
         if (headlineBuilder_ != null) {
@@ -11533,7 +12144,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       * <code>.google.protobuf.HeadlineComponent headline = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder> 
@@ -11553,13 +12164,13 @@ public final class Csnmessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder> bodyBuilder_;
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public boolean hasBody() {
         return bodyBuilder_ != null || body_ != null;
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody() {
         if (bodyBuilder_ == null) {
@@ -11569,7 +12180,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public Builder setBody(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent value) {
         if (bodyBuilder_ == null) {
@@ -11585,7 +12196,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public Builder setBody(
           com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder builderForValue) {
@@ -11599,7 +12210,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public Builder mergeBody(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent value) {
         if (bodyBuilder_ == null) {
@@ -11617,7 +12228,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public Builder clearBody() {
         if (bodyBuilder_ == null) {
@@ -11631,7 +12242,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder getBodyBuilder() {
         
@@ -11639,7 +12250,7 @@ public final class Csnmessages {
         return getBodyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder() {
         if (bodyBuilder_ != null) {
@@ -11650,7 +12261,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       * <code>.google.protobuf.BodyComponent body = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder> 
@@ -11670,13 +12281,13 @@ public final class Csnmessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder> advertiserBuilder_;
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public boolean hasAdvertiser() {
         return advertiserBuilder_ != null || advertiser_ != null;
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser() {
         if (advertiserBuilder_ == null) {
@@ -11686,7 +12297,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public Builder setAdvertiser(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent value) {
         if (advertiserBuilder_ == null) {
@@ -11702,7 +12313,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public Builder setAdvertiser(
           com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder builderForValue) {
@@ -11716,7 +12327,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public Builder mergeAdvertiser(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent value) {
         if (advertiserBuilder_ == null) {
@@ -11734,7 +12345,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public Builder clearAdvertiser() {
         if (advertiserBuilder_ == null) {
@@ -11748,7 +12359,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder getAdvertiserBuilder() {
         
@@ -11756,7 +12367,7 @@ public final class Csnmessages {
         return getAdvertiserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder() {
         if (advertiserBuilder_ != null) {
@@ -11767,7 +12378,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder> 
@@ -11787,13 +12398,13 @@ public final class Csnmessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder> locationBuilder_;
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public boolean hasLocation() {
         return locationBuilder_ != null || location_ != null;
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation() {
         if (locationBuilder_ == null) {
@@ -11803,7 +12414,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public Builder setLocation(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent value) {
         if (locationBuilder_ == null) {
@@ -11819,7 +12430,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public Builder setLocation(
           com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder builderForValue) {
@@ -11833,7 +12444,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public Builder mergeLocation(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent value) {
         if (locationBuilder_ == null) {
@@ -11851,7 +12462,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public Builder clearLocation() {
         if (locationBuilder_ == null) {
@@ -11865,7 +12476,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder getLocationBuilder() {
         
@@ -11873,7 +12484,7 @@ public final class Csnmessages {
         return getLocationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder() {
         if (locationBuilder_ != null) {
@@ -11884,7 +12495,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       * <code>.google.protobuf.LocationComponent location = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder> 
@@ -11898,123 +12509,6 @@ public final class Csnmessages {
           location_ = null;
         }
         return locationBuilder_;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.StopComponent stop_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.StopComponent, com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder> stopBuilder_;
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public boolean hasStop() {
-        return stopBuilder_ != null || stop_ != null;
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent getStop() {
-        if (stopBuilder_ == null) {
-          return stop_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.getDefaultInstance() : stop_;
-        } else {
-          return stopBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public Builder setStop(com.commutestream.nativeads.protobuf.Csnmessages.StopComponent value) {
-        if (stopBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          stop_ = value;
-          onChanged();
-        } else {
-          stopBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public Builder setStop(
-          com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder builderForValue) {
-        if (stopBuilder_ == null) {
-          stop_ = builderForValue.build();
-          onChanged();
-        } else {
-          stopBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public Builder mergeStop(com.commutestream.nativeads.protobuf.Csnmessages.StopComponent value) {
-        if (stopBuilder_ == null) {
-          if (stop_ != null) {
-            stop_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.newBuilder(stop_).mergeFrom(value).buildPartial();
-          } else {
-            stop_ = value;
-          }
-          onChanged();
-        } else {
-          stopBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public Builder clearStop() {
-        if (stopBuilder_ == null) {
-          stop_ = null;
-          onChanged();
-        } else {
-          stop_ = null;
-          stopBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder getStopBuilder() {
-        
-        onChanged();
-        return getStopFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder getStopOrBuilder() {
-        if (stopBuilder_ != null) {
-          return stopBuilder_.getMessageOrBuilder();
-        } else {
-          return stop_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.getDefaultInstance() : stop_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.StopComponent stop = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.StopComponent, com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder> 
-          getStopFieldBuilder() {
-        if (stopBuilder_ == null) {
-          stopBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.StopComponent, com.commutestream.nativeads.protobuf.Csnmessages.StopComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopComponentOrBuilder>(
-                  getStop(),
-                  getParentForChildren(),
-                  isClean());
-          stop_ = null;
-        }
-        return stopBuilder_;
       }
 
       private com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent hero_ = null;
@@ -12133,246 +12627,6 @@ public final class Csnmessages {
         }
         return heroBuilder_;
       }
-
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_ =
-        java.util.Collections.emptyList();
-      private void ensureActionsIsMutable() {
-        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
-          actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>(actions_);
-          bitField0_ |= 0x00002000;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> actionsBuilder_;
-
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
-        if (actionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(actions_);
-        } else {
-          return actionsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public int getActionsCount() {
-        if (actionsBuilder_ == null) {
-          return actions_.size();
-        } else {
-          return actionsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
-        if (actionsBuilder_ == null) {
-          return actions_.get(index);
-        } else {
-          return actionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder setActions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
-        if (actionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActionsIsMutable();
-          actions_.set(index, value);
-          onChanged();
-        } else {
-          actionsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder setActions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
-        if (actionsBuilder_ == null) {
-          ensureActionsIsMutable();
-          actions_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          actionsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder addActions(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
-        if (actionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActionsIsMutable();
-          actions_.add(value);
-          onChanged();
-        } else {
-          actionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder addActions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
-        if (actionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureActionsIsMutable();
-          actions_.add(index, value);
-          onChanged();
-        } else {
-          actionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder addActions(
-          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
-        if (actionsBuilder_ == null) {
-          ensureActionsIsMutable();
-          actions_.add(builderForValue.build());
-          onChanged();
-        } else {
-          actionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder addActions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
-        if (actionsBuilder_ == null) {
-          ensureActionsIsMutable();
-          actions_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          actionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder addAllActions(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> values) {
-        if (actionsBuilder_ == null) {
-          ensureActionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, actions_);
-          onChanged();
-        } else {
-          actionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder clearActions() {
-        if (actionsBuilder_ == null) {
-          actions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
-          onChanged();
-        } else {
-          actionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public Builder removeActions(int index) {
-        if (actionsBuilder_ == null) {
-          ensureActionsIsMutable();
-          actions_.remove(index);
-          onChanged();
-        } else {
-          actionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder getActionsBuilder(
-          int index) {
-        return getActionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
-          int index) {
-        if (actionsBuilder_ == null) {
-          return actions_.get(index);  } else {
-          return actionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
-           getActionsOrBuilderList() {
-        if (actionsBuilder_ != null) {
-          return actionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(actions_);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder() {
-        return getActionsFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder(
-          int index) {
-        return getActionsFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.ActionComponent actions = 14;</code>
-       */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder> 
-           getActionsBuilderList() {
-        return getActionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
-          getActionsFieldBuilder() {
-        if (actionsBuilder_ == null) {
-          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder>(
-                  actions_,
-                  ((bitField0_ & 0x00002000) == 0x00002000),
-                  getParentForChildren(),
-                  isClean());
-          actions_ = null;
-        }
-        return actionsBuilder_;
-      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -12422,1329 +12676,121 @@ public final class Csnmessages {
 
   }
 
-  public interface StopAdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.StopAd)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    boolean hasStopTuple();
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple();
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder();
-
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    long getAdId();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.StopAd}
-   */
-  public  static final class StopAd extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.StopAd)
-      StopAdOrBuilder {
-    // Use StopAd.newBuilder() to construct.
-    private StopAd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StopAd() {
-      adId_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private StopAd(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder subBuilder = null;
-              if (stopTuple_ != null) {
-                subBuilder = stopTuple_.toBuilder();
-              }
-              stopTuple_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Stop.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stopTuple_);
-                stopTuple_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              adId_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopAd_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopAd_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.StopAd.class, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder.class);
-    }
-
-    public static final int STOP_TUPLE_FIELD_NUMBER = 1;
-    private com.commutestream.nativeads.protobuf.Csnmessages.Stop stopTuple_;
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    public boolean hasStopTuple() {
-      return stopTuple_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple() {
-      return stopTuple_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-    }
-    /**
-     * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder() {
-      return getStopTuple();
-    }
-
-    public static final int AD_ID_FIELD_NUMBER = 2;
-    private long adId_;
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    public long getAdId() {
-      return adId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (stopTuple_ != null) {
-        output.writeMessage(1, getStopTuple());
-      }
-      if (adId_ != 0L) {
-        output.writeUInt64(2, adId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (stopTuple_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStopTuple());
-      }
-      if (adId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, adId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.StopAd)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.StopAd other = (com.commutestream.nativeads.protobuf.Csnmessages.StopAd) obj;
-
-      boolean result = true;
-      result = result && (hasStopTuple() == other.hasStopTuple());
-      if (hasStopTuple()) {
-        result = result && getStopTuple()
-            .equals(other.getStopTuple());
-      }
-      result = result && (getAdId()
-          == other.getAdId());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasStopTuple()) {
-        hash = (37 * hash) + STOP_TUPLE_FIELD_NUMBER;
-        hash = (53 * hash) + getStopTuple().hashCode();
-      }
-      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAdId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.StopAd prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.StopAd}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.StopAd)
-        com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopAd_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopAd_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.StopAd.class, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.StopAd.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = null;
-        } else {
-          stopTuple_ = null;
-          stopTupleBuilder_ = null;
-        }
-        adId_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_StopAd_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.StopAd.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopAd result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopAd result = new com.commutestream.nativeads.protobuf.Csnmessages.StopAd(this);
-        if (stopTupleBuilder_ == null) {
-          result.stopTuple_ = stopTuple_;
-        } else {
-          result.stopTuple_ = stopTupleBuilder_.build();
-        }
-        result.adId_ = adId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.StopAd) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.StopAd)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.StopAd other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.StopAd.getDefaultInstance()) return this;
-        if (other.hasStopTuple()) {
-          mergeStopTuple(other.getStopTuple());
-        }
-        if (other.getAdId() != 0L) {
-          setAdId(other.getAdId());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.StopAd parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.StopAd) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.Stop stopTuple_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> stopTupleBuilder_;
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public boolean hasStopTuple() {
-        return stopTupleBuilder_ != null || stopTuple_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStopTuple() {
-        if (stopTupleBuilder_ == null) {
-          return stopTuple_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-        } else {
-          return stopTupleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public Builder setStopTuple(com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopTupleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          stopTuple_ = value;
-          onChanged();
-        } else {
-          stopTupleBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public Builder setStopTuple(
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder builderForValue) {
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = builderForValue.build();
-          onChanged();
-        } else {
-          stopTupleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public Builder mergeStopTuple(com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopTupleBuilder_ == null) {
-          if (stopTuple_ != null) {
-            stopTuple_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.newBuilder(stopTuple_).mergeFrom(value).buildPartial();
-          } else {
-            stopTuple_ = value;
-          }
-          onChanged();
-        } else {
-          stopTupleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public Builder clearStopTuple() {
-        if (stopTupleBuilder_ == null) {
-          stopTuple_ = null;
-          onChanged();
-        } else {
-          stopTuple_ = null;
-          stopTupleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder getStopTupleBuilder() {
-        
-        onChanged();
-        return getStopTupleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopTupleOrBuilder() {
-        if (stopTupleBuilder_ != null) {
-          return stopTupleBuilder_.getMessageOrBuilder();
-        } else {
-          return stopTuple_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance() : stopTuple_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Stop stop_tuple = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
-          getStopTupleFieldBuilder() {
-        if (stopTupleBuilder_ == null) {
-          stopTupleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder>(
-                  getStopTuple(),
-                  getParentForChildren(),
-                  isClean());
-          stopTuple_ = null;
-        }
-        return stopTupleBuilder_;
-      }
-
-      private long adId_ ;
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public long getAdId() {
-        return adId_;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder setAdId(long value) {
-        
-        adId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder clearAdId() {
-        
-        adId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.StopAd)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.StopAd)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.StopAd DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.StopAd();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.StopAd getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StopAd>
-        PARSER = new com.google.protobuf.AbstractParser<StopAd>() {
-      public StopAd parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StopAd(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StopAd> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StopAd> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopAd getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LocationAdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.LocationAd)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    boolean hasLoc();
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.Location getLoc();
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocOrBuilder();
-
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    long getAdId();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.LocationAd}
-   */
-  public  static final class LocationAd extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.LocationAd)
-      LocationAdOrBuilder {
-    // Use LocationAd.newBuilder() to construct.
-    private LocationAd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LocationAd() {
-      adId_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private LocationAd(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder subBuilder = null;
-              if (loc_ != null) {
-                subBuilder = loc_.toBuilder();
-              }
-              loc_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(loc_);
-                loc_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              adId_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationAd_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationAd_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.class, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder.class);
-    }
-
-    public static final int LOC_FIELD_NUMBER = 1;
-    private com.commutestream.nativeads.protobuf.Csnmessages.Location loc_;
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    public boolean hasLoc() {
-      return loc_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Location getLoc() {
-      return loc_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : loc_;
-    }
-    /**
-     * <code>.google.protobuf.Location loc = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocOrBuilder() {
-      return getLoc();
-    }
-
-    public static final int AD_ID_FIELD_NUMBER = 2;
-    private long adId_;
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    public long getAdId() {
-      return adId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (loc_ != null) {
-        output.writeMessage(1, getLoc());
-      }
-      if (adId_ != 0L) {
-        output.writeUInt64(2, adId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (loc_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLoc());
-      }
-      if (adId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, adId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.LocationAd)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.LocationAd other = (com.commutestream.nativeads.protobuf.Csnmessages.LocationAd) obj;
-
-      boolean result = true;
-      result = result && (hasLoc() == other.hasLoc());
-      if (hasLoc()) {
-        result = result && getLoc()
-            .equals(other.getLoc());
-      }
-      result = result && (getAdId()
-          == other.getAdId());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLoc()) {
-        hash = (37 * hash) + LOC_FIELD_NUMBER;
-        hash = (53 * hash) + getLoc().hashCode();
-      }
-      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAdId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.LocationAd prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.LocationAd}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.LocationAd)
-        com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationAd_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationAd_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.class, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (locBuilder_ == null) {
-          loc_ = null;
-        } else {
-          loc_ = null;
-          locBuilder_ = null;
-        }
-        adId_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationAd_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.LocationAd result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.LocationAd result = new com.commutestream.nativeads.protobuf.Csnmessages.LocationAd(this);
-        if (locBuilder_ == null) {
-          result.loc_ = loc_;
-        } else {
-          result.loc_ = locBuilder_.build();
-        }
-        result.adId_ = adId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.LocationAd) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.LocationAd)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.LocationAd other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.getDefaultInstance()) return this;
-        if (other.hasLoc()) {
-          mergeLoc(other.getLoc());
-        }
-        if (other.getAdId() != 0L) {
-          setAdId(other.getAdId());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.LocationAd parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.LocationAd) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.Location loc_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> locBuilder_;
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public boolean hasLoc() {
-        return locBuilder_ != null || loc_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location getLoc() {
-        if (locBuilder_ == null) {
-          return loc_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : loc_;
-        } else {
-          return locBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public Builder setLoc(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          loc_ = value;
-          onChanged();
-        } else {
-          locBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public Builder setLoc(
-          com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
-        if (locBuilder_ == null) {
-          loc_ = builderForValue.build();
-          onChanged();
-        } else {
-          locBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public Builder mergeLoc(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locBuilder_ == null) {
-          if (loc_ != null) {
-            loc_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.newBuilder(loc_).mergeFrom(value).buildPartial();
-          } else {
-            loc_ = value;
-          }
-          onChanged();
-        } else {
-          locBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public Builder clearLoc() {
-        if (locBuilder_ == null) {
-          loc_ = null;
-          onChanged();
-        } else {
-          loc_ = null;
-          locBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder getLocBuilder() {
-        
-        onChanged();
-        return getLocFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocOrBuilder() {
-        if (locBuilder_ != null) {
-          return locBuilder_.getMessageOrBuilder();
-        } else {
-          return loc_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : loc_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location loc = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
-          getLocFieldBuilder() {
-        if (locBuilder_ == null) {
-          locBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder>(
-                  getLoc(),
-                  getParentForChildren(),
-                  isClean());
-          loc_ = null;
-        }
-        return locBuilder_;
-      }
-
-      private long adId_ ;
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public long getAdId() {
-        return adId_;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder setAdId(long value) {
-        
-        adId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder clearAdId() {
-        
-        adId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.LocationAd)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.LocationAd)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.LocationAd DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.LocationAd();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LocationAd>
-        PARSER = new com.google.protobuf.AbstractParser<LocationAd>() {
-      public LocationAd parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocationAd(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LocationAd> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LocationAd> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface AdRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.protobuf.AdRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ad_unit = 1;</code>
+     * <code>bytes hash_id = 1;</code>
      */
-    java.lang.String getAdUnit();
-    /**
-     * <code>string ad_unit = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getAdUnitBytes();
+    com.google.protobuf.ByteString getHashId();
 
     /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     * <code>uint32 num_of_ads = 2;</code>
      */
-    boolean hasDeviceId();
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId();
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder();
+    int getNumOfAds();
 
     /**
-     * <code>string timezone = 3;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    java.lang.String getTimezone();
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> 
+        getLocationsList();
     /**
-     * <code>string timezone = 3;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getTimezoneBytes();
+    com.commutestream.nativeads.protobuf.Csnmessages.Location getLocations(int index);
+    /**
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
+     */
+    int getLocationsCount();
+    /**
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
+        getLocationsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationsOrBuilder(
+        int index);
 
     /**
-     * <code>.google.protobuf.Location location = 4;</code>
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
      */
-    boolean hasLocation();
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> 
+        getAgenciesList();
     /**
-     * <code>.google.protobuf.Location location = 4;</code>
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation();
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getAgencies(int index);
     /**
-     * <code>.google.protobuf.Location location = 4;</code>
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder();
+    int getAgenciesCount();
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder> 
+        getAgenciesOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder getAgenciesOrBuilder(
+        int index);
 
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
      */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop> 
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> 
+        getRoutesList();
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getRoutes(int index);
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    int getRoutesCount();
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder> 
+        getRoutesOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder getRoutesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> 
         getStopsList();
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.Stop getStops(int index);
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getStops(int index);
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
     int getStopsCount();
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder> 
         getStopsOrBuilderList();
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopsOrBuilder(
+    com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder getStopsOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * AdRequest contains a hash_id which is the hash everything but the num_of_ads 
+   * </pre>
+   *
    * Protobuf type {@code google.protobuf.AdRequest}
    */
   public  static final class AdRequest extends
@@ -13756,8 +12802,11 @@ public final class Csnmessages {
       super(builder);
     }
     private AdRequest() {
-      adUnit_ = "";
-      timezone_ = "";
+      hashId_ = com.google.protobuf.ByteString.EMPTY;
+      numOfAds_ = 0;
+      locations_ = java.util.Collections.emptyList();
+      agencies_ = java.util.Collections.emptyList();
+      routes_ = java.util.Collections.emptyList();
       stops_ = java.util.Collections.emptyList();
     }
 
@@ -13787,50 +12836,49 @@ public final class Csnmessages {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              adUnit_ = s;
+              hashId_ = input.readBytes();
               break;
             }
-            case 18: {
-              com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder subBuilder = null;
-              if (deviceId_ != null) {
-                subBuilder = deviceId_.toBuilder();
-              }
-              deviceId_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deviceId_);
-                deviceId_ = subBuilder.buildPartial();
-              }
+            case 16: {
 
+              numOfAds_ = input.readUInt32();
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              timezone_ = s;
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                locations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Location>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              locations_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Location.parser(), extensionRegistry));
               break;
             }
             case 34: {
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder subBuilder = null;
-              if (location_ != null) {
-                subBuilder = location_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                agencies_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency>();
+                mutable_bitField0_ |= 0x00000008;
               }
-              location_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-
+              agencies_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.parser(), extensionRegistry));
               break;
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Stop>();
+                routes_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute>();
                 mutable_bitField0_ |= 0x00000010;
               }
+              routes_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop>();
+                mutable_bitField0_ |= 0x00000020;
+              }
               stops_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Stop.parser(), extensionRegistry));
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.parser(), extensionRegistry));
               break;
             }
           }
@@ -13841,7 +12889,16 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          locations_ = java.util.Collections.unmodifiableList(locations_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          agencies_ = java.util.Collections.unmodifiableList(agencies_);
+        }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          routes_ = java.util.Collections.unmodifiableList(routes_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           stops_ = java.util.Collections.unmodifiableList(stops_);
         }
         makeExtensionsImmutable();
@@ -13860,147 +12917,160 @@ public final class Csnmessages {
     }
 
     private int bitField0_;
-    public static final int AD_UNIT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object adUnit_;
+    public static final int HASH_ID_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString hashId_;
     /**
-     * <code>string ad_unit = 1;</code>
+     * <code>bytes hash_id = 1;</code>
      */
-    public java.lang.String getAdUnit() {
-      java.lang.Object ref = adUnit_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        adUnit_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ad_unit = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAdUnitBytes() {
-      java.lang.Object ref = adUnit_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        adUnit_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getHashId() {
+      return hashId_;
     }
 
-    public static final int DEVICE_ID_FIELD_NUMBER = 2;
-    private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
+    public static final int NUM_OF_ADS_FIELD_NUMBER = 2;
+    private int numOfAds_;
     /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     * <code>uint32 num_of_ads = 2;</code>
      */
-    public boolean hasDeviceId() {
-      return deviceId_ != null;
-    }
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId() {
-      return deviceId_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.getDefaultInstance() : deviceId_;
-    }
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder() {
-      return getDeviceId();
+    public int getNumOfAds() {
+      return numOfAds_;
     }
 
-    public static final int TIMEZONE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object timezone_;
+    public static final int LOCATIONS_FIELD_NUMBER = 3;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> locations_;
     /**
-     * <code>string timezone = 3;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    public java.lang.String getTimezone() {
-      java.lang.Object ref = timezone_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timezone_ = s;
-        return s;
-      }
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> getLocationsList() {
+      return locations_;
     }
     /**
-     * <code>string timezone = 3;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTimezoneBytes() {
-      java.lang.Object ref = timezone_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timezone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LOCATION_FIELD_NUMBER = 4;
-    private com.commutestream.nativeads.protobuf.Csnmessages.Location location_;
-    /**
-     * <code>.google.protobuf.Location location = 4;</code>
-     */
-    public boolean hasLocation() {
-      return location_ != null;
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
+        getLocationsOrBuilderList() {
+      return locations_;
     }
     /**
-     * <code>.google.protobuf.Location location = 4;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation() {
-      return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
+    public int getLocationsCount() {
+      return locations_.size();
     }
     /**
-     * <code>.google.protobuf.Location location = 4;</code>
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder() {
-      return getLocation();
+    public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocations(int index) {
+      return locations_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.Location locations = 3;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationsOrBuilder(
+        int index) {
+      return locations_.get(index);
     }
 
-    public static final int STOPS_FIELD_NUMBER = 5;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop> stops_;
+    public static final int AGENCIES_FIELD_NUMBER = 4;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> agencies_;
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
      */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop> getStopsList() {
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> getAgenciesList() {
+      return agencies_;
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder> 
+        getAgenciesOrBuilderList() {
+      return agencies_;
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    public int getAgenciesCount() {
+      return agencies_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getAgencies(int index) {
+      return agencies_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder getAgenciesOrBuilder(
+        int index) {
+      return agencies_.get(index);
+    }
+
+    public static final int ROUTES_FIELD_NUMBER = 5;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> routes_;
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> getRoutesList() {
+      return routes_;
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder> 
+        getRoutesOrBuilderList() {
+      return routes_;
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    public int getRoutesCount() {
+      return routes_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getRoutes(int index) {
+      return routes_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder getRoutesOrBuilder(
+        int index) {
+      return routes_.get(index);
+    }
+
+    public static final int STOPS_FIELD_NUMBER = 6;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> stops_;
+    /**
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> getStopsList() {
       return stops_;
     }
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder> 
         getStopsOrBuilderList() {
       return stops_;
     }
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
     public int getStopsCount() {
       return stops_.size();
     }
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStops(int index) {
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getStops(int index) {
       return stops_.get(index);
     }
     /**
-     * <code>repeated .google.protobuf.Stop stops = 5;</code>
+     * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopsOrBuilder(
+    public com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder getStopsOrBuilder(
         int index) {
       return stops_.get(index);
     }
@@ -14017,20 +13087,23 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAdUnitBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, adUnit_);
+      if (!hashId_.isEmpty()) {
+        output.writeBytes(1, hashId_);
       }
-      if (deviceId_ != null) {
-        output.writeMessage(2, getDeviceId());
+      if (numOfAds_ != 0) {
+        output.writeUInt32(2, numOfAds_);
       }
-      if (!getTimezoneBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timezone_);
+      for (int i = 0; i < locations_.size(); i++) {
+        output.writeMessage(3, locations_.get(i));
       }
-      if (location_ != null) {
-        output.writeMessage(4, getLocation());
+      for (int i = 0; i < agencies_.size(); i++) {
+        output.writeMessage(4, agencies_.get(i));
+      }
+      for (int i = 0; i < routes_.size(); i++) {
+        output.writeMessage(5, routes_.get(i));
       }
       for (int i = 0; i < stops_.size(); i++) {
-        output.writeMessage(5, stops_.get(i));
+        output.writeMessage(6, stops_.get(i));
       }
     }
 
@@ -14039,23 +13112,29 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAdUnitBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, adUnit_);
-      }
-      if (deviceId_ != null) {
+      if (!hashId_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getDeviceId());
+          .computeBytesSize(1, hashId_);
       }
-      if (!getTimezoneBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timezone_);
-      }
-      if (location_ != null) {
+      if (numOfAds_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getLocation());
+          .computeUInt32Size(2, numOfAds_);
+      }
+      for (int i = 0; i < locations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, locations_.get(i));
+      }
+      for (int i = 0; i < agencies_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, agencies_.get(i));
+      }
+      for (int i = 0; i < routes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, routes_.get(i));
       }
       for (int i = 0; i < stops_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, stops_.get(i));
+          .computeMessageSize(6, stops_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -14073,20 +13152,16 @@ public final class Csnmessages {
       com.commutestream.nativeads.protobuf.Csnmessages.AdRequest other = (com.commutestream.nativeads.protobuf.Csnmessages.AdRequest) obj;
 
       boolean result = true;
-      result = result && getAdUnit()
-          .equals(other.getAdUnit());
-      result = result && (hasDeviceId() == other.hasDeviceId());
-      if (hasDeviceId()) {
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
-      }
-      result = result && getTimezone()
-          .equals(other.getTimezone());
-      result = result && (hasLocation() == other.hasLocation());
-      if (hasLocation()) {
-        result = result && getLocation()
-            .equals(other.getLocation());
-      }
+      result = result && getHashId()
+          .equals(other.getHashId());
+      result = result && (getNumOfAds()
+          == other.getNumOfAds());
+      result = result && getLocationsList()
+          .equals(other.getLocationsList());
+      result = result && getAgenciesList()
+          .equals(other.getAgenciesList());
+      result = result && getRoutesList()
+          .equals(other.getRoutesList());
       result = result && getStopsList()
           .equals(other.getStopsList());
       return result;
@@ -14099,17 +13174,21 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AD_UNIT_FIELD_NUMBER;
-      hash = (53 * hash) + getAdUnit().hashCode();
-      if (hasDeviceId()) {
-        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + HASH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getHashId().hashCode();
+      hash = (37 * hash) + NUM_OF_ADS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumOfAds();
+      if (getLocationsCount() > 0) {
+        hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getLocationsList().hashCode();
       }
-      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
-      hash = (53 * hash) + getTimezone().hashCode();
-      if (hasLocation()) {
-        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
-        hash = (53 * hash) + getLocation().hashCode();
+      if (getAgenciesCount() > 0) {
+        hash = (37 * hash) + AGENCIES_FIELD_NUMBER;
+        hash = (53 * hash) + getAgenciesList().hashCode();
+      }
+      if (getRoutesCount() > 0) {
+        hash = (37 * hash) + ROUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getRoutesList().hashCode();
       }
       if (getStopsCount() > 0) {
         hash = (37 * hash) + STOPS_FIELD_NUMBER;
@@ -14120,6 +13199,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14198,6 +13288,10 @@ public final class Csnmessages {
       return builder;
     }
     /**
+     * <pre>
+     * AdRequest contains a hash_id which is the hash everything but the num_of_ads 
+     * </pre>
+     *
      * Protobuf type {@code google.protobuf.AdRequest}
      */
     public static final class Builder extends
@@ -14229,30 +13323,39 @@ public final class Csnmessages {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getLocationsFieldBuilder();
+          getAgenciesFieldBuilder();
+          getRoutesFieldBuilder();
           getStopsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        adUnit_ = "";
+        hashId_ = com.google.protobuf.ByteString.EMPTY;
 
-        if (deviceIdBuilder_ == null) {
-          deviceId_ = null;
+        numOfAds_ = 0;
+
+        if (locationsBuilder_ == null) {
+          locations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          deviceId_ = null;
-          deviceIdBuilder_ = null;
+          locationsBuilder_.clear();
         }
-        timezone_ = "";
-
-        if (locationBuilder_ == null) {
-          location_ = null;
+        if (agenciesBuilder_ == null) {
+          agencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          location_ = null;
-          locationBuilder_ = null;
+          agenciesBuilder_.clear();
+        }
+        if (routesBuilder_ == null) {
+          routes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          routesBuilder_.clear();
         }
         if (stopsBuilder_ == null) {
           stops_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           stopsBuilder_.clear();
         }
@@ -14280,22 +13383,39 @@ public final class Csnmessages {
         com.commutestream.nativeads.protobuf.Csnmessages.AdRequest result = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.adUnit_ = adUnit_;
-        if (deviceIdBuilder_ == null) {
-          result.deviceId_ = deviceId_;
+        result.hashId_ = hashId_;
+        result.numOfAds_ = numOfAds_;
+        if (locationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            locations_ = java.util.Collections.unmodifiableList(locations_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.locations_ = locations_;
         } else {
-          result.deviceId_ = deviceIdBuilder_.build();
+          result.locations_ = locationsBuilder_.build();
         }
-        result.timezone_ = timezone_;
-        if (locationBuilder_ == null) {
-          result.location_ = location_;
+        if (agenciesBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            agencies_ = java.util.Collections.unmodifiableList(agencies_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.agencies_ = agencies_;
         } else {
-          result.location_ = locationBuilder_.build();
+          result.agencies_ = agenciesBuilder_.build();
+        }
+        if (routesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            routes_ = java.util.Collections.unmodifiableList(routes_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.routes_ = routes_;
+        } else {
+          result.routes_ = routesBuilder_.build();
         }
         if (stopsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             stops_ = java.util.Collections.unmodifiableList(stops_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.stops_ = stops_;
         } else {
@@ -14343,25 +13463,95 @@ public final class Csnmessages {
 
       public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdRequest other) {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.getDefaultInstance()) return this;
-        if (!other.getAdUnit().isEmpty()) {
-          adUnit_ = other.adUnit_;
-          onChanged();
+        if (other.getHashId() != com.google.protobuf.ByteString.EMPTY) {
+          setHashId(other.getHashId());
         }
-        if (other.hasDeviceId()) {
-          mergeDeviceId(other.getDeviceId());
+        if (other.getNumOfAds() != 0) {
+          setNumOfAds(other.getNumOfAds());
         }
-        if (!other.getTimezone().isEmpty()) {
-          timezone_ = other.timezone_;
-          onChanged();
+        if (locationsBuilder_ == null) {
+          if (!other.locations_.isEmpty()) {
+            if (locations_.isEmpty()) {
+              locations_ = other.locations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureLocationsIsMutable();
+              locations_.addAll(other.locations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.locations_.isEmpty()) {
+            if (locationsBuilder_.isEmpty()) {
+              locationsBuilder_.dispose();
+              locationsBuilder_ = null;
+              locations_ = other.locations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              locationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLocationsFieldBuilder() : null;
+            } else {
+              locationsBuilder_.addAllMessages(other.locations_);
+            }
+          }
         }
-        if (other.hasLocation()) {
-          mergeLocation(other.getLocation());
+        if (agenciesBuilder_ == null) {
+          if (!other.agencies_.isEmpty()) {
+            if (agencies_.isEmpty()) {
+              agencies_ = other.agencies_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureAgenciesIsMutable();
+              agencies_.addAll(other.agencies_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.agencies_.isEmpty()) {
+            if (agenciesBuilder_.isEmpty()) {
+              agenciesBuilder_.dispose();
+              agenciesBuilder_ = null;
+              agencies_ = other.agencies_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              agenciesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAgenciesFieldBuilder() : null;
+            } else {
+              agenciesBuilder_.addAllMessages(other.agencies_);
+            }
+          }
+        }
+        if (routesBuilder_ == null) {
+          if (!other.routes_.isEmpty()) {
+            if (routes_.isEmpty()) {
+              routes_ = other.routes_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureRoutesIsMutable();
+              routes_.addAll(other.routes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.routes_.isEmpty()) {
+            if (routesBuilder_.isEmpty()) {
+              routesBuilder_.dispose();
+              routesBuilder_ = null;
+              routes_ = other.routes_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              routesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRoutesFieldBuilder() : null;
+            } else {
+              routesBuilder_.addAllMessages(other.routes_);
+            }
+          }
         }
         if (stopsBuilder_ == null) {
           if (!other.stops_.isEmpty()) {
             if (stops_.isEmpty()) {
               stops_ = other.stops_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureStopsIsMutable();
               stops_.addAll(other.stops_);
@@ -14374,7 +13564,7 @@ public final class Csnmessages {
               stopsBuilder_.dispose();
               stopsBuilder_ = null;
               stops_ = other.stops_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               stopsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStopsFieldBuilder() : null;
@@ -14410,43 +13600,1813 @@ public final class Csnmessages {
       }
       private int bitField0_;
 
-      private java.lang.Object adUnit_ = "";
+      private com.google.protobuf.ByteString hashId_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>bytes hash_id = 1;</code>
        */
-      public java.lang.String getAdUnit() {
-        java.lang.Object ref = adUnit_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          adUnit_ = s;
-          return s;
+      public com.google.protobuf.ByteString getHashId() {
+        return hashId_;
+      }
+      /**
+       * <code>bytes hash_id = 1;</code>
+       */
+      public Builder setHashId(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes hash_id = 1;</code>
+       */
+      public Builder clearHashId() {
+        
+        hashId_ = getDefaultInstance().getHashId();
+        onChanged();
+        return this;
+      }
+
+      private int numOfAds_ ;
+      /**
+       * <code>uint32 num_of_ads = 2;</code>
+       */
+      public int getNumOfAds() {
+        return numOfAds_;
+      }
+      /**
+       * <code>uint32 num_of_ads = 2;</code>
+       */
+      public Builder setNumOfAds(int value) {
+        
+        numOfAds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 num_of_ads = 2;</code>
+       */
+      public Builder clearNumOfAds() {
+        
+        numOfAds_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> locations_ =
+        java.util.Collections.emptyList();
+      private void ensureLocationsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          locations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Location>(locations_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> locationsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> getLocationsList() {
+        if (locationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(locations_);
         } else {
-          return (java.lang.String) ref;
+          return locationsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getAdUnitBytes() {
-        java.lang.Object ref = adUnit_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          adUnit_ = b;
-          return b;
+      public int getLocationsCount() {
+        if (locationsBuilder_ == null) {
+          return locations_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return locationsBuilder_.getCount();
         }
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
        */
-      public Builder setAdUnit(
-          java.lang.String value) {
+      public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocations(int index) {
+        if (locationsBuilder_ == null) {
+          return locations_.get(index);
+        } else {
+          return locationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder setLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
+        if (locationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLocationsIsMutable();
+          locations_.set(index, value);
+          onChanged();
+        } else {
+          locationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder setLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
+        if (locationsBuilder_ == null) {
+          ensureLocationsIsMutable();
+          locations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          locationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder addLocations(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
+        if (locationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLocationsIsMutable();
+          locations_.add(value);
+          onChanged();
+        } else {
+          locationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder addLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
+        if (locationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLocationsIsMutable();
+          locations_.add(index, value);
+          onChanged();
+        } else {
+          locationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder addLocations(
+          com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
+        if (locationsBuilder_ == null) {
+          ensureLocationsIsMutable();
+          locations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          locationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder addLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
+        if (locationsBuilder_ == null) {
+          ensureLocationsIsMutable();
+          locations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          locationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder addAllLocations(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.Location> values) {
+        if (locationsBuilder_ == null) {
+          ensureLocationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, locations_);
+          onChanged();
+        } else {
+          locationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder clearLocations() {
+        if (locationsBuilder_ == null) {
+          locations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          locationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public Builder removeLocations(int index) {
+        if (locationsBuilder_ == null) {
+          ensureLocationsIsMutable();
+          locations_.remove(index);
+          onChanged();
+        } else {
+          locationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder getLocationsBuilder(
+          int index) {
+        return getLocationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationsOrBuilder(
+          int index) {
+        if (locationsBuilder_ == null) {
+          return locations_.get(index);  } else {
+          return locationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
+           getLocationsOrBuilderList() {
+        if (locationsBuilder_ != null) {
+          return locationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(locations_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder addLocationsBuilder() {
+        return getLocationsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder addLocationsBuilder(
+          int index) {
+        return getLocationsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.Location locations = 3;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder> 
+           getLocationsBuilderList() {
+        return getLocationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
+          getLocationsFieldBuilder() {
+        if (locationsBuilder_ == null) {
+          locationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder>(
+                  locations_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          locations_ = null;
+        }
+        return locationsBuilder_;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> agencies_ =
+        java.util.Collections.emptyList();
+      private void ensureAgenciesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          agencies_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency>(agencies_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder> agenciesBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> getAgenciesList() {
+        if (agenciesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(agencies_);
+        } else {
+          return agenciesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public int getAgenciesCount() {
+        if (agenciesBuilder_ == null) {
+          return agencies_.size();
+        } else {
+          return agenciesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getAgencies(int index) {
+        if (agenciesBuilder_ == null) {
+          return agencies_.get(index);
+        } else {
+          return agenciesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder setAgencies(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency value) {
+        if (agenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgenciesIsMutable();
+          agencies_.set(index, value);
+          onChanged();
+        } else {
+          agenciesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder setAgencies(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder builderForValue) {
+        if (agenciesBuilder_ == null) {
+          ensureAgenciesIsMutable();
+          agencies_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          agenciesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder addAgencies(com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency value) {
+        if (agenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgenciesIsMutable();
+          agencies_.add(value);
+          onChanged();
+        } else {
+          agenciesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder addAgencies(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency value) {
+        if (agenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgenciesIsMutable();
+          agencies_.add(index, value);
+          onChanged();
+        } else {
+          agenciesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder addAgencies(
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder builderForValue) {
+        if (agenciesBuilder_ == null) {
+          ensureAgenciesIsMutable();
+          agencies_.add(builderForValue.build());
+          onChanged();
+        } else {
+          agenciesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder addAgencies(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder builderForValue) {
+        if (agenciesBuilder_ == null) {
+          ensureAgenciesIsMutable();
+          agencies_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          agenciesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder addAllAgencies(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> values) {
+        if (agenciesBuilder_ == null) {
+          ensureAgenciesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, agencies_);
+          onChanged();
+        } else {
+          agenciesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder clearAgencies() {
+        if (agenciesBuilder_ == null) {
+          agencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          agenciesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public Builder removeAgencies(int index) {
+        if (agenciesBuilder_ == null) {
+          ensureAgenciesIsMutable();
+          agencies_.remove(index);
+          onChanged();
+        } else {
+          agenciesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder getAgenciesBuilder(
+          int index) {
+        return getAgenciesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder getAgenciesOrBuilder(
+          int index) {
+        if (agenciesBuilder_ == null) {
+          return agencies_.get(index);  } else {
+          return agenciesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder> 
+           getAgenciesOrBuilderList() {
+        if (agenciesBuilder_ != null) {
+          return agenciesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(agencies_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder addAgenciesBuilder() {
+        return getAgenciesFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder addAgenciesBuilder(
+          int index) {
+        return getAgenciesFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitAgency agencies = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder> 
+           getAgenciesBuilderList() {
+        return getAgenciesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder> 
+          getAgenciesFieldBuilder() {
+        if (agenciesBuilder_ == null) {
+          agenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder>(
+                  agencies_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          agencies_ = null;
+        }
+        return agenciesBuilder_;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> routes_ =
+        java.util.Collections.emptyList();
+      private void ensureRoutesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          routes_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute>(routes_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder> routesBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> getRoutesList() {
+        if (routesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(routes_);
+        } else {
+          return routesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public int getRoutesCount() {
+        if (routesBuilder_ == null) {
+          return routes_.size();
+        } else {
+          return routesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getRoutes(int index) {
+        if (routesBuilder_ == null) {
+          return routes_.get(index);
+        } else {
+          return routesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder setRoutes(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute value) {
+        if (routesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoutesIsMutable();
+          routes_.set(index, value);
+          onChanged();
+        } else {
+          routesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder setRoutes(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder builderForValue) {
+        if (routesBuilder_ == null) {
+          ensureRoutesIsMutable();
+          routes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          routesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder addRoutes(com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute value) {
+        if (routesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoutesIsMutable();
+          routes_.add(value);
+          onChanged();
+        } else {
+          routesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder addRoutes(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute value) {
+        if (routesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRoutesIsMutable();
+          routes_.add(index, value);
+          onChanged();
+        } else {
+          routesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder addRoutes(
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder builderForValue) {
+        if (routesBuilder_ == null) {
+          ensureRoutesIsMutable();
+          routes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          routesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder addRoutes(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder builderForValue) {
+        if (routesBuilder_ == null) {
+          ensureRoutesIsMutable();
+          routes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          routesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder addAllRoutes(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> values) {
+        if (routesBuilder_ == null) {
+          ensureRoutesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, routes_);
+          onChanged();
+        } else {
+          routesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder clearRoutes() {
+        if (routesBuilder_ == null) {
+          routes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          routesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public Builder removeRoutes(int index) {
+        if (routesBuilder_ == null) {
+          ensureRoutesIsMutable();
+          routes_.remove(index);
+          onChanged();
+        } else {
+          routesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder getRoutesBuilder(
+          int index) {
+        return getRoutesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder getRoutesOrBuilder(
+          int index) {
+        if (routesBuilder_ == null) {
+          return routes_.get(index);  } else {
+          return routesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder> 
+           getRoutesOrBuilderList() {
+        if (routesBuilder_ != null) {
+          return routesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(routes_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder addRoutesBuilder() {
+        return getRoutesFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder addRoutesBuilder(
+          int index) {
+        return getRoutesFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitRoute routes = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder> 
+           getRoutesBuilderList() {
+        return getRoutesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder> 
+          getRoutesFieldBuilder() {
+        if (routesBuilder_ == null) {
+          routesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder>(
+                  routes_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          routes_ = null;
+        }
+        return routesBuilder_;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> stops_ =
+        java.util.Collections.emptyList();
+      private void ensureStopsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop>(stops_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitStop, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder> stopsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> getStopsList() {
+        if (stopsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stops_);
+        } else {
+          return stopsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public int getStopsCount() {
+        if (stopsBuilder_ == null) {
+          return stops_.size();
+        } else {
+          return stopsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getStops(int index) {
+        if (stopsBuilder_ == null) {
+          return stops_.get(index);
+        } else {
+          return stopsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder setStops(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop value) {
+        if (stopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopsIsMutable();
+          stops_.set(index, value);
+          onChanged();
+        } else {
+          stopsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder setStops(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder builderForValue) {
+        if (stopsBuilder_ == null) {
+          ensureStopsIsMutable();
+          stops_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder addStops(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop value) {
+        if (stopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopsIsMutable();
+          stops_.add(value);
+          onChanged();
+        } else {
+          stopsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder addStops(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop value) {
+        if (stopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopsIsMutable();
+          stops_.add(index, value);
+          onChanged();
+        } else {
+          stopsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder addStops(
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder builderForValue) {
+        if (stopsBuilder_ == null) {
+          ensureStopsIsMutable();
+          stops_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stopsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder addStops(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder builderForValue) {
+        if (stopsBuilder_ == null) {
+          ensureStopsIsMutable();
+          stops_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder addAllStops(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> values) {
+        if (stopsBuilder_ == null) {
+          ensureStopsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, stops_);
+          onChanged();
+        } else {
+          stopsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder clearStops() {
+        if (stopsBuilder_ == null) {
+          stops_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          stopsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public Builder removeStops(int index) {
+        if (stopsBuilder_ == null) {
+          ensureStopsIsMutable();
+          stops_.remove(index);
+          onChanged();
+        } else {
+          stopsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder getStopsBuilder(
+          int index) {
+        return getStopsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder getStopsOrBuilder(
+          int index) {
+        if (stopsBuilder_ == null) {
+          return stops_.get(index);  } else {
+          return stopsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder> 
+           getStopsOrBuilderList() {
+        if (stopsBuilder_ != null) {
+          return stopsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stops_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder addStopsBuilder() {
+        return getStopsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder addStopsBuilder(
+          int index) {
+        return getStopsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.TransitStop stops = 6;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder> 
+           getStopsBuilderList() {
+        return getStopsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.TransitStop, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder> 
+          getStopsFieldBuilder() {
+        if (stopsBuilder_ == null) {
+          stopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.TransitStop, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder>(
+                  stops_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          stops_ = null;
+        }
+        return stopsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdRequest)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequest();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AdRequest>() {
+      public AdRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdRequest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdRequestsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdRequests)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes ad_unit = 1;</code>
+     */
+    com.google.protobuf.ByteString getAdUnit();
+
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId();
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder();
+
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getIpAddressesList();
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    int getIpAddressesCount();
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    com.google.protobuf.ByteString getIpAddresses(int index);
+
+    /**
+     * <code>string timezone = 4;</code>
+     */
+    java.lang.String getTimezone();
+    /**
+     * <code>string timezone = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getTimezoneBytes();
+
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> 
+        getAdRequestsList();
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getAdRequests(int index);
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    int getAdRequestsCount();
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder> 
+        getAdRequestsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder getAdRequestsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * AdRequests contains relevant information needed to attempt filling ad requests
+   * </pre>
+   *
+   * Protobuf type {@code google.protobuf.AdRequests}
+   */
+  public  static final class AdRequests extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdRequests)
+      AdRequestsOrBuilder {
+    // Use AdRequests.newBuilder() to construct.
+    private AdRequests(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdRequests() {
+      adUnit_ = com.google.protobuf.ByteString.EMPTY;
+      ipAddresses_ = java.util.Collections.emptyList();
+      timezone_ = "";
+      adRequests_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdRequests(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+
+              adUnit_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder subBuilder = null;
+              if (deviceId_ != null) {
+                subBuilder = deviceId_.toBuilder();
+              }
+              deviceId_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deviceId_);
+                deviceId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              ipAddresses_.add(input.readBytes());
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timezone_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                adRequests_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              adRequests_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          adRequests_ = java.util.Collections.unmodifiableList(adRequests_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.class, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int AD_UNIT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString adUnit_;
+    /**
+     * <code>bytes ad_unit = 1;</code>
+     */
+    public com.google.protobuf.ByteString getAdUnit() {
+      return adUnit_;
+    }
+
+    public static final int DEVICE_ID_FIELD_NUMBER = 2;
+    private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public boolean hasDeviceId() {
+      return deviceId_ != null;
+    }
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId() {
+      return deviceId_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.getDefaultInstance() : deviceId_;
+    }
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder() {
+      return getDeviceId();
+    }
+
+    public static final int IP_ADDRESSES_FIELD_NUMBER = 3;
+    private java.util.List<com.google.protobuf.ByteString> ipAddresses_;
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getIpAddressesList() {
+      return ipAddresses_;
+    }
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    public int getIpAddressesCount() {
+      return ipAddresses_.size();
+    }
+    /**
+     * <code>repeated bytes ip_addresses = 3;</code>
+     */
+    public com.google.protobuf.ByteString getIpAddresses(int index) {
+      return ipAddresses_.get(index);
+    }
+
+    public static final int TIMEZONE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object timezone_;
+    /**
+     * <code>string timezone = 4;</code>
+     */
+    public java.lang.String getTimezone() {
+      java.lang.Object ref = timezone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timezone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string timezone = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTimezoneBytes() {
+      java.lang.Object ref = timezone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timezone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AD_REQUESTS_FIELD_NUMBER = 5;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> adRequests_;
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> getAdRequestsList() {
+      return adRequests_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder> 
+        getAdRequestsOrBuilderList() {
+      return adRequests_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    public int getAdRequestsCount() {
+      return adRequests_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getAdRequests(int index) {
+      return adRequests_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder getAdRequestsOrBuilder(
+        int index) {
+      return adRequests_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!adUnit_.isEmpty()) {
+        output.writeBytes(1, adUnit_);
+      }
+      if (deviceId_ != null) {
+        output.writeMessage(2, getDeviceId());
+      }
+      for (int i = 0; i < ipAddresses_.size(); i++) {
+        output.writeBytes(3, ipAddresses_.get(i));
+      }
+      if (!getTimezoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, timezone_);
+      }
+      for (int i = 0; i < adRequests_.size(); i++) {
+        output.writeMessage(5, adRequests_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!adUnit_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, adUnit_);
+      }
+      if (deviceId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getDeviceId());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ipAddresses_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(ipAddresses_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getIpAddressesList().size();
+      }
+      if (!getTimezoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, timezone_);
+      }
+      for (int i = 0; i < adRequests_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, adRequests_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdRequests)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdRequests other = (com.commutestream.nativeads.protobuf.Csnmessages.AdRequests) obj;
+
+      boolean result = true;
+      result = result && getAdUnit()
+          .equals(other.getAdUnit());
+      result = result && (hasDeviceId() == other.hasDeviceId());
+      if (hasDeviceId()) {
+        result = result && getDeviceId()
+            .equals(other.getDeviceId());
+      }
+      result = result && getIpAddressesList()
+          .equals(other.getIpAddressesList());
+      result = result && getTimezone()
+          .equals(other.getTimezone());
+      result = result && getAdRequestsList()
+          .equals(other.getAdRequestsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AD_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getAdUnit().hashCode();
+      if (hasDeviceId()) {
+        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceId().hashCode();
+      }
+      if (getIpAddressesCount() > 0) {
+        hash = (37 * hash) + IP_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getIpAddressesList().hashCode();
+      }
+      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimezone().hashCode();
+      if (getAdRequestsCount() > 0) {
+        hash = (37 * hash) + AD_REQUESTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAdRequestsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AdRequests contains relevant information needed to attempt filling ad requests
+     * </pre>
+     *
+     * Protobuf type {@code google.protobuf.AdRequests}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdRequests)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.class, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAdRequestsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        adUnit_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (deviceIdBuilder_ == null) {
+          deviceId_ = null;
+        } else {
+          deviceId_ = null;
+          deviceIdBuilder_ = null;
+        }
+        ipAddresses_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timezone_ = "";
+
+        if (adRequestsBuilder_ == null) {
+          adRequests_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          adRequestsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdRequests result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdRequests result = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequests(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.adUnit_ = adUnit_;
+        if (deviceIdBuilder_ == null) {
+          result.deviceId_ = deviceId_;
+        } else {
+          result.deviceId_ = deviceIdBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.ipAddresses_ = ipAddresses_;
+        result.timezone_ = timezone_;
+        if (adRequestsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            adRequests_ = java.util.Collections.unmodifiableList(adRequests_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.adRequests_ = adRequests_;
+        } else {
+          result.adRequests_ = adRequestsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdRequests) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdRequests)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance()) return this;
+        if (other.getAdUnit() != com.google.protobuf.ByteString.EMPTY) {
+          setAdUnit(other.getAdUnit());
+        }
+        if (other.hasDeviceId()) {
+          mergeDeviceId(other.getDeviceId());
+        }
+        if (!other.ipAddresses_.isEmpty()) {
+          if (ipAddresses_.isEmpty()) {
+            ipAddresses_ = other.ipAddresses_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureIpAddressesIsMutable();
+            ipAddresses_.addAll(other.ipAddresses_);
+          }
+          onChanged();
+        }
+        if (!other.getTimezone().isEmpty()) {
+          timezone_ = other.timezone_;
+          onChanged();
+        }
+        if (adRequestsBuilder_ == null) {
+          if (!other.adRequests_.isEmpty()) {
+            if (adRequests_.isEmpty()) {
+              adRequests_ = other.adRequests_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureAdRequestsIsMutable();
+              adRequests_.addAll(other.adRequests_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.adRequests_.isEmpty()) {
+            if (adRequestsBuilder_.isEmpty()) {
+              adRequestsBuilder_.dispose();
+              adRequestsBuilder_ = null;
+              adRequests_ = other.adRequests_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              adRequestsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAdRequestsFieldBuilder() : null;
+            } else {
+              adRequestsBuilder_.addAllMessages(other.adRequests_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdRequests parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdRequests) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString adUnit_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes ad_unit = 1;</code>
+       */
+      public com.google.protobuf.ByteString getAdUnit() {
+        return adUnit_;
+      }
+      /**
+       * <code>bytes ad_unit = 1;</code>
+       */
+      public Builder setAdUnit(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -14456,25 +15416,11 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>bytes ad_unit = 1;</code>
        */
       public Builder clearAdUnit() {
         
         adUnit_ = getDefaultInstance().getAdUnit();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ad_unit = 1;</code>
-       */
-      public Builder setAdUnitBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        adUnit_ = value;
         onChanged();
         return this;
       }
@@ -14596,9 +15542,81 @@ public final class Csnmessages {
         return deviceIdBuilder_;
       }
 
+      private java.util.List<com.google.protobuf.ByteString> ipAddresses_ = java.util.Collections.emptyList();
+      private void ensureIpAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>(ipAddresses_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getIpAddressesList() {
+        return java.util.Collections.unmodifiableList(ipAddresses_);
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public int getIpAddressesCount() {
+        return ipAddresses_.size();
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public com.google.protobuf.ByteString getIpAddresses(int index) {
+        return ipAddresses_.get(index);
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public Builder setIpAddresses(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIpAddressesIsMutable();
+        ipAddresses_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public Builder addIpAddresses(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIpAddressesIsMutable();
+        ipAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public Builder addAllIpAddresses(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureIpAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ipAddresses_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes ip_addresses = 3;</code>
+       */
+      public Builder clearIpAddresses() {
+        ipAddresses_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object timezone_ = "";
       /**
-       * <code>string timezone = 3;</code>
+       * <code>string timezone = 4;</code>
        */
       public java.lang.String getTimezone() {
         java.lang.Object ref = timezone_;
@@ -14613,7 +15631,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>string timezone = 3;</code>
+       * <code>string timezone = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTimezoneBytes() {
@@ -14629,7 +15647,7 @@ public final class Csnmessages {
         }
       }
       /**
-       * <code>string timezone = 3;</code>
+       * <code>string timezone = 4;</code>
        */
       public Builder setTimezone(
           java.lang.String value) {
@@ -14642,7 +15660,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>string timezone = 3;</code>
+       * <code>string timezone = 4;</code>
        */
       public Builder clearTimezone() {
         
@@ -14651,7 +15669,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>string timezone = 3;</code>
+       * <code>string timezone = 4;</code>
        */
       public Builder setTimezoneBytes(
           com.google.protobuf.ByteString value) {
@@ -14665,361 +15683,244 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Location location_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> locationBuilder_;
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public boolean hasLocation() {
-        return locationBuilder_ != null || location_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation() {
-        if (locationBuilder_ == null) {
-          return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
-        } else {
-          return locationBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public Builder setLocation(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          location_ = value;
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public Builder setLocation(
-          com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
-        if (locationBuilder_ == null) {
-          location_ = builderForValue.build();
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public Builder mergeLocation(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locationBuilder_ == null) {
-          if (location_ != null) {
-            location_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.newBuilder(location_).mergeFrom(value).buildPartial();
-          } else {
-            location_ = value;
-          }
-          onChanged();
-        } else {
-          locationBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public Builder clearLocation() {
-        if (locationBuilder_ == null) {
-          location_ = null;
-          onChanged();
-        } else {
-          location_ = null;
-          locationBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder getLocationBuilder() {
-        
-        onChanged();
-        return getLocationFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder() {
-        if (locationBuilder_ != null) {
-          return locationBuilder_.getMessageOrBuilder();
-        } else {
-          return location_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location location = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
-          getLocationFieldBuilder() {
-        if (locationBuilder_ == null) {
-          locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder>(
-                  getLocation(),
-                  getParentForChildren(),
-                  isClean());
-          location_ = null;
-        }
-        return locationBuilder_;
-      }
-
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop> stops_ =
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> adRequests_ =
         java.util.Collections.emptyList();
-      private void ensureStopsIsMutable() {
+      private void ensureAdRequestsIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Stop>(stops_);
+          adRequests_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest>(adRequests_);
           bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> stopsBuilder_;
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequest, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder> adRequestsBuilder_;
 
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop> getStopsList() {
-        if (stopsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(stops_);
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> getAdRequestsList() {
+        if (adRequestsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(adRequests_);
         } else {
-          return stopsBuilder_.getMessageList();
+          return adRequestsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public int getStopsCount() {
-        if (stopsBuilder_ == null) {
-          return stops_.size();
+      public int getAdRequestsCount() {
+        if (adRequestsBuilder_ == null) {
+          return adRequests_.size();
         } else {
-          return stopsBuilder_.getCount();
+          return adRequestsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop getStops(int index) {
-        if (stopsBuilder_ == null) {
-          return stops_.get(index);
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getAdRequests(int index) {
+        if (adRequestsBuilder_ == null) {
+          return adRequests_.get(index);
         } else {
-          return stopsBuilder_.getMessage(index);
+          return adRequestsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder setStops(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopsBuilder_ == null) {
+      public Builder setAdRequests(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest value) {
+        if (adRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopsIsMutable();
-          stops_.set(index, value);
+          ensureAdRequestsIsMutable();
+          adRequests_.set(index, value);
           onChanged();
         } else {
-          stopsBuilder_.setMessage(index, value);
+          adRequestsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder setStops(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder builderForValue) {
-        if (stopsBuilder_ == null) {
-          ensureStopsIsMutable();
-          stops_.set(index, builderForValue.build());
+      public Builder setAdRequests(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder builderForValue) {
+        if (adRequestsBuilder_ == null) {
+          ensureAdRequestsIsMutable();
+          adRequests_.set(index, builderForValue.build());
           onChanged();
         } else {
-          stopsBuilder_.setMessage(index, builderForValue.build());
+          adRequestsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder addStops(com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopsBuilder_ == null) {
+      public Builder addAdRequests(com.commutestream.nativeads.protobuf.Csnmessages.AdRequest value) {
+        if (adRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopsIsMutable();
-          stops_.add(value);
+          ensureAdRequestsIsMutable();
+          adRequests_.add(value);
           onChanged();
         } else {
-          stopsBuilder_.addMessage(value);
+          adRequestsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder addStops(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.Stop value) {
-        if (stopsBuilder_ == null) {
+      public Builder addAdRequests(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest value) {
+        if (adRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopsIsMutable();
-          stops_.add(index, value);
+          ensureAdRequestsIsMutable();
+          adRequests_.add(index, value);
           onChanged();
         } else {
-          stopsBuilder_.addMessage(index, value);
+          adRequestsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder addStops(
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder builderForValue) {
-        if (stopsBuilder_ == null) {
-          ensureStopsIsMutable();
-          stops_.add(builderForValue.build());
+      public Builder addAdRequests(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder builderForValue) {
+        if (adRequestsBuilder_ == null) {
+          ensureAdRequestsIsMutable();
+          adRequests_.add(builderForValue.build());
           onChanged();
         } else {
-          stopsBuilder_.addMessage(builderForValue.build());
+          adRequestsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder addStops(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder builderForValue) {
-        if (stopsBuilder_ == null) {
-          ensureStopsIsMutable();
-          stops_.add(index, builderForValue.build());
+      public Builder addAdRequests(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder builderForValue) {
+        if (adRequestsBuilder_ == null) {
+          ensureAdRequestsIsMutable();
+          adRequests_.add(index, builderForValue.build());
           onChanged();
         } else {
-          stopsBuilder_.addMessage(index, builderForValue.build());
+          adRequestsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder addAllStops(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.Stop> values) {
-        if (stopsBuilder_ == null) {
-          ensureStopsIsMutable();
+      public Builder addAllAdRequests(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> values) {
+        if (adRequestsBuilder_ == null) {
+          ensureAdRequestsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, stops_);
+              values, adRequests_);
           onChanged();
         } else {
-          stopsBuilder_.addAllMessages(values);
+          adRequestsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder clearStops() {
-        if (stopsBuilder_ == null) {
-          stops_ = java.util.Collections.emptyList();
+      public Builder clearAdRequests() {
+        if (adRequestsBuilder_ == null) {
+          adRequests_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
-          stopsBuilder_.clear();
+          adRequestsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public Builder removeStops(int index) {
-        if (stopsBuilder_ == null) {
-          ensureStopsIsMutable();
-          stops_.remove(index);
+      public Builder removeAdRequests(int index) {
+        if (adRequestsBuilder_ == null) {
+          ensureAdRequestsIsMutable();
+          adRequests_.remove(index);
           onChanged();
         } else {
-          stopsBuilder_.remove(index);
+          adRequestsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder getStopsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder getAdRequestsBuilder(
           int index) {
-        return getStopsFieldBuilder().getBuilder(index);
+        return getAdRequestsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder getStopsOrBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder getAdRequestsOrBuilder(
           int index) {
-        if (stopsBuilder_ == null) {
-          return stops_.get(index);  } else {
-          return stopsBuilder_.getMessageOrBuilder(index);
+        if (adRequestsBuilder_ == null) {
+          return adRequests_.get(index);  } else {
+          return adRequestsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
-           getStopsOrBuilderList() {
-        if (stopsBuilder_ != null) {
-          return stopsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder> 
+           getAdRequestsOrBuilderList() {
+        if (adRequestsBuilder_ != null) {
+          return adRequestsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(stops_);
+          return java.util.Collections.unmodifiableList(adRequests_);
         }
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder addStopsBuilder() {
-        return getStopsFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance());
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder addAdRequestsBuilder() {
+        return getAdRequestsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder addStopsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder addAdRequestsBuilder(
           int index) {
-        return getStopsFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.Stop.getDefaultInstance());
+        return getAdRequestsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.Stop stops = 5;</code>
+       * <code>repeated .google.protobuf.AdRequest ad_requests = 5;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder> 
-           getStopsBuilderList() {
-        return getStopsFieldBuilder().getBuilderList();
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder> 
+           getAdRequestsBuilderList() {
+        return getAdRequestsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder> 
-          getStopsFieldBuilder() {
-        if (stopsBuilder_ == null) {
-          stopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Stop, com.commutestream.nativeads.protobuf.Csnmessages.Stop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopOrBuilder>(
-                  stops_,
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequest, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder> 
+          getAdRequestsFieldBuilder() {
+        if (adRequestsBuilder_ == null) {
+          adRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequest, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder>(
+                  adRequests_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
-          stops_ = null;
+          adRequests_ = null;
         }
-        return stopsBuilder_;
+        return adRequestsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15032,39 +15933,39 @@ public final class Csnmessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.protobuf.AdRequest)
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdRequests)
     }
 
-    // @@protoc_insertion_point(class_scope:google.protobuf.AdRequest)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdRequests)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdRequests DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequest();
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequests();
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstance() {
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AdRequest>
-        PARSER = new com.google.protobuf.AbstractParser<AdRequest>() {
-      public AdRequest parsePartialFrom(
+    private static final com.google.protobuf.Parser<AdRequests>
+        PARSER = new com.google.protobuf.AbstractParser<AdRequests>() {
+      public AdRequests parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AdRequest(input, extensionRegistry);
+          return new AdRequests(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AdRequest> parser() {
+    public static com.google.protobuf.Parser<AdRequests> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AdRequest> getParserForType() {
+    public com.google.protobuf.Parser<AdRequests> getParserForType() {
       return PARSER;
     }
 
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstanceForType() {
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15075,88 +15976,39 @@ public final class Csnmessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
+     * <code>bytes hash_id = 1;</code>
      */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> 
-        getLocationAdsList();
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getLocationAds(int index);
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    int getLocationAdsCount();
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder> 
-        getLocationAdsOrBuilderList();
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder getLocationAdsOrBuilder(
-        int index);
+    com.google.protobuf.ByteString getHashId();
 
     /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd> 
-        getStopAdsList();
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> 
+        getAdsList();
     /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopAd getStopAds(int index);
+    com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAds(int index);
     /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    int getStopAdsCount();
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder> 
-        getStopAdsOrBuilderList();
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder getStopAdsOrBuilder(
-        int index);
-
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
     int getAdsCount();
     /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    boolean containsAds(
-        long key);
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder> 
+        getAdsOrBuilderList();
     /**
-     * Use {@link #getAdsMap()} instead.
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-    getAds();
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-    java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-    getAdsMap();
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-
-    com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrDefault(
-        long key,
-        com.commutestream.nativeads.protobuf.Csnmessages.NativeAd defaultValue);
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-
-    com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrThrow(
-        long key);
+    com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder getAdsOrBuilder(
+        int index);
   }
   /**
+   * <pre>
+   * AdResponse is a mapping between an AdRequest hash_id and the set of ads
+   * </pre>
+   *
    * Protobuf type {@code google.protobuf.AdResponse}
    */
   public  static final class AdResponse extends
@@ -15168,8 +16020,8 @@ public final class Csnmessages {
       super(builder);
     }
     private AdResponse() {
-      locationAds_ = java.util.Collections.emptyList();
-      stopAds_ = java.util.Collections.emptyList();
+      hashId_ = com.google.protobuf.ByteString.EMPTY;
+      ads_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -15198,34 +16050,17 @@ public final class Csnmessages {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                locationAds_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              locationAds_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.parser(), extensionRegistry));
+
+              hashId_ = input.readBytes();
               break;
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                stopAds_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.StopAd>();
+                ads_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              stopAds_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.StopAd.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                ads_ = com.google.protobuf.MapField.newMapField(
-                    AdsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-              ads__ = input.readMessage(
-                  AdsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              ads_.getMutableMap().put(
-                  ads__.getKey(), ads__.getValue());
+              ads_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.parser(), extensionRegistry));
               break;
             }
           }
@@ -15236,11 +16071,8 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          locationAds_ = java.util.Collections.unmodifiableList(locationAds_);
-        }
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          stopAds_ = java.util.Collections.unmodifiableList(stopAds_);
+          ads_ = java.util.Collections.unmodifiableList(ads_);
         }
         makeExtensionsImmutable();
       }
@@ -15250,17 +16082,6 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetAds();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_fieldAccessorTable
@@ -15268,150 +16089,49 @@ public final class Csnmessages {
               com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.class, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder.class);
     }
 
-    public static final int LOCATION_ADS_FIELD_NUMBER = 1;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> locationAds_;
+    private int bitField0_;
+    public static final int HASH_ID_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString hashId_;
     /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
+     * <code>bytes hash_id = 1;</code>
      */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> getLocationAdsList() {
-      return locationAds_;
-    }
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder> 
-        getLocationAdsOrBuilderList() {
-      return locationAds_;
-    }
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    public int getLocationAdsCount() {
-      return locationAds_.size();
-    }
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getLocationAds(int index) {
-      return locationAds_.get(index);
-    }
-    /**
-     * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder getLocationAdsOrBuilder(
-        int index) {
-      return locationAds_.get(index);
+    public com.google.protobuf.ByteString getHashId() {
+      return hashId_;
     }
 
-    public static final int STOP_ADS_FIELD_NUMBER = 2;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd> stopAds_;
+    public static final int ADS_FIELD_NUMBER = 2;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> ads_;
     /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd> getStopAdsList() {
-      return stopAds_;
-    }
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder> 
-        getStopAdsOrBuilderList() {
-      return stopAds_;
-    }
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    public int getStopAdsCount() {
-      return stopAds_.size();
-    }
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopAd getStopAds(int index) {
-      return stopAds_.get(index);
-    }
-    /**
-     * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder getStopAdsOrBuilder(
-        int index) {
-      return stopAds_.get(index);
-    }
-
-    public static final int ADS_FIELD_NUMBER = 3;
-    private static final class AdsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>newDefaultInstance(
-                  com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_AdsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT64,
-                  0L,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> ads_;
-    private com.google.protobuf.MapField<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-    internalGetAds() {
-      if (ads_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            AdsDefaultEntryHolder.defaultEntry);
-      }
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAdsList() {
       return ads_;
     }
-
+    /**
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder> 
+        getAdsOrBuilderList() {
+      return ads_;
+    }
+    /**
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
+     */
     public int getAdsCount() {
-      return internalGetAds().getMap().size();
+      return ads_.size();
     }
     /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-
-    public boolean containsAds(
-        long key) {
-      
-      return internalGetAds().getMap().containsKey(key);
+    public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAds(int index) {
+      return ads_.get(index);
     }
     /**
-     * Use {@link #getAdsMap()} instead.
+     * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAds() {
-      return getAdsMap();
-    }
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-
-    public java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAdsMap() {
-      return internalGetAds().getMap();
-    }
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrDefault(
-        long key,
-        com.commutestream.nativeads.protobuf.Csnmessages.NativeAd defaultValue) {
-      
-      java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> map =
-          internalGetAds().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-     */
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrThrow(
-        long key) {
-      
-      java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> map =
-          internalGetAds().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder getAdsOrBuilder(
+        int index) {
+      return ads_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -15426,18 +16146,12 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < locationAds_.size(); i++) {
-        output.writeMessage(1, locationAds_.get(i));
+      if (!hashId_.isEmpty()) {
+        output.writeBytes(1, hashId_);
       }
-      for (int i = 0; i < stopAds_.size(); i++) {
-        output.writeMessage(2, stopAds_.get(i));
+      for (int i = 0; i < ads_.size(); i++) {
+        output.writeMessage(2, ads_.get(i));
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeLongMapTo(
-          output,
-          internalGetAds(),
-          AdsDefaultEntryHolder.defaultEntry,
-          3);
     }
 
     public int getSerializedSize() {
@@ -15445,23 +16159,13 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < locationAds_.size(); i++) {
+      if (!hashId_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, locationAds_.get(i));
+          .computeBytesSize(1, hashId_);
       }
-      for (int i = 0; i < stopAds_.size(); i++) {
+      for (int i = 0; i < ads_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, stopAds_.get(i));
-      }
-      for (java.util.Map.Entry<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> entry
-           : internalGetAds().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-        ads__ = AdsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, ads__);
+          .computeMessageSize(2, ads_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -15479,12 +16183,10 @@ public final class Csnmessages {
       com.commutestream.nativeads.protobuf.Csnmessages.AdResponse other = (com.commutestream.nativeads.protobuf.Csnmessages.AdResponse) obj;
 
       boolean result = true;
-      result = result && getLocationAdsList()
-          .equals(other.getLocationAdsList());
-      result = result && getStopAdsList()
-          .equals(other.getStopAdsList());
-      result = result && internalGetAds().equals(
-          other.internalGetAds());
+      result = result && getHashId()
+          .equals(other.getHashId());
+      result = result && getAdsList()
+          .equals(other.getAdsList());
       return result;
     }
 
@@ -15495,23 +16197,28 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getLocationAdsCount() > 0) {
-        hash = (37 * hash) + LOCATION_ADS_FIELD_NUMBER;
-        hash = (53 * hash) + getLocationAdsList().hashCode();
-      }
-      if (getStopAdsCount() > 0) {
-        hash = (37 * hash) + STOP_ADS_FIELD_NUMBER;
-        hash = (53 * hash) + getStopAdsList().hashCode();
-      }
-      if (!internalGetAds().getMap().isEmpty()) {
+      hash = (37 * hash) + HASH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getHashId().hashCode();
+      if (getAdsCount() > 0) {
         hash = (37 * hash) + ADS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetAds().hashCode();
+        hash = (53 * hash) + getAdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -15590,6 +16297,10 @@ public final class Csnmessages {
       return builder;
     }
     /**
+     * <pre>
+     * AdResponse is a mapping between an AdRequest hash_id and the set of ads
+     * </pre>
+     *
      * Protobuf type {@code google.protobuf.AdResponse}
      */
     public static final class Builder extends
@@ -15601,28 +16312,6 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetAds();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMutableAds();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_fieldAccessorTable
@@ -15643,25 +16332,19 @@ public final class Csnmessages {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getLocationAdsFieldBuilder();
-          getStopAdsFieldBuilder();
+          getAdsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (locationAdsBuilder_ == null) {
-          locationAds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          locationAdsBuilder_.clear();
-        }
-        if (stopAdsBuilder_ == null) {
-          stopAds_ = java.util.Collections.emptyList();
+        hashId_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (adsBuilder_ == null) {
+          ads_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          stopAdsBuilder_.clear();
+          adsBuilder_.clear();
         }
-        internalGetMutableAds().clear();
         return this;
       }
 
@@ -15685,26 +16368,18 @@ public final class Csnmessages {
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdResponse result = new com.commutestream.nativeads.protobuf.Csnmessages.AdResponse(this);
         int from_bitField0_ = bitField0_;
-        if (locationAdsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            locationAds_ = java.util.Collections.unmodifiableList(locationAds_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.locationAds_ = locationAds_;
-        } else {
-          result.locationAds_ = locationAdsBuilder_.build();
-        }
-        if (stopAdsBuilder_ == null) {
+        int to_bitField0_ = 0;
+        result.hashId_ = hashId_;
+        if (adsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            stopAds_ = java.util.Collections.unmodifiableList(stopAds_);
+            ads_ = java.util.Collections.unmodifiableList(ads_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.stopAds_ = stopAds_;
+          result.ads_ = ads_;
         } else {
-          result.stopAds_ = stopAdsBuilder_.build();
+          result.ads_ = adsBuilder_.build();
         }
-        result.ads_ = internalGetAds();
-        result.ads_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -15746,60 +16421,35 @@ public final class Csnmessages {
 
       public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdResponse other) {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.getDefaultInstance()) return this;
-        if (locationAdsBuilder_ == null) {
-          if (!other.locationAds_.isEmpty()) {
-            if (locationAds_.isEmpty()) {
-              locationAds_ = other.locationAds_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+        if (other.getHashId() != com.google.protobuf.ByteString.EMPTY) {
+          setHashId(other.getHashId());
+        }
+        if (adsBuilder_ == null) {
+          if (!other.ads_.isEmpty()) {
+            if (ads_.isEmpty()) {
+              ads_ = other.ads_;
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureLocationAdsIsMutable();
-              locationAds_.addAll(other.locationAds_);
+              ensureAdsIsMutable();
+              ads_.addAll(other.ads_);
             }
             onChanged();
           }
         } else {
-          if (!other.locationAds_.isEmpty()) {
-            if (locationAdsBuilder_.isEmpty()) {
-              locationAdsBuilder_.dispose();
-              locationAdsBuilder_ = null;
-              locationAds_ = other.locationAds_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              locationAdsBuilder_ = 
+          if (!other.ads_.isEmpty()) {
+            if (adsBuilder_.isEmpty()) {
+              adsBuilder_.dispose();
+              adsBuilder_ = null;
+              ads_ = other.ads_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              adsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getLocationAdsFieldBuilder() : null;
+                   getAdsFieldBuilder() : null;
             } else {
-              locationAdsBuilder_.addAllMessages(other.locationAds_);
+              adsBuilder_.addAllMessages(other.ads_);
             }
           }
         }
-        if (stopAdsBuilder_ == null) {
-          if (!other.stopAds_.isEmpty()) {
-            if (stopAds_.isEmpty()) {
-              stopAds_ = other.stopAds_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureStopAdsIsMutable();
-              stopAds_.addAll(other.stopAds_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.stopAds_.isEmpty()) {
-            if (stopAdsBuilder_.isEmpty()) {
-              stopAdsBuilder_.dispose();
-              stopAdsBuilder_ = null;
-              stopAds_ = other.stopAds_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              stopAdsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getStopAdsFieldBuilder() : null;
-            } else {
-              stopAdsBuilder_.addAllMessages(other.stopAds_);
-            }
-          }
-        }
-        internalGetMutableAds().mergeFrom(
-            other.internalGetAds());
         onChanged();
         return this;
       }
@@ -15827,607 +16477,273 @@ public final class Csnmessages {
       }
       private int bitField0_;
 
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> locationAds_ =
+      private com.google.protobuf.ByteString hashId_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes hash_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString getHashId() {
+        return hashId_;
+      }
+      /**
+       * <code>bytes hash_id = 1;</code>
+       */
+      public Builder setHashId(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes hash_id = 1;</code>
+       */
+      public Builder clearHashId() {
+        
+        hashId_ = getDefaultInstance().getHashId();
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> ads_ =
         java.util.Collections.emptyList();
-      private void ensureLocationAdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          locationAds_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd>(locationAds_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.LocationAd, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder> locationAdsBuilder_;
-
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> getLocationAdsList() {
-        if (locationAdsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(locationAds_);
-        } else {
-          return locationAdsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public int getLocationAdsCount() {
-        if (locationAdsBuilder_ == null) {
-          return locationAds_.size();
-        } else {
-          return locationAdsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd getLocationAds(int index) {
-        if (locationAdsBuilder_ == null) {
-          return locationAds_.get(index);
-        } else {
-          return locationAdsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder setLocationAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd value) {
-        if (locationAdsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationAdsIsMutable();
-          locationAds_.set(index, value);
-          onChanged();
-        } else {
-          locationAdsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder setLocationAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder builderForValue) {
-        if (locationAdsBuilder_ == null) {
-          ensureLocationAdsIsMutable();
-          locationAds_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          locationAdsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder addLocationAds(com.commutestream.nativeads.protobuf.Csnmessages.LocationAd value) {
-        if (locationAdsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationAdsIsMutable();
-          locationAds_.add(value);
-          onChanged();
-        } else {
-          locationAdsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder addLocationAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd value) {
-        if (locationAdsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationAdsIsMutable();
-          locationAds_.add(index, value);
-          onChanged();
-        } else {
-          locationAdsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder addLocationAds(
-          com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder builderForValue) {
-        if (locationAdsBuilder_ == null) {
-          ensureLocationAdsIsMutable();
-          locationAds_.add(builderForValue.build());
-          onChanged();
-        } else {
-          locationAdsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder addLocationAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder builderForValue) {
-        if (locationAdsBuilder_ == null) {
-          ensureLocationAdsIsMutable();
-          locationAds_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          locationAdsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder addAllLocationAds(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationAd> values) {
-        if (locationAdsBuilder_ == null) {
-          ensureLocationAdsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, locationAds_);
-          onChanged();
-        } else {
-          locationAdsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder clearLocationAds() {
-        if (locationAdsBuilder_ == null) {
-          locationAds_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          locationAdsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public Builder removeLocationAds(int index) {
-        if (locationAdsBuilder_ == null) {
-          ensureLocationAdsIsMutable();
-          locationAds_.remove(index);
-          onChanged();
-        } else {
-          locationAdsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder getLocationAdsBuilder(
-          int index) {
-        return getLocationAdsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder getLocationAdsOrBuilder(
-          int index) {
-        if (locationAdsBuilder_ == null) {
-          return locationAds_.get(index);  } else {
-          return locationAdsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder> 
-           getLocationAdsOrBuilderList() {
-        if (locationAdsBuilder_ != null) {
-          return locationAdsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(locationAds_);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder addLocationAdsBuilder() {
-        return getLocationAdsFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder addLocationAdsBuilder(
-          int index) {
-        return getLocationAdsFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.LocationAd location_ads = 1;</code>
-       */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder> 
-           getLocationAdsBuilderList() {
-        return getLocationAdsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.LocationAd, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder> 
-          getLocationAdsFieldBuilder() {
-        if (locationAdsBuilder_ == null) {
-          locationAdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.LocationAd, com.commutestream.nativeads.protobuf.Csnmessages.LocationAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationAdOrBuilder>(
-                  locationAds_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
-          locationAds_ = null;
-        }
-        return locationAdsBuilder_;
-      }
-
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd> stopAds_ =
-        java.util.Collections.emptyList();
-      private void ensureStopAdsIsMutable() {
+      private void ensureAdsIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          stopAds_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.StopAd>(stopAds_);
+          ads_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>(ads_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.StopAd, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder> stopAdsBuilder_;
+          com.commutestream.nativeads.protobuf.Csnmessages.NativeAd, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder> adsBuilder_;
 
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd> getStopAdsList() {
-        if (stopAdsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(stopAds_);
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAdsList() {
+        if (adsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ads_);
         } else {
-          return stopAdsBuilder_.getMessageList();
+          return adsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public int getStopAdsCount() {
-        if (stopAdsBuilder_ == null) {
-          return stopAds_.size();
+      public int getAdsCount() {
+        if (adsBuilder_ == null) {
+          return ads_.size();
         } else {
-          return stopAdsBuilder_.getCount();
+          return adsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd getStopAds(int index) {
-        if (stopAdsBuilder_ == null) {
-          return stopAds_.get(index);
+      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAds(int index) {
+        if (adsBuilder_ == null) {
+          return ads_.get(index);
         } else {
-          return stopAdsBuilder_.getMessage(index);
+          return adsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder setStopAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.StopAd value) {
-        if (stopAdsBuilder_ == null) {
+      public Builder setAds(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd value) {
+        if (adsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopAdsIsMutable();
-          stopAds_.set(index, value);
+          ensureAdsIsMutable();
+          ads_.set(index, value);
           onChanged();
         } else {
-          stopAdsBuilder_.setMessage(index, value);
+          adsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder setStopAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder builderForValue) {
-        if (stopAdsBuilder_ == null) {
-          ensureStopAdsIsMutable();
-          stopAds_.set(index, builderForValue.build());
+      public Builder setAds(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder builderForValue) {
+        if (adsBuilder_ == null) {
+          ensureAdsIsMutable();
+          ads_.set(index, builderForValue.build());
           onChanged();
         } else {
-          stopAdsBuilder_.setMessage(index, builderForValue.build());
+          adsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder addStopAds(com.commutestream.nativeads.protobuf.Csnmessages.StopAd value) {
-        if (stopAdsBuilder_ == null) {
+      public Builder addAds(com.commutestream.nativeads.protobuf.Csnmessages.NativeAd value) {
+        if (adsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopAdsIsMutable();
-          stopAds_.add(value);
+          ensureAdsIsMutable();
+          ads_.add(value);
           onChanged();
         } else {
-          stopAdsBuilder_.addMessage(value);
+          adsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder addStopAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.StopAd value) {
-        if (stopAdsBuilder_ == null) {
+      public Builder addAds(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd value) {
+        if (adsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureStopAdsIsMutable();
-          stopAds_.add(index, value);
+          ensureAdsIsMutable();
+          ads_.add(index, value);
           onChanged();
         } else {
-          stopAdsBuilder_.addMessage(index, value);
+          adsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder addStopAds(
-          com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder builderForValue) {
-        if (stopAdsBuilder_ == null) {
-          ensureStopAdsIsMutable();
-          stopAds_.add(builderForValue.build());
+      public Builder addAds(
+          com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder builderForValue) {
+        if (adsBuilder_ == null) {
+          ensureAdsIsMutable();
+          ads_.add(builderForValue.build());
           onChanged();
         } else {
-          stopAdsBuilder_.addMessage(builderForValue.build());
+          adsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder addStopAds(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder builderForValue) {
-        if (stopAdsBuilder_ == null) {
-          ensureStopAdsIsMutable();
-          stopAds_.add(index, builderForValue.build());
+      public Builder addAds(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder builderForValue) {
+        if (adsBuilder_ == null) {
+          ensureAdsIsMutable();
+          ads_.add(index, builderForValue.build());
           onChanged();
         } else {
-          stopAdsBuilder_.addMessage(index, builderForValue.build());
+          adsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder addAllStopAds(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopAd> values) {
-        if (stopAdsBuilder_ == null) {
-          ensureStopAdsIsMutable();
+      public Builder addAllAds(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> values) {
+        if (adsBuilder_ == null) {
+          ensureAdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, stopAds_);
+              values, ads_);
           onChanged();
         } else {
-          stopAdsBuilder_.addAllMessages(values);
+          adsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder clearStopAds() {
-        if (stopAdsBuilder_ == null) {
-          stopAds_ = java.util.Collections.emptyList();
+      public Builder clearAds() {
+        if (adsBuilder_ == null) {
+          ads_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          stopAdsBuilder_.clear();
+          adsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public Builder removeStopAds(int index) {
-        if (stopAdsBuilder_ == null) {
-          ensureStopAdsIsMutable();
-          stopAds_.remove(index);
+      public Builder removeAds(int index) {
+        if (adsBuilder_ == null) {
+          ensureAdsIsMutable();
+          ads_.remove(index);
           onChanged();
         } else {
-          stopAdsBuilder_.remove(index);
+          adsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder getStopAdsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder getAdsBuilder(
           int index) {
-        return getStopAdsFieldBuilder().getBuilder(index);
+        return getAdsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder getStopAdsOrBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder getAdsOrBuilder(
           int index) {
-        if (stopAdsBuilder_ == null) {
-          return stopAds_.get(index);  } else {
-          return stopAdsBuilder_.getMessageOrBuilder(index);
+        if (adsBuilder_ == null) {
+          return ads_.get(index);  } else {
+          return adsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder> 
-           getStopAdsOrBuilderList() {
-        if (stopAdsBuilder_ != null) {
-          return stopAdsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder> 
+           getAdsOrBuilderList() {
+        if (adsBuilder_ != null) {
+          return adsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(stopAds_);
+          return java.util.Collections.unmodifiableList(ads_);
         }
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder addStopAdsBuilder() {
-        return getStopAdsFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.StopAd.getDefaultInstance());
+      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder addAdsBuilder() {
+        return getAdsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder addStopAdsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder addAdsBuilder(
           int index) {
-        return getStopAdsFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.getDefaultInstance());
+        return getAdsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.StopAd stop_ads = 2;</code>
+       * <code>repeated .google.protobuf.NativeAd ads = 2;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder> 
-           getStopAdsBuilderList() {
-        return getStopAdsFieldBuilder().getBuilderList();
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder> 
+           getAdsBuilderList() {
+        return getAdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.StopAd, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder> 
-          getStopAdsFieldBuilder() {
-        if (stopAdsBuilder_ == null) {
-          stopAdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.StopAd, com.commutestream.nativeads.protobuf.Csnmessages.StopAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.StopAdOrBuilder>(
-                  stopAds_,
+          com.commutestream.nativeads.protobuf.Csnmessages.NativeAd, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder> 
+          getAdsFieldBuilder() {
+        if (adsBuilder_ == null) {
+          adsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.NativeAd, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder>(
+                  ads_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
-          stopAds_ = null;
+          ads_ = null;
         }
-        return stopAdsBuilder_;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> ads_;
-      private com.google.protobuf.MapField<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-      internalGetAds() {
-        if (ads_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              AdsDefaultEntryHolder.defaultEntry);
-        }
-        return ads_;
-      }
-      private com.google.protobuf.MapField<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-      internalGetMutableAds() {
-        onChanged();;
-        if (ads_ == null) {
-          ads_ = com.google.protobuf.MapField.newMapField(
-              AdsDefaultEntryHolder.defaultEntry);
-        }
-        if (!ads_.isMutable()) {
-          ads_ = ads_.copy();
-        }
-        return ads_;
-      }
-
-      public int getAdsCount() {
-        return internalGetAds().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public boolean containsAds(
-          long key) {
-        
-        return internalGetAds().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getAdsMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAds() {
-        return getAdsMap();
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> getAdsMap() {
-        return internalGetAds().getMap();
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrDefault(
-          long key,
-          com.commutestream.nativeads.protobuf.Csnmessages.NativeAd defaultValue) {
-        
-        java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> map =
-            internalGetAds().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getAdsOrThrow(
-          long key) {
-        
-        java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> map =
-            internalGetAds().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearAds() {
-        internalGetMutableAds().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public Builder removeAds(
-          long key) {
-        
-        internalGetMutableAds().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>
-      getMutableAds() {
-        return internalGetMutableAds().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-      public Builder putAds(
-          long key,
-          com.commutestream.nativeads.protobuf.Csnmessages.NativeAd value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableAds().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint64, .google.protobuf.NativeAd&gt; ads = 3;</code>
-       */
-
-      public Builder putAllAds(
-          java.util.Map<java.lang.Long, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> values) {
-        internalGetMutableAds().getMutableMap()
-            .putAll(values);
-        return this;
+        return adsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16478,6 +16794,900 @@ public final class Csnmessages {
 
   }
 
+  public interface AdResponsesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdResponses)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string server_id = 1;</code>
+     */
+    java.lang.String getServerId();
+    /**
+     * <code>string server_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getServerIdBytes();
+
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> 
+        getAdResponsesList();
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdResponse getAdResponses(int index);
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    int getAdResponsesCount();
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder> 
+        getAdResponsesOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder getAdResponsesOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * AdResponses returns a mapping of ad context hashes to a set of ads.
+   * </pre>
+   *
+   * Protobuf type {@code google.protobuf.AdResponses}
+   */
+  public  static final class AdResponses extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdResponses)
+      AdResponsesOrBuilder {
+    // Use AdResponses.newBuilder() to construct.
+    private AdResponses(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdResponses() {
+      serverId_ = "";
+      adResponses_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdResponses(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serverId_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                adResponses_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              adResponses_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          adResponses_ = java.util.Collections.unmodifiableList(adResponses_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.class, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SERVER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object serverId_;
+    /**
+     * <code>string server_id = 1;</code>
+     */
+    public java.lang.String getServerId() {
+      java.lang.Object ref = serverId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string server_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServerIdBytes() {
+      java.lang.Object ref = serverId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serverId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AD_RESPONSES_FIELD_NUMBER = 2;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> adResponses_;
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> getAdResponsesList() {
+      return adResponses_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder> 
+        getAdResponsesOrBuilderList() {
+      return adResponses_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    public int getAdResponsesCount() {
+      return adResponses_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse getAdResponses(int index) {
+      return adResponses_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder getAdResponsesOrBuilder(
+        int index) {
+      return adResponses_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getServerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serverId_);
+      }
+      for (int i = 0; i < adResponses_.size(); i++) {
+        output.writeMessage(2, adResponses_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getServerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serverId_);
+      }
+      for (int i = 0; i < adResponses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, adResponses_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdResponses)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdResponses other = (com.commutestream.nativeads.protobuf.Csnmessages.AdResponses) obj;
+
+      boolean result = true;
+      result = result && getServerId()
+          .equals(other.getServerId());
+      result = result && getAdResponsesList()
+          .equals(other.getAdResponsesList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getServerId().hashCode();
+      if (getAdResponsesCount() > 0) {
+        hash = (37 * hash) + AD_RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getAdResponsesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AdResponses returns a mapping of ad context hashes to a set of ads.
+     * </pre>
+     *
+     * Protobuf type {@code google.protobuf.AdResponses}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdResponses)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.class, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAdResponsesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        serverId_ = "";
+
+        if (adResponsesBuilder_ == null) {
+          adResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          adResponsesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdResponses result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdResponses result = new com.commutestream.nativeads.protobuf.Csnmessages.AdResponses(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.serverId_ = serverId_;
+        if (adResponsesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            adResponses_ = java.util.Collections.unmodifiableList(adResponses_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.adResponses_ = adResponses_;
+        } else {
+          result.adResponses_ = adResponsesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdResponses) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdResponses)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance()) return this;
+        if (!other.getServerId().isEmpty()) {
+          serverId_ = other.serverId_;
+          onChanged();
+        }
+        if (adResponsesBuilder_ == null) {
+          if (!other.adResponses_.isEmpty()) {
+            if (adResponses_.isEmpty()) {
+              adResponses_ = other.adResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureAdResponsesIsMutable();
+              adResponses_.addAll(other.adResponses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.adResponses_.isEmpty()) {
+            if (adResponsesBuilder_.isEmpty()) {
+              adResponsesBuilder_.dispose();
+              adResponsesBuilder_ = null;
+              adResponses_ = other.adResponses_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              adResponsesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAdResponsesFieldBuilder() : null;
+            } else {
+              adResponsesBuilder_.addAllMessages(other.adResponses_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdResponses parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdResponses) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object serverId_ = "";
+      /**
+       * <code>string server_id = 1;</code>
+       */
+      public java.lang.String getServerId() {
+        java.lang.Object ref = serverId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serverId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string server_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServerIdBytes() {
+        java.lang.Object ref = serverId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serverId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string server_id = 1;</code>
+       */
+      public Builder setServerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        serverId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string server_id = 1;</code>
+       */
+      public Builder clearServerId() {
+        
+        serverId_ = getDefaultInstance().getServerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string server_id = 1;</code>
+       */
+      public Builder setServerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        serverId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> adResponses_ =
+        java.util.Collections.emptyList();
+      private void ensureAdResponsesIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          adResponses_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse>(adResponses_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponse, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder> adResponsesBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> getAdResponsesList() {
+        if (adResponsesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(adResponses_);
+        } else {
+          return adResponsesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public int getAdResponsesCount() {
+        if (adResponsesBuilder_ == null) {
+          return adResponses_.size();
+        } else {
+          return adResponsesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse getAdResponses(int index) {
+        if (adResponsesBuilder_ == null) {
+          return adResponses_.get(index);
+        } else {
+          return adResponsesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder setAdResponses(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse value) {
+        if (adResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdResponsesIsMutable();
+          adResponses_.set(index, value);
+          onChanged();
+        } else {
+          adResponsesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder setAdResponses(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder builderForValue) {
+        if (adResponsesBuilder_ == null) {
+          ensureAdResponsesIsMutable();
+          adResponses_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          adResponsesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder addAdResponses(com.commutestream.nativeads.protobuf.Csnmessages.AdResponse value) {
+        if (adResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdResponsesIsMutable();
+          adResponses_.add(value);
+          onChanged();
+        } else {
+          adResponsesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder addAdResponses(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse value) {
+        if (adResponsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdResponsesIsMutable();
+          adResponses_.add(index, value);
+          onChanged();
+        } else {
+          adResponsesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder addAdResponses(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder builderForValue) {
+        if (adResponsesBuilder_ == null) {
+          ensureAdResponsesIsMutable();
+          adResponses_.add(builderForValue.build());
+          onChanged();
+        } else {
+          adResponsesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder addAdResponses(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder builderForValue) {
+        if (adResponsesBuilder_ == null) {
+          ensureAdResponsesIsMutable();
+          adResponses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          adResponsesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder addAllAdResponses(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> values) {
+        if (adResponsesBuilder_ == null) {
+          ensureAdResponsesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, adResponses_);
+          onChanged();
+        } else {
+          adResponsesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder clearAdResponses() {
+        if (adResponsesBuilder_ == null) {
+          adResponses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          adResponsesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public Builder removeAdResponses(int index) {
+        if (adResponsesBuilder_ == null) {
+          ensureAdResponsesIsMutable();
+          adResponses_.remove(index);
+          onChanged();
+        } else {
+          adResponsesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder getAdResponsesBuilder(
+          int index) {
+        return getAdResponsesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder getAdResponsesOrBuilder(
+          int index) {
+        if (adResponsesBuilder_ == null) {
+          return adResponses_.get(index);  } else {
+          return adResponsesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder> 
+           getAdResponsesOrBuilderList() {
+        if (adResponsesBuilder_ != null) {
+          return adResponsesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(adResponses_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder addAdResponsesBuilder() {
+        return getAdResponsesFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder addAdResponsesBuilder(
+          int index) {
+        return getAdResponsesFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdResponse ad_responses = 2;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder> 
+           getAdResponsesBuilderList() {
+        return getAdResponsesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponse, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder> 
+          getAdResponsesFieldBuilder() {
+        if (adResponsesBuilder_ == null) {
+          adResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponse, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder>(
+                  adResponses_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          adResponses_ = null;
+        }
+        return adResponsesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdResponses)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdResponses)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdResponses DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdResponses();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdResponses>
+        PARSER = new com.google.protobuf.AbstractParser<AdResponses>() {
+      public AdResponses parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdResponses(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdResponses> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdResponses> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DeviceIDOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.protobuf.DeviceID)
       com.google.protobuf.MessageOrBuilder {
@@ -16492,14 +17702,9 @@ public final class Csnmessages {
     com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type getDeviceIdType();
 
     /**
-     * <code>string device_id = 2;</code>
+     * <code>bytes device_id = 2;</code>
      */
-    java.lang.String getDeviceId();
-    /**
-     * <code>string device_id = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeviceIdBytes();
+    com.google.protobuf.ByteString getDeviceId();
   }
   /**
    * Protobuf type {@code google.protobuf.DeviceID}
@@ -16514,7 +17719,7 @@ public final class Csnmessages {
     }
     private DeviceID() {
       deviceIdType_ = 0;
-      deviceId_ = "";
+      deviceId_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -16549,9 +17754,8 @@ public final class Csnmessages {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              deviceId_ = s;
+              deviceId_ = input.readBytes();
               break;
             }
           }
@@ -16692,37 +17896,12 @@ public final class Csnmessages {
     }
 
     public static final int DEVICE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object deviceId_;
+    private com.google.protobuf.ByteString deviceId_;
     /**
-     * <code>string device_id = 2;</code>
+     * <code>bytes device_id = 2;</code>
      */
-    public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string device_id = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getDeviceId() {
+      return deviceId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16740,8 +17919,8 @@ public final class Csnmessages {
       if (deviceIdType_ != com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.IDFA.getNumber()) {
         output.writeEnum(1, deviceIdType_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
+      if (!deviceId_.isEmpty()) {
+        output.writeBytes(2, deviceId_);
       }
     }
 
@@ -16754,8 +17933,9 @@ public final class Csnmessages {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, deviceIdType_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
+      if (!deviceId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, deviceId_);
       }
       memoizedSize = size;
       return size;
@@ -16795,6 +17975,17 @@ public final class Csnmessages {
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.DeviceID parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.DeviceID parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.DeviceID parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16910,7 +18101,7 @@ public final class Csnmessages {
         super.clear();
         deviceIdType_ = 0;
 
-        deviceId_ = "";
+        deviceId_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -16980,9 +18171,8 @@ public final class Csnmessages {
         if (other.deviceIdType_ != 0) {
           setDeviceIdTypeValue(other.getDeviceIdTypeValue());
         }
-        if (!other.getDeviceId().isEmpty()) {
-          deviceId_ = other.deviceId_;
-          onChanged();
+        if (other.getDeviceId() != com.google.protobuf.ByteString.EMPTY) {
+          setDeviceId(other.getDeviceId());
         }
         onChanged();
         return this;
@@ -17054,43 +18244,17 @@ public final class Csnmessages {
         return this;
       }
 
-      private java.lang.Object deviceId_ = "";
+      private com.google.protobuf.ByteString deviceId_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>string device_id = 2;</code>
+       * <code>bytes device_id = 2;</code>
        */
-      public java.lang.String getDeviceId() {
-        java.lang.Object ref = deviceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ByteString getDeviceId() {
+        return deviceId_;
       }
       /**
-       * <code>string device_id = 2;</code>
+       * <code>bytes device_id = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string device_id = 2;</code>
-       */
-      public Builder setDeviceId(
-          java.lang.String value) {
+      public Builder setDeviceId(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -17100,25 +18264,11 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>string device_id = 2;</code>
+       * <code>bytes device_id = 2;</code>
        */
       public Builder clearDeviceId() {
         
         deviceId_ = getDefaultInstance().getDeviceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string device_id = 2;</code>
-       */
-      public Builder setDeviceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceId_ = value;
         onChanged();
         return this;
       }
@@ -17171,1699 +18321,37 @@ public final class Csnmessages {
 
   }
 
-  public interface SimpleStatOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.SimpleStat)
+  public interface ComponentInteractionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.ComponentInteraction)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>double min = 1;</code>
+     * <code>uint64 device_time = 1;</code>
      */
-    double getMin();
+    long getDeviceTime();
 
     /**
-     * <code>double max = 2;</code>
-     */
-    double getMax();
-
-    /**
-     * <code>double mean = 3;</code>
-     */
-    double getMean();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.SimpleStat}
-   */
-  public  static final class SimpleStat extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.SimpleStat)
-      SimpleStatOrBuilder {
-    // Use SimpleStat.newBuilder() to construct.
-    private SimpleStat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SimpleStat() {
-      min_ = 0D;
-      max_ = 0D;
-      mean_ = 0D;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private SimpleStat(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 9: {
-
-              min_ = input.readDouble();
-              break;
-            }
-            case 17: {
-
-              max_ = input.readDouble();
-              break;
-            }
-            case 25: {
-
-              mean_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SimpleStat_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SimpleStat_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.class, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder.class);
-    }
-
-    public static final int MIN_FIELD_NUMBER = 1;
-    private double min_;
-    /**
-     * <code>double min = 1;</code>
-     */
-    public double getMin() {
-      return min_;
-    }
-
-    public static final int MAX_FIELD_NUMBER = 2;
-    private double max_;
-    /**
-     * <code>double max = 2;</code>
-     */
-    public double getMax() {
-      return max_;
-    }
-
-    public static final int MEAN_FIELD_NUMBER = 3;
-    private double mean_;
-    /**
-     * <code>double mean = 3;</code>
-     */
-    public double getMean() {
-      return mean_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (min_ != 0D) {
-        output.writeDouble(1, min_);
-      }
-      if (max_ != 0D) {
-        output.writeDouble(2, max_);
-      }
-      if (mean_ != 0D) {
-        output.writeDouble(3, mean_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (min_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, min_);
-      }
-      if (max_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, max_);
-      }
-      if (mean_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, mean_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat other = (com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat) obj;
-
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getMin())
-          == java.lang.Double.doubleToLongBits(
-              other.getMin()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getMax())
-          == java.lang.Double.doubleToLongBits(
-              other.getMax()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getMean())
-          == java.lang.Double.doubleToLongBits(
-              other.getMean()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MIN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMin()));
-      hash = (37 * hash) + MAX_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMax()));
-      hash = (37 * hash) + MEAN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMean()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.SimpleStat}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.SimpleStat)
-        com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SimpleStat_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SimpleStat_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.class, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        min_ = 0D;
-
-        max_ = 0D;
-
-        mean_ = 0D;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SimpleStat_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat result = new com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat(this);
-        result.min_ = min_;
-        result.max_ = max_;
-        result.mean_ = mean_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance()) return this;
-        if (other.getMin() != 0D) {
-          setMin(other.getMin());
-        }
-        if (other.getMax() != 0D) {
-          setMax(other.getMax());
-        }
-        if (other.getMean() != 0D) {
-          setMean(other.getMean());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private double min_ ;
-      /**
-       * <code>double min = 1;</code>
-       */
-      public double getMin() {
-        return min_;
-      }
-      /**
-       * <code>double min = 1;</code>
-       */
-      public Builder setMin(double value) {
-        
-        min_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double min = 1;</code>
-       */
-      public Builder clearMin() {
-        
-        min_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double max_ ;
-      /**
-       * <code>double max = 2;</code>
-       */
-      public double getMax() {
-        return max_;
-      }
-      /**
-       * <code>double max = 2;</code>
-       */
-      public Builder setMax(double value) {
-        
-        max_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double max = 2;</code>
-       */
-      public Builder clearMax() {
-        
-        max_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double mean_ ;
-      /**
-       * <code>double mean = 3;</code>
-       */
-      public double getMean() {
-        return mean_;
-      }
-      /**
-       * <code>double mean = 3;</code>
-       */
-      public Builder setMean(double value) {
-        
-        mean_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double mean = 3;</code>
-       */
-      public Builder clearMean() {
-        
-        mean_ = 0D;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.SimpleStat)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.SimpleStat)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SimpleStat>
-        PARSER = new com.google.protobuf.AbstractParser<SimpleStat>() {
-      public SimpleStat parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SimpleStat(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SimpleStat> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SimpleStat> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AdVisibilityOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.AdVisibility)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 request_id = 1;</code>
-     */
-    long getRequestId();
-
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    long getAdId();
-
-    /**
-     * <code>uint64 component_id = 3;</code>
-     */
-    long getComponentId();
-
-    /**
-     * <code>uint64 epoch_offset = 4;</code>
-     */
-    long getEpochOffset();
-
-    /**
-     * <code>uint64 duration = 5;</code>
-     */
-    long getDuration();
-
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    boolean hasComponentVisibility();
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getComponentVisibility();
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getComponentVisibilityOrBuilder();
-
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    boolean hasScreenVisibility();
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getScreenVisibility();
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getScreenVisibilityOrBuilder();
-  }
-  /**
-   * Protobuf type {@code google.protobuf.AdVisibility}
-   */
-  public  static final class AdVisibility extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.AdVisibility)
-      AdVisibilityOrBuilder {
-    // Use AdVisibility.newBuilder() to construct.
-    private AdVisibility(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AdVisibility() {
-      requestId_ = 0L;
-      adId_ = 0L;
-      componentId_ = 0L;
-      epochOffset_ = 0L;
-      duration_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private AdVisibility(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              requestId_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              adId_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              componentId_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              epochOffset_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              duration_ = input.readUInt64();
-              break;
-            }
-            case 50: {
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder subBuilder = null;
-              if (componentVisibility_ != null) {
-                subBuilder = componentVisibility_.toBuilder();
-              }
-              componentVisibility_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(componentVisibility_);
-                componentVisibility_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder subBuilder = null;
-              if (screenVisibility_ != null) {
-                subBuilder = screenVisibility_.toBuilder();
-              }
-              screenVisibility_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(screenVisibility_);
-                screenVisibility_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdVisibility_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdVisibility_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.class, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder.class);
-    }
-
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private long requestId_;
-    /**
-     * <code>uint64 request_id = 1;</code>
-     */
-    public long getRequestId() {
-      return requestId_;
-    }
-
-    public static final int AD_ID_FIELD_NUMBER = 2;
-    private long adId_;
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    public long getAdId() {
-      return adId_;
-    }
-
-    public static final int COMPONENT_ID_FIELD_NUMBER = 3;
-    private long componentId_;
-    /**
-     * <code>uint64 component_id = 3;</code>
-     */
-    public long getComponentId() {
-      return componentId_;
-    }
-
-    public static final int EPOCH_OFFSET_FIELD_NUMBER = 4;
-    private long epochOffset_;
-    /**
-     * <code>uint64 epoch_offset = 4;</code>
-     */
-    public long getEpochOffset() {
-      return epochOffset_;
-    }
-
-    public static final int DURATION_FIELD_NUMBER = 5;
-    private long duration_;
-    /**
-     * <code>uint64 duration = 5;</code>
-     */
-    public long getDuration() {
-      return duration_;
-    }
-
-    public static final int COMPONENT_VISIBILITY_FIELD_NUMBER = 6;
-    private com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat componentVisibility_;
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    public boolean hasComponentVisibility() {
-      return componentVisibility_ != null;
-    }
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getComponentVisibility() {
-      return componentVisibility_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : componentVisibility_;
-    }
-    /**
-     * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getComponentVisibilityOrBuilder() {
-      return getComponentVisibility();
-    }
-
-    public static final int SCREEN_VISIBILITY_FIELD_NUMBER = 7;
-    private com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat screenVisibility_;
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    public boolean hasScreenVisibility() {
-      return screenVisibility_ != null;
-    }
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getScreenVisibility() {
-      return screenVisibility_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : screenVisibility_;
-    }
-    /**
-     * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getScreenVisibilityOrBuilder() {
-      return getScreenVisibility();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (requestId_ != 0L) {
-        output.writeUInt64(1, requestId_);
-      }
-      if (adId_ != 0L) {
-        output.writeUInt64(2, adId_);
-      }
-      if (componentId_ != 0L) {
-        output.writeUInt64(3, componentId_);
-      }
-      if (epochOffset_ != 0L) {
-        output.writeUInt64(4, epochOffset_);
-      }
-      if (duration_ != 0L) {
-        output.writeUInt64(5, duration_);
-      }
-      if (componentVisibility_ != null) {
-        output.writeMessage(6, getComponentVisibility());
-      }
-      if (screenVisibility_ != null) {
-        output.writeMessage(7, getScreenVisibility());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (requestId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, requestId_);
-      }
-      if (adId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, adId_);
-      }
-      if (componentId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, componentId_);
-      }
-      if (epochOffset_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, epochOffset_);
-      }
-      if (duration_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, duration_);
-      }
-      if (componentVisibility_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getComponentVisibility());
-      }
-      if (screenVisibility_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getScreenVisibility());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility)) {
-        return super.equals(obj);
-      }
-      com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility other = (com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility) obj;
-
-      boolean result = true;
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && (getAdId()
-          == other.getAdId());
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && (getEpochOffset()
-          == other.getEpochOffset());
-      result = result && (getDuration()
-          == other.getDuration());
-      result = result && (hasComponentVisibility() == other.hasComponentVisibility());
-      if (hasComponentVisibility()) {
-        result = result && getComponentVisibility()
-            .equals(other.getComponentVisibility());
-      }
-      result = result && (hasScreenVisibility() == other.hasScreenVisibility());
-      if (hasScreenVisibility()) {
-        result = result && getScreenVisibility()
-            .equals(other.getScreenVisibility());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRequestId());
-      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAdId());
-      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getComponentId());
-      hash = (37 * hash) + EPOCH_OFFSET_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEpochOffset());
-      hash = (37 * hash) + DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDuration());
-      if (hasComponentVisibility()) {
-        hash = (37 * hash) + COMPONENT_VISIBILITY_FIELD_NUMBER;
-        hash = (53 * hash) + getComponentVisibility().hashCode();
-      }
-      if (hasScreenVisibility()) {
-        hash = (37 * hash) + SCREEN_VISIBILITY_FIELD_NUMBER;
-        hash = (53 * hash) + getScreenVisibility().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.protobuf.AdVisibility}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.AdVisibility)
-        com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdVisibility_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdVisibility_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.class, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder.class);
-      }
-
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        requestId_ = 0L;
-
-        adId_ = 0L;
-
-        componentId_ = 0L;
-
-        epochOffset_ = 0L;
-
-        duration_ = 0L;
-
-        if (componentVisibilityBuilder_ == null) {
-          componentVisibility_ = null;
-        } else {
-          componentVisibility_ = null;
-          componentVisibilityBuilder_ = null;
-        }
-        if (screenVisibilityBuilder_ == null) {
-          screenVisibility_ = null;
-        } else {
-          screenVisibility_ = null;
-          screenVisibilityBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdVisibility_descriptor;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.getDefaultInstance();
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility result = new com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility(this);
-        result.requestId_ = requestId_;
-        result.adId_ = adId_;
-        result.componentId_ = componentId_;
-        result.epochOffset_ = epochOffset_;
-        result.duration_ = duration_;
-        if (componentVisibilityBuilder_ == null) {
-          result.componentVisibility_ = componentVisibility_;
-        } else {
-          result.componentVisibility_ = componentVisibilityBuilder_.build();
-        }
-        if (screenVisibilityBuilder_ == null) {
-          result.screenVisibility_ = screenVisibility_;
-        } else {
-          result.screenVisibility_ = screenVisibilityBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.getDefaultInstance()) return this;
-        if (other.getRequestId() != 0L) {
-          setRequestId(other.getRequestId());
-        }
-        if (other.getAdId() != 0L) {
-          setAdId(other.getAdId());
-        }
-        if (other.getComponentId() != 0L) {
-          setComponentId(other.getComponentId());
-        }
-        if (other.getEpochOffset() != 0L) {
-          setEpochOffset(other.getEpochOffset());
-        }
-        if (other.getDuration() != 0L) {
-          setDuration(other.getDuration());
-        }
-        if (other.hasComponentVisibility()) {
-          mergeComponentVisibility(other.getComponentVisibility());
-        }
-        if (other.hasScreenVisibility()) {
-          mergeScreenVisibility(other.getScreenVisibility());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long requestId_ ;
-      /**
-       * <code>uint64 request_id = 1;</code>
-       */
-      public long getRequestId() {
-        return requestId_;
-      }
-      /**
-       * <code>uint64 request_id = 1;</code>
-       */
-      public Builder setRequestId(long value) {
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 request_id = 1;</code>
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long adId_ ;
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public long getAdId() {
-        return adId_;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder setAdId(long value) {
-        
-        adId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder clearAdId() {
-        
-        adId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long componentId_ ;
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public long getComponentId() {
-        return componentId_;
-      }
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public Builder setComponentId(long value) {
-        
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public Builder clearComponentId() {
-        
-        componentId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long epochOffset_ ;
-      /**
-       * <code>uint64 epoch_offset = 4;</code>
-       */
-      public long getEpochOffset() {
-        return epochOffset_;
-      }
-      /**
-       * <code>uint64 epoch_offset = 4;</code>
-       */
-      public Builder setEpochOffset(long value) {
-        
-        epochOffset_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 epoch_offset = 4;</code>
-       */
-      public Builder clearEpochOffset() {
-        
-        epochOffset_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long duration_ ;
-      /**
-       * <code>uint64 duration = 5;</code>
-       */
-      public long getDuration() {
-        return duration_;
-      }
-      /**
-       * <code>uint64 duration = 5;</code>
-       */
-      public Builder setDuration(long value) {
-        
-        duration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 duration = 5;</code>
-       */
-      public Builder clearDuration() {
-        
-        duration_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat componentVisibility_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder> componentVisibilityBuilder_;
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public boolean hasComponentVisibility() {
-        return componentVisibilityBuilder_ != null || componentVisibility_ != null;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getComponentVisibility() {
-        if (componentVisibilityBuilder_ == null) {
-          return componentVisibility_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : componentVisibility_;
-        } else {
-          return componentVisibilityBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public Builder setComponentVisibility(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat value) {
-        if (componentVisibilityBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          componentVisibility_ = value;
-          onChanged();
-        } else {
-          componentVisibilityBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public Builder setComponentVisibility(
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder builderForValue) {
-        if (componentVisibilityBuilder_ == null) {
-          componentVisibility_ = builderForValue.build();
-          onChanged();
-        } else {
-          componentVisibilityBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public Builder mergeComponentVisibility(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat value) {
-        if (componentVisibilityBuilder_ == null) {
-          if (componentVisibility_ != null) {
-            componentVisibility_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.newBuilder(componentVisibility_).mergeFrom(value).buildPartial();
-          } else {
-            componentVisibility_ = value;
-          }
-          onChanged();
-        } else {
-          componentVisibilityBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public Builder clearComponentVisibility() {
-        if (componentVisibilityBuilder_ == null) {
-          componentVisibility_ = null;
-          onChanged();
-        } else {
-          componentVisibility_ = null;
-          componentVisibilityBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder getComponentVisibilityBuilder() {
-        
-        onChanged();
-        return getComponentVisibilityFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getComponentVisibilityOrBuilder() {
-        if (componentVisibilityBuilder_ != null) {
-          return componentVisibilityBuilder_.getMessageOrBuilder();
-        } else {
-          return componentVisibility_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : componentVisibility_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat component_visibility = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder> 
-          getComponentVisibilityFieldBuilder() {
-        if (componentVisibilityBuilder_ == null) {
-          componentVisibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder>(
-                  getComponentVisibility(),
-                  getParentForChildren(),
-                  isClean());
-          componentVisibility_ = null;
-        }
-        return componentVisibilityBuilder_;
-      }
-
-      private com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat screenVisibility_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder> screenVisibilityBuilder_;
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public boolean hasScreenVisibility() {
-        return screenVisibilityBuilder_ != null || screenVisibility_ != null;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat getScreenVisibility() {
-        if (screenVisibilityBuilder_ == null) {
-          return screenVisibility_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : screenVisibility_;
-        } else {
-          return screenVisibilityBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public Builder setScreenVisibility(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat value) {
-        if (screenVisibilityBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          screenVisibility_ = value;
-          onChanged();
-        } else {
-          screenVisibilityBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public Builder setScreenVisibility(
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder builderForValue) {
-        if (screenVisibilityBuilder_ == null) {
-          screenVisibility_ = builderForValue.build();
-          onChanged();
-        } else {
-          screenVisibilityBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public Builder mergeScreenVisibility(com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat value) {
-        if (screenVisibilityBuilder_ == null) {
-          if (screenVisibility_ != null) {
-            screenVisibility_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.newBuilder(screenVisibility_).mergeFrom(value).buildPartial();
-          } else {
-            screenVisibility_ = value;
-          }
-          onChanged();
-        } else {
-          screenVisibilityBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public Builder clearScreenVisibility() {
-        if (screenVisibilityBuilder_ == null) {
-          screenVisibility_ = null;
-          onChanged();
-        } else {
-          screenVisibility_ = null;
-          screenVisibilityBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder getScreenVisibilityBuilder() {
-        
-        onChanged();
-        return getScreenVisibilityFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder getScreenVisibilityOrBuilder() {
-        if (screenVisibilityBuilder_ != null) {
-          return screenVisibilityBuilder_.getMessageOrBuilder();
-        } else {
-          return screenVisibility_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.getDefaultInstance() : screenVisibility_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.SimpleStat screen_visibility = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder> 
-          getScreenVisibilityFieldBuilder() {
-        if (screenVisibilityBuilder_ == null) {
-          screenVisibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStat.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SimpleStatOrBuilder>(
-                  getScreenVisibility(),
-                  getParentForChildren(),
-                  isClean());
-          screenVisibility_ = null;
-        }
-        return screenVisibilityBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.protobuf.AdVisibility)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.protobuf.AdVisibility)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility();
-    }
-
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AdVisibility>
-        PARSER = new com.google.protobuf.AbstractParser<AdVisibility>() {
-      public AdVisibility parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AdVisibility(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AdVisibility> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AdVisibility> getParserForType() {
-      return PARSER;
-    }
-
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AdInteractionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.protobuf.AdInteraction)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 request_id = 1;</code>
-     */
-    long getRequestId();
-
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    long getAdId();
-
-    /**
-     * <code>uint64 component_id = 3;</code>
-     */
-    long getComponentId();
-
-    /**
-     * <code>uint64 duration = 4;</code>
-     */
-    long getDuration();
-
-    /**
-     * <code>uint64 epoch_offset = 5;</code>
-     */
-    long getEpochOffset();
-
-    /**
-     * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+     * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
      */
     int getKindValue();
     /**
-     * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+     * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind getKind();
+    com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind getKind();
   }
   /**
-   * Protobuf type {@code google.protobuf.AdInteraction}
+   * Protobuf type {@code google.protobuf.ComponentInteraction}
    */
-  public  static final class AdInteraction extends
+  public  static final class ComponentInteraction extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.protobuf.AdInteraction)
-      AdInteractionOrBuilder {
-    // Use AdInteraction.newBuilder() to construct.
-    private AdInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:google.protobuf.ComponentInteraction)
+      ComponentInteractionOrBuilder {
+    // Use ComponentInteraction.newBuilder() to construct.
+    private ComponentInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AdInteraction() {
-      requestId_ = 0L;
-      adId_ = 0L;
-      componentId_ = 0L;
-      duration_ = 0L;
-      epochOffset_ = 0L;
+    private ComponentInteraction() {
+      deviceTime_ = 0L;
       kind_ = 0;
     }
 
@@ -18872,7 +18360,7 @@ public final class Csnmessages {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private AdInteraction(
+    private ComponentInteraction(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -18894,30 +18382,10 @@ public final class Csnmessages {
             }
             case 8: {
 
-              requestId_ = input.readUInt64();
+              deviceTime_ = input.readUInt64();
               break;
             }
             case 16: {
-
-              adId_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              componentId_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              duration_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              epochOffset_ = input.readUInt64();
-              break;
-            }
-            case 48: {
               int rawValue = input.readEnum();
 
               kind_ = rawValue;
@@ -18936,75 +18404,39 @@ public final class Csnmessages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdInteraction_descriptor;
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdInteraction_fieldAccessorTable
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.class, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder.class);
+              com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.class, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder.class);
     }
 
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private long requestId_;
+    public static final int DEVICE_TIME_FIELD_NUMBER = 1;
+    private long deviceTime_;
     /**
-     * <code>uint64 request_id = 1;</code>
+     * <code>uint64 device_time = 1;</code>
      */
-    public long getRequestId() {
-      return requestId_;
+    public long getDeviceTime() {
+      return deviceTime_;
     }
 
-    public static final int AD_ID_FIELD_NUMBER = 2;
-    private long adId_;
-    /**
-     * <code>uint64 ad_id = 2;</code>
-     */
-    public long getAdId() {
-      return adId_;
-    }
-
-    public static final int COMPONENT_ID_FIELD_NUMBER = 3;
-    private long componentId_;
-    /**
-     * <code>uint64 component_id = 3;</code>
-     */
-    public long getComponentId() {
-      return componentId_;
-    }
-
-    public static final int DURATION_FIELD_NUMBER = 4;
-    private long duration_;
-    /**
-     * <code>uint64 duration = 4;</code>
-     */
-    public long getDuration() {
-      return duration_;
-    }
-
-    public static final int EPOCH_OFFSET_FIELD_NUMBER = 5;
-    private long epochOffset_;
-    /**
-     * <code>uint64 epoch_offset = 5;</code>
-     */
-    public long getEpochOffset() {
-      return epochOffset_;
-    }
-
-    public static final int KIND_FIELD_NUMBER = 6;
+    public static final int KIND_FIELD_NUMBER = 2;
     private int kind_;
     /**
-     * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+     * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
      */
     public int getKindValue() {
       return kind_;
     }
     /**
-     * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+     * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind getKind() {
-      com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.valueOf(kind_);
-      return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.UNRECOGNIZED : result;
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind getKind() {
+      com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.valueOf(kind_);
+      return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -19019,23 +18451,11 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (requestId_ != 0L) {
-        output.writeUInt64(1, requestId_);
+      if (deviceTime_ != 0L) {
+        output.writeUInt64(1, deviceTime_);
       }
-      if (adId_ != 0L) {
-        output.writeUInt64(2, adId_);
-      }
-      if (componentId_ != 0L) {
-        output.writeUInt64(3, componentId_);
-      }
-      if (duration_ != 0L) {
-        output.writeUInt64(4, duration_);
-      }
-      if (epochOffset_ != 0L) {
-        output.writeUInt64(5, epochOffset_);
-      }
-      if (kind_ != com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.Tap.getNumber()) {
-        output.writeEnum(6, kind_);
+      if (kind_ != com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.Tap.getNumber()) {
+        output.writeEnum(2, kind_);
       }
     }
 
@@ -19044,29 +18464,13 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      if (requestId_ != 0L) {
+      if (deviceTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, requestId_);
+          .computeUInt64Size(1, deviceTime_);
       }
-      if (adId_ != 0L) {
+      if (kind_ != com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.Tap.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, adId_);
-      }
-      if (componentId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, componentId_);
-      }
-      if (duration_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, duration_);
-      }
-      if (epochOffset_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, epochOffset_);
-      }
-      if (kind_ != com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.Tap.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, kind_);
+          .computeEnumSize(2, kind_);
       }
       memoizedSize = size;
       return size;
@@ -19078,22 +18482,14 @@ public final class Csnmessages {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction)) {
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction)) {
         return super.equals(obj);
       }
-      com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction other = (com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction) obj;
+      com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction other = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction) obj;
 
       boolean result = true;
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && (getAdId()
-          == other.getAdId());
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && (getDuration()
-          == other.getDuration());
-      result = result && (getEpochOffset()
-          == other.getEpochOffset());
+      result = result && (getDeviceTime()
+          == other.getDeviceTime());
       result = result && kind_ == other.kind_;
       return result;
     }
@@ -19105,21 +18501,9 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (37 * hash) + DEVICE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRequestId());
-      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAdId());
-      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getComponentId());
-      hash = (37 * hash) + DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDuration());
-      hash = (37 * hash) + EPOCH_OFFSET_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEpochOffset());
+          getDeviceTime());
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + kind_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -19127,58 +18511,69 @@ public final class Csnmessages {
       return hash;
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(byte[] data)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(java.io.InputStream input)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseDelimitedFrom(java.io.InputStream input)
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseDelimitedFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parseFrom(
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19190,7 +18585,7 @@ public final class Csnmessages {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction prototype) {
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -19205,25 +18600,25 @@ public final class Csnmessages {
       return builder;
     }
     /**
-     * Protobuf type {@code google.protobuf.AdInteraction}
+     * Protobuf type {@code google.protobuf.ComponentInteraction}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.protobuf.AdInteraction)
-        com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.protobuf.ComponentInteraction)
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdInteraction_descriptor;
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdInteraction_fieldAccessorTable
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.class, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder.class);
+                com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.class, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder.class);
       }
 
-      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.newBuilder()
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -19240,15 +18635,7 @@ public final class Csnmessages {
       }
       public Builder clear() {
         super.clear();
-        requestId_ = 0L;
-
-        adId_ = 0L;
-
-        componentId_ = 0L;
-
-        duration_ = 0L;
-
-        epochOffset_ = 0L;
+        deviceTime_ = 0L;
 
         kind_ = 0;
 
@@ -19257,28 +18644,24 @@ public final class Csnmessages {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdInteraction_descriptor;
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getDefaultInstanceForType() {
-        return com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.getDefaultInstance();
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.getDefaultInstance();
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction build() {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction result = buildPartial();
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction buildPartial() {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction result = new com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction(this);
-        result.requestId_ = requestId_;
-        result.adId_ = adId_;
-        result.componentId_ = componentId_;
-        result.duration_ = duration_;
-        result.epochOffset_ = epochOffset_;
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction result = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction(this);
+        result.deviceTime_ = deviceTime_;
         result.kind_ = kind_;
         onBuilt();
         return result;
@@ -19311,30 +18694,18 @@ public final class Csnmessages {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction) {
-          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction)other);
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction other) {
-        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.getDefaultInstance()) return this;
-        if (other.getRequestId() != 0L) {
-          setRequestId(other.getRequestId());
-        }
-        if (other.getAdId() != 0L) {
-          setAdId(other.getAdId());
-        }
-        if (other.getComponentId() != 0L) {
-          setComponentId(other.getComponentId());
-        }
-        if (other.getDuration() != 0L) {
-          setDuration(other.getDuration());
-        }
-        if (other.getEpochOffset() != 0L) {
-          setEpochOffset(other.getEpochOffset());
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.getDefaultInstance()) return this;
+        if (other.getDeviceTime() != 0L) {
+          setDeviceTime(other.getDeviceTime());
         }
         if (other.kind_ != 0) {
           setKindValue(other.getKindValue());
@@ -19351,11 +18722,11 @@ public final class Csnmessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction parsedMessage = null;
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction) e.getUnfinishedMessage();
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19365,145 +18736,41 @@ public final class Csnmessages {
         return this;
       }
 
-      private long requestId_ ;
+      private long deviceTime_ ;
       /**
-       * <code>uint64 request_id = 1;</code>
+       * <code>uint64 device_time = 1;</code>
        */
-      public long getRequestId() {
-        return requestId_;
+      public long getDeviceTime() {
+        return deviceTime_;
       }
       /**
-       * <code>uint64 request_id = 1;</code>
+       * <code>uint64 device_time = 1;</code>
        */
-      public Builder setRequestId(long value) {
+      public Builder setDeviceTime(long value) {
         
-        requestId_ = value;
+        deviceTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 request_id = 1;</code>
+       * <code>uint64 device_time = 1;</code>
        */
-      public Builder clearRequestId() {
+      public Builder clearDeviceTime() {
         
-        requestId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long adId_ ;
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public long getAdId() {
-        return adId_;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder setAdId(long value) {
-        
-        adId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ad_id = 2;</code>
-       */
-      public Builder clearAdId() {
-        
-        adId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long componentId_ ;
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public long getComponentId() {
-        return componentId_;
-      }
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public Builder setComponentId(long value) {
-        
-        componentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 component_id = 3;</code>
-       */
-      public Builder clearComponentId() {
-        
-        componentId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long duration_ ;
-      /**
-       * <code>uint64 duration = 4;</code>
-       */
-      public long getDuration() {
-        return duration_;
-      }
-      /**
-       * <code>uint64 duration = 4;</code>
-       */
-      public Builder setDuration(long value) {
-        
-        duration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 duration = 4;</code>
-       */
-      public Builder clearDuration() {
-        
-        duration_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long epochOffset_ ;
-      /**
-       * <code>uint64 epoch_offset = 5;</code>
-       */
-      public long getEpochOffset() {
-        return epochOffset_;
-      }
-      /**
-       * <code>uint64 epoch_offset = 5;</code>
-       */
-      public Builder setEpochOffset(long value) {
-        
-        epochOffset_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 epoch_offset = 5;</code>
-       */
-      public Builder clearEpochOffset() {
-        
-        epochOffset_ = 0L;
+        deviceTime_ = 0L;
         onChanged();
         return this;
       }
 
       private int kind_ = 0;
       /**
-       * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+       * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
       public int getKindValue() {
         return kind_;
       }
       /**
-       * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+       * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
       public Builder setKindValue(int value) {
         kind_ = value;
@@ -19511,16 +18778,16 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+       * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind getKind() {
-        com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.valueOf(kind_);
-        return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind.UNRECOGNIZED : result;
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind getKind() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.valueOf(kind_);
+        return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.UNRECOGNIZED : result;
       }
       /**
-       * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+       * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
-      public Builder setKind(com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionKind value) {
+      public Builder setKind(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -19530,7 +18797,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>.google.protobuf.AdInteractionKind kind = 6;</code>
+       * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
       public Builder clearKind() {
         
@@ -19549,39 +18816,1764 @@ public final class Csnmessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.protobuf.AdInteraction)
+      // @@protoc_insertion_point(builder_scope:google.protobuf.ComponentInteraction)
     }
 
-    // @@protoc_insertion_point(class_scope:google.protobuf.AdInteraction)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.protobuf.ComponentInteraction)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction();
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction();
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getDefaultInstance() {
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AdInteraction>
-        PARSER = new com.google.protobuf.AbstractParser<AdInteraction>() {
-      public AdInteraction parsePartialFrom(
+    private static final com.google.protobuf.Parser<ComponentInteraction>
+        PARSER = new com.google.protobuf.AbstractParser<ComponentInteraction>() {
+      public ComponentInteraction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AdInteraction(input, extensionRegistry);
+          return new ComponentInteraction(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AdInteraction> parser() {
+    public static com.google.protobuf.Parser<ComponentInteraction> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AdInteraction> getParserForType() {
+    public com.google.protobuf.Parser<ComponentInteraction> getParserForType() {
       return PARSER;
     }
 
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getDefaultInstanceForType() {
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ComponentReportOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.ComponentReport)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 component_id = 1;</code>
+     */
+    long getComponentId();
+
+    /**
+     * <code>uint64 visibility_epoch = 2;</code>
+     */
+    long getVisibilityEpoch();
+
+    /**
+     * <code>uint64 visibility_sample_count = 3;</code>
+     */
+    long getVisibilitySampleCount();
+
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    java.util.List<java.lang.Long> getViewVisibilitySamplesList();
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    int getViewVisibilitySamplesCount();
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    long getViewVisibilitySamples(int index);
+
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    java.util.List<java.lang.Long> getDeviceVisibilitySamplesList();
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    int getDeviceVisibilitySamplesCount();
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    long getDeviceVisibilitySamples(int index);
+
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> 
+        getInteractionsList();
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getInteractions(int index);
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    int getInteractionsCount();
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder> 
+        getInteractionsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder getInteractionsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code google.protobuf.ComponentReport}
+   */
+  public  static final class ComponentReport extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.ComponentReport)
+      ComponentReportOrBuilder {
+    // Use ComponentReport.newBuilder() to construct.
+    private ComponentReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ComponentReport() {
+      componentId_ = 0L;
+      visibilityEpoch_ = 0L;
+      visibilitySampleCount_ = 0L;
+      viewVisibilitySamples_ = java.util.Collections.emptyList();
+      deviceVisibilitySamples_ = java.util.Collections.emptyList();
+      interactions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ComponentReport(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              componentId_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              visibilityEpoch_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              visibilitySampleCount_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              viewVisibilitySamples_.add(input.readUInt64());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                viewVisibilitySamples_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              deviceVisibilitySamples_.add(input.readUInt64());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                deviceVisibilitySamples_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                interactions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              interactions_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          viewVisibilitySamples_ = java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          deviceVisibilitySamples_ = java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          interactions_ = java.util.Collections.unmodifiableList(interactions_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.class, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int COMPONENT_ID_FIELD_NUMBER = 1;
+    private long componentId_;
+    /**
+     * <code>uint64 component_id = 1;</code>
+     */
+    public long getComponentId() {
+      return componentId_;
+    }
+
+    public static final int VISIBILITY_EPOCH_FIELD_NUMBER = 2;
+    private long visibilityEpoch_;
+    /**
+     * <code>uint64 visibility_epoch = 2;</code>
+     */
+    public long getVisibilityEpoch() {
+      return visibilityEpoch_;
+    }
+
+    public static final int VISIBILITY_SAMPLE_COUNT_FIELD_NUMBER = 3;
+    private long visibilitySampleCount_;
+    /**
+     * <code>uint64 visibility_sample_count = 3;</code>
+     */
+    public long getVisibilitySampleCount() {
+      return visibilitySampleCount_;
+    }
+
+    public static final int VIEW_VISIBILITY_SAMPLES_FIELD_NUMBER = 4;
+    private java.util.List<java.lang.Long> viewVisibilitySamples_;
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getViewVisibilitySamplesList() {
+      return viewVisibilitySamples_;
+    }
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    public int getViewVisibilitySamplesCount() {
+      return viewVisibilitySamples_.size();
+    }
+    /**
+     * <code>repeated uint64 view_visibility_samples = 4;</code>
+     */
+    public long getViewVisibilitySamples(int index) {
+      return viewVisibilitySamples_.get(index);
+    }
+    private int viewVisibilitySamplesMemoizedSerializedSize = -1;
+
+    public static final int DEVICE_VISIBILITY_SAMPLES_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Long> deviceVisibilitySamples_;
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getDeviceVisibilitySamplesList() {
+      return deviceVisibilitySamples_;
+    }
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    public int getDeviceVisibilitySamplesCount() {
+      return deviceVisibilitySamples_.size();
+    }
+    /**
+     * <code>repeated uint64 device_visibility_samples = 5;</code>
+     */
+    public long getDeviceVisibilitySamples(int index) {
+      return deviceVisibilitySamples_.get(index);
+    }
+    private int deviceVisibilitySamplesMemoizedSerializedSize = -1;
+
+    public static final int INTERACTIONS_FIELD_NUMBER = 6;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> interactions_;
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> getInteractionsList() {
+      return interactions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder> 
+        getInteractionsOrBuilderList() {
+      return interactions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    public int getInteractionsCount() {
+      return interactions_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getInteractions(int index) {
+      return interactions_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder getInteractionsOrBuilder(
+        int index) {
+      return interactions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (componentId_ != 0L) {
+        output.writeUInt64(1, componentId_);
+      }
+      if (visibilityEpoch_ != 0L) {
+        output.writeUInt64(2, visibilityEpoch_);
+      }
+      if (visibilitySampleCount_ != 0L) {
+        output.writeUInt64(3, visibilitySampleCount_);
+      }
+      if (getViewVisibilitySamplesList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(viewVisibilitySamplesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < viewVisibilitySamples_.size(); i++) {
+        output.writeUInt64NoTag(viewVisibilitySamples_.get(i));
+      }
+      if (getDeviceVisibilitySamplesList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(deviceVisibilitySamplesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < deviceVisibilitySamples_.size(); i++) {
+        output.writeUInt64NoTag(deviceVisibilitySamples_.get(i));
+      }
+      for (int i = 0; i < interactions_.size(); i++) {
+        output.writeMessage(6, interactions_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (componentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, componentId_);
+      }
+      if (visibilityEpoch_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, visibilityEpoch_);
+      }
+      if (visibilitySampleCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, visibilitySampleCount_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < viewVisibilitySamples_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt64SizeNoTag(viewVisibilitySamples_.get(i));
+        }
+        size += dataSize;
+        if (!getViewVisibilitySamplesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        viewVisibilitySamplesMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deviceVisibilitySamples_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt64SizeNoTag(deviceVisibilitySamples_.get(i));
+        }
+        size += dataSize;
+        if (!getDeviceVisibilitySamplesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        deviceVisibilitySamplesMemoizedSerializedSize = dataSize;
+      }
+      for (int i = 0; i < interactions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, interactions_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport other = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport) obj;
+
+      boolean result = true;
+      result = result && (getComponentId()
+          == other.getComponentId());
+      result = result && (getVisibilityEpoch()
+          == other.getVisibilityEpoch());
+      result = result && (getVisibilitySampleCount()
+          == other.getVisibilitySampleCount());
+      result = result && getViewVisibilitySamplesList()
+          .equals(other.getViewVisibilitySamplesList());
+      result = result && getDeviceVisibilitySamplesList()
+          .equals(other.getDeviceVisibilitySamplesList());
+      result = result && getInteractionsList()
+          .equals(other.getInteractionsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COMPONENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getComponentId());
+      hash = (37 * hash) + VISIBILITY_EPOCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVisibilityEpoch());
+      hash = (37 * hash) + VISIBILITY_SAMPLE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVisibilitySampleCount());
+      if (getViewVisibilitySamplesCount() > 0) {
+        hash = (37 * hash) + VIEW_VISIBILITY_SAMPLES_FIELD_NUMBER;
+        hash = (53 * hash) + getViewVisibilitySamplesList().hashCode();
+      }
+      if (getDeviceVisibilitySamplesCount() > 0) {
+        hash = (37 * hash) + DEVICE_VISIBILITY_SAMPLES_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceVisibilitySamplesList().hashCode();
+      }
+      if (getInteractionsCount() > 0) {
+        hash = (37 * hash) + INTERACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getInteractionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.ComponentReport}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.ComponentReport)
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.class, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInteractionsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        componentId_ = 0L;
+
+        visibilityEpoch_ = 0L;
+
+        visibilitySampleCount_ = 0L;
+
+        viewVisibilitySamples_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        deviceVisibilitySamples_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (interactionsBuilder_ == null) {
+          interactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          interactionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport result = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.componentId_ = componentId_;
+        result.visibilityEpoch_ = visibilityEpoch_;
+        result.visibilitySampleCount_ = visibilitySampleCount_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          viewVisibilitySamples_ = java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.viewVisibilitySamples_ = viewVisibilitySamples_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          deviceVisibilitySamples_ = java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.deviceVisibilitySamples_ = deviceVisibilitySamples_;
+        if (interactionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            interactions_ = java.util.Collections.unmodifiableList(interactions_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.interactions_ = interactions_;
+        } else {
+          result.interactions_ = interactionsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.getDefaultInstance()) return this;
+        if (other.getComponentId() != 0L) {
+          setComponentId(other.getComponentId());
+        }
+        if (other.getVisibilityEpoch() != 0L) {
+          setVisibilityEpoch(other.getVisibilityEpoch());
+        }
+        if (other.getVisibilitySampleCount() != 0L) {
+          setVisibilitySampleCount(other.getVisibilitySampleCount());
+        }
+        if (!other.viewVisibilitySamples_.isEmpty()) {
+          if (viewVisibilitySamples_.isEmpty()) {
+            viewVisibilitySamples_ = other.viewVisibilitySamples_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureViewVisibilitySamplesIsMutable();
+            viewVisibilitySamples_.addAll(other.viewVisibilitySamples_);
+          }
+          onChanged();
+        }
+        if (!other.deviceVisibilitySamples_.isEmpty()) {
+          if (deviceVisibilitySamples_.isEmpty()) {
+            deviceVisibilitySamples_ = other.deviceVisibilitySamples_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureDeviceVisibilitySamplesIsMutable();
+            deviceVisibilitySamples_.addAll(other.deviceVisibilitySamples_);
+          }
+          onChanged();
+        }
+        if (interactionsBuilder_ == null) {
+          if (!other.interactions_.isEmpty()) {
+            if (interactions_.isEmpty()) {
+              interactions_ = other.interactions_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureInteractionsIsMutable();
+              interactions_.addAll(other.interactions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.interactions_.isEmpty()) {
+            if (interactionsBuilder_.isEmpty()) {
+              interactionsBuilder_.dispose();
+              interactionsBuilder_ = null;
+              interactions_ = other.interactions_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              interactionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getInteractionsFieldBuilder() : null;
+            } else {
+              interactionsBuilder_.addAllMessages(other.interactions_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long componentId_ ;
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public long getComponentId() {
+        return componentId_;
+      }
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public Builder setComponentId(long value) {
+        
+        componentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 component_id = 1;</code>
+       */
+      public Builder clearComponentId() {
+        
+        componentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long visibilityEpoch_ ;
+      /**
+       * <code>uint64 visibility_epoch = 2;</code>
+       */
+      public long getVisibilityEpoch() {
+        return visibilityEpoch_;
+      }
+      /**
+       * <code>uint64 visibility_epoch = 2;</code>
+       */
+      public Builder setVisibilityEpoch(long value) {
+        
+        visibilityEpoch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 visibility_epoch = 2;</code>
+       */
+      public Builder clearVisibilityEpoch() {
+        
+        visibilityEpoch_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long visibilitySampleCount_ ;
+      /**
+       * <code>uint64 visibility_sample_count = 3;</code>
+       */
+      public long getVisibilitySampleCount() {
+        return visibilitySampleCount_;
+      }
+      /**
+       * <code>uint64 visibility_sample_count = 3;</code>
+       */
+      public Builder setVisibilitySampleCount(long value) {
+        
+        visibilitySampleCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 visibility_sample_count = 3;</code>
+       */
+      public Builder clearVisibilitySampleCount() {
+        
+        visibilitySampleCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Long> viewVisibilitySamples_ = java.util.Collections.emptyList();
+      private void ensureViewVisibilitySamplesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>(viewVisibilitySamples_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getViewVisibilitySamplesList() {
+        return java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public int getViewVisibilitySamplesCount() {
+        return viewVisibilitySamples_.size();
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public long getViewVisibilitySamples(int index) {
+        return viewVisibilitySamples_.get(index);
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public Builder setViewVisibilitySamples(
+          int index, long value) {
+        ensureViewVisibilitySamplesIsMutable();
+        viewVisibilitySamples_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public Builder addViewVisibilitySamples(long value) {
+        ensureViewVisibilitySamplesIsMutable();
+        viewVisibilitySamples_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public Builder addAllViewVisibilitySamples(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureViewVisibilitySamplesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, viewVisibilitySamples_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 view_visibility_samples = 4;</code>
+       */
+      public Builder clearViewVisibilitySamples() {
+        viewVisibilitySamples_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Long> deviceVisibilitySamples_ = java.util.Collections.emptyList();
+      private void ensureDeviceVisibilitySamplesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>(deviceVisibilitySamples_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getDeviceVisibilitySamplesList() {
+        return java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public int getDeviceVisibilitySamplesCount() {
+        return deviceVisibilitySamples_.size();
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public long getDeviceVisibilitySamples(int index) {
+        return deviceVisibilitySamples_.get(index);
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public Builder setDeviceVisibilitySamples(
+          int index, long value) {
+        ensureDeviceVisibilitySamplesIsMutable();
+        deviceVisibilitySamples_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public Builder addDeviceVisibilitySamples(long value) {
+        ensureDeviceVisibilitySamplesIsMutable();
+        deviceVisibilitySamples_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public Builder addAllDeviceVisibilitySamples(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureDeviceVisibilitySamplesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deviceVisibilitySamples_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 device_visibility_samples = 5;</code>
+       */
+      public Builder clearDeviceVisibilitySamples() {
+        deviceVisibilitySamples_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> interactions_ =
+        java.util.Collections.emptyList();
+      private void ensureInteractionsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          interactions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction>(interactions_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder> interactionsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> getInteractionsList() {
+        if (interactionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(interactions_);
+        } else {
+          return interactionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public int getInteractionsCount() {
+        if (interactionsBuilder_ == null) {
+          return interactions_.size();
+        } else {
+          return interactionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getInteractions(int index) {
+        if (interactionsBuilder_ == null) {
+          return interactions_.get(index);
+        } else {
+          return interactionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder setInteractions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction value) {
+        if (interactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInteractionsIsMutable();
+          interactions_.set(index, value);
+          onChanged();
+        } else {
+          interactionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder setInteractions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder builderForValue) {
+        if (interactionsBuilder_ == null) {
+          ensureInteractionsIsMutable();
+          interactions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          interactionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder addInteractions(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction value) {
+        if (interactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInteractionsIsMutable();
+          interactions_.add(value);
+          onChanged();
+        } else {
+          interactionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder addInteractions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction value) {
+        if (interactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInteractionsIsMutable();
+          interactions_.add(index, value);
+          onChanged();
+        } else {
+          interactionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder addInteractions(
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder builderForValue) {
+        if (interactionsBuilder_ == null) {
+          ensureInteractionsIsMutable();
+          interactions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          interactionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder addInteractions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder builderForValue) {
+        if (interactionsBuilder_ == null) {
+          ensureInteractionsIsMutable();
+          interactions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          interactionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder addAllInteractions(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> values) {
+        if (interactionsBuilder_ == null) {
+          ensureInteractionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, interactions_);
+          onChanged();
+        } else {
+          interactionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder clearInteractions() {
+        if (interactionsBuilder_ == null) {
+          interactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          interactionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public Builder removeInteractions(int index) {
+        if (interactionsBuilder_ == null) {
+          ensureInteractionsIsMutable();
+          interactions_.remove(index);
+          onChanged();
+        } else {
+          interactionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder getInteractionsBuilder(
+          int index) {
+        return getInteractionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder getInteractionsOrBuilder(
+          int index) {
+        if (interactionsBuilder_ == null) {
+          return interactions_.get(index);  } else {
+          return interactionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder> 
+           getInteractionsOrBuilderList() {
+        if (interactionsBuilder_ != null) {
+          return interactionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(interactions_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder addInteractionsBuilder() {
+        return getInteractionsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder addInteractionsBuilder(
+          int index) {
+        return getInteractionsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentInteraction interactions = 6;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder> 
+           getInteractionsBuilderList() {
+        return getInteractionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder> 
+          getInteractionsFieldBuilder() {
+        if (interactionsBuilder_ == null) {
+          interactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder>(
+                  interactions_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          interactions_ = null;
+        }
+        return interactionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.ComponentReport)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.ComponentReport)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ComponentReport>
+        PARSER = new com.google.protobuf.AbstractParser<ComponentReport>() {
+      public ComponentReport parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ComponentReport(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ComponentReport> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ComponentReport> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdImpressionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdImpression)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 device_time = 1;</code>
+     */
+    long getDeviceTime();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.AdImpression}
+   */
+  public  static final class AdImpression extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdImpression)
+      AdImpressionOrBuilder {
+    // Use AdImpression.newBuilder() to construct.
+    private AdImpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdImpression() {
+      deviceTime_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdImpression(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              deviceTime_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.class, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder.class);
+    }
+
+    public static final int DEVICE_TIME_FIELD_NUMBER = 1;
+    private long deviceTime_;
+    /**
+     * <code>uint64 device_time = 1;</code>
+     */
+    public long getDeviceTime() {
+      return deviceTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (deviceTime_ != 0L) {
+        output.writeUInt64(1, deviceTime_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (deviceTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, deviceTime_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdImpression)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdImpression other = (com.commutestream.nativeads.protobuf.Csnmessages.AdImpression) obj;
+
+      boolean result = true;
+      result = result && (getDeviceTime()
+          == other.getDeviceTime());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DEVICE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDeviceTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.AdImpression}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdImpression)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.class, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        deviceTime_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdImpression result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdImpression result = new com.commutestream.nativeads.protobuf.Csnmessages.AdImpression(this);
+        result.deviceTime_ = deviceTime_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdImpression) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdImpression)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.getDefaultInstance()) return this;
+        if (other.getDeviceTime() != 0L) {
+          setDeviceTime(other.getDeviceTime());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdImpression parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdImpression) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long deviceTime_ ;
+      /**
+       * <code>uint64 device_time = 1;</code>
+       */
+      public long getDeviceTime() {
+        return deviceTime_;
+      }
+      /**
+       * <code>uint64 device_time = 1;</code>
+       */
+      public Builder setDeviceTime(long value) {
+        
+        deviceTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 device_time = 1;</code>
+       */
+      public Builder clearDeviceTime() {
+        
+        deviceTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdImpression)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdImpression)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdImpression DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdImpression();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdImpression>
+        PARSER = new com.google.protobuf.AbstractParser<AdImpression>() {
+      public AdImpression parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdImpression(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdImpression> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdImpression> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -19592,89 +20584,66 @@ public final class Csnmessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ad_unit = 1;</code>
+     * <code>uint64 request_id = 1;</code>
      */
-    java.lang.String getAdUnit();
-    /**
-     * <code>string ad_unit = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getAdUnitBytes();
+    long getRequestId();
 
     /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     * <code>uint64 ad_id = 2;</code>
      */
-    boolean hasDeviceId();
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId();
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder();
+    long getAdId();
 
     /**
-     * <code>string timezone = 3;</code>
+     * <code>uint64 version_id = 3;</code>
      */
-    java.lang.String getTimezone();
-    /**
-     * <code>string timezone = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getTimezoneBytes();
+    long getVersionId();
 
     /**
-     * <code>uint64 epoch = 4;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    long getEpoch();
-
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> 
+        getComponentsList();
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> 
-        getAdVisibiltyList();
+    com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getComponents(int index);
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getAdVisibilty(int index);
+    int getComponentsCount();
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    int getAdVisibiltyCount();
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder> 
+        getComponentsOrBuilderList();
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder> 
-        getAdVisibiltyOrBuilderList();
-    /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder getAdVisibiltyOrBuilder(
+    com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder getComponentsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> 
-        getAdInteractionsList();
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> 
+        getImpressionsList();
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getAdInteractions(int index);
+    com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getImpressions(int index);
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    int getAdInteractionsCount();
+    int getImpressionsCount();
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder> 
-        getAdInteractionsOrBuilderList();
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder> 
+        getImpressionsOrBuilderList();
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder getAdInteractionsOrBuilder(
+    com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder getImpressionsOrBuilder(
         int index);
   }
   /**
@@ -19689,11 +20658,11 @@ public final class Csnmessages {
       super(builder);
     }
     private AdReport() {
-      adUnit_ = "";
-      timezone_ = "";
-      epoch_ = 0L;
-      adVisibilty_ = java.util.Collections.emptyList();
-      adInteractions_ = java.util.Collections.emptyList();
+      requestId_ = 0L;
+      adId_ = 0L;
+      versionId_ = 0L;
+      components_ = java.util.Collections.emptyList();
+      impressions_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -19721,52 +20690,37 @@ public final class Csnmessages {
               }
               break;
             }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              adUnit_ = s;
+              requestId_ = input.readUInt64();
               break;
             }
-            case 18: {
-              com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder subBuilder = null;
-              if (deviceId_ != null) {
-                subBuilder = deviceId_.toBuilder();
+            case 16: {
+
+              adId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              versionId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                components_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport>();
+                mutable_bitField0_ |= 0x00000008;
               }
-              deviceId_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deviceId_);
-                deviceId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              timezone_ = s;
-              break;
-            }
-            case 32: {
-
-              epoch_ = input.readUInt64();
+              components_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.parser(), extensionRegistry));
               break;
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                adVisibilty_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility>();
+                impressions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              adVisibilty_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                adInteractions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              adInteractions_.add(
-                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.parser(), extensionRegistry));
+              impressions_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.parser(), extensionRegistry));
               break;
             }
           }
@@ -19777,11 +20731,11 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          adVisibilty_ = java.util.Collections.unmodifiableList(adVisibilty_);
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          components_ = java.util.Collections.unmodifiableList(components_);
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          adInteractions_ = java.util.Collections.unmodifiableList(adInteractions_);
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          impressions_ = java.util.Collections.unmodifiableList(impressions_);
         }
         makeExtensionsImmutable();
       }
@@ -19799,172 +20753,101 @@ public final class Csnmessages {
     }
 
     private int bitField0_;
-    public static final int AD_UNIT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object adUnit_;
+    public static final int REQUEST_ID_FIELD_NUMBER = 1;
+    private long requestId_;
     /**
-     * <code>string ad_unit = 1;</code>
+     * <code>uint64 request_id = 1;</code>
      */
-    public java.lang.String getAdUnit() {
-      java.lang.Object ref = adUnit_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        adUnit_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ad_unit = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAdUnitBytes() {
-      java.lang.Object ref = adUnit_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        adUnit_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getRequestId() {
+      return requestId_;
     }
 
-    public static final int DEVICE_ID_FIELD_NUMBER = 2;
-    private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
+    public static final int AD_ID_FIELD_NUMBER = 2;
+    private long adId_;
     /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     * <code>uint64 ad_id = 2;</code>
      */
-    public boolean hasDeviceId() {
-      return deviceId_ != null;
-    }
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId() {
-      return deviceId_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.getDefaultInstance() : deviceId_;
-    }
-    /**
-     * <code>.google.protobuf.DeviceID device_id = 2;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder() {
-      return getDeviceId();
+    public long getAdId() {
+      return adId_;
     }
 
-    public static final int TIMEZONE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object timezone_;
+    public static final int VERSION_ID_FIELD_NUMBER = 3;
+    private long versionId_;
     /**
-     * <code>string timezone = 3;</code>
+     * <code>uint64 version_id = 3;</code>
      */
-    public java.lang.String getTimezone() {
-      java.lang.Object ref = timezone_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timezone_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string timezone = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTimezoneBytes() {
-      java.lang.Object ref = timezone_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timezone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getVersionId() {
+      return versionId_;
     }
 
-    public static final int EPOCH_FIELD_NUMBER = 4;
-    private long epoch_;
+    public static final int COMPONENTS_FIELD_NUMBER = 4;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> components_;
     /**
-     * <code>uint64 epoch = 4;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    public long getEpoch() {
-      return epoch_;
-    }
-
-    public static final int AD_VISIBILTY_FIELD_NUMBER = 5;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> adVisibilty_;
-    /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-     */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> getAdVisibiltyList() {
-      return adVisibilty_;
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> getComponentsList() {
+      return components_;
     }
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder> 
-        getAdVisibiltyOrBuilderList() {
-      return adVisibilty_;
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder> 
+        getComponentsOrBuilderList() {
+      return components_;
     }
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    public int getAdVisibiltyCount() {
-      return adVisibilty_.size();
+    public int getComponentsCount() {
+      return components_.size();
     }
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getAdVisibilty(int index) {
-      return adVisibilty_.get(index);
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getComponents(int index) {
+      return components_.get(index);
     }
     /**
-     * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+     * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder getAdVisibiltyOrBuilder(
+    public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder getComponentsOrBuilder(
         int index) {
-      return adVisibilty_.get(index);
+      return components_.get(index);
     }
 
-    public static final int AD_INTERACTIONS_FIELD_NUMBER = 6;
-    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> adInteractions_;
+    public static final int IMPRESSIONS_FIELD_NUMBER = 5;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> impressions_;
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> getAdInteractionsList() {
-      return adInteractions_;
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> getImpressionsList() {
+      return impressions_;
     }
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder> 
-        getAdInteractionsOrBuilderList() {
-      return adInteractions_;
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder> 
+        getImpressionsOrBuilderList() {
+      return impressions_;
     }
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    public int getAdInteractionsCount() {
-      return adInteractions_.size();
+    public int getImpressionsCount() {
+      return impressions_.size();
     }
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getAdInteractions(int index) {
-      return adInteractions_.get(index);
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getImpressions(int index) {
+      return impressions_.get(index);
     }
     /**
-     * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+     * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
      */
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder getAdInteractionsOrBuilder(
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder getImpressionsOrBuilder(
         int index) {
-      return adInteractions_.get(index);
+      return impressions_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -19979,23 +20862,20 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAdUnitBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, adUnit_);
+      if (requestId_ != 0L) {
+        output.writeUInt64(1, requestId_);
       }
-      if (deviceId_ != null) {
-        output.writeMessage(2, getDeviceId());
+      if (adId_ != 0L) {
+        output.writeUInt64(2, adId_);
       }
-      if (!getTimezoneBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timezone_);
+      if (versionId_ != 0L) {
+        output.writeUInt64(3, versionId_);
       }
-      if (epoch_ != 0L) {
-        output.writeUInt64(4, epoch_);
+      for (int i = 0; i < components_.size(); i++) {
+        output.writeMessage(4, components_.get(i));
       }
-      for (int i = 0; i < adVisibilty_.size(); i++) {
-        output.writeMessage(5, adVisibilty_.get(i));
-      }
-      for (int i = 0; i < adInteractions_.size(); i++) {
-        output.writeMessage(6, adInteractions_.get(i));
+      for (int i = 0; i < impressions_.size(); i++) {
+        output.writeMessage(5, impressions_.get(i));
       }
     }
 
@@ -20004,27 +20884,25 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAdUnitBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, adUnit_);
-      }
-      if (deviceId_ != null) {
+      if (requestId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getDeviceId());
+          .computeUInt64Size(1, requestId_);
       }
-      if (!getTimezoneBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timezone_);
-      }
-      if (epoch_ != 0L) {
+      if (adId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, epoch_);
+          .computeUInt64Size(2, adId_);
       }
-      for (int i = 0; i < adVisibilty_.size(); i++) {
+      if (versionId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, adVisibilty_.get(i));
+          .computeUInt64Size(3, versionId_);
       }
-      for (int i = 0; i < adInteractions_.size(); i++) {
+      for (int i = 0; i < components_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, adInteractions_.get(i));
+          .computeMessageSize(4, components_.get(i));
+      }
+      for (int i = 0; i < impressions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, impressions_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -20042,21 +20920,16 @@ public final class Csnmessages {
       com.commutestream.nativeads.protobuf.Csnmessages.AdReport other = (com.commutestream.nativeads.protobuf.Csnmessages.AdReport) obj;
 
       boolean result = true;
-      result = result && getAdUnit()
-          .equals(other.getAdUnit());
-      result = result && (hasDeviceId() == other.hasDeviceId());
-      if (hasDeviceId()) {
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
-      }
-      result = result && getTimezone()
-          .equals(other.getTimezone());
-      result = result && (getEpoch()
-          == other.getEpoch());
-      result = result && getAdVisibiltyList()
-          .equals(other.getAdVisibiltyList());
-      result = result && getAdInteractionsList()
-          .equals(other.getAdInteractionsList());
+      result = result && (getRequestId()
+          == other.getRequestId());
+      result = result && (getAdId()
+          == other.getAdId());
+      result = result && (getVersionId()
+          == other.getVersionId());
+      result = result && getComponentsList()
+          .equals(other.getComponentsList());
+      result = result && getImpressionsList()
+          .equals(other.getImpressionsList());
       return result;
     }
 
@@ -20067,30 +20940,39 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AD_UNIT_FIELD_NUMBER;
-      hash = (53 * hash) + getAdUnit().hashCode();
-      if (hasDeviceId()) {
-        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceId().hashCode();
-      }
-      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
-      hash = (53 * hash) + getTimezone().hashCode();
-      hash = (37 * hash) + EPOCH_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEpoch());
-      if (getAdVisibiltyCount() > 0) {
-        hash = (37 * hash) + AD_VISIBILTY_FIELD_NUMBER;
-        hash = (53 * hash) + getAdVisibiltyList().hashCode();
+          getRequestId());
+      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAdId());
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionId());
+      if (getComponentsCount() > 0) {
+        hash = (37 * hash) + COMPONENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getComponentsList().hashCode();
       }
-      if (getAdInteractionsCount() > 0) {
-        hash = (37 * hash) + AD_INTERACTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getAdInteractionsList().hashCode();
+      if (getImpressionsCount() > 0) {
+        hash = (37 * hash) + IMPRESSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getImpressionsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReport parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReport parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.commutestream.nativeads.protobuf.Csnmessages.AdReport parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -20200,35 +21082,29 @@ public final class Csnmessages {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getAdVisibiltyFieldBuilder();
-          getAdInteractionsFieldBuilder();
+          getComponentsFieldBuilder();
+          getImpressionsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        adUnit_ = "";
+        requestId_ = 0L;
 
-        if (deviceIdBuilder_ == null) {
-          deviceId_ = null;
+        adId_ = 0L;
+
+        versionId_ = 0L;
+
+        if (componentsBuilder_ == null) {
+          components_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          deviceId_ = null;
-          deviceIdBuilder_ = null;
+          componentsBuilder_.clear();
         }
-        timezone_ = "";
-
-        epoch_ = 0L;
-
-        if (adVisibiltyBuilder_ == null) {
-          adVisibilty_ = java.util.Collections.emptyList();
+        if (impressionsBuilder_ == null) {
+          impressions_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          adVisibiltyBuilder_.clear();
-        }
-        if (adInteractionsBuilder_ == null) {
-          adInteractions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          adInteractionsBuilder_.clear();
+          impressionsBuilder_.clear();
         }
         return this;
       }
@@ -20254,31 +21130,26 @@ public final class Csnmessages {
         com.commutestream.nativeads.protobuf.Csnmessages.AdReport result = new com.commutestream.nativeads.protobuf.Csnmessages.AdReport(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.adUnit_ = adUnit_;
-        if (deviceIdBuilder_ == null) {
-          result.deviceId_ = deviceId_;
+        result.requestId_ = requestId_;
+        result.adId_ = adId_;
+        result.versionId_ = versionId_;
+        if (componentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            components_ = java.util.Collections.unmodifiableList(components_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.components_ = components_;
         } else {
-          result.deviceId_ = deviceIdBuilder_.build();
+          result.components_ = componentsBuilder_.build();
         }
-        result.timezone_ = timezone_;
-        result.epoch_ = epoch_;
-        if (adVisibiltyBuilder_ == null) {
+        if (impressionsBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            adVisibilty_ = java.util.Collections.unmodifiableList(adVisibilty_);
+            impressions_ = java.util.Collections.unmodifiableList(impressions_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.adVisibilty_ = adVisibilty_;
+          result.impressions_ = impressions_;
         } else {
-          result.adVisibilty_ = adVisibiltyBuilder_.build();
-        }
-        if (adInteractionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            adInteractions_ = java.util.Collections.unmodifiableList(adInteractions_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.adInteractions_ = adInteractions_;
-        } else {
-          result.adInteractions_ = adInteractionsBuilder_.build();
+          result.impressions_ = impressionsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -20322,69 +21193,64 @@ public final class Csnmessages {
 
       public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdReport other) {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdReport.getDefaultInstance()) return this;
-        if (!other.getAdUnit().isEmpty()) {
-          adUnit_ = other.adUnit_;
-          onChanged();
+        if (other.getRequestId() != 0L) {
+          setRequestId(other.getRequestId());
         }
-        if (other.hasDeviceId()) {
-          mergeDeviceId(other.getDeviceId());
+        if (other.getAdId() != 0L) {
+          setAdId(other.getAdId());
         }
-        if (!other.getTimezone().isEmpty()) {
-          timezone_ = other.timezone_;
-          onChanged();
+        if (other.getVersionId() != 0L) {
+          setVersionId(other.getVersionId());
         }
-        if (other.getEpoch() != 0L) {
-          setEpoch(other.getEpoch());
-        }
-        if (adVisibiltyBuilder_ == null) {
-          if (!other.adVisibilty_.isEmpty()) {
-            if (adVisibilty_.isEmpty()) {
-              adVisibilty_ = other.adVisibilty_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+        if (componentsBuilder_ == null) {
+          if (!other.components_.isEmpty()) {
+            if (components_.isEmpty()) {
+              components_ = other.components_;
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
-              ensureAdVisibiltyIsMutable();
-              adVisibilty_.addAll(other.adVisibilty_);
+              ensureComponentsIsMutable();
+              components_.addAll(other.components_);
             }
             onChanged();
           }
         } else {
-          if (!other.adVisibilty_.isEmpty()) {
-            if (adVisibiltyBuilder_.isEmpty()) {
-              adVisibiltyBuilder_.dispose();
-              adVisibiltyBuilder_ = null;
-              adVisibilty_ = other.adVisibilty_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              adVisibiltyBuilder_ = 
+          if (!other.components_.isEmpty()) {
+            if (componentsBuilder_.isEmpty()) {
+              componentsBuilder_.dispose();
+              componentsBuilder_ = null;
+              components_ = other.components_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              componentsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAdVisibiltyFieldBuilder() : null;
+                   getComponentsFieldBuilder() : null;
             } else {
-              adVisibiltyBuilder_.addAllMessages(other.adVisibilty_);
+              componentsBuilder_.addAllMessages(other.components_);
             }
           }
         }
-        if (adInteractionsBuilder_ == null) {
-          if (!other.adInteractions_.isEmpty()) {
-            if (adInteractions_.isEmpty()) {
-              adInteractions_ = other.adInteractions_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+        if (impressionsBuilder_ == null) {
+          if (!other.impressions_.isEmpty()) {
+            if (impressions_.isEmpty()) {
+              impressions_ = other.impressions_;
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
-              ensureAdInteractionsIsMutable();
-              adInteractions_.addAll(other.adInteractions_);
+              ensureImpressionsIsMutable();
+              impressions_.addAll(other.impressions_);
             }
             onChanged();
           }
         } else {
-          if (!other.adInteractions_.isEmpty()) {
-            if (adInteractionsBuilder_.isEmpty()) {
-              adInteractionsBuilder_.dispose();
-              adInteractionsBuilder_ = null;
-              adInteractions_ = other.adInteractions_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-              adInteractionsBuilder_ = 
+          if (!other.impressions_.isEmpty()) {
+            if (impressionsBuilder_.isEmpty()) {
+              impressionsBuilder_.dispose();
+              impressionsBuilder_ = null;
+              impressions_ = other.impressions_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              impressionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAdInteractionsFieldBuilder() : null;
+                   getImpressionsFieldBuilder() : null;
             } else {
-              adInteractionsBuilder_.addAllMessages(other.adInteractions_);
+              impressionsBuilder_.addAllMessages(other.impressions_);
             }
           }
         }
@@ -20415,43 +21281,1386 @@ public final class Csnmessages {
       }
       private int bitField0_;
 
-      private java.lang.Object adUnit_ = "";
+      private long requestId_ ;
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>uint64 request_id = 1;</code>
        */
-      public java.lang.String getAdUnit() {
-        java.lang.Object ref = adUnit_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          adUnit_ = s;
-          return s;
+      public long getRequestId() {
+        return requestId_;
+      }
+      /**
+       * <code>uint64 request_id = 1;</code>
+       */
+      public Builder setRequestId(long value) {
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 request_id = 1;</code>
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long adId_ ;
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public long getAdId() {
+        return adId_;
+      }
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public Builder setAdId(long value) {
+        
+        adId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public Builder clearAdId() {
+        
+        adId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long versionId_ ;
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public long getVersionId() {
+        return versionId_;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder setVersionId(long value) {
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> components_ =
+        java.util.Collections.emptyList();
+      private void ensureComponentsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          components_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport>(components_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder> componentsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> getComponentsList() {
+        if (componentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(components_);
         } else {
-          return (java.lang.String) ref;
+          return componentsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getAdUnitBytes() {
-        java.lang.Object ref = adUnit_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          adUnit_ = b;
-          return b;
+      public int getComponentsCount() {
+        if (componentsBuilder_ == null) {
+          return components_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return componentsBuilder_.getCount();
         }
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
        */
-      public Builder setAdUnit(
-          java.lang.String value) {
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getComponents(int index) {
+        if (componentsBuilder_ == null) {
+          return components_.get(index);
+        } else {
+          return componentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder setComponents(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport value) {
+        if (componentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComponentsIsMutable();
+          components_.set(index, value);
+          onChanged();
+        } else {
+          componentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder setComponents(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder builderForValue) {
+        if (componentsBuilder_ == null) {
+          ensureComponentsIsMutable();
+          components_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          componentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder addComponents(com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport value) {
+        if (componentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComponentsIsMutable();
+          components_.add(value);
+          onChanged();
+        } else {
+          componentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder addComponents(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport value) {
+        if (componentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComponentsIsMutable();
+          components_.add(index, value);
+          onChanged();
+        } else {
+          componentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder addComponents(
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder builderForValue) {
+        if (componentsBuilder_ == null) {
+          ensureComponentsIsMutable();
+          components_.add(builderForValue.build());
+          onChanged();
+        } else {
+          componentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder addComponents(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder builderForValue) {
+        if (componentsBuilder_ == null) {
+          ensureComponentsIsMutable();
+          components_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          componentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder addAllComponents(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> values) {
+        if (componentsBuilder_ == null) {
+          ensureComponentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, components_);
+          onChanged();
+        } else {
+          componentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder clearComponents() {
+        if (componentsBuilder_ == null) {
+          components_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          componentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public Builder removeComponents(int index) {
+        if (componentsBuilder_ == null) {
+          ensureComponentsIsMutable();
+          components_.remove(index);
+          onChanged();
+        } else {
+          componentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder getComponentsBuilder(
+          int index) {
+        return getComponentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder getComponentsOrBuilder(
+          int index) {
+        if (componentsBuilder_ == null) {
+          return components_.get(index);  } else {
+          return componentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder> 
+           getComponentsOrBuilderList() {
+        if (componentsBuilder_ != null) {
+          return componentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(components_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder addComponentsBuilder() {
+        return getComponentsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder addComponentsBuilder(
+          int index) {
+        return getComponentsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ComponentReport components = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder> 
+           getComponentsBuilderList() {
+        return getComponentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder> 
+          getComponentsFieldBuilder() {
+        if (componentsBuilder_ == null) {
+          componentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder>(
+                  components_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          components_ = null;
+        }
+        return componentsBuilder_;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> impressions_ =
+        java.util.Collections.emptyList();
+      private void ensureImpressionsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          impressions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression>(impressions_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdImpression, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder> impressionsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> getImpressionsList() {
+        if (impressionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(impressions_);
+        } else {
+          return impressionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public int getImpressionsCount() {
+        if (impressionsBuilder_ == null) {
+          return impressions_.size();
+        } else {
+          return impressionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getImpressions(int index) {
+        if (impressionsBuilder_ == null) {
+          return impressions_.get(index);
+        } else {
+          return impressionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder setImpressions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression value) {
+        if (impressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImpressionsIsMutable();
+          impressions_.set(index, value);
+          onChanged();
+        } else {
+          impressionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder setImpressions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder builderForValue) {
+        if (impressionsBuilder_ == null) {
+          ensureImpressionsIsMutable();
+          impressions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          impressionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder addImpressions(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression value) {
+        if (impressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImpressionsIsMutable();
+          impressions_.add(value);
+          onChanged();
+        } else {
+          impressionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder addImpressions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression value) {
+        if (impressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImpressionsIsMutable();
+          impressions_.add(index, value);
+          onChanged();
+        } else {
+          impressionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder addImpressions(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder builderForValue) {
+        if (impressionsBuilder_ == null) {
+          ensureImpressionsIsMutable();
+          impressions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          impressionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder addImpressions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder builderForValue) {
+        if (impressionsBuilder_ == null) {
+          ensureImpressionsIsMutable();
+          impressions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          impressionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder addAllImpressions(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> values) {
+        if (impressionsBuilder_ == null) {
+          ensureImpressionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, impressions_);
+          onChanged();
+        } else {
+          impressionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder clearImpressions() {
+        if (impressionsBuilder_ == null) {
+          impressions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          impressionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public Builder removeImpressions(int index) {
+        if (impressionsBuilder_ == null) {
+          ensureImpressionsIsMutable();
+          impressions_.remove(index);
+          onChanged();
+        } else {
+          impressionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder getImpressionsBuilder(
+          int index) {
+        return getImpressionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder getImpressionsOrBuilder(
+          int index) {
+        if (impressionsBuilder_ == null) {
+          return impressions_.get(index);  } else {
+          return impressionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder> 
+           getImpressionsOrBuilderList() {
+        if (impressionsBuilder_ != null) {
+          return impressionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(impressions_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder addImpressionsBuilder() {
+        return getImpressionsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder addImpressionsBuilder(
+          int index) {
+        return getImpressionsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdImpression impressions = 5;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder> 
+           getImpressionsBuilderList() {
+        return getImpressionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdImpression, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder> 
+          getImpressionsFieldBuilder() {
+        if (impressionsBuilder_ == null) {
+          impressionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdImpression, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder>(
+                  impressions_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          impressions_ = null;
+        }
+        return impressionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdReport)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdReport)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdReport DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdReport();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdReport>
+        PARSER = new com.google.protobuf.AbstractParser<AdReport>() {
+      public AdReport parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdReport(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdReport> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdReport> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdReportsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdReports)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes ad_unit = 1;</code>
+     */
+    com.google.protobuf.ByteString getAdUnit();
+
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId();
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder();
+
+    /**
+     * <code>string timezone = 3;</code>
+     */
+    java.lang.String getTimezone();
+    /**
+     * <code>string timezone = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTimezoneBytes();
+
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getIpAddressesList();
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    int getIpAddressesCount();
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    com.google.protobuf.ByteString getIpAddresses(int index);
+
+    /**
+     * <code>uint64 device_time = 5;</code>
+     */
+    long getDeviceTime();
+
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> 
+        getAdReportsList();
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdReport getAdReports(int index);
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    int getAdReportsCount();
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder> 
+        getAdReportsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder getAdReportsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code google.protobuf.AdReports}
+   */
+  public  static final class AdReports extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdReports)
+      AdReportsOrBuilder {
+    // Use AdReports.newBuilder() to construct.
+    private AdReports(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdReports() {
+      adUnit_ = com.google.protobuf.ByteString.EMPTY;
+      timezone_ = "";
+      ipAddresses_ = java.util.Collections.emptyList();
+      deviceTime_ = 0L;
+      adReports_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdReports(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+
+              adUnit_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder subBuilder = null;
+              if (deviceId_ != null) {
+                subBuilder = deviceId_.toBuilder();
+              }
+              deviceId_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deviceId_);
+                deviceId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timezone_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              ipAddresses_.add(input.readBytes());
+              break;
+            }
+            case 40: {
+
+              deviceTime_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                adReports_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReport>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              adReports_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdReport.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          adReports_ = java.util.Collections.unmodifiableList(adReports_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdReports.class, com.commutestream.nativeads.protobuf.Csnmessages.AdReports.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int AD_UNIT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString adUnit_;
+    /**
+     * <code>bytes ad_unit = 1;</code>
+     */
+    public com.google.protobuf.ByteString getAdUnit() {
+      return adUnit_;
+    }
+
+    public static final int DEVICE_ID_FIELD_NUMBER = 2;
+    private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public boolean hasDeviceId() {
+      return deviceId_ != null;
+    }
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDeviceId() {
+      return deviceId_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.getDefaultInstance() : deviceId_;
+    }
+    /**
+     * <code>.google.protobuf.DeviceID device_id = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder getDeviceIdOrBuilder() {
+      return getDeviceId();
+    }
+
+    public static final int TIMEZONE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object timezone_;
+    /**
+     * <code>string timezone = 3;</code>
+     */
+    public java.lang.String getTimezone() {
+      java.lang.Object ref = timezone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timezone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string timezone = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTimezoneBytes() {
+      java.lang.Object ref = timezone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timezone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IP_ADDRESSES_FIELD_NUMBER = 4;
+    private java.util.List<com.google.protobuf.ByteString> ipAddresses_;
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getIpAddressesList() {
+      return ipAddresses_;
+    }
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    public int getIpAddressesCount() {
+      return ipAddresses_.size();
+    }
+    /**
+     * <code>repeated bytes ip_addresses = 4;</code>
+     */
+    public com.google.protobuf.ByteString getIpAddresses(int index) {
+      return ipAddresses_.get(index);
+    }
+
+    public static final int DEVICE_TIME_FIELD_NUMBER = 5;
+    private long deviceTime_;
+    /**
+     * <code>uint64 device_time = 5;</code>
+     */
+    public long getDeviceTime() {
+      return deviceTime_;
+    }
+
+    public static final int AD_REPORTS_FIELD_NUMBER = 6;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> adReports_;
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> getAdReportsList() {
+      return adReports_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder> 
+        getAdReportsOrBuilderList() {
+      return adReports_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    public int getAdReportsCount() {
+      return adReports_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getAdReports(int index) {
+      return adReports_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder getAdReportsOrBuilder(
+        int index) {
+      return adReports_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!adUnit_.isEmpty()) {
+        output.writeBytes(1, adUnit_);
+      }
+      if (deviceId_ != null) {
+        output.writeMessage(2, getDeviceId());
+      }
+      if (!getTimezoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timezone_);
+      }
+      for (int i = 0; i < ipAddresses_.size(); i++) {
+        output.writeBytes(4, ipAddresses_.get(i));
+      }
+      if (deviceTime_ != 0L) {
+        output.writeUInt64(5, deviceTime_);
+      }
+      for (int i = 0; i < adReports_.size(); i++) {
+        output.writeMessage(6, adReports_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!adUnit_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, adUnit_);
+      }
+      if (deviceId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getDeviceId());
+      }
+      if (!getTimezoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timezone_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ipAddresses_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(ipAddresses_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getIpAddressesList().size();
+      }
+      if (deviceTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, deviceTime_);
+      }
+      for (int i = 0; i < adReports_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, adReports_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReports)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdReports other = (com.commutestream.nativeads.protobuf.Csnmessages.AdReports) obj;
+
+      boolean result = true;
+      result = result && getAdUnit()
+          .equals(other.getAdUnit());
+      result = result && (hasDeviceId() == other.hasDeviceId());
+      if (hasDeviceId()) {
+        result = result && getDeviceId()
+            .equals(other.getDeviceId());
+      }
+      result = result && getTimezone()
+          .equals(other.getTimezone());
+      result = result && getIpAddressesList()
+          .equals(other.getIpAddressesList());
+      result = result && (getDeviceTime()
+          == other.getDeviceTime());
+      result = result && getAdReportsList()
+          .equals(other.getAdReportsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AD_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getAdUnit().hashCode();
+      if (hasDeviceId()) {
+        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceId().hashCode();
+      }
+      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimezone().hashCode();
+      if (getIpAddressesCount() > 0) {
+        hash = (37 * hash) + IP_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getIpAddressesList().hashCode();
+      }
+      hash = (37 * hash) + DEVICE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDeviceTime());
+      if (getAdReportsCount() > 0) {
+        hash = (37 * hash) + AD_REPORTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAdReportsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdReports prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.AdReports}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdReports)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReportsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdReports.class, com.commutestream.nativeads.protobuf.Csnmessages.AdReports.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdReports.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAdReportsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        adUnit_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (deviceIdBuilder_ == null) {
+          deviceId_ = null;
+        } else {
+          deviceId_ = null;
+          deviceIdBuilder_ = null;
+        }
+        timezone_ = "";
+
+        ipAddresses_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        deviceTime_ = 0L;
+
+        if (adReportsBuilder_ == null) {
+          adReports_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          adReportsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReports getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdReports.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReports build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReports result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReports buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReports result = new com.commutestream.nativeads.protobuf.Csnmessages.AdReports(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.adUnit_ = adUnit_;
+        if (deviceIdBuilder_ == null) {
+          result.deviceId_ = deviceId_;
+        } else {
+          result.deviceId_ = deviceIdBuilder_.build();
+        }
+        result.timezone_ = timezone_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.ipAddresses_ = ipAddresses_;
+        result.deviceTime_ = deviceTime_;
+        if (adReportsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            adReports_ = java.util.Collections.unmodifiableList(adReports_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.adReports_ = adReports_;
+        } else {
+          result.adReports_ = adReportsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReports) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdReports)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdReports other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdReports.getDefaultInstance()) return this;
+        if (other.getAdUnit() != com.google.protobuf.ByteString.EMPTY) {
+          setAdUnit(other.getAdUnit());
+        }
+        if (other.hasDeviceId()) {
+          mergeDeviceId(other.getDeviceId());
+        }
+        if (!other.getTimezone().isEmpty()) {
+          timezone_ = other.timezone_;
+          onChanged();
+        }
+        if (!other.ipAddresses_.isEmpty()) {
+          if (ipAddresses_.isEmpty()) {
+            ipAddresses_ = other.ipAddresses_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureIpAddressesIsMutable();
+            ipAddresses_.addAll(other.ipAddresses_);
+          }
+          onChanged();
+        }
+        if (other.getDeviceTime() != 0L) {
+          setDeviceTime(other.getDeviceTime());
+        }
+        if (adReportsBuilder_ == null) {
+          if (!other.adReports_.isEmpty()) {
+            if (adReports_.isEmpty()) {
+              adReports_ = other.adReports_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureAdReportsIsMutable();
+              adReports_.addAll(other.adReports_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.adReports_.isEmpty()) {
+            if (adReportsBuilder_.isEmpty()) {
+              adReportsBuilder_.dispose();
+              adReportsBuilder_ = null;
+              adReports_ = other.adReports_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              adReportsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAdReportsFieldBuilder() : null;
+            } else {
+              adReportsBuilder_.addAllMessages(other.adReports_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReports parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdReports) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString adUnit_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes ad_unit = 1;</code>
+       */
+      public com.google.protobuf.ByteString getAdUnit() {
+        return adUnit_;
+      }
+      /**
+       * <code>bytes ad_unit = 1;</code>
+       */
+      public Builder setAdUnit(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -20461,25 +22670,11 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>string ad_unit = 1;</code>
+       * <code>bytes ad_unit = 1;</code>
        */
       public Builder clearAdUnit() {
         
         adUnit_ = getDefaultInstance().getAdUnit();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ad_unit = 1;</code>
-       */
-      public Builder setAdUnitBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        adUnit_ = value;
         onChanged();
         return this;
       }
@@ -20670,510 +22865,342 @@ public final class Csnmessages {
         return this;
       }
 
-      private long epoch_ ;
-      /**
-       * <code>uint64 epoch = 4;</code>
-       */
-      public long getEpoch() {
-        return epoch_;
-      }
-      /**
-       * <code>uint64 epoch = 4;</code>
-       */
-      public Builder setEpoch(long value) {
-        
-        epoch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 epoch = 4;</code>
-       */
-      public Builder clearEpoch() {
-        
-        epoch_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> adVisibilty_ =
-        java.util.Collections.emptyList();
-      private void ensureAdVisibiltyIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          adVisibilty_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility>(adVisibilty_);
-          bitField0_ |= 0x00000010;
+      private java.util.List<com.google.protobuf.ByteString> ipAddresses_ = java.util.Collections.emptyList();
+      private void ensureIpAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>(ipAddresses_);
+          bitField0_ |= 0x00000008;
          }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder> adVisibiltyBuilder_;
-
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> getAdVisibiltyList() {
-        if (adVisibiltyBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(adVisibilty_);
-        } else {
-          return adVisibiltyBuilder_.getMessageList();
-        }
+      public java.util.List<com.google.protobuf.ByteString>
+          getIpAddressesList() {
+        return java.util.Collections.unmodifiableList(ipAddresses_);
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public int getAdVisibiltyCount() {
-        if (adVisibiltyBuilder_ == null) {
-          return adVisibilty_.size();
-        } else {
-          return adVisibiltyBuilder_.getCount();
-        }
+      public int getIpAddressesCount() {
+        return ipAddresses_.size();
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility getAdVisibilty(int index) {
-        if (adVisibiltyBuilder_ == null) {
-          return adVisibilty_.get(index);
-        } else {
-          return adVisibiltyBuilder_.getMessage(index);
-        }
+      public com.google.protobuf.ByteString getIpAddresses(int index) {
+        return ipAddresses_.get(index);
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public Builder setAdVisibilty(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility value) {
-        if (adVisibiltyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.set(index, value);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.setMessage(index, value);
-        }
+      public Builder setIpAddresses(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIpAddressesIsMutable();
+        ipAddresses_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public Builder setAdVisibilty(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder builderForValue) {
-        if (adVisibiltyBuilder_ == null) {
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder addIpAddresses(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIpAddressesIsMutable();
+        ipAddresses_.add(value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public Builder addAdVisibilty(com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility value) {
-        if (adVisibiltyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.add(value);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.addMessage(value);
-        }
+      public Builder addAllIpAddresses(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureIpAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ipAddresses_);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
+       * <code>repeated bytes ip_addresses = 4;</code>
        */
-      public Builder addAdVisibilty(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility value) {
-        if (adVisibiltyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.add(index, value);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.addMessage(index, value);
-        }
+      public Builder clearIpAddresses() {
+        ipAddresses_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public Builder addAdVisibilty(
-          com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder builderForValue) {
-        if (adVisibiltyBuilder_ == null) {
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.add(builderForValue.build());
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public Builder addAdVisibilty(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder builderForValue) {
-        if (adVisibiltyBuilder_ == null) {
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public Builder addAllAdVisibilty(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility> values) {
-        if (adVisibiltyBuilder_ == null) {
-          ensureAdVisibiltyIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, adVisibilty_);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public Builder clearAdVisibilty() {
-        if (adVisibiltyBuilder_ == null) {
-          adVisibilty_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public Builder removeAdVisibilty(int index) {
-        if (adVisibiltyBuilder_ == null) {
-          ensureAdVisibiltyIsMutable();
-          adVisibilty_.remove(index);
-          onChanged();
-        } else {
-          adVisibiltyBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder getAdVisibiltyBuilder(
-          int index) {
-        return getAdVisibiltyFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder getAdVisibiltyOrBuilder(
-          int index) {
-        if (adVisibiltyBuilder_ == null) {
-          return adVisibilty_.get(index);  } else {
-          return adVisibiltyBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder> 
-           getAdVisibiltyOrBuilderList() {
-        if (adVisibiltyBuilder_ != null) {
-          return adVisibiltyBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(adVisibilty_);
-        }
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder addAdVisibiltyBuilder() {
-        return getAdVisibiltyFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder addAdVisibiltyBuilder(
-          int index) {
-        return getAdVisibiltyFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .google.protobuf.AdVisibility ad_visibilty = 5;</code>
-       */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder> 
-           getAdVisibiltyBuilderList() {
-        return getAdVisibiltyFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder> 
-          getAdVisibiltyFieldBuilder() {
-        if (adVisibiltyBuilder_ == null) {
-          adVisibiltyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibility.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdVisibilityOrBuilder>(
-                  adVisibilty_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
-                  getParentForChildren(),
-                  isClean());
-          adVisibilty_ = null;
-        }
-        return adVisibiltyBuilder_;
       }
 
-      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> adInteractions_ =
+      private long deviceTime_ ;
+      /**
+       * <code>uint64 device_time = 5;</code>
+       */
+      public long getDeviceTime() {
+        return deviceTime_;
+      }
+      /**
+       * <code>uint64 device_time = 5;</code>
+       */
+      public Builder setDeviceTime(long value) {
+        
+        deviceTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 device_time = 5;</code>
+       */
+      public Builder clearDeviceTime() {
+        
+        deviceTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> adReports_ =
         java.util.Collections.emptyList();
-      private void ensureAdInteractionsIsMutable() {
+      private void ensureAdReportsIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          adInteractions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction>(adInteractions_);
+          adReports_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReport>(adReports_);
           bitField0_ |= 0x00000020;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder> adInteractionsBuilder_;
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReport, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder> adReportsBuilder_;
 
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> getAdInteractionsList() {
-        if (adInteractionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(adInteractions_);
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> getAdReportsList() {
+        if (adReportsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(adReports_);
         } else {
-          return adInteractionsBuilder_.getMessageList();
+          return adReportsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public int getAdInteractionsCount() {
-        if (adInteractionsBuilder_ == null) {
-          return adInteractions_.size();
+      public int getAdReportsCount() {
+        if (adReportsBuilder_ == null) {
+          return adReports_.size();
         } else {
-          return adInteractionsBuilder_.getCount();
+          return adReportsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction getAdInteractions(int index) {
-        if (adInteractionsBuilder_ == null) {
-          return adInteractions_.get(index);
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getAdReports(int index) {
+        if (adReportsBuilder_ == null) {
+          return adReports_.get(index);
         } else {
-          return adInteractionsBuilder_.getMessage(index);
+          return adReportsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder setAdInteractions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction value) {
-        if (adInteractionsBuilder_ == null) {
+      public Builder setAdReports(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReport value) {
+        if (adReportsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAdInteractionsIsMutable();
-          adInteractions_.set(index, value);
+          ensureAdReportsIsMutable();
+          adReports_.set(index, value);
           onChanged();
         } else {
-          adInteractionsBuilder_.setMessage(index, value);
+          adReportsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder setAdInteractions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder builderForValue) {
-        if (adInteractionsBuilder_ == null) {
-          ensureAdInteractionsIsMutable();
-          adInteractions_.set(index, builderForValue.build());
+      public Builder setAdReports(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder builderForValue) {
+        if (adReportsBuilder_ == null) {
+          ensureAdReportsIsMutable();
+          adReports_.set(index, builderForValue.build());
           onChanged();
         } else {
-          adInteractionsBuilder_.setMessage(index, builderForValue.build());
+          adReportsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder addAdInteractions(com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction value) {
-        if (adInteractionsBuilder_ == null) {
+      public Builder addAdReports(com.commutestream.nativeads.protobuf.Csnmessages.AdReport value) {
+        if (adReportsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAdInteractionsIsMutable();
-          adInteractions_.add(value);
+          ensureAdReportsIsMutable();
+          adReports_.add(value);
           onChanged();
         } else {
-          adInteractionsBuilder_.addMessage(value);
+          adReportsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder addAdInteractions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction value) {
-        if (adInteractionsBuilder_ == null) {
+      public Builder addAdReports(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReport value) {
+        if (adReportsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAdInteractionsIsMutable();
-          adInteractions_.add(index, value);
+          ensureAdReportsIsMutable();
+          adReports_.add(index, value);
           onChanged();
         } else {
-          adInteractionsBuilder_.addMessage(index, value);
+          adReportsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder addAdInteractions(
-          com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder builderForValue) {
-        if (adInteractionsBuilder_ == null) {
-          ensureAdInteractionsIsMutable();
-          adInteractions_.add(builderForValue.build());
+      public Builder addAdReports(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder builderForValue) {
+        if (adReportsBuilder_ == null) {
+          ensureAdReportsIsMutable();
+          adReports_.add(builderForValue.build());
           onChanged();
         } else {
-          adInteractionsBuilder_.addMessage(builderForValue.build());
+          adReportsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder addAdInteractions(
-          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder builderForValue) {
-        if (adInteractionsBuilder_ == null) {
-          ensureAdInteractionsIsMutable();
-          adInteractions_.add(index, builderForValue.build());
+      public Builder addAdReports(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder builderForValue) {
+        if (adReportsBuilder_ == null) {
+          ensureAdReportsIsMutable();
+          adReports_.add(index, builderForValue.build());
           onChanged();
         } else {
-          adInteractionsBuilder_.addMessage(index, builderForValue.build());
+          adReportsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder addAllAdInteractions(
-          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction> values) {
-        if (adInteractionsBuilder_ == null) {
-          ensureAdInteractionsIsMutable();
+      public Builder addAllAdReports(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReport> values) {
+        if (adReportsBuilder_ == null) {
+          ensureAdReportsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, adInteractions_);
+              values, adReports_);
           onChanged();
         } else {
-          adInteractionsBuilder_.addAllMessages(values);
+          adReportsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder clearAdInteractions() {
-        if (adInteractionsBuilder_ == null) {
-          adInteractions_ = java.util.Collections.emptyList();
+      public Builder clearAdReports() {
+        if (adReportsBuilder_ == null) {
+          adReports_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
-          adInteractionsBuilder_.clear();
+          adReportsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public Builder removeAdInteractions(int index) {
-        if (adInteractionsBuilder_ == null) {
-          ensureAdInteractionsIsMutable();
-          adInteractions_.remove(index);
+      public Builder removeAdReports(int index) {
+        if (adReportsBuilder_ == null) {
+          ensureAdReportsIsMutable();
+          adReports_.remove(index);
           onChanged();
         } else {
-          adInteractionsBuilder_.remove(index);
+          adReportsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder getAdInteractionsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder getAdReportsBuilder(
           int index) {
-        return getAdInteractionsFieldBuilder().getBuilder(index);
+        return getAdReportsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder getAdInteractionsOrBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder getAdReportsOrBuilder(
           int index) {
-        if (adInteractionsBuilder_ == null) {
-          return adInteractions_.get(index);  } else {
-          return adInteractionsBuilder_.getMessageOrBuilder(index);
+        if (adReportsBuilder_ == null) {
+          return adReports_.get(index);  } else {
+          return adReportsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder> 
-           getAdInteractionsOrBuilderList() {
-        if (adInteractionsBuilder_ != null) {
-          return adInteractionsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder> 
+           getAdReportsOrBuilderList() {
+        if (adReportsBuilder_ != null) {
+          return adReportsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(adInteractions_);
+          return java.util.Collections.unmodifiableList(adReports_);
         }
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder addAdInteractionsBuilder() {
-        return getAdInteractionsFieldBuilder().addBuilder(
-            com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.getDefaultInstance());
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder addAdReportsBuilder() {
+        return getAdReportsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.AdReport.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder addAdInteractionsBuilder(
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder addAdReportsBuilder(
           int index) {
-        return getAdInteractionsFieldBuilder().addBuilder(
-            index, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.getDefaultInstance());
+        return getAdReportsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.getDefaultInstance());
       }
       /**
-       * <code>repeated .google.protobuf.AdInteraction ad_interactions = 6;</code>
+       * <code>repeated .google.protobuf.AdReport ad_reports = 6;</code>
        */
-      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder> 
-           getAdInteractionsBuilderList() {
-        return getAdInteractionsFieldBuilder().getBuilderList();
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder> 
+           getAdReportsBuilderList() {
+        return getAdReportsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder> 
-          getAdInteractionsFieldBuilder() {
-        if (adInteractionsBuilder_ == null) {
-          adInteractionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction, com.commutestream.nativeads.protobuf.Csnmessages.AdInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdInteractionOrBuilder>(
-                  adInteractions_,
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReport, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder> 
+          getAdReportsFieldBuilder() {
+        if (adReportsBuilder_ == null) {
+          adReportsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdReport, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder>(
+                  adReports_,
                   ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
-          adInteractions_ = null;
+          adReports_ = null;
         }
-        return adInteractionsBuilder_;
+        return adReportsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -21186,54 +23213,824 @@ public final class Csnmessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.protobuf.AdReport)
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdReports)
     }
 
-    // @@protoc_insertion_point(class_scope:google.protobuf.AdReport)
-    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdReport DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdReports)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdReports DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdReport();
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdReports();
     }
 
-    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstance() {
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReports getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AdReport>
-        PARSER = new com.google.protobuf.AbstractParser<AdReport>() {
-      public AdReport parsePartialFrom(
+    private static final com.google.protobuf.Parser<AdReports>
+        PARSER = new com.google.protobuf.AbstractParser<AdReports>() {
+      public AdReports parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AdReport(input, extensionRegistry);
+          return new AdReports(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AdReport> parser() {
+    public static com.google.protobuf.Parser<AdReports> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AdReport> getParserForType() {
+    public com.google.protobuf.Parser<AdReports> getParserForType() {
       return PARSER;
     }
 
-    public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstanceForType() {
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReports getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdTransactionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdTransaction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    boolean hasRequests();
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getRequests();
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder getRequestsOrBuilder();
+
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    boolean hasResponses();
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getResponses();
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder getResponsesOrBuilder();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.AdTransaction}
+   */
+  public  static final class AdTransaction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdTransaction)
+      AdTransactionOrBuilder {
+    // Use AdTransaction.newBuilder() to construct.
+    private AdTransaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdTransaction() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdTransaction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder subBuilder = null;
+              if (requests_ != null) {
+                subBuilder = requests_.toBuilder();
+              }
+              requests_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(requests_);
+                requests_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder subBuilder = null;
+              if (responses_ != null) {
+                subBuilder = responses_.toBuilder();
+              }
+              responses_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(responses_);
+                responses_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.class, com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.Builder.class);
+    }
+
+    public static final int REQUESTS_FIELD_NUMBER = 1;
+    private com.commutestream.nativeads.protobuf.Csnmessages.AdRequests requests_;
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    public boolean hasRequests() {
+      return requests_ != null;
+    }
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getRequests() {
+      return requests_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance() : requests_;
+    }
+    /**
+     * <code>.google.protobuf.AdRequests requests = 1;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder getRequestsOrBuilder() {
+      return getRequests();
+    }
+
+    public static final int RESPONSES_FIELD_NUMBER = 2;
+    private com.commutestream.nativeads.protobuf.Csnmessages.AdResponses responses_;
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    public boolean hasResponses() {
+      return responses_ != null;
+    }
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getResponses() {
+      return responses_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance() : responses_;
+    }
+    /**
+     * <code>.google.protobuf.AdResponses responses = 2;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder getResponsesOrBuilder() {
+      return getResponses();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requests_ != null) {
+        output.writeMessage(1, getRequests());
+      }
+      if (responses_ != null) {
+        output.writeMessage(2, getResponses());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requests_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getRequests());
+      }
+      if (responses_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResponses());
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction other = (com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction) obj;
+
+      boolean result = true;
+      result = result && (hasRequests() == other.hasRequests());
+      if (hasRequests()) {
+        result = result && getRequests()
+            .equals(other.getRequests());
+      }
+      result = result && (hasResponses() == other.hasResponses());
+      if (hasResponses()) {
+        result = result && getResponses()
+            .equals(other.getResponses());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRequests()) {
+        hash = (37 * hash) + REQUESTS_FIELD_NUMBER;
+        hash = (53 * hash) + getRequests().hashCode();
+      }
+      if (hasResponses()) {
+        hash = (37 * hash) + RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getResponses().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.AdTransaction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdTransaction)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdTransactionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.class, com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (requestsBuilder_ == null) {
+          requests_ = null;
+        } else {
+          requests_ = null;
+          requestsBuilder_ = null;
+        }
+        if (responsesBuilder_ == null) {
+          responses_ = null;
+        } else {
+          responses_ = null;
+          responsesBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.getDefaultInstance();
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction result = new com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction(this);
+        if (requestsBuilder_ == null) {
+          result.requests_ = requests_;
+        } else {
+          result.requests_ = requestsBuilder_.build();
+        }
+        if (responsesBuilder_ == null) {
+          result.responses_ = responses_;
+        } else {
+          result.responses_ = responsesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.getDefaultInstance()) return this;
+        if (other.hasRequests()) {
+          mergeRequests(other.getRequests());
+        }
+        if (other.hasResponses()) {
+          mergeResponses(other.getResponses());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdRequests requests_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequests, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder> requestsBuilder_;
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public boolean hasRequests() {
+        return requestsBuilder_ != null || requests_ != null;
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getRequests() {
+        if (requestsBuilder_ == null) {
+          return requests_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance() : requests_;
+        } else {
+          return requestsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public Builder setRequests(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests value) {
+        if (requestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requests_ = value;
+          onChanged();
+        } else {
+          requestsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public Builder setRequests(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder builderForValue) {
+        if (requestsBuilder_ == null) {
+          requests_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public Builder mergeRequests(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests value) {
+        if (requestsBuilder_ == null) {
+          if (requests_ != null) {
+            requests_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.newBuilder(requests_).mergeFrom(value).buildPartial();
+          } else {
+            requests_ = value;
+          }
+          onChanged();
+        } else {
+          requestsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public Builder clearRequests() {
+        if (requestsBuilder_ == null) {
+          requests_ = null;
+          onChanged();
+        } else {
+          requests_ = null;
+          requestsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder getRequestsBuilder() {
+        
+        onChanged();
+        return getRequestsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder getRequestsOrBuilder() {
+        if (requestsBuilder_ != null) {
+          return requestsBuilder_.getMessageOrBuilder();
+        } else {
+          return requests_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance() : requests_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdRequests requests = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdRequests, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder> 
+          getRequestsFieldBuilder() {
+        if (requestsBuilder_ == null) {
+          requestsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdRequests, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder>(
+                  getRequests(),
+                  getParentForChildren(),
+                  isClean());
+          requests_ = null;
+        }
+        return requestsBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdResponses responses_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponses, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder> responsesBuilder_;
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public boolean hasResponses() {
+        return responsesBuilder_ != null || responses_ != null;
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getResponses() {
+        if (responsesBuilder_ == null) {
+          return responses_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance() : responses_;
+        } else {
+          return responsesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public Builder setResponses(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses value) {
+        if (responsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responses_ = value;
+          onChanged();
+        } else {
+          responsesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public Builder setResponses(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder builderForValue) {
+        if (responsesBuilder_ == null) {
+          responses_ = builderForValue.build();
+          onChanged();
+        } else {
+          responsesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public Builder mergeResponses(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses value) {
+        if (responsesBuilder_ == null) {
+          if (responses_ != null) {
+            responses_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.newBuilder(responses_).mergeFrom(value).buildPartial();
+          } else {
+            responses_ = value;
+          }
+          onChanged();
+        } else {
+          responsesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public Builder clearResponses() {
+        if (responsesBuilder_ == null) {
+          responses_ = null;
+          onChanged();
+        } else {
+          responses_ = null;
+          responsesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder getResponsesBuilder() {
+        
+        onChanged();
+        return getResponsesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder getResponsesOrBuilder() {
+        if (responsesBuilder_ != null) {
+          return responsesBuilder_.getMessageOrBuilder();
+        } else {
+          return responses_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance() : responses_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdResponses responses = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdResponses, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder> 
+          getResponsesFieldBuilder() {
+        if (responsesBuilder_ == null) {
+          responsesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdResponses, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder>(
+                  getResponses(),
+                  getParentForChildren(),
+                  isClean());
+          responses_ = null;
+        }
+        return responsesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdTransaction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdTransaction)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdTransaction>
+        PARSER = new com.google.protobuf.AbstractParser<AdTransaction>() {
+      public AdTransaction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdTransaction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdTransaction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdTransaction> getParserForType() {
+      return PARSER;
+    }
+
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_Stop_descriptor;
+    internal_static_google_protobuf_TransitAgency_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_Stop_fieldAccessorTable;
+      internal_static_google_protobuf_TransitAgency_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_StopComponent_descriptor;
+    internal_static_google_protobuf_TransitRoute_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_StopComponent_fieldAccessorTable;
+      internal_static_google_protobuf_TransitRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_TransitStop_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_TransitStop_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_Location_descriptor;
   private static final 
@@ -21255,16 +24052,6 @@ public final class Csnmessages {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_ActionComponent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_TransitTitleComponent_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_TransitTitleComponent_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_TransitSubtitleComponent_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_TransitSubtitleComponent_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_LogoComponent_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21285,6 +24072,11 @@ public final class Csnmessages {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdvertiserComponent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_Color_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_Color_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_Colors_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21295,60 +24087,70 @@ public final class Csnmessages {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_SecondaryActionComponent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_ViewComponent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_ViewComponent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_NativeAd_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_NativeAd_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_StopAd_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_StopAd_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_LocationAd_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_LocationAd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_AdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_AdRequests_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_AdRequests_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_AdResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_AdResponse_AdsEntry_descriptor;
+    internal_static_google_protobuf_AdResponses_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_AdResponse_AdsEntry_fieldAccessorTable;
+      internal_static_google_protobuf_AdResponses_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_DeviceID_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_DeviceID_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_SimpleStat_descriptor;
+    internal_static_google_protobuf_ComponentInteraction_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_SimpleStat_fieldAccessorTable;
+      internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_AdVisibility_descriptor;
+    internal_static_google_protobuf_ComponentReport_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_AdVisibility_fieldAccessorTable;
+      internal_static_google_protobuf_ComponentReport_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_protobuf_AdInteraction_descriptor;
+    internal_static_google_protobuf_AdImpression_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_protobuf_AdInteraction_fieldAccessorTable;
+      internal_static_google_protobuf_AdImpression_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_AdReport_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdReport_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_AdReports_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_AdReports_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_AdTransaction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_AdTransaction_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -21358,88 +24160,90 @@ public final class Csnmessages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021csnmessages.proto\022\017google.protobuf\"<\n\004" +
-      "Stop\022\021\n\tagency_id\030\001 \001(\t\022\020\n\010route_id\030\002 \001(" +
-      "\t\022\017\n\007stop_id\030\003 \001(\t\"\211\001\n\rStopComponent\022\024\n\014" +
-      "component_id\030\001 \001(\t\022)\n\nstop_tuple\030\002 \001(\0132\025" +
-      ".google.protobuf.Stop\022\022\n\nagencyName\030\003 \001(" +
-      "\t\022\021\n\trouteName\030\004 \001(\t\022\020\n\010stopName\030\005 \001(\t\"$" +
-      "\n\010Location\022\013\n\003lat\030\002 \001(\001\022\013\n\003lon\030\003 \001(\001\"u\n\021" +
-      "LocationComponent\022\024\n\014component_id\030\001 \001(\004\022" +
-      "+\n\010location\030\002 \001(\0132\031.google.protobuf.Loca" +
-      "tion\022\014\n\004name\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\"\\\n\rH",
-      "eroComponent\022\024\n\014component_id\030\001 \001(\004\022\'\n\004ki" +
-      "nd\030\002 \001(\0162\031.google.protobuf.HeroKind\022\014\n\004b" +
-      "lob\030\003 \001(\014\"}\n\017ActionComponent\022\024\n\014componen" +
-      "t_id\030\001 \001(\004\022)\n\004kind\030\002 \001(\0162\033.google.protob" +
-      "uf.ActionKind\022\013\n\003url\030\003 \001(\t\022\r\n\005title\030\004 \001(" +
-      "\t\022\r\n\005color\030\005 \001(\014\"<\n\025TransitTitleComponen" +
-      "t\022\024\n\014component_id\030\001 \001(\004\022\r\n\005title\030\002 \001(\t\"B" +
-      "\n\030TransitSubtitleComponent\022\024\n\014component_" +
-      "id\030\001 \001(\004\022\020\n\010subtitle\030\002 \001(\t\"4\n\rLogoCompon" +
-      "ent\022\024\n\014component_id\030\001 \001(\004\022\r\n\005image\030\002 \001(\014",
-      "\";\n\021HeadlineComponent\022\024\n\014component_id\030\001 " +
-      "\001(\004\022\020\n\010headline\030\002 \001(\t\"3\n\rBodyComponent\022\024" +
-      "\n\014component_id\030\001 \001(\004\022\014\n\004body\030\002 \001(\t\"?\n\023Ad" +
-      "vertiserComponent\022\024\n\014component_id\030\001 \001(\004\022" +
-      "\022\n\nadvertiser\030\002 \001(\t\"0\n\006Colors\022\022\n\nbackgro" +
-      "und\030\001 \001(\t\022\022\n\nforeground\030\002 \001(\t\"0\n\030Seconda" +
-      "ryActionComponent\022\024\n\014component_id\030\001 \001(\004\"" +
-      "\267\005\n\010NativeAd\022\022\n\nrequest_id\030\001 \001(\004\022\r\n\005ad_i" +
-      "d\030\002 \001(\004\022\'\n\006colors\030\003 \001(\0132\027.google.protobu" +
-      "f.Colors\022J\n\027secondary_action_screen\030\004 \001(",
-      "\0132).google.protobuf.SecondaryActionCompo" +
-      "nent\022=\n\rtransit_title\030\005 \001(\0132&.google.pro" +
-      "tobuf.TransitTitleComponent\022C\n\020transit_s" +
-      "ubtitle\030\006 \001(\0132).google.protobuf.TransitS" +
-      "ubtitleComponent\022,\n\004logo\030\007 \001(\0132\036.google." +
-      "protobuf.LogoComponent\0224\n\010headline\030\010 \001(\013" +
-      "2\".google.protobuf.HeadlineComponent\022,\n\004" +
-      "body\030\t \001(\0132\036.google.protobuf.BodyCompone" +
-      "nt\0228\n\nadvertiser\030\n \001(\0132$.google.protobuf" +
-      ".AdvertiserComponent\0224\n\010location\030\013 \001(\0132\"",
-      ".google.protobuf.LocationComponent\022,\n\004st" +
-      "op\030\014 \001(\0132\036.google.protobuf.StopComponent" +
-      "\022,\n\004hero\030\r \001(\0132\036.google.protobuf.HeroCom" +
-      "ponent\0221\n\007actions\030\016 \003(\0132 .google.protobu" +
-      "f.ActionComponent\"B\n\006StopAd\022)\n\nstop_tupl" +
-      "e\030\001 \001(\0132\025.google.protobuf.Stop\022\r\n\005ad_id\030" +
-      "\002 \001(\004\"C\n\nLocationAd\022&\n\003loc\030\001 \001(\0132\031.googl" +
-      "e.protobuf.Location\022\r\n\005ad_id\030\002 \001(\004\"\257\001\n\tA" +
-      "dRequest\022\017\n\007ad_unit\030\001 \001(\t\022,\n\tdevice_id\030\002" +
-      " \001(\0132\031.google.protobuf.DeviceID\022\020\n\010timez",
-      "one\030\003 \001(\t\022+\n\010location\030\004 \001(\0132\031.google.pro" +
-      "tobuf.Location\022$\n\005stops\030\005 \003(\0132\025.google.p" +
-      "rotobuf.Stop\"\344\001\n\nAdResponse\0221\n\014location_" +
-      "ads\030\001 \003(\0132\033.google.protobuf.LocationAd\022)" +
-      "\n\010stop_ads\030\002 \003(\0132\027.google.protobuf.StopA" +
-      "d\0221\n\003ads\030\003 \003(\0132$.google.protobuf.AdRespo" +
-      "nse.AdsEntry\032E\n\010AdsEntry\022\013\n\003key\030\001 \001(\004\022(\n" +
-      "\005value\030\002 \001(\0132\031.google.protobuf.NativeAd:" +
-      "\0028\001\"q\n\010DeviceID\0226\n\016device_id_type\030\001 \001(\0162" +
-      "\036.google.protobuf.DeviceID.Type\022\021\n\tdevic",
-      "e_id\030\002 \001(\t\"\032\n\004Type\022\010\n\004IDFA\020\000\022\010\n\004AAID\020\001\"4" +
-      "\n\nSimpleStat\022\013\n\003min\030\001 \001(\001\022\013\n\003max\030\002 \001(\001\022\014" +
-      "\n\004mean\030\003 \001(\001\"\342\001\n\014AdVisibility\022\022\n\nrequest" +
-      "_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\024\n\014component_id" +
-      "\030\003 \001(\004\022\024\n\014epoch_offset\030\004 \001(\004\022\020\n\010duration" +
-      "\030\005 \001(\004\0229\n\024component_visibility\030\006 \001(\0132\033.g" +
-      "oogle.protobuf.SimpleStat\0226\n\021screen_visi" +
-      "bility\030\007 \001(\0132\033.google.protobuf.SimpleSta" +
-      "t\"\242\001\n\rAdInteraction\022\022\n\nrequest_id\030\001 \001(\004\022" +
-      "\r\n\005ad_id\030\002 \001(\004\022\024\n\014component_id\030\003 \001(\004\022\020\n\010",
-      "duration\030\004 \001(\004\022\024\n\014epoch_offset\030\005 \001(\004\0220\n\004" +
-      "kind\030\006 \001(\0162\".google.protobuf.AdInteracti" +
-      "onKind\"\330\001\n\010AdReport\022\017\n\007ad_unit\030\001 \001(\t\022,\n\t" +
-      "device_id\030\002 \001(\0132\031.google.protobuf.Device" +
-      "ID\022\020\n\010timezone\030\003 \001(\t\022\r\n\005epoch\030\004 \001(\004\0223\n\014a" +
-      "d_visibilty\030\005 \003(\0132\035.google.protobuf.AdVi" +
-      "sibility\0227\n\017ad_interactions\030\006 \003(\0132\036.goog" +
-      "le.protobuf.AdInteraction*\037\n\010HeroKind\022\t\n" +
-      "\005Image\020\000\022\010\n\004HTML\020\001*\025\n\nActionKind\022\007\n\003Url\020" +
-      "\000*\034\n\021AdInteractionKind\022\007\n\003Tap\020\000B-\n$com.c",
-      "ommutestream.nativeads.protobuf\242\002\004CSNPb\006" +
-      "proto3"
+      "\n\021csnmessages.proto\022\017google.protobuf\"\"\n\r" +
+      "TransitAgency\022\021\n\tagency_id\030\001 \001(\t\"3\n\014Tran" +
+      "sitRoute\022\021\n\tagency_id\030\001 \001(\t\022\020\n\010route_id\030" +
+      "\002 \001(\t\"C\n\013TransitStop\022\021\n\tagency_id\030\001 \001(\t\022" +
+      "\020\n\010route_id\030\002 \001(\t\022\017\n\007stop_id\030\003 \001(\t\"$\n\010Lo" +
+      "cation\022\013\n\003lat\030\002 \001(\001\022\013\n\003lon\030\003 \001(\001\"u\n\021Loca" +
+      "tionComponent\022\024\n\014component_id\030\001 \001(\004\022+\n\010l" +
+      "ocation\030\002 \001(\0132\031.google.protobuf.Location" +
+      "\022\014\n\004name\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\"\\\n\rHeroC" +
+      "omponent\022\024\n\014component_id\030\001 \001(\004\022\'\n\004kind\030\002",
+      " \001(\0162\031.google.protobuf.HeroKind\022\014\n\004blob\030" +
+      "\003 \001(\014\"\227\001\n\017ActionComponent\022\024\n\014component_i" +
+      "d\030\001 \001(\004\022)\n\004kind\030\002 \001(\0162\033.google.protobuf." +
+      "ActionKind\022\013\n\003url\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\'" +
+      "\n\006colors\030\005 \001(\0132\027.google.protobuf.Colors\"" +
+      "4\n\rLogoComponent\022\024\n\014component_id\030\001 \001(\004\022\r" +
+      "\n\005image\030\002 \001(\014\";\n\021HeadlineComponent\022\024\n\014co" +
+      "mponent_id\030\001 \001(\004\022\020\n\010headline\030\002 \001(\t\"3\n\rBo" +
+      "dyComponent\022\024\n\014component_id\030\001 \001(\004\022\014\n\004bod" +
+      "y\030\002 \001(\t\"?\n\023AdvertiserComponent\022\024\n\014compon",
+      "ent_id\030\001 \001(\004\022\022\n\nadvertiser\030\002 \001(\t\"1\n\005Colo" +
+      "r\022\013\n\003red\030\001 \001(\r\022\r\n\005green\030\002 \001(\r\022\014\n\004blue\030\003 " +
+      "\001(\r\"`\n\006Colors\022*\n\nbackground\030\001 \001(\0132\026.goog" +
+      "le.protobuf.Color\022*\n\nforeground\030\002 \001(\0132\026." +
+      "google.protobuf.Color\"Q\n\030SecondaryAction" +
+      "Component\022\024\n\014component_id\030\001 \001(\004\022\r\n\005title" +
+      "\030\002 \001(\t\022\020\n\010subtitle\030\003 \001(\t\"%\n\rViewComponen" +
+      "t\022\024\n\014component_id\030\001 \001(\004\"\307\004\n\010NativeAd\022\022\n\n" +
+      "request_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022\n\nversi" +
+      "on_id\030\003 \001(\004\022\'\n\006colors\030\004 \001(\0132\027.google.pro",
+      "tobuf.Colors\0221\n\007actions\030\005 \003(\0132 .google.p" +
+      "rotobuf.ActionComponent\022,\n\004view\030\006 \001(\0132\036." +
+      "google.protobuf.ViewComponent\022J\n\027seconda" +
+      "ry_action_screen\030\007 \001(\0132).google.protobuf" +
+      ".SecondaryActionComponent\022,\n\004logo\030\010 \001(\0132" +
+      "\036.google.protobuf.LogoComponent\0224\n\010headl" +
+      "ine\030\t \001(\0132\".google.protobuf.HeadlineComp" +
+      "onent\022,\n\004body\030\n \001(\0132\036.google.protobuf.Bo" +
+      "dyComponent\0228\n\nadvertiser\030\013 \001(\0132$.google" +
+      ".protobuf.AdvertiserComponent\0224\n\010locatio",
+      "n\030\014 \001(\0132\".google.protobuf.LocationCompon" +
+      "ent\022,\n\004hero\030\r \001(\0132\036.google.protobuf.Hero" +
+      "Component\"\354\001\n\tAdRequest\022\017\n\007hash_id\030\001 \001(\014" +
+      "\022\022\n\nnum_of_ads\030\002 \001(\r\022,\n\tlocations\030\003 \003(\0132" +
+      "\031.google.protobuf.Location\0220\n\010agencies\030\004" +
+      " \003(\0132\036.google.protobuf.TransitAgency\022-\n\006" +
+      "routes\030\005 \003(\0132\035.google.protobuf.TransitRo" +
+      "ute\022+\n\005stops\030\006 \003(\0132\034.google.protobuf.Tra" +
+      "nsitStop\"\244\001\n\nAdRequests\022\017\n\007ad_unit\030\001 \001(\014" +
+      "\022,\n\tdevice_id\030\002 \001(\0132\031.google.protobuf.De",
+      "viceID\022\024\n\014ip_addresses\030\003 \003(\014\022\020\n\010timezone" +
+      "\030\004 \001(\t\022/\n\013ad_requests\030\005 \003(\0132\032.google.pro" +
+      "tobuf.AdRequest\"E\n\nAdResponse\022\017\n\007hash_id" +
+      "\030\001 \001(\014\022&\n\003ads\030\002 \003(\0132\031.google.protobuf.Na" +
+      "tiveAd\"S\n\013AdResponses\022\021\n\tserver_id\030\001 \001(\t" +
+      "\0221\n\014ad_responses\030\002 \003(\0132\033.google.protobuf" +
+      ".AdResponse\"q\n\010DeviceID\0226\n\016device_id_typ" +
+      "e\030\001 \001(\0162\036.google.protobuf.DeviceID.Type\022" +
+      "\021\n\tdevice_id\030\002 \001(\014\"\032\n\004Type\022\010\n\004IDFA\020\000\022\010\n\004" +
+      "AAID\020\001\"d\n\024ComponentInteraction\022\023\n\013device",
+      "_time\030\001 \001(\004\0227\n\004kind\030\002 \001(\0162).google.proto" +
+      "buf.ComponentInteractionKind\"\343\001\n\017Compone" +
+      "ntReport\022\024\n\014component_id\030\001 \001(\004\022\030\n\020visibi" +
+      "lity_epoch\030\002 \001(\004\022\037\n\027visibility_sample_co" +
+      "unt\030\003 \001(\004\022\037\n\027view_visibility_samples\030\004 \003" +
+      "(\004\022!\n\031device_visibility_samples\030\005 \003(\004\022;\n" +
+      "\014interactions\030\006 \003(\0132%.google.protobuf.Co" +
+      "mponentInteraction\"#\n\014AdImpression\022\023\n\013de" +
+      "vice_time\030\001 \001(\004\"\253\001\n\010AdReport\022\022\n\nrequest_" +
+      "id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022\n\nversion_id\030\003 ",
+      "\001(\004\0224\n\ncomponents\030\004 \003(\0132 .google.protobu" +
+      "f.ComponentReport\0222\n\013impressions\030\005 \003(\0132\035" +
+      ".google.protobuf.AdImpression\"\266\001\n\tAdRepo" +
+      "rts\022\017\n\007ad_unit\030\001 \001(\014\022,\n\tdevice_id\030\002 \001(\0132" +
+      "\031.google.protobuf.DeviceID\022\020\n\010timezone\030\003" +
+      " \001(\t\022\024\n\014ip_addresses\030\004 \003(\014\022\023\n\013device_tim" +
+      "e\030\005 \001(\004\022-\n\nad_reports\030\006 \003(\0132\031.google.pro" +
+      "tobuf.AdReport\"o\n\rAdTransaction\022-\n\010reque" +
+      "sts\030\001 \001(\0132\033.google.protobuf.AdRequests\022/" +
+      "\n\tresponses\030\002 \001(\0132\034.google.protobuf.AdRe",
+      "sponses*\037\n\010HeroKind\022\t\n\005Image\020\000\022\010\n\004HTML\020\001" +
+      "*\025\n\nActionKind\022\007\n\003Url\020\000*#\n\030ComponentInte" +
+      "ractionKind\022\007\n\003Tap\020\000B-\n$com.commutestrea" +
+      "m.nativeads.protobuf\242\002\004CSNPb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21453,78 +24257,78 @@ public final class Csnmessages {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_google_protobuf_Stop_descriptor =
+    internal_static_google_protobuf_TransitAgency_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_google_protobuf_Stop_fieldAccessorTable = new
+    internal_static_google_protobuf_TransitAgency_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_Stop_descriptor,
-        new java.lang.String[] { "AgencyId", "RouteId", "StopId", });
-    internal_static_google_protobuf_StopComponent_descriptor =
+        internal_static_google_protobuf_TransitAgency_descriptor,
+        new java.lang.String[] { "AgencyId", });
+    internal_static_google_protobuf_TransitRoute_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_google_protobuf_StopComponent_fieldAccessorTable = new
+    internal_static_google_protobuf_TransitRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_StopComponent_descriptor,
-        new java.lang.String[] { "ComponentId", "StopTuple", "AgencyName", "RouteName", "StopName", });
-    internal_static_google_protobuf_Location_descriptor =
+        internal_static_google_protobuf_TransitRoute_descriptor,
+        new java.lang.String[] { "AgencyId", "RouteId", });
+    internal_static_google_protobuf_TransitStop_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_google_protobuf_TransitStop_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_TransitStop_descriptor,
+        new java.lang.String[] { "AgencyId", "RouteId", "StopId", });
+    internal_static_google_protobuf_Location_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_google_protobuf_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_Location_descriptor,
         new java.lang.String[] { "Lat", "Lon", });
     internal_static_google_protobuf_LocationComponent_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_google_protobuf_LocationComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_LocationComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Location", "Name", "Address", });
     internal_static_google_protobuf_HeroComponent_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_google_protobuf_HeroComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_HeroComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Kind", "Blob", });
     internal_static_google_protobuf_ActionComponent_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_google_protobuf_ActionComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_ActionComponent_descriptor,
-        new java.lang.String[] { "ComponentId", "Kind", "Url", "Title", "Color", });
-    internal_static_google_protobuf_TransitTitleComponent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_google_protobuf_TransitTitleComponent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_TransitTitleComponent_descriptor,
-        new java.lang.String[] { "ComponentId", "Title", });
-    internal_static_google_protobuf_TransitSubtitleComponent_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_google_protobuf_TransitSubtitleComponent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_TransitSubtitleComponent_descriptor,
-        new java.lang.String[] { "ComponentId", "Subtitle", });
+        new java.lang.String[] { "ComponentId", "Kind", "Url", "Title", "Colors", });
     internal_static_google_protobuf_LogoComponent_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_google_protobuf_LogoComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_LogoComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Image", });
     internal_static_google_protobuf_HeadlineComponent_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_google_protobuf_HeadlineComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_HeadlineComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Headline", });
     internal_static_google_protobuf_BodyComponent_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_google_protobuf_BodyComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_BodyComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Body", });
     internal_static_google_protobuf_AdvertiserComponent_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_google_protobuf_AdvertiserComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdvertiserComponent_descriptor,
         new java.lang.String[] { "ComponentId", "Advertiser", });
+    internal_static_google_protobuf_Color_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_google_protobuf_Color_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_Color_descriptor,
+        new java.lang.String[] { "Red", "Green", "Blue", });
     internal_static_google_protobuf_Colors_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_google_protobuf_Colors_fieldAccessorTable = new
@@ -21536,73 +24340,85 @@ public final class Csnmessages {
     internal_static_google_protobuf_SecondaryActionComponent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_SecondaryActionComponent_descriptor,
+        new java.lang.String[] { "ComponentId", "Title", "Subtitle", });
+    internal_static_google_protobuf_ViewComponent_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_google_protobuf_ViewComponent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_ViewComponent_descriptor,
         new java.lang.String[] { "ComponentId", });
     internal_static_google_protobuf_NativeAd_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_google_protobuf_NativeAd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_NativeAd_descriptor,
-        new java.lang.String[] { "RequestId", "AdId", "Colors", "SecondaryActionScreen", "TransitTitle", "TransitSubtitle", "Logo", "Headline", "Body", "Advertiser", "Location", "Stop", "Hero", "Actions", });
-    internal_static_google_protobuf_StopAd_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_google_protobuf_StopAd_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_StopAd_descriptor,
-        new java.lang.String[] { "StopTuple", "AdId", });
-    internal_static_google_protobuf_LocationAd_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_google_protobuf_LocationAd_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_LocationAd_descriptor,
-        new java.lang.String[] { "Loc", "AdId", });
+        new java.lang.String[] { "RequestId", "AdId", "VersionId", "Colors", "Actions", "View", "SecondaryActionScreen", "Logo", "Headline", "Body", "Advertiser", "Location", "Hero", });
     internal_static_google_protobuf_AdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_google_protobuf_AdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdRequest_descriptor,
-        new java.lang.String[] { "AdUnit", "DeviceId", "Timezone", "Location", "Stops", });
+        new java.lang.String[] { "HashId", "NumOfAds", "Locations", "Agencies", "Routes", "Stops", });
+    internal_static_google_protobuf_AdRequests_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_google_protobuf_AdRequests_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdRequests_descriptor,
+        new java.lang.String[] { "AdUnit", "DeviceId", "IpAddresses", "Timezone", "AdRequests", });
     internal_static_google_protobuf_AdResponse_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_google_protobuf_AdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdResponse_descriptor,
-        new java.lang.String[] { "LocationAds", "StopAds", "Ads", });
-    internal_static_google_protobuf_AdResponse_AdsEntry_descriptor =
-      internal_static_google_protobuf_AdResponse_descriptor.getNestedTypes().get(0);
-    internal_static_google_protobuf_AdResponse_AdsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_AdResponse_AdsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_google_protobuf_DeviceID_descriptor =
+        new java.lang.String[] { "HashId", "Ads", });
+    internal_static_google_protobuf_AdResponses_descriptor =
       getDescriptor().getMessageTypes().get(19);
+    internal_static_google_protobuf_AdResponses_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdResponses_descriptor,
+        new java.lang.String[] { "ServerId", "AdResponses", });
+    internal_static_google_protobuf_DeviceID_descriptor =
+      getDescriptor().getMessageTypes().get(20);
     internal_static_google_protobuf_DeviceID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DeviceID_descriptor,
         new java.lang.String[] { "DeviceIdType", "DeviceId", });
-    internal_static_google_protobuf_SimpleStat_descriptor =
-      getDescriptor().getMessageTypes().get(20);
-    internal_static_google_protobuf_SimpleStat_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_SimpleStat_descriptor,
-        new java.lang.String[] { "Min", "Max", "Mean", });
-    internal_static_google_protobuf_AdVisibility_descriptor =
+    internal_static_google_protobuf_ComponentInteraction_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_google_protobuf_AdVisibility_fieldAccessorTable = new
+    internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_AdVisibility_descriptor,
-        new java.lang.String[] { "RequestId", "AdId", "ComponentId", "EpochOffset", "Duration", "ComponentVisibility", "ScreenVisibility", });
-    internal_static_google_protobuf_AdInteraction_descriptor =
+        internal_static_google_protobuf_ComponentInteraction_descriptor,
+        new java.lang.String[] { "DeviceTime", "Kind", });
+    internal_static_google_protobuf_ComponentReport_descriptor =
       getDescriptor().getMessageTypes().get(22);
-    internal_static_google_protobuf_AdInteraction_fieldAccessorTable = new
+    internal_static_google_protobuf_ComponentReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_protobuf_AdInteraction_descriptor,
-        new java.lang.String[] { "RequestId", "AdId", "ComponentId", "Duration", "EpochOffset", "Kind", });
-    internal_static_google_protobuf_AdReport_descriptor =
+        internal_static_google_protobuf_ComponentReport_descriptor,
+        new java.lang.String[] { "ComponentId", "VisibilityEpoch", "VisibilitySampleCount", "ViewVisibilitySamples", "DeviceVisibilitySamples", "Interactions", });
+    internal_static_google_protobuf_AdImpression_descriptor =
       getDescriptor().getMessageTypes().get(23);
+    internal_static_google_protobuf_AdImpression_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdImpression_descriptor,
+        new java.lang.String[] { "DeviceTime", });
+    internal_static_google_protobuf_AdReport_descriptor =
+      getDescriptor().getMessageTypes().get(24);
     internal_static_google_protobuf_AdReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdReport_descriptor,
-        new java.lang.String[] { "AdUnit", "DeviceId", "Timezone", "Epoch", "AdVisibilty", "AdInteractions", });
+        new java.lang.String[] { "RequestId", "AdId", "VersionId", "Components", "Impressions", });
+    internal_static_google_protobuf_AdReports_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_google_protobuf_AdReports_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdReports_descriptor,
+        new java.lang.String[] { "AdUnit", "DeviceId", "Timezone", "IpAddresses", "DeviceTime", "AdReports", });
+    internal_static_google_protobuf_AdTransaction_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_google_protobuf_AdTransaction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdTransaction_descriptor,
+        new java.lang.String[] { "Requests", "Responses", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

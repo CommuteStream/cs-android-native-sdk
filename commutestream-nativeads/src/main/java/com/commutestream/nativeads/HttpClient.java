@@ -2,7 +2,8 @@ package com.commutestream.nativeads;
 
 import android.util.Log;
 
-import com.commutestream.nativeads.protobuf.Csnmessages;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdRequest;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdReport;
 
 public class HttpClient implements Client {
 
@@ -21,12 +22,12 @@ public class HttpClient implements Client {
     }
 
     @Override
-    public void getAds(Csnmessages.AdRequest request, AdResponseHandler handler) {
+    public void getAds(AdRequest request, AdResponseHandler handler) {
 
     }
 
     @Override
-    public void sendReports(Csnmessages.AdReport report, AdReportsHandler handler) {
+    public void sendReports(AdReport report, AdReportsHandler handler) {
 
     }
 }

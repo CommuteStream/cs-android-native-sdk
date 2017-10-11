@@ -5,19 +5,19 @@ package google.protobuf;
 option objc_class_prefix = "CSNP";
 option java_package = "com.commutestream.nativeads.protobuf";
 
+message TransitAgency {
+  string agency_id = 1;
+}
 
-message Stop {
+message TransitRoute {
+  string agency_id = 1;
+  string route_id = 2;
+}
+
+message TransitStop {
   string agency_id = 1;
   string route_id = 2;
   string stop_id = 3;
-}
-
-message StopComponent {
-  string component_id = 1;
-  Stop stop_tuple = 2;
-  string agencyName = 3;
-  string routeName = 4;
-  string stopName = 5;
 }
 
 message Location {
@@ -53,18 +53,7 @@ message ActionComponent {
   ActionKind kind = 2;
   string url = 3;
   string title = 4;
-  bytes color = 5;
-}
-
-
-message TransitTitleComponent {
-  uint64 component_id = 1;
-  string title = 2;
-}
-
-message TransitSubtitleComponent {
-  uint64 component_id = 1;
-  string subtitle = 2;
+  Colors colors = 5;
 }
 
 message LogoComponent {
@@ -87,54 +76,72 @@ message AdvertiserComponent {
   string advertiser = 2;
 }
 
+message Color {
+ uint32 red = 1;
+ uint32 green = 2;
+ uint32 blue = 3;
+}
+
 message Colors {
-  string background = 1;
-  string foreground = 2;
+  Color background = 1;
+  Color foreground = 2;
 }
 
 message SecondaryActionComponent {
+  uint64 component_id = 1;
+  string title = 2;
+  string subtitle = 3;
+}
+
+message ViewComponent {
   uint64 component_id = 1;
 }
 
 message NativeAd {
   uint64 request_id = 1;
   uint64 ad_id = 2;
-  Colors colors = 3;
-  SecondaryActionComponent secondary_action_screen = 4;
-  TransitTitleComponent transit_title = 5;
-  TransitSubtitleComponent transit_subtitle = 6;
-  LogoComponent logo = 7;
-  HeadlineComponent headline = 8;
-  BodyComponent body = 9;
-  AdvertiserComponent advertiser = 10;
-  LocationComponent location = 11;
-  StopComponent stop = 12;
+  uint64 version_id = 3;
+  Colors colors = 4;
+  repeated ActionComponent actions = 5;
+  ViewComponent view = 6;
+  SecondaryActionComponent secondary_action_screen = 7;
+  LogoComponent logo = 8;
+  HeadlineComponent headline = 9;
+  BodyComponent body = 10;
+  AdvertiserComponent advertiser = 11;
+  LocationComponent location = 12;
   HeroComponent hero = 13;
-  repeated ActionComponent actions = 14;
 }
 
-message StopAd {
-  Stop stop_tuple = 1;
-  uint64 ad_id = 2;
-}
-
-message LocationAd {
-  Location loc = 1;
-  uint64 ad_id = 2;
-}
-
+// AdRequest contains a hash_id which is the hash everything but the num_of_ads 
 message AdRequest {
-  string ad_unit = 1;
-  DeviceID device_id = 2;
-  string timezone = 3;
-  Location location = 4;
-  repeated Stop stops = 5;
+  bytes hash_id = 1;
+  uint32 num_of_ads = 2;
+  repeated Location locations = 3;
+  repeated TransitAgency agencies = 4;
+  repeated TransitRoute routes = 5;
+  repeated TransitStop stops = 6;
 }
 
+// AdRequests contains relevant information needed to attempt filling ad requests
+message AdRequests {
+  bytes ad_unit = 1;
+  DeviceID device_id = 2;
+  repeated bytes ip_addresses = 3;
+  string timezone = 4;
+  repeated AdRequest ad_requests = 5;
+}
+
+// AdResponse is a mapping between an AdRequest hash_id and the set of ads
 message AdResponse {
-  repeated LocationAd location_ads = 1;
-  repeated StopAd stop_ads = 2;
-  map<uint64, NativeAd> ads = 3;
+  bytes hash_id = 1;
+  repeated NativeAd ads = 2;
+}
+
+// AdResponses returns a mapping of ad context hashes to a set of ads.
+message AdResponses {
+  string server_id = 1;
+  repeated AdResponse ad_responses = 2;
 }
 
 message DeviceID  {
@@ -143,44 +150,49 @@ message DeviceID  {
     AAID = 1;
   }
   Type device_id_type = 1;
-  string device_id = 2;
+  bytes device_id = 2;
 }
 
-
-message SimpleStat {
-  double min = 1;
-  double max = 2;
-  double mean = 3;
-}
-
-message AdVisibility {
-  uint64 request_id = 1;
-  uint64 ad_id = 2;
-  uint64 component_id = 3;
-  uint64 epoch_offset = 4;
-  uint64 duration = 5;
-  SimpleStat component_visibility = 6;
-  SimpleStat screen_visibility = 7;
-}
-
-enum AdInteractionKind {
+enum ComponentInteractionKind {
   Tap = 0;
 }
 
-message AdInteraction {
+message ComponentInteraction {
+  uint64 device_time = 1;
+  ComponentInteractionKind kind = 2;
+}
+
+message ComponentReport {
+  uint64 component_id = 1;
+  uint64 visibility_epoch = 2;
+  uint64 visibility_sample_count = 3;
+  repeated uint64 view_visibility_samples = 4;
+  repeated uint64 device_visibility_samples = 5;
+  repeated ComponentInteraction interactions = 6;
+}
+
+message AdImpression {
+  uint64 device_time = 1;
+}
+
+message AdReport {
   uint64 request_id = 1;
   uint64 ad_id = 2;
-  uint64 component_id = 3;
-  uint64 duration = 4;
-  uint64 epoch_offset = 5;
-  AdInteractionKind kind = 6;
+  uint64 version_id = 3;
+  repeated ComponentReport components = 4;
+  repeated AdImpression impressions = 5;
 }
   
-message AdReport {
-  string ad_unit = 1;
+message AdReports {
+  bytes ad_unit = 1;
   DeviceID device_id = 2;
   string timezone = 3;
-  uint64 epoch = 4;
-  repeated AdVisibility ad_visibilty = 5;
-  repeated AdInteraction ad_interactions = 6;
+  repeated bytes ip_addresses = 4;
+  uint64 device_time = 5;
+  repeated AdReport ad_reports = 6;
+}
+
+message AdTransaction {
+  AdRequests requests = 1;
+  AdResponses responses = 2;
 }
