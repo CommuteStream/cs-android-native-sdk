@@ -1,19 +1,21 @@
 package com.commutestream.nativeads;
 
-import com.commutestream.nativeads.protobuf.Csnmessages.AdReport;
-import com.commutestream.nativeads.protobuf.Csnmessages.AdRequest;
-import com.commutestream.nativeads.protobuf.Csnmessages.AdResponse;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdRequests;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
 
 public interface Client {
     interface AdResponseHandler {
-        void onResponse(AdResponse reponse);
+        void onResponse(AdResponses responses);
+        void onFailure();
     }
 
-    void getAds(AdRequest request, AdResponseHandler handler);
+    void getAds(AdRequests requests, AdResponseHandler handler);
 
     interface AdReportsHandler {
         void onResponse();
+        void onFailure();
     }
 
-    void sendReports(AdReport report, AdReportsHandler handler);
+    void sendReports(AdReports reports, AdReportsHandler handler);
 }
