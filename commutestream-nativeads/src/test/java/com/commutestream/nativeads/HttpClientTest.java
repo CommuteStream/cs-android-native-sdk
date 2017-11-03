@@ -1,5 +1,7 @@
 package com.commutestream.nativeads;
 
+import android.security.NetworkSecurityPolicy;
+
 import com.commutestream.nativeads.protobuf.Csnmessages.DeviceID;
 import com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency;
 import com.commutestream.nativeads.protobuf.Csnmessages.NativeAd;
@@ -20,14 +22,32 @@ import static org.hamcrest.Matchers.equalTo;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import org.robolectric.annotation.Implementation;
+import org.robolectric.annotation.Implements;
 
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = Config.NONE)
+@Config(manifest = Config.NONE, shadows = HttpClientTest.NetworkSecurityPolicyWorkaround.class)
 public class HttpClientTest {
+
+    @Implements(NetworkSecurityPolicy.class)
+    public static class NetworkSecurityPolicyWorkaround {
+        @Implementation public static NetworkSecurityPolicy getInstance() {
+            try {
+                Class<?> shadow = Class.forName("android.security.NetworkSecurityPolicy");
+                return (NetworkSecurityPolicy) shadow.newInstance();
+            } catch (Exception e) {
+                throw new AssertionError();
+            }
+        }
+
+        @Implementation public boolean isCleartextTrafficPermitted(String hostname) {
+            return true;
+        }
+    }
 
     class TestAdResponseHandler implements Client.AdResponseHandler {
         int response_count = 0;
