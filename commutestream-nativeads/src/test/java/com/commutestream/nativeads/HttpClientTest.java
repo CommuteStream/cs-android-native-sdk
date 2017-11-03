@@ -122,6 +122,7 @@ public class HttpClientTest {
                 .addAdResponses(response)
                 .build();
         MockWebServer server = new MockWebServer();
+
         server.enqueue(new MockResponse()
                 .setResponseCode(200)
                 .setHeader("Content-Type", "application/x-cs-protobuf")
