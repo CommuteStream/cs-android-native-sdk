@@ -14,20 +14,24 @@ import com.google.protobuf.ByteString;
 import org.junit.Test;
 
 
+import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.equalTo;
 
 
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
+import org.robolectric.shadows.ShadowLooper;
 
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import okio.Buffer;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest = Config.NONE, shadows = HttpClientTest.NetworkSecurityPolicyWorkaround.class)
@@ -142,18 +146,19 @@ public class HttpClientTest {
                 .addAdResponses(response)
                 .build();
         MockWebServer server = new MockWebServer();
+        Buffer body = new Buffer();
+        body.write(responses.toByteArray());
 
         server.enqueue(new MockResponse()
                 .setResponseCode(200)
                 .setHeader("Content-Type", "application/x-cs-protobuf")
-                .setBody(responses.toString()));
+                .setBody(body));
         HttpUrl baseUrl = server.url("/");
         HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
         TestAdResponseHandler handler = new TestAdResponseHandler();
-        client.getAds(requests, (Client.AdResponseHandler) handler);
-        synchronized (handler) {
-            handler.wait(100);
-        }
+        client.getAds(requests, handler);
+        assertThat(handler.response_count, greaterThan(0));
         assertThat(handler.responses, notNullValue());
     }
 }

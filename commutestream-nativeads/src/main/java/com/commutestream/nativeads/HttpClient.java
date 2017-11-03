@@ -3,7 +3,7 @@ package com.commutestream.nativeads;
 
 import android.util.Log;
 
-import com.commutestream.nativeads.protobuf.Csnmessages;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdRequests;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
 
@@ -26,6 +26,7 @@ public class HttpClient implements Client {
 
     private HttpUrl mBaseURL = new HttpUrl.Builder().scheme("https").host("api.commutestream.com").build();
     private OkHttpClient mClient;
+    private boolean mAsync = true;
 
     HttpClient() {
         init();
@@ -36,6 +37,10 @@ public class HttpClient implements Client {
         init();
     }
 
+    public void setAsync(boolean async) {
+        mAsync = async;
+    }
+
     public HttpUrl getBaseURL() {
         return mBaseURL;
     }
@@ -44,11 +49,29 @@ public class HttpClient implements Client {
         mClient = new OkHttpClient.Builder().addInterceptor(new HttpLogger()).build();
     }
 
+    private void performRequest(Request request, Callback callback) {
+        Call call = mClient.newCall(request);
+        if(!mAsync) {
+            try {
+                Response response = call.execute();
+                try {
+                    callback.onResponse(call, response);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                callback.onFailure(call, e);
+            }
+        } else {
+            call.enqueue(callback);
+        }
+    }
+
     @Override
     public void getAds(AdRequests requests, final AdResponseHandler handler) {
         HttpUrl url = mBaseURL.newBuilder("/v2/native_ads")
                 .build();
-        RequestBody body = RequestBody.create(MediaType.parse("application/x-cs-protobuf"), "test");
+        RequestBody body = RequestBody.create(MediaType.parse("application/x-cs-protobuf"), requests.toByteArray());
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
@@ -61,11 +84,11 @@ public class HttpClient implements Client {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                //TODO decode responses
-                handler.onResponse(null);
+                AdResponses responses = AdResponses.parseFrom(response.body().bytes());
+                handler.onResponse(responses);
             }
         };
-        mClient.newCall(request).enqueue(callback);
+        performRequest(request, callback);
     }
 
     @Override
@@ -88,6 +111,6 @@ public class HttpClient implements Client {
                 handler.onResponse();
             }
         };
-        mClient.newCall(request).enqueue(callback);
+        performRequest(request, callback);
     }
 }
