@@ -9,6 +9,8 @@ import com.commutestream.nativeads.protobuf.Csnmessages.AdRequest;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdResponse;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdRequests;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdReport;
+import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
 import com.google.protobuf.ByteString;
 
 import org.junit.Test;
@@ -21,12 +23,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 
 import org.junit.runner.RunWith;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
-import org.robolectric.shadows.ShadowLooper;
 
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
@@ -160,5 +160,121 @@ public class HttpClientTest {
         client.getAds(requests, handler);
         assertThat(handler.response_count, greaterThan(0));
         assertThat(handler.responses, notNullValue());
+    }
+
+    @Test
+    public void getAdsFailure() throws Exception {
+        byte[] hashID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        byte[] adUnitID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        byte[] deviceID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        String timezone = "America/Chicago";
+        AdRequest request = AdRequest.newBuilder()
+                .setHashId(ByteString.copyFrom(hashID))
+                .setNumOfAds(1)
+                .addAgencies(TransitAgency.newBuilder().setAgencyId("test").build())
+                .build();
+        AdRequests requests = AdRequests.newBuilder()
+                .setAdUnit(ByteString.copyFrom(adUnitID))
+                .setDeviceId(DeviceID.newBuilder()
+                        .setDeviceIdType(DeviceID.Type.AAID)
+                        .setDeviceId(ByteString.copyFrom(deviceID))
+                        .build())
+                .setTimezone(timezone)
+                .addAdRequests(request)
+                .build();
+        MockWebServer server = new MockWebServer();
+        HttpUrl baseUrl = server.url("/");
+        HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
+
+        int[] codes = {400, 500, 503};
+        for(int code : codes) {
+            server.enqueue(new MockResponse()
+                    .setResponseCode(code));
+            TestAdResponseHandler handler = new TestAdResponseHandler();
+            client.getAds(requests, handler);
+            assertThat(handler.failure_count, greaterThan(0));
+        }
+        server.shutdown();
+        TestAdResponseHandler handler = new TestAdResponseHandler();
+        client.getAds(requests, handler);
+        assertThat(handler.failure_count, greaterThan(0));
+    }
+
+    @Test
+    public void sendReportsSuccess() throws Exception {
+        int adID = (int) (Math.random()*1000.0);
+        int versionID = (int) (Math.random()*1000.0);
+        int requestID = (int) (Math.random()*1000.0);
+        byte[] adUnitID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        byte[] deviceID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        String timezone = "America/Chicago";
+        AdReport report = AdReport.newBuilder()
+                .setAdId(adID)
+                .setRequestId(requestID)
+                .setVersionId(versionID)
+                .build();
+        AdReports reports = AdReports.newBuilder()
+                .setAdUnit(ByteString.copyFrom(adUnitID))
+                .setDeviceId(DeviceID.newBuilder()
+                        .setDeviceIdType(DeviceID.Type.AAID)
+                        .setDeviceId(ByteString.copyFrom(deviceID))
+                        .build())
+                .setTimezone(timezone)
+                .addAdReports(report)
+                .build();
+        MockWebServer server = new MockWebServer();
+        Buffer body = new Buffer();
+        body.write(reports.toByteArray());
+
+        server.enqueue(new MockResponse()
+                .setResponseCode(204));
+        HttpUrl baseUrl = server.url("/");
+        HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
+        TestAdReportsHandler handler = new TestAdReportsHandler();
+        client.sendReports(reports, handler);
+        assertThat(handler.response_count, greaterThan(0));
+    }
+
+    @Test
+    public void sendReportsFailure() throws Exception {
+        int adID = (int) (Math.random()*1000.0);
+        int versionID = (int) (Math.random()*1000.0);
+        int requestID = (int) (Math.random()*1000.0);
+        byte[] adUnitID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        byte[] deviceID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        String timezone = "America/Chicago";
+        AdReport report = AdReport.newBuilder()
+                .setAdId(adID)
+                .setRequestId(requestID)
+                .setVersionId(versionID)
+                .build();
+        AdReports reports = AdReports.newBuilder()
+                .setAdUnit(ByteString.copyFrom(adUnitID))
+                .setDeviceId(DeviceID.newBuilder()
+                        .setDeviceIdType(DeviceID.Type.AAID)
+                        .setDeviceId(ByteString.copyFrom(deviceID))
+                        .build())
+                .setTimezone(timezone)
+                .addAdReports(report)
+                .build();
+        MockWebServer server = new MockWebServer();
+        HttpUrl baseUrl = server.url("/");
+        HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
+
+        int[] codes = {400, 500, 503};
+        for(int code : codes) {
+            server.enqueue(new MockResponse()
+                    .setResponseCode(code));
+            TestAdReportsHandler handler = new TestAdReportsHandler();
+            client.sendReports(reports, handler);
+            assertThat(handler.failure_count, greaterThan(0));
+        }
+        server.shutdown();
+        TestAdReportsHandler handler = new TestAdReportsHandler();
+        client.sendReports(reports, handler);
+        assertThat(handler.failure_count, greaterThan(0));
     }
 }

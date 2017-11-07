@@ -1,15 +1,10 @@
 package com.commutestream.nativeads;
 
-
-import android.util.Log;
-
 import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdRequests;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
 
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -19,7 +14,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 
 public class HttpClient implements Client {
@@ -84,8 +78,12 @@ public class HttpClient implements Client {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                AdResponses responses = AdResponses.parseFrom(response.body().bytes());
-                handler.onResponse(responses);
+                if(response.code() == 200) {
+                    AdResponses responses = AdResponses.parseFrom(response.body().bytes());
+                    handler.onResponse(responses);
+                } else {
+                    handler.onFailure();
+                }
             }
         };
         performRequest(request, callback);
@@ -108,7 +106,11 @@ public class HttpClient implements Client {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                handler.onResponse();
+                if(response.code() == 204) {
+                    handler.onResponse();
+                } else {
+                    handler.onFailure();
+                }
             }
         };
         performRequest(request, callback);
