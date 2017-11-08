@@ -7,12 +7,22 @@ public class SecondaryActionComponent implements Component {
     private String title;
     private String subtitle;
 
-    public SecondaryActionComponent(Csnmessages.SecondaryActionComponent secondary) {
-        //TODO
+    public SecondaryActionComponent(Csnmessages.SecondaryActionComponent msg) {
+        componentID = msg.getComponentId();
+        title = msg.getTitle();
+        subtitle = msg.getSubtitle();
     }
 
     @Override
     public long getComponentID() {
         return componentID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
     }
 }

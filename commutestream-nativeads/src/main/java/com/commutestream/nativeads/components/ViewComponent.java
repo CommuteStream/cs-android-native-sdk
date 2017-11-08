@@ -1,14 +1,12 @@
 package com.commutestream.nativeads.components;
 
-import android.view.View;
-
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class ViewComponent implements Component {
     private long componentID;
 
-    public ViewComponent(Csnmessages.ViewComponent view) {
-        //TODO
+    public ViewComponent(Csnmessages.ViewComponent msg) {
+        componentID = msg.getComponentId();
     }
 
     @Override

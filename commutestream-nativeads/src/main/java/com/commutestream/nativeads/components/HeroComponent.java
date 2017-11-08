@@ -3,6 +3,7 @@ package com.commutestream.nativeads.components;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class HeroComponent implements Component {
@@ -15,15 +16,12 @@ public class HeroComponent implements Component {
 
     public HeroComponent(Csnmessages.HeroComponent msg) {
         componentID = msg.getComponentId();
-        switch(msg.getKind()) {
-            case HTML: {
-                kind = HERO_HTML;
-                html = msg.getBlob().toStringUtf8();
-            }
-            case Image: {
-                kind = HERO_IMAGE;
-                image = BitmapFactory.decodeByteArray(msg.getBlob().toByteArray(), 0, msg.getBlob().size());
-            }
+        if (msg.getKind() == Csnmessages.HeroKind.HTML) {
+            kind = HERO_HTML;
+            html = msg.getBlob().toStringUtf8();
+        } else if (msg.getKind() == Csnmessages.HeroKind.Image) {
+            kind = HERO_IMAGE;
+            image = BitmapFactory.decodeByteArray(msg.getBlob().toByteArray(), 0, msg.getBlob().size());
         }
     }
 
