@@ -4,10 +4,11 @@ import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class AdvertiserComponent implements Component {
     private long componentID;
-    private String headline;
+    private String advertiser;
 
-    public AdvertiserComponent(Csnmessages.AdvertiserComponent advertiser) {
-
+    public AdvertiserComponent(Csnmessages.AdvertiserComponent msg) {
+        componentID = msg.getComponentId();
+        advertiser = msg.getAdvertiser();
     }
 
     @Override
@@ -15,7 +16,7 @@ public class AdvertiserComponent implements Component {
         return componentID;
     }
 
-    public String getHeadline() {
-        return headline;
+    public String getAdvertiser() {
+        return advertiser;
     }
 }

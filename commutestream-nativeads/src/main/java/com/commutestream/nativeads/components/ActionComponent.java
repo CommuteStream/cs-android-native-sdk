@@ -10,8 +10,15 @@ public class ActionComponent implements Component {
     private String title;
     private Colors colors;
 
-    public ActionComponent(Csnmessages.ActionComponent action) {
-        //TODO
+    public ActionComponent(Csnmessages.ActionComponent msg) {
+        componentID = msg.getComponentId();
+        switch (msg.getKind()) {
+            case Url: kind = ACTION_KIND_URL;
+            default: kind = ACTION_KIND_URL;
+        }
+        url = msg.getUrl();
+        title = msg.getTitle();
+        colors = new Colors(msg.getColors());
     }
 
     @Override
