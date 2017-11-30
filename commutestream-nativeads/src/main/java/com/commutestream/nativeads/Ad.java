@@ -12,7 +12,8 @@ import com.commutestream.nativeads.components.SecondaryActionComponent;
 import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
-public class NativeAd {
+public class Ad {
+    private long requestID;
     private long adID;
     private long versionID;
     private Colors colors;
@@ -26,7 +27,8 @@ public class NativeAd {
     private LocationComponent location;
     private HeroComponent hero;
 
-    public NativeAd(Csnmessages.NativeAd ad) {
+    public Ad(Csnmessages.NativeAd ad) {
+        requestID = ad.getRequestId();
         adID = ad.getAdId();
         versionID = ad.getVersionId();
         colors = new Colors(ad.getColors());
@@ -39,5 +41,13 @@ public class NativeAd {
         advertiser = new AdvertiserComponent(ad.getAdvertiser());
         location = new LocationComponent(ad.getLocation());
         hero = new HeroComponent(ad.getHero());
+    }
+
+    public LogoComponent getLogo() {
+        return logo;
+    }
+
+    public HeadlineComponent getHeadline() {
+        return headline;
     }
 }
