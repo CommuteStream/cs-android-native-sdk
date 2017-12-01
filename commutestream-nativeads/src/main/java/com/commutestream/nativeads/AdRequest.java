@@ -21,12 +21,36 @@ public class AdRequest {
         agencies.add(ta);
     }
 
+    public void addAgency(String agencyID) {
+        agencies.add(new TransitAgency(agencyID));
+    }
+
+    public HashSet<TransitAgency> getAgencies() {
+        return agencies;
+    }
+
     public void addRoute(TransitRoute tr) {
         routes.add(tr);
     }
 
+    public void addRoute(String agencyID, String routeID) {
+        routes.add(new TransitRoute(agencyID, routeID));
+    }
+
+    public HashSet<TransitRoute> getRoutes() {
+        return routes;
+    }
+
     public void addStop(TransitStop ts) {
         stops.add(ts);
+    }
+
+    public void addStop(String agencyID, String routeID, String stopID) {
+        stops.add(new TransitStop(agencyID, routeID, stopID));
+    }
+
+    public HashSet<TransitStop> getStops() {
+        return stops;
     }
 
     public String sha256() throws NoSuchAlgorithmException {

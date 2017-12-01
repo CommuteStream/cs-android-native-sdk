@@ -43,4 +43,18 @@ public class AdRequestTest {
         ar.addStop(ts);
         assertThat(hash, not(ar.sha256()));
     }
+
+    @Test
+    public void testConvienenceAdd() throws NoSuchAlgorithmException {
+        AdRequest ar = new AdRequest();
+        String hash = ar.sha256();
+        ar.addAgency("bogus");
+        assertThat(hash, not(ar.sha256()));
+        hash = ar.sha256();
+        ar.addRoute("bogus", "route");
+        assertThat(hash, not(ar.sha256()));
+        hash = ar.sha256();
+        ar.addStop("bogus", "route", "stop");
+        assertThat(hash, not(ar.sha256()));
+    }
 }
