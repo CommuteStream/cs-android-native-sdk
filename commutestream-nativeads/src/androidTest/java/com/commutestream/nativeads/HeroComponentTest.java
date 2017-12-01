@@ -39,7 +39,7 @@ public class HeroComponentTest {
         assertThat(hero.getKind(), equalTo(HeroComponent.HERO_IMAGE));
         assertThat(hero.getImage(), notNullValue());
         assertThat(hero.getHtml(), nullValue());
-        //assertThat(hero.getImage().getWidth(), equalTo(img.getWidth()));
+        assertThat(hero.getImage().getWidth(), equalTo(img.getWidth()));
         assertThat(hero.getImage().getHeight(), equalTo(img.getHeight()));
         CSNLog.v("image test complete");
     }
