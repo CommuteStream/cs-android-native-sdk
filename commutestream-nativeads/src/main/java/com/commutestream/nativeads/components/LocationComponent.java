@@ -1,15 +1,13 @@
 package com.commutestream.nativeads.components;
 
-import android.location.Location;
-
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class LocationComponent implements Component {
-    private long componentID;
-    private double latitude;
-    private double longitude;
-    private String name;
-    private String address;
+    protected long componentID;
+    protected double latitude;
+    protected double longitude;
+    protected String name;
+    protected String address;
 
     public LocationComponent(Csnmessages.LocationComponent msg) {
         componentID = msg.getComponentId();
@@ -17,6 +15,9 @@ public class LocationComponent implements Component {
         longitude = msg.getLocation().getLon();
         name = msg.getName();
         address = msg.getAddress();
+    }
+
+    protected LocationComponent() {
     }
 
     @Override
@@ -38,5 +39,36 @@ public class LocationComponent implements Component {
 
     public String getAddress() {
         return address;
+    }
+
+    public static class Builder extends LocationComponent {
+        public Builder setComponentID(long componentID) {
+            this.componentID = componentID;
+            return this;
+        }
+
+        public Builder setLatitude(double latitutde) {
+            this.latitude = latitutde;
+            return this;
+        }
+
+        public Builder setLongitude(double longitude) {
+            this.longitude = longitude;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public LocationComponent build() {
+            return this;
+        }
     }
 }

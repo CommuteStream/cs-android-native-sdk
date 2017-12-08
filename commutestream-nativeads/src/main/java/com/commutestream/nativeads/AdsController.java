@@ -1,14 +1,24 @@
 package com.commutestream.nativeads;
 
+import java.util.List;
+
 public class AdsController {
 
-    private Client mClient;
-
-    AdsController(Client client) {
-        mClient = client;
+    public interface AdResponseHandler {
+        void onAds(List<Ad> ads);
     }
 
-    AdsController() {
-        mClient = new HttpClient();
+    private Client client;
+
+    public AdsController(Client client) {
+        this.client = client;
+    }
+
+    public AdsController() {
+        client = new HttpClient();
+    }
+
+    public void fetchAds(List<AdRequest> requests, AdResponseHandler responseHandler) {
+        responseHandler.onAds(null);
     }
 }

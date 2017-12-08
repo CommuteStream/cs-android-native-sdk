@@ -3,8 +3,11 @@ package com.commutestream.nativeads.components;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class HeadlineComponent implements Component {
-    private long componentID;
-    private String headline;
+    protected long componentID;
+    protected String headline;
+
+    protected HeadlineComponent() {
+    }
 
     public HeadlineComponent(Csnmessages.HeadlineComponent msg) {
         componentID = msg.getComponentId();
@@ -18,5 +21,21 @@ public class HeadlineComponent implements Component {
 
     public String getHeadline() {
         return headline;
+    }
+
+    public static class Builder extends HeadlineComponent {
+        public Builder setComponentID(long componentID) {
+            this.componentID = componentID;
+            return this;
+        }
+
+        public Builder setHeadline(String headline) {
+            this.headline = headline;
+            return this;
+        }
+
+        public HeadlineComponent build() {
+            return this;
+        }
     }
 }

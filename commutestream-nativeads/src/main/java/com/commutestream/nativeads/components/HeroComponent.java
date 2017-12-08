@@ -9,10 +9,10 @@ import com.commutestream.nativeads.protobuf.Csnmessages;
 public class HeroComponent implements Component {
     public static final String HERO_HTML = "html";
     public static final String HERO_IMAGE = "image";
-    private long componentID;
-    private String kind;
-    private Bitmap image;
-    private String html;
+    protected long componentID;
+    protected String kind;
+    protected Bitmap image;
+    protected String html;
 
     public HeroComponent(Csnmessages.HeroComponent msg) {
         componentID = msg.getComponentId();
@@ -23,6 +23,9 @@ public class HeroComponent implements Component {
             kind = HERO_IMAGE;
             image = BitmapFactory.decodeByteArray(msg.getBlob().toByteArray(), 0, msg.getBlob().size());
         }
+    }
+
+    protected HeroComponent() {
     }
 
     @Override
@@ -40,5 +43,31 @@ public class HeroComponent implements Component {
 
     public Bitmap getImage() {
         return image;
+    }
+
+    public static class Builder extends HeroComponent {
+        public Builder setComponentID(int componentID) {
+            this.componentID = componentID;
+            return this;
+        }
+
+        public Builder setKind(String kind) {
+            this.kind = kind;
+            return this;
+        }
+
+        public Builder setImage(Bitmap image) {
+            this.image = image;
+            return this;
+        }
+
+        public Builder setHtml(String html) {
+            this.html = html;
+            return this;
+        }
+
+        public HeroComponent build() {
+            return this;
+        }
     }
 }

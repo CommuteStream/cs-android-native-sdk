@@ -13,19 +13,95 @@ import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class Ad {
-    private long requestID;
-    private long adID;
-    private long versionID;
-    private Colors colors;
-    private ActionComponent[] actions;
-    private ViewComponent view;
-    private SecondaryActionComponent secondaryAction;
-    private LogoComponent logo;
-    private HeadlineComponent headline;
-    private BodyComponent body;
-    private AdvertiserComponent advertiser;
-    private LocationComponent location;
-    private HeroComponent hero;
+    protected long requestID;
+    protected long adID;
+    protected long versionID;
+    protected Colors colors;
+
+
+    protected ActionComponent[] actions;
+    protected ViewComponent view;
+    protected SecondaryActionComponent secondaryAction;
+    protected LogoComponent logo;
+    protected HeadlineComponent headline;
+    protected BodyComponent body;
+    protected AdvertiserComponent advertiser;
+    protected LocationComponent location;
+    protected HeroComponent hero;
+
+    public static class Builder extends Ad {
+        public Builder setRequestID(long requestID) {
+            this.requestID = requestID;
+            return this;
+        }
+
+        public Builder setAdID(long adID) {
+            this.adID = adID;
+            return this;
+        }
+
+        public Builder setVersionID(long versionID) {
+            this.versionID = versionID;
+            return this;
+        }
+
+        public Builder setColors(Colors colors) {
+            this.colors = colors;
+            return this;
+        }
+
+        public Builder setActions(ActionComponent[] actions) {
+            this.actions = actions;
+            return this;
+        }
+
+        public Builder setView(ViewComponent view) {
+            this.view = view;
+            return this;
+        }
+
+        public Builder setSecondaryAction(SecondaryActionComponent secondaryAction) {
+            this.secondaryAction = secondaryAction;
+            return this;
+        }
+
+        public Builder setLogo(LogoComponent logo) {
+            this.logo = logo;
+            return this;
+        }
+
+        public Builder setHeadline(HeadlineComponent headline) {
+            this.headline = headline;
+            return this;
+        }
+
+        public Builder setBody(BodyComponent body) {
+            this.body = body;
+            return this;
+        }
+
+        public Builder setAdvertiser(AdvertiserComponent advertiser) {
+            this.advertiser = advertiser;
+            return this;
+        }
+
+        public Builder setLocation(LocationComponent location) {
+            this.location = location;
+            return this;
+        }
+
+        public Builder setHero(HeroComponent hero) {
+            this.hero = hero;
+            return this;
+        }
+
+        protected Ad build() {
+            return this;
+        }
+    }
+
+    protected Ad() {
+    }
 
     public Ad(Csnmessages.NativeAd ad) {
         requestID = ad.getRequestId();
@@ -41,6 +117,50 @@ public class Ad {
         advertiser = new AdvertiserComponent(ad.getAdvertiser());
         location = new LocationComponent(ad.getLocation());
         hero = new HeroComponent(ad.getHero());
+    }
+
+    public long getRequestID() {
+        return requestID;
+    }
+
+    public long getAdID() {
+        return adID;
+    }
+
+    public long getVersionID() {
+        return versionID;
+    }
+
+    public Colors getColors() {
+        return colors;
+    }
+
+    public ActionComponent[] getActions() {
+        return actions;
+    }
+
+    public ViewComponent getView() {
+        return view;
+    }
+
+    public SecondaryActionComponent getSecondaryAction() {
+        return secondaryAction;
+    }
+
+    public BodyComponent getBody() {
+        return body;
+    }
+
+    public AdvertiserComponent getAdvertiser() {
+        return advertiser;
+    }
+
+    public LocationComponent getLocation() {
+        return location;
+    }
+
+    public HeroComponent getHero() {
+        return hero;
     }
 
     public LogoComponent getLogo() {

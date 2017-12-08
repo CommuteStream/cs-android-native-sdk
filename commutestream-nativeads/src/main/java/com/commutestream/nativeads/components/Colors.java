@@ -6,6 +6,11 @@ public class Colors {
     private int foreground;
     private int background;
 
+    public Colors(int foreground, int background) {
+        this.foreground = foreground;
+        this.background = background;
+    }
+
     public Colors(Csnmessages.Colors msg) {
         Csnmessages.Color fgmsg = msg.getForeground();
         Csnmessages.Color bgmsg = msg.getBackground();

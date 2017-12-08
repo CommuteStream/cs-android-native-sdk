@@ -3,12 +3,27 @@ package com.commutestream.nativeads.components;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class BodyComponent implements Component {
-    private long componentID;
-    private String body;
+    protected long componentID;
+    protected String body;
+
+    protected BodyComponent() {
+    }
 
     public BodyComponent(Csnmessages.BodyComponent msg) {
         componentID = msg.getComponentId();
         body = msg.getBody();
+    }
+
+    public final static class Builder extends BodyComponent {
+        public Builder setComopnentID(long componentID) {
+            this.componentID = componentID;
+            return this;
+        }
+
+        public Builder setBody(String body) {
+            this.body = body;
+            return this;
+        }
     }
 
     @Override
