@@ -1,9 +1,7 @@
 package com.commutestream.nativeads;
 
-
-import android.drm.DrmStore;
 import android.view.View;
-import android.view.ViewGroup;
+
 
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.HeadlineComponent;
