@@ -1,34 +1,67 @@
 package com.commutestream.nativeads;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.Component;
+import com.commutestream.nativeads.components.HeadlineComponent;
+import com.commutestream.nativeads.components.LogoComponent;
 
 /**
  * Render an Ad to a layout
  */
 public class AdRenderer {
-    private Context mContext;
+    private Context context;
     public AdRenderer(Context context) {
-        mContext = context;
+        this.context = context;
     }
 
     public View render(ViewGroup viewGroup, Ad ad, ViewBinder binder) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
+        LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(binder.getLayout(), viewGroup);
         renderInto(view, ad, binder);
         return view;
     }
 
     public void renderInto(View view, Ad ad, ViewBinder binder) {
+        renderLogo(view, ad, binder);
+        renderHeadline(view, ad, binder);
+        renderBody(view, ad, binder);
+    }
+
+    protected void renderLogo(View view, Ad ad, ViewBinder binder) {
+        LogoComponent logo = ad.getLogo();
         ImageView logoView = view.findViewById(binder.getLogo());
-        if(logoView != null) {
-            logoView.setImageBitmap(ad.getLogo().getLogo());
-            monitorVisibility(ad, ad.getLogo(), logoView);
+        if(logoView != null && logo != null) {
+            Bitmap logoBitmap = logo.getLogo();
+            if(logoBitmap != null) {
+                logoView.setImageBitmap(logoBitmap);
+                monitorVisibility(ad, logo, logoView);
+            }
+        }
+    }
+
+    protected void renderHeadline(View view, Ad ad, ViewBinder binder) {
+        HeadlineComponent headline = ad.getHeadline();
+        TextView headlineView = view.findViewById(binder.getHeadline());
+        if(headlineView != null && headline != null) {
+            headlineView.setText(headline.getHeadline());
+            monitorVisibility(ad, headline, headlineView);
+        }
+    }
+
+    protected void renderBody(View view, Ad ad, ViewBinder binder) {
+        BodyComponent body = ad.getBody();
+        TextView bodyView = view.findViewById(binder.getBody());
+        if(bodyView != null && body != null) {
+            bodyView.setText(body.getBody());
+            monitorVisibility(ad, body, bodyView);
         }
     }
 

@@ -15,13 +15,17 @@ public class BodyComponent implements Component {
     }
 
     public final static class Builder extends BodyComponent {
-        public Builder setComopnentID(long componentID) {
+        public Builder setComponentID(long componentID) {
             this.componentID = componentID;
             return this;
         }
 
         public Builder setBody(String body) {
             this.body = body;
+            return this;
+        }
+
+        public BodyComponent build() {
             return this;
         }
     }

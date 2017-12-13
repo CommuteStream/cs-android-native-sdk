@@ -1,11 +1,29 @@
 package com.commutestream.nativetestapp;
 
+import com.commutestream.nativeads.Ad;
+import com.commutestream.nativeads.AdRenderer;
 import com.commutestream.nativeads.AdsController;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
+import com.commutestream.nativeads.SecondaryPopUp;
+import com.commutestream.nativeads.ViewBinder;
+import com.commutestream.nativeads.components.ActionComponent;
+import com.commutestream.nativeads.components.BodyComponent;
+import com.commutestream.nativeads.components.HeadlineComponent;
+import com.commutestream.nativeads.components.HeroComponent;
+import com.commutestream.nativeads.components.LogoComponent;
 import com.commutestream.nativetestapp.R;
+
+import static android.view.ViewGroup.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +33,60 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // render fake
+        ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
+                .setHeadline(R.id.headlineView)
+                .setLogo(R.id.logoView)
+                .setBody(R.id.bodyView);
+        Ad.Builder adBuilder = new Ad.Builder();
+        ActionComponent action1 = new ActionComponent.Builder()
+                .setComponentID(0)
+                .setTitle("Click Me")
+                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setUrl("https://wikipedia.com")
+                .build();
+        HeadlineComponent headlineComponent = new HeadlineComponent.Builder()
+                .setComponentID(1)
+                .setHeadline("The Headline")
+                .build();
+        BodyComponent bodyComponent = new BodyComponent.Builder()
+                .setComponentID(1)
+                .setBody("The Body")
+                .build();
+        ActionComponent[] actionComponents = new ActionComponent[1];
+        actionComponents[0] = action1;
+        LogoComponent logoComponent = new LogoComponent.Builder()
+                .setComponentID(2)
+                .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.cs))
+                .build();
+        HeroComponent heroComponent = new HeroComponent.Builder()
+                .setComponentID(3)
+                .setKind(HeroComponent.HERO_IMAGE)
+                .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.hero_boat))
+                .build();
+        final Ad ad = adBuilder.setAdID(1)
+                .setRequestID(1)
+                .setVersionID(1)
+                .setHeadline(headlineComponent)
+                .setBody(bodyComponent)
+                .setLogo(logoComponent)
+                .setHero(heroComponent)
+                .setActions(actionComponents)
+                .build();
+        AdRenderer r = new AdRenderer(this);
+        View view = r.render(null, ad, viewBinder);
+        LinearLayout mainLayout = findViewById(R.id.main_layout);
+        Button showPopup = findViewById(R.id.show_popup);
+        final SecondaryPopUp popup = new SecondaryPopUp(this);
+        showPopup.setOnClickListener(
+                new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popup.displayAd(ad);
+                    }
+                }
+        );
+        mainLayout.addView(view);
         //mAdsController = new AdsController();
 
         // get nearbytransit

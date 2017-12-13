@@ -1,9 +1,11 @@
 package com.commutestream.nativeads;
 
 import android.view.View;
+import android.widget.ImageView;
 
 
 import com.commutestream.nativeads.components.ActionComponent;
+import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.HeadlineComponent;
 
 import org.junit.Test;
@@ -25,6 +27,10 @@ public class AdRendererTest {
                 .setComponentID(1)
                 .setHeadline("The Headline")
                 .build();
+        BodyComponent bodyComponent = new BodyComponent.Builder()
+                .setComponentID(1)
+                .setBody("The Headline")
+                .build();
         ActionComponent[] actionComponents = new ActionComponent[1];
         actionComponents[0] = action1;
         Ad ad = adBuilder.setAdID(1)
@@ -35,5 +41,9 @@ public class AdRendererTest {
                 .build();
         AdRenderer r = new AdRenderer(getContext());
         View view = r.render(null, ad, viewBinder);
+        //TODO assert views contain correct data
+        //TODO assert monitor matches views
+        //TODO assert click handler is set appropriately
+        //ImageView logoView = view.findViewById(R.id.native_ad_logo);
     }
 }

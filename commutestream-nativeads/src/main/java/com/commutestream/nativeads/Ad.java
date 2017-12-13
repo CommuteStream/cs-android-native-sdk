@@ -95,7 +95,7 @@ public class Ad {
             return this;
         }
 
-        protected Ad build() {
+        public Ad build() {
             return this;
         }
     }

@@ -4,32 +4,43 @@ package com.commutestream.nativeads;
  * Bind views to various ad components
  */
 public class ViewBinder {
-    private int mLayout = 0;
-    private int mLogo = 0;
-    private int mTitle = 0;
-    private int mSubtitle = 0;
+    private int layout = 0;
+    private int logo = 0;
+    private int headline = 0;
+    private int body = 0;
 
     public ViewBinder(int layout) {
-        mLayout = layout;
+        this.layout = layout;
     }
 
     public int getLayout() {
-        return mLayout;
+        return this.layout;
     }
 
-    public void setLogo(int logo) {
-        mLogo = logo;
+    public ViewBinder setLogo(int logo) {
+        this.logo = logo;
+        return this;
     }
 
     public int getLogo() {
-        return mLogo;
+        return logo;
     }
 
-    public void setTitle(int title) {
-        mTitle = title;
+    public ViewBinder setHeadline(int headline) {
+        this.headline = headline;
+        return this;
     }
 
-    public void setSubtitle(int subtitle) {
-        mSubtitle = subtitle;
+    public int getHeadline() {
+        return this.headline;
+    }
+
+    public int getBody() {
+        return body;
+    }
+
+    public ViewBinder setBody(int body) {
+        this.body = body;
+        return this;
     }
 }
