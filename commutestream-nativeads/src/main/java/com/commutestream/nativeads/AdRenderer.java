@@ -12,6 +12,8 @@ import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.components.HeadlineComponent;
 import com.commutestream.nativeads.components.LogoComponent;
+import com.commutestream.nativeads.components.SecondaryActionComponent;
+import com.commutestream.nativeads.components.ViewComponent;
 
 /**
  * Render an Ad to a layout

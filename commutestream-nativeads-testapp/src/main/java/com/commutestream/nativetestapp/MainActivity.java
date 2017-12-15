@@ -7,11 +7,8 @@ import com.commutestream.nativeads.AdsController;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.commutestream.nativeads.SecondaryPopUp;
@@ -21,7 +18,7 @@ import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.HeadlineComponent;
 import com.commutestream.nativeads.components.HeroComponent;
 import com.commutestream.nativeads.components.LogoComponent;
-import com.commutestream.nativetestapp.R;
+import com.commutestream.nativeads.components.SecondaryActionComponent;
 
 import static android.view.ViewGroup.*;
 
@@ -55,14 +52,18 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         ActionComponent[] actionComponents = new ActionComponent[1];
         actionComponents[0] = action1;
+        SecondaryActionComponent secondaryComponent = new SecondaryActionComponent.Builder()
+                .setTitle("Near Clark and Lake")
+                .setSubtitle("200 W Lake St.")
+                .build();
         LogoComponent logoComponent = new LogoComponent.Builder()
                 .setComponentID(2)
-                .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.cs))
+                .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.test_logo))
                 .build();
         HeroComponent heroComponent = new HeroComponent.Builder()
                 .setComponentID(3)
                 .setKind(HeroComponent.HERO_IMAGE)
-                .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.hero_boat))
+                .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero))
                 .build();
         final Ad ad = adBuilder.setAdID(1)
                 .setRequestID(1)
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 .setHeadline(headlineComponent)
                 .setBody(bodyComponent)
                 .setLogo(logoComponent)
+                .setSecondaryAction(secondaryComponent)
                 .setHero(heroComponent)
                 .setActions(actionComponents)
                 .build();
