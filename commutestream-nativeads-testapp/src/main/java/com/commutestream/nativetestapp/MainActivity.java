@@ -15,6 +15,7 @@ import com.commutestream.nativeads.SecondaryPopUp;
 import com.commutestream.nativeads.ViewBinder;
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.BodyComponent;
+import com.commutestream.nativeads.components.Colors;
 import com.commutestream.nativeads.components.HeadlineComponent;
 import com.commutestream.nativeads.components.HeroComponent;
 import com.commutestream.nativeads.components.LogoComponent;
@@ -38,9 +39,24 @@ public class MainActivity extends AppCompatActivity {
         Ad.Builder adBuilder = new Ad.Builder();
         ActionComponent action1 = new ActionComponent.Builder()
                 .setComponentID(0)
-                .setTitle("Click Me")
+                .setTitle("Wikipedia")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://wikipedia.com")
+                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
+                .build();
+        ActionComponent action2 = new ActionComponent.Builder()
+                .setComponentID(0)
+                .setTitle("Google")
+                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setUrl("https://google.com")
+                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
+                .build();
+        ActionComponent action3 = new ActionComponent.Builder()
+                .setComponentID(0)
+                .setTitle("Yahoo")
+                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setUrl("https://yahoo.com")
+                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
                 .build();
         HeadlineComponent headlineComponent = new HeadlineComponent.Builder()
                 .setComponentID(1)
@@ -50,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 .setComponentID(1)
                 .setBody("The Body")
                 .build();
-        ActionComponent[] actionComponents = new ActionComponent[1];
+        ActionComponent[] actionComponents = new ActionComponent[3];
         actionComponents[0] = action1;
+        actionComponents[1] = action2;
+        actionComponents[2] = action3;
         SecondaryActionComponent secondaryComponent = new SecondaryActionComponent.Builder()
                 .setTitle("Near Clark and Lake")
                 .setSubtitle("200 W Lake St.")
