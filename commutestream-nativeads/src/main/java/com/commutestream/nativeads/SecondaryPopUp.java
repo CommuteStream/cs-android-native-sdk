@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -102,15 +103,32 @@ public class SecondaryPopUp {
         heroFrame.removeAllViews();
         heroFrame.addView(heroImageView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
+        Float buttonFontSize = (float)14;
 
-        //TODO add action buttons
+        switch (ad.actions.length){
+            case 1:
+                buttonFontSize = (float)22;
+                break;
+
+            case 2:
+                buttonFontSize = (float)19;
+                break;
+
+            case 3:
+                buttonFontSize = (float)14;
+                break;
+
+            default:
+                break;
+        }
+
         actionsLayout.removeAllViews();
         for (final ActionComponent action : ad.actions) {
             Button actionButton = new Button(activity);
-
             actionButton.setText(action.getTitle());
             actionButton.setBackgroundColor(action.getColors().getBackground());
             actionButton.setTextColor(action.getColors().getForeground());
+            actionButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, buttonFontSize);
 
             actionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
