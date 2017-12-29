@@ -15,6 +15,7 @@ import com.commutestream.nativeads.SecondaryPopUp;
 import com.commutestream.nativeads.ViewBinder;
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.BodyComponent;
+import com.commutestream.nativeads.components.AdvertiserComponent;
 import com.commutestream.nativeads.components.Colors;
 import com.commutestream.nativeads.components.HeadlineComponent;
 import com.commutestream.nativeads.components.HeroComponent;
@@ -42,37 +43,43 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("Wikipedia")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://wikipedia.com")
-                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
+                .setColors(new Colors(0xffffffff, 0xff0e9047))
                 .build();
         ActionComponent action2 = new ActionComponent.Builder()
                 .setComponentID(0)
                 .setTitle("Google")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://google.com")
-                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
+                .setColors(new Colors(0xffffffff, 0xff137dd0))
                 .build();
         ActionComponent action3 = new ActionComponent.Builder()
                 .setComponentID(0)
                 .setTitle("Yahoo")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://yahoo.com")
-                .setColors(new Colors(R.color.colorAccent, R.color.colorPrimaryDark))
+                .setColors(new Colors(0xffffffff, 0xffedab1d))
                 .build();
         HeadlineComponent headlineComponent = new HeadlineComponent.Builder()
                 .setComponentID(1)
-                .setHeadline("The Headline")
+                .setHeadline("Look and feel your best")
                 .build();
         BodyComponent bodyComponent = new BodyComponent.Builder()
                 .setComponentID(1)
-                .setBody("The Body")
+                .setBody("Get a free massage with purchase of any other service.")
                 .build();
+
+        AdvertiserComponent advertiserComponent = new AdvertiserComponent.Builder()
+                .setComponentID(1)
+                .setAdvertiser("Hand and Stone Massage")
+                .build();
+
         ActionComponent[] actionComponents = new ActionComponent[3];
         actionComponents[0] = action1;
         actionComponents[1] = action2;
         actionComponents[2] = action3;
         SecondaryActionComponent secondaryComponent = new SecondaryActionComponent.Builder()
                 .setTitle("Near Clark and Lake")
-                .setSubtitle("200 W Lake St.")
+                .setSubtitle("200 W Lake St is in Chicago")
                 .build();
         LogoComponent logoComponent = new LogoComponent.Builder()
                 .setComponentID(2)
@@ -88,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 .setVersionID(1)
                 .setHeadline(headlineComponent)
                 .setBody(bodyComponent)
+                .setAdvertiser(advertiserComponent)
                 .setLogo(logoComponent)
                 .setSecondaryAction(secondaryComponent)
                 .setHero(heroComponent)
