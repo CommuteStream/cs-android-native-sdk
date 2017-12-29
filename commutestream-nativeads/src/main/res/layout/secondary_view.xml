@@ -12,82 +12,108 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="350dp"
-        android:layout_height="475dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:padding="5dp"
-        android:background="@android:color/holo_blue_light"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/secondary_ad_title"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
             android:layout_weight="1"
+            android:includeFontPadding="false"
+            android:padding="0dp"
             android:text="Title"
-            android:textColor="@android:color/black" />
+            android:textColor="#666666"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/secondary_ad_subtitle"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:text="Subtitle"
-            android:textColor="@android:color/black" />
+            android:textColor="#666666" />
 
         <FrameLayout
             android:id="@+id/secondary_ad_hero"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="1"
+            android:layout_height="160dp"
             android:layout_gravity="top"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="top"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/test_hero" />
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="128dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/secondary_ad_logo"
                 android:layout_width="128dp"
-                android:layout_height="128dp"
-                android:layout_gravity="center_vertical"
+                android:layout_height="55dp"
+                android:layout_gravity="top|center"
                 android:layout_weight="1"
+                android:padding="5dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/test_logo" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/secondary_ad_headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:textSize="16sp"
                     android:gravity="center_vertical"
-                    android:text="Headline Text" />
+                    android:text="Headline Text"
+                    android:textColor="#666666"/>
 
                 <TextView
                     android:id="@+id/secondary_ad_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textSize="14sp"
                     android:gravity="center_vertical"
-                    android:text="Body Text" />
+                    android:text="Body Text"
+                    android:textColor="#666666"/>
+                <TextView
+                    android:id="@+id/secondary_ad_advertiser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:textSize="10sp"
+                    android:gravity="center_vertical"
+                    android:text="Body Text"
+                    android:textColor="#999999"/>
 
             </LinearLayout>
 
@@ -97,14 +123,17 @@
             android:id="@+id/secondary_ad_actions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:orientation="horizontal"></LinearLayout>
 
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/secondary_ad_close"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
