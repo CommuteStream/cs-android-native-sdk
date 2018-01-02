@@ -45,29 +45,33 @@ public class AdReportBuilder {
             builder.setDeviceVisibilitySamples(idx, deviceSample);
         }
         builder.setVisibilitySampleCount(builder.getVisibilitySampleCount() + 1);
-        if(impressionDetector.addVisibility(viewVisible, screenVisible)) {
+        if (impressionDetector.addVisibility(viewVisible, screenVisible)) {
             addImpression();
         }
     }
 
     public void addComponentInteraction(long componentID, Csnmessages.ComponentInteractionKind kind) {
         Csnmessages.ComponentReport.Builder builder = getComponentBuilder(componentID);
-        if(impressionDetector.addInteraction(kind)) {
+        builder.addInteractions(Csnmessages.ComponentInteraction.newBuilder()
+                .setKind(kind)
+                .setDeviceTime(System.currentTimeMillis())
+                .build()
+        );
+        if (impressionDetector.addInteraction(kind)) {
             addImpression();
         }
     }
 
     private void addImpression() {
         this.adReportBuilder.addImpressions(Csnmessages.AdImpression.newBuilder()
-            .setDeviceTime(System.currentTimeMillis())
+                .setDeviceTime(System.currentTimeMillis())
                 .build()
-
         );
     }
 
     public Csnmessages.AdReport build() {
         adReportBuilder.clearComponents();
-        for(Csnmessages.ComponentReport.Builder componentBuilder : componentReportBuilders.values()) {
+        for (Csnmessages.ComponentReport.Builder componentBuilder : componentReportBuilders.values()) {
             adReportBuilder.addComponents(componentBuilder.build());
         }
         return adReportBuilder.build();
@@ -75,7 +79,7 @@ public class AdReportBuilder {
 
     private Csnmessages.ComponentReport.Builder getComponentBuilder(long componentID) {
         Csnmessages.ComponentReport.Builder builder = componentReportBuilders.get(Long.valueOf(componentID));
-        if(builder == null) {
+        if (builder == null) {
             builder = Csnmessages.ComponentReport.newBuilder()
                     .setComponentId(componentID);
             componentReportBuilders.put(Long.valueOf(componentID), builder);
