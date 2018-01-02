@@ -4,6 +4,7 @@ import com.commutestream.nativeads.Ad;
 import com.commutestream.nativeads.AdRenderer;
 import com.commutestream.nativeads.AdsController;
 
+import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.commutestream.nativeads.CSNLog;
+import com.commutestream.nativeads.reporting.ReportEngine;
 import com.commutestream.nativeads.SecondaryPopUp;
 import com.commutestream.nativeads.ViewBinder;
+import com.commutestream.nativeads.VisibilityMonitor;
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.AdvertiserComponent;
@@ -21,6 +25,16 @@ import com.commutestream.nativeads.components.HeadlineComponent;
 import com.commutestream.nativeads.components.HeroComponent;
 import com.commutestream.nativeads.components.LogoComponent;
 import com.commutestream.nativeads.components.SecondaryActionComponent;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.UUID;
 
 import static android.view.ViewGroup.*;
 
@@ -38,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 .setLogo(R.id.logoView)
                 .setBody(R.id.bodyView);
         Ad.Builder adBuilder = new Ad.Builder();
-        ActionComponent action1 = new ActionComponent.Builder()
+        final ActionComponent action1 = new ActionComponent.Builder()
                 .setComponentID(0)
                 .setTitle("Wikipedia")
                 .setKind(ActionComponent.ACTION_KIND_URL)
@@ -102,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 .setActions(actionComponents)
                 .build();
         AdRenderer r = new AdRenderer(this);
-        View view = r.render(null, ad, viewBinder);
-        LinearLayout mainLayout = findViewById(R.id.main_layout);
+        final View view = r.render(null, ad, viewBinder);
+        final LinearLayout mainLayout = findViewById(R.id.main_layout);
         Button showPopup = findViewById(R.id.show_popup);
         final SecondaryPopUp popup = new SecondaryPopUp(this);
         showPopup.setOnClickListener(
@@ -115,6 +129,40 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
         mainLayout.addView(view);
+        HashSet<InetAddress> ipAddrs = new HashSet();
+        List<NetworkInterface> interfaces = null;
+        try {
+            interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+        } catch (Exception ex) {
+            interfaces = new ArrayList<>();
+        }
+        for (NetworkInterface intf : interfaces) {
+            for(InetAddress addr : Collections.list(intf.getInetAddresses())) {
+                if(!addr.isLoopbackAddress()) {
+                    ipAddrs.add(addr);
+                    CSNLog.v("Ip Address: " + addr.toString());
+                }
+            }
+        }
+        ReportEngine reportEngine = new ReportEngine(UUID.randomUUID(), UUID.randomUUID(), false, ipAddrs);
+        VisibilityMonitor visMonitor = new VisibilityMonitor(reportEngine);
+        visMonitor.addView(view, ad, logoComponent);
+        visMonitor.startMonitoring();
+        final Activity activity = this;
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mainLayout.removeView(view);
+                    }
+                });
+            }
+        };
+        timer.schedule(timerTask, 10000);
+
         //mAdsController = new AdsController();
 
         // get nearbytransit
