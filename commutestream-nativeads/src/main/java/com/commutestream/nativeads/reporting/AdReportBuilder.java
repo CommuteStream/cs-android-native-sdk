@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class AdReportBuilder {
     Csnmessages.AdReport.Builder adReportBuilder;
     HashMap<Long, Csnmessages.ComponentReport.Builder> componentReportBuilders;
+    ImpressionDetector impressionDetector;
 
     public AdReportBuilder(Ad ad) {
         adReportBuilder = Csnmessages.AdReport.newBuilder()
@@ -17,6 +18,7 @@ public class AdReportBuilder {
                 .setRequestId(ad.getRequestID())
                 .setVersionId(ad.getVersionID());
         componentReportBuilders = new HashMap();
+        impressionDetector = new ImpressionDetector();
     }
 
     public void addComponentVisibility(long componentID, double viewVisible, double screenVisible) {
@@ -43,12 +45,24 @@ public class AdReportBuilder {
             builder.setDeviceVisibilitySamples(idx, deviceSample);
         }
         builder.setVisibilitySampleCount(builder.getVisibilitySampleCount() + 1);
-
-        //TODO check for impressions
+        if(impressionDetector.addVisibility(viewVisible, screenVisible)) {
+            addImpression();
+        }
     }
 
     public void addComponentInteraction(long componentID, Csnmessages.ComponentInteractionKind kind) {
         Csnmessages.ComponentReport.Builder builder = getComponentBuilder(componentID);
+        if(impressionDetector.addInteraction(kind)) {
+            addImpression();
+        }
+    }
+
+    private void addImpression() {
+        this.adReportBuilder.addImpressions(Csnmessages.AdImpression.newBuilder()
+            .setDeviceTime(System.currentTimeMillis())
+                .build()
+
+        );
     }
 
     public Csnmessages.AdReport build() {
