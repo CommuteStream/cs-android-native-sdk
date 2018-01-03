@@ -53,7 +53,7 @@ public class AdRequest {
         return stops;
     }
 
-    public String sha256() throws NoSuchAlgorithmException {
+    public byte[] sha256() throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         for(TransitAgency agency : agencies) {
             md.update(agency.getAgencyID().getBytes());
@@ -67,10 +67,10 @@ public class AdRequest {
             md.update(stop.getRouteID().getBytes());
             md.update(stop.getStopID().getBytes());
         }
-        return bin2hex(md.digest());
+        return md.digest();
     }
 
     static String bin2hex(byte[] data) {
-        return String.format("%0" + (data.length*2) + "X", new BigInteger(1, data));
+        return String.format("%0" + (data.length * 2) + "X", new BigInteger(1, data));
     }
 }

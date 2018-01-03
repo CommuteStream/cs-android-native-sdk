@@ -12,7 +12,7 @@ public class AdRequestTest {
     public void testAgencyOnly() throws NoSuchAlgorithmException {
         TransitAgency ta = new TransitAgency("bogus");
         AdRequest ar = new AdRequest();
-        String hash = ar.sha256();
+        byte[] hash = ar.sha256();
         ar.addAgency(ta);
         assertThat(hash, not(ar.sha256()));
     }
@@ -21,7 +21,7 @@ public class AdRequestTest {
     public void testRouteOnly() throws NoSuchAlgorithmException {
         TransitRoute tr = new TransitRoute("bogus", "hocus");
         AdRequest ar = new AdRequest();
-        String hash = ar.sha256();
+        byte[] hash = ar.sha256();
         ar.addRoute(tr);
         assertThat(hash, not(ar.sha256()));
     }
@@ -30,7 +30,7 @@ public class AdRequestTest {
     public void testStopOnly() throws NoSuchAlgorithmException {
         TransitStop ts = new TransitStop("bogus", "hocus", "pocus");
         AdRequest ar = new AdRequest();
-        String hash = ar.sha256();
+        byte[] hash = ar.sha256();
         ar.addStop(ts);
         assertThat(hash, not(ar.sha256()));
     }
@@ -39,7 +39,7 @@ public class AdRequestTest {
     public void testStopOnlyWithNull() throws NoSuchAlgorithmException {
         TransitStop ts = new TransitStop("bogus", null, "pocus");
         AdRequest ar = new AdRequest();
-        String hash = ar.sha256();
+        byte[] hash = ar.sha256();
         ar.addStop(ts);
         assertThat(hash, not(ar.sha256()));
     }
@@ -47,7 +47,7 @@ public class AdRequestTest {
     @Test
     public void testConvienenceAdd() throws NoSuchAlgorithmException {
         AdRequest ar = new AdRequest();
-        String hash = ar.sha256();
+        byte[] hash = ar.sha256();
         ar.addAgency("bogus");
         assertThat(hash, not(ar.sha256()));
         hash = ar.sha256();

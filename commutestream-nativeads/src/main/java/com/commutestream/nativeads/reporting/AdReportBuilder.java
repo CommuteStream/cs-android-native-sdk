@@ -1,7 +1,5 @@
 package com.commutestream.nativeads.reporting;
 
-import android.util.Xml;
-
 import com.commutestream.nativeads.Ad;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 

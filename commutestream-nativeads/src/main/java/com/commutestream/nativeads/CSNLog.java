@@ -8,4 +8,6 @@ public class CSNLog {
     public static int v(String msg) {
         return Log.v(TAG, msg);
     }
+
+    public static int e(String msg) { return Log.e(TAG, msg); }
 }

@@ -1,8 +1,6 @@
 package com.commutestream.nativeads;
 
 import android.view.View;
-import android.widget.ImageView;
-
 
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.BodyComponent;
