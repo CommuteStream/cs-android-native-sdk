@@ -2,13 +2,20 @@ package com.commutestream.nativeads;
 
 import android.content.Context;
 
+import com.commutestream.nativeads.reporting.ReportEngine;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.google.protobuf.ByteString;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,17 +25,30 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
+    private UUID adUnit;
+    private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
+    private boolean limitTracking = true;
+    private Collection<InetAddress> ipAddresses = new ArrayList<>();
+    private ReportEngine reportEngine;
     private Context context;
     private Client client;
 
-    public AdsController(Context context, Client client) {
-        this.context = context;
-        this.client = client;
+    public AdsController(Context context, Client client, UUID adUnit) {
+        init(context, client, adUnit);
     }
 
-    public AdsController(Context context) {
-        this.context = context;
+    public AdsController(Context context, UUID adUnit) {
         client = new HttpClient();
+        init(context, client, adUnit);
+    }
+
+    private void init(Context context, Client client, UUID adUnit) {
+        this.context = context;
+        this.client = client;
+        this.adUnit = adUnit;
+        reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
+        loadAaid();
+        loadIpAddresses();
     }
 
     public void fetchAds(List<AdRequest> requests, final AdResponseHandler responseHandler) {
@@ -88,6 +108,29 @@ public class AdsController {
         return builder;
     }
 
+    private void loadIpAddresses() {
+        HashSet<InetAddress> ipAddresses = new HashSet();
+        List<NetworkInterface> interfaces = null;
+        try {
+            interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+        } catch (Exception ex) {
+            interfaces = new ArrayList<>();
+        }
+        for (NetworkInterface intf : interfaces) {
+            for(InetAddress addr : Collections.list(intf.getInetAddresses())) {
+                if(!addr.isLoopbackAddress()) {
+                    ipAddresses.add(addr);
+                }
+            }
+        }
+        setIpAddresses(ipAddresses);
+    }
+
+    private synchronized void setIpAddresses(Collection<InetAddress> ipAddresses) {
+        this.ipAddresses = ipAddresses;
+        reportEngine.setIpAddresses(ipAddresses);
+    }
+
     private void loadAaid() {
         final AdsController controller = this;
         final Context context = this.context;
@@ -112,5 +155,8 @@ public class AdsController {
 
 
     private synchronized void setDeviceInfo(UUID aaid, boolean limitTracking) {
+        this.aaid = aaid;
+        this.limitTracking = limitTracking;
+        this.reportEngine.setDeviceInfo(aaid, limitTracking);
     }
 }

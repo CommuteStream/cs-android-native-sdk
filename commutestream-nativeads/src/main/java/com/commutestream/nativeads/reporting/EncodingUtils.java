@@ -1,5 +1,8 @@
 package com.commutestream.nativeads.reporting;
 
+import java.nio.ByteBuffer;
+import java.util.UUID;
+
 public class EncodingUtils {
 
     private EncodingUtils() {}
@@ -19,5 +22,9 @@ public class EncodingUtils {
         long maskedSample = sample & sampleMask;
         long newSample = maskedSample | shiftedValue;
         return newSample;
+    }
+
+    public static byte[] encodeUUID(UUID uuid) {
+        return ByteBuffer.allocate(16).putLong(uuid.getMostSignificantBits()).putLong(uuid.getLeastSignificantBits()).array();
     }
 }

@@ -1,5 +1,7 @@
 package com.commutestream.nativeads.reporting;
 
+import android.util.Xml;
+
 import com.commutestream.nativeads.Ad;
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.protobuf.Csnmessages;
@@ -7,6 +9,7 @@ import com.google.protobuf.ByteString;
 
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import java.security.spec.EncodedKeySpec;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,25 +19,29 @@ import java.util.UUID;
 
 public class ReportEngine {
 
-    private HashMap<AdReportKey, AdReportBuilder> adReportBuilders;
+
     private ByteString adUnit;
     private Csnmessages.DeviceID deviceID;
-    private boolean limitTracking = false;
+    private boolean limitTracking;
     private HashSet<ByteString> ipAddresses;
+    private HashMap<AdReportKey, AdReportBuilder> adReportBuilders = new HashMap<>();
 
     public ReportEngine(UUID adUnit, UUID aaid, boolean limitTracking, Collection<InetAddress> ipAddresses) {
-        this.adUnit = ByteString.copyFrom(ByteBuffer.allocate(16).putLong(adUnit.getMostSignificantBits()).putLong(adUnit.getLeastSignificantBits()).array());
+        this.adUnit = ByteString.copyFrom(EncodingUtils.encodeUUID(adUnit));
+        setDeviceInfo(aaid, limitTracking);
+        setIpAddresses(ipAddresses);
+    }
+
+    public void setDeviceInfo(UUID aaid, boolean limitTracking) {
         this.deviceID = Csnmessages.DeviceID.newBuilder()
                 .setDeviceIdType(Csnmessages.DeviceID.Type.AAID)
-                .setDeviceId(ByteString.copyFrom(ByteBuffer.allocate(16).putLong(aaid.getMostSignificantBits()).putLong(aaid.getLeastSignificantBits()).array()))
+                .setDeviceId(ByteString.copyFrom(EncodingUtils.encodeUUID(aaid)))
                 .build();
         this.limitTracking = limitTracking;
-        this.ipAddresses = new HashSet();
-        this.setIpAddresses(ipAddresses);
-        adReportBuilders = new HashMap();
     }
 
     public void setIpAddresses(Collection<InetAddress> ipAddresses) {
+        this.ipAddresses = new HashSet<>();
         for(InetAddress addr : ipAddresses) {
             this.ipAddresses.add(ByteString.copyFrom(addr.getAddress()));
         }

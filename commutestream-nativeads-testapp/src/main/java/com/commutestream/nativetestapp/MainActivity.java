@@ -40,7 +40,7 @@ import static android.view.ViewGroup.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AdsController mAdsController;
+    private AdsController adsController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         };
         timer.schedule(timerTask, 10000);
 
-        //mAdsController = new AdsController();
+        adsController = new AdsController(this, UUID.randomUUID());
 
         // get nearbytransit
 
