@@ -47,8 +47,8 @@ public class AdsController {
         this.client = client;
         this.adUnit = adUnit;
         reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
-        loadAaid();
         loadIpAddresses();
+        loadAaid();
     }
 
     public void fetchAds(List<AdRequest> requests, final AdResponseHandler responseHandler) {
@@ -127,6 +127,7 @@ public class AdsController {
     }
 
     private synchronized void setIpAddresses(Collection<InetAddress> ipAddresses) {
+        CSNLog.v("Set Ip Addresses: " + ipAddresses.toString());
         this.ipAddresses = ipAddresses;
         reportEngine.setIpAddresses(ipAddresses);
     }
@@ -148,15 +149,18 @@ public class AdsController {
                 final String aaidStr = adInfo.getId();
                 final UUID aaid = UUID.fromString(aaidStr);
                 final boolean limitTracking = adInfo.isLimitAdTrackingEnabled();
+
                 controller.setDeviceInfo(aaid,limitTracking);
             }
-        }).run();
+        }).start();
     }
 
 
     private synchronized void setDeviceInfo(UUID aaid, boolean limitTracking) {
+        CSNLog.v("Set AAID: " + aaid + " Limit Tracking: " + limitTracking);
         this.aaid = aaid;
         this.limitTracking = limitTracking;
         this.reportEngine.setDeviceInfo(aaid, limitTracking);
     }
+
 }
