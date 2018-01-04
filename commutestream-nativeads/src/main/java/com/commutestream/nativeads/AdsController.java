@@ -2,6 +2,7 @@ package com.commutestream.nativeads;
 
 import android.content.Context;
 
+import com.commutestream.nativeads.reporting.EncodingUtils;
 import com.commutestream.nativeads.reporting.ReportEngine;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
@@ -11,12 +12,15 @@ import com.google.protobuf.ByteString;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Queue;
+import java.util.TimeZone;
 import java.util.UUID;
 
 public class AdsController {
@@ -51,24 +55,56 @@ public class AdsController {
         loadAaid();
     }
 
-    public void fetchAds(List<AdRequest> requests, final AdResponseHandler responseHandler) {
-        //TODO convert requests to AdRequests message
-        Csnmessages.AdRequests msg = Csnmessages.AdRequests.newBuilder()
-                .build();
-
-
+    public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
+        try {
+            Csnmessages.AdRequests msg = buildRequestsMessage(requests);
+        } catch (Exception ex) {
+            // TODO fix to match each ad request with a null ad
+            CSNLog.e("Failed to encode ad requests: " + ex.getMessage());
+            responseHandler.onAds(null);
+        }
         client.getAds(msg, new Client.AdResponseHandler() {
             @Override
             public void onResponse(Csnmessages.AdResponses responses) {
-                responseHandler.onAds(null);
+                try {
+                    List<Ad> ads = decodeResponses(requests, responses);
+                    responseHandler.onAds(ads);
+                } catch (Exception ex) {
+                    CSNLog.e("Failed to decode ad responses: " + ex.getMessage());
+                    // TODO replace null with list of null ads matching requests
+                    responseHandler.onAds(null);
+                }
             }
 
             @Override
             public void onFailure() {
+                // TODO replace null with list of null ads matching requests
                 responseHandler.onAds(null);
             }
         });
 
+    }
+
+    private List<Ad> decodeResponses(List<AdRequest> requests, Csnmessages.AdResponses adResponses) throws NoSuchAlgorithmException {
+        HashMap<byte[], ArrayDeque<Ad>> adQueues = new HashMap<>();
+        for(Csnmessages.AdResponse adResponse : adResponses.getAdResponsesList()) {
+            ArrayDeque<Ad> adQueue = new ArrayDeque<>();
+            for(Csnmessages.NativeAd nativeAd : adResponse.getAdsList()) {
+                Ad ad = new Ad(nativeAd);
+                adQueue.push(ad);
+            }
+            adQueues.put(adResponse.getHashId().toByteArray(), adQueue);
+        }
+        ArrayList<Ad> ads = new ArrayList<>(requests.size());
+        for(AdRequest request : requests) {
+            ArrayDeque<Ad> adQueue = adQueues.get(request.sha256());
+            if(adQueue == null) {
+                ads.add(null);
+            } else {
+                ads.add(adQueue.pop());
+            }
+        }
+        return ads;
     }
 
     private Csnmessages.AdRequests buildRequestsMessage(List<AdRequest> requests) throws NoSuchAlgorithmException {
@@ -83,7 +119,21 @@ public class AdsController {
                 builder.setNumOfAds(builder.getNumOfAds() + 1);
             }
         }
-        return Csnmessages.AdRequests.newBuilder().build();
+        Csnmessages.AdRequests.Builder builder = Csnmessages.AdRequests.newBuilder()
+                .setDeviceId(Csnmessages.DeviceID.newBuilder()
+                        .setDeviceIdType(Csnmessages.DeviceID.Type.AAID)
+                        .setDeviceId(ByteString.copyFrom(EncodingUtils.encodeUUID(aaid)))
+                        .build())
+                .setAdUnit(ByteString.copyFrom(EncodingUtils.encodeUUID(adUnit)))
+                .setTimezone(TimeZone.getDefault().getID());
+
+        for(InetAddress addr : ipAddresses) {
+            builder.addIpAddresses(ByteString.copyFrom(addr.getAddress()));
+        }
+        for(Csnmessages.AdRequest.Builder requestBuilder : requestBuilders.values()) {
+            builder.addAdRequests(requestBuilder.build());
+        }
+        return builder.build();
     }
 
     private Csnmessages.AdRequest.Builder requestBuilder(AdRequest request) throws NoSuchAlgorithmException {
