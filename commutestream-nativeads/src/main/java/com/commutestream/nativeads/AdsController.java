@@ -19,7 +19,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Queue;
 import java.util.TimeZone;
 import java.util.UUID;
 
@@ -58,31 +57,30 @@ public class AdsController {
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
         try {
             Csnmessages.AdRequests msg = buildRequestsMessage(requests);
+            client.getAds(msg, new Client.AdResponseHandler() {
+                @Override
+                public void onResponse(Csnmessages.AdResponses responses) {
+                    try {
+                        List<Ad> ads = decodeResponses(requests, responses);
+                        responseHandler.onAds(ads);
+                    } catch (Exception ex) {
+                        CSNLog.e("Failed to decode ad responses: " + ex.getMessage());
+                        // TODO replace null with list of null ads matching requests
+                        responseHandler.onAds(null);
+                    }
+                }
+
+                @Override
+                public void onFailure() {
+                    // TODO replace null with list of null ads matching requests
+                    responseHandler.onAds(null);
+                }
+            });
         } catch (Exception ex) {
             // TODO fix to match each ad request with a null ad
             CSNLog.e("Failed to encode ad requests: " + ex.getMessage());
             responseHandler.onAds(null);
         }
-        client.getAds(msg, new Client.AdResponseHandler() {
-            @Override
-            public void onResponse(Csnmessages.AdResponses responses) {
-                try {
-                    List<Ad> ads = decodeResponses(requests, responses);
-                    responseHandler.onAds(ads);
-                } catch (Exception ex) {
-                    CSNLog.e("Failed to decode ad responses: " + ex.getMessage());
-                    // TODO replace null with list of null ads matching requests
-                    responseHandler.onAds(null);
-                }
-            }
-
-            @Override
-            public void onFailure() {
-                // TODO replace null with list of null ads matching requests
-                responseHandler.onAds(null);
-            }
-        });
-
     }
 
     private List<Ad> decodeResponses(List<AdRequest> requests, Csnmessages.AdResponses adResponses) throws NoSuchAlgorithmException {

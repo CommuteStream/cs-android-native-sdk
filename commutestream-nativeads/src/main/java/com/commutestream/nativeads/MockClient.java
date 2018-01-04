@@ -5,16 +5,24 @@ import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 
 class MockClient implements Client {
 
-    Queue<AdResponses> mAdsResponses = new ArrayDeque<>();
-    Queue<Boolean> mReportsResponses = new ArrayDeque<>();
+    ArrayDeque<AdResponses> adsResponses = new ArrayDeque<>();
+    ArrayDeque<Boolean> reportsResponses = new ArrayDeque<>();
+
+    public void addAdsResponse(AdResponses adResponses) {
+        adsResponses.push(adResponses);
+    }
+
+    public void addReportsResponse(boolean success) {
+        reportsResponses.push(success);
+    }
+
 
     @Override
     public void getAds(AdRequests request, AdResponseHandler handler) {
-        AdResponses responses = mAdsResponses.remove();
+        AdResponses responses = adsResponses.pop();
         if(responses != null) {
             handler.onResponse(responses);
         } else {
@@ -24,8 +32,8 @@ class MockClient implements Client {
 
     @Override
     public void sendReports(AdReports report, AdReportsHandler handler) {
-        Boolean reportsResponse = mReportsResponses.remove();
-        if(reportsResponse != null) {
+        Boolean reportsResponse = reportsResponses.pop();
+        if(reportsResponse != null && reportsResponse == true) {
             handler.onResponse();
         } else {
             handler.onFailure();

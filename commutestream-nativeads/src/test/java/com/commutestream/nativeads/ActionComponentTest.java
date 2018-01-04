@@ -1,7 +1,5 @@
 package com.commutestream.nativeads;
 
-import android.graphics.Color;
-
 import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.components.Colors;
 import com.commutestream.nativeads.protobuf.Csnmessages;

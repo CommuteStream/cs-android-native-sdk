@@ -1,5 +1,7 @@
 package com.commutestream.nativeads;
 
+import android.support.test.filters.SmallTest;
+import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 
 import com.commutestream.nativeads.components.ActionComponent;
@@ -7,9 +9,12 @@ import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.HeadlineComponent;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static android.support.test.InstrumentationRegistry.getContext;
 
+@RunWith(AndroidJUnit4.class)
+@SmallTest
 public class AdRendererTest {
     @Test
     public void newAdRenderer() {
