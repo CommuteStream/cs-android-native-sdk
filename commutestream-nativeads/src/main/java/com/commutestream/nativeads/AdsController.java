@@ -11,6 +11,7 @@ import com.google.protobuf.ByteString;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.nio.ByteBuffer;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -55,6 +56,10 @@ public class AdsController {
     }
 
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
+        final ArrayList<Ad> nullAds = new ArrayList<>(requests.size());
+        for(AdRequest request : requests) {
+            nullAds.add(null);
+        }
         try {
             Csnmessages.AdRequests msg = buildRequestsMessage(requests);
             client.getAds(msg, new Client.AdResponseHandler() {
@@ -64,51 +69,51 @@ public class AdsController {
                         List<Ad> ads = decodeResponses(requests, responses);
                         responseHandler.onAds(ads);
                     } catch (Exception ex) {
-                        CSNLog.e("Failed to decode ad responses: " + ex.getMessage());
-                        // TODO replace null with list of null ads matching requests
-                        responseHandler.onAds(null);
+                        CSNLog.e("Failed to decode ad responses: " + ex);
+                        responseHandler.onAds(nullAds);
                     }
                 }
 
                 @Override
                 public void onFailure() {
-                    // TODO replace null with list of null ads matching requests
-                    responseHandler.onAds(null);
+                    responseHandler.onAds(nullAds);
                 }
             });
         } catch (Exception ex) {
-            // TODO fix to match each ad request with a null ad
-            CSNLog.e("Failed to encode ad requests: " + ex.getMessage());
-            responseHandler.onAds(null);
+            CSNLog.e("Failed to encode ad requests: " + ex);
+            responseHandler.onAds(nullAds);
         }
     }
 
     private List<Ad> decodeResponses(List<AdRequest> requests, Csnmessages.AdResponses adResponses) throws NoSuchAlgorithmException {
-        HashMap<byte[], ArrayDeque<Ad>> adQueues = new HashMap<>();
+        HashMap<ByteBuffer, ArrayDeque<Ad>> adQueues = new HashMap<>();
         for(Csnmessages.AdResponse adResponse : adResponses.getAdResponsesList()) {
             ArrayDeque<Ad> adQueue = new ArrayDeque<>();
             for(Csnmessages.NativeAd nativeAd : adResponse.getAdsList()) {
                 Ad ad = new Ad(nativeAd);
                 adQueue.push(ad);
             }
-            adQueues.put(adResponse.getHashId().toByteArray(), adQueue);
+            adQueues.put(ByteBuffer.wrap(adResponse.getHashId().toByteArray()), adQueue);
         }
         ArrayList<Ad> ads = new ArrayList<>(requests.size());
         for(AdRequest request : requests) {
-            ArrayDeque<Ad> adQueue = adQueues.get(request.sha256());
+            ArrayDeque<Ad> adQueue = adQueues.get(ByteBuffer.wrap(request.sha256()));
             if(adQueue == null) {
+                CSNLog.v("null queue");
                 ads.add(null);
             } else {
-                ads.add(adQueue.pop());
+                Ad ad = adQueue.pop();
+                CSNLog.v("found ad " + ad);
+                ads.add(ad);
             }
         }
         return ads;
     }
 
     private Csnmessages.AdRequests buildRequestsMessage(List<AdRequest> requests) throws NoSuchAlgorithmException {
-        HashMap<byte[], Csnmessages.AdRequest.Builder> requestBuilders = new HashMap();
+        HashMap<ByteBuffer, Csnmessages.AdRequest.Builder> requestBuilders = new HashMap();
         for(AdRequest request: requests) {
-            byte[] sha256 = request.sha256();
+            ByteBuffer sha256 = ByteBuffer.wrap(request.sha256());
             Csnmessages.AdRequest.Builder builder = requestBuilders.get(sha256);
             if(builder == null) {
                 builder = requestBuilder(request);
