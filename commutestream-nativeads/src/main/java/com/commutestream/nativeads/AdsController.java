@@ -2,11 +2,11 @@ package com.commutestream.nativeads;
 
 import android.content.Context;
 
+import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.EncodingUtils;
 import com.commutestream.nativeads.reporting.ReportEngine;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
-import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.google.protobuf.ByteString;
 
 import java.net.InetAddress;
@@ -91,18 +91,21 @@ public class AdsController {
             ArrayDeque<Ad> adQueue = new ArrayDeque<>();
             for(Csnmessages.NativeAd nativeAd : adResponse.getAdsList()) {
                 Ad ad = new Ad(nativeAd);
-                adQueue.push(ad);
+                adQueue.add(ad);
             }
             adQueues.put(ByteBuffer.wrap(adResponse.getHashId().toByteArray()), adQueue);
         }
         ArrayList<Ad> ads = new ArrayList<>(requests.size());
         for(AdRequest request : requests) {
             ArrayDeque<Ad> adQueue = adQueues.get(ByteBuffer.wrap(request.sha256()));
-            if(adQueue == null) {
+            if (adQueue == null) {
                 CSNLog.v("null queue");
                 ads.add(null);
+            } else if (adQueue.isEmpty()) {
+                CSNLog.v("empty queue");
+                ads.add(null);
             } else {
-                Ad ad = adQueue.pop();
+                Ad ad = adQueue.remove();
                 CSNLog.v("found ad " + ad);
                 ads.add(ad);
             }

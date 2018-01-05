@@ -56,7 +56,7 @@ public class AdControllerTest {
         adRequest.addAgency("bogus");
         ArrayList<AdRequest> adRequests = new ArrayList<>();
         adRequests.add(adRequest);
-        Csnmessages.AdResponses adResponses = Csnmessages.AdResponses.newBuilder()
+        final Csnmessages.AdResponses adResponses = Csnmessages.AdResponses.newBuilder()
                 .setServerId("specialid")
                 .addAdResponses(addMockAd(responseBuilder(adRequest)).build())
                 .build();
@@ -66,13 +66,15 @@ public class AdControllerTest {
             public void onAds(List<Ad> ads) {
                 assertThat(ads, notNullValue());
                 assertThat(ads.size(), equalTo(1));
-                assertThat(ads.get(0), notNullValue());
+                Ad ad = ads.get(0);
+                assertThat(ad, notNullValue());
+                assertThat(ad.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(0).getAdId()));
             }
         });
     }
 
     @Test
-    public void testFetchAdsDuplicates() {
+    public void testFetchAdsDuplicates() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
         AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
@@ -80,17 +82,28 @@ public class AdControllerTest {
         ArrayList<AdRequest> adRequests = new ArrayList<>();
         adRequests.add(adRequest);
         adRequests.add(adRequest);
+        final Csnmessages.AdResponses adResponses = Csnmessages.AdResponses.newBuilder()
+                .setServerId("specialid")
+                .addAdResponses(addMockAd(addMockAd(responseBuilder(adRequest))).build())
+                .build();
+        mockClient.addAdsResponse(adResponses);
         adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
             @Override
             public void onAds(List<Ad> ads) {
                 assertThat(ads, notNullValue());
                 assertThat(ads.size(), equalTo(2));
+                Ad ad1 = ads.get(0);
+                Ad ad2 = ads.get(1);
+                assertThat(ad1, notNullValue());
+                assertThat(ad2, notNullValue());
+                assertThat(ad1.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(0).getAdId()));
+                assertThat(ad2.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(1).getAdId()));
             }
         });
     }
 
     @Test
-    public void testFetchAdsComplex() {
+    public void testFetchAdsComplex() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
         AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
         AdRequest adRequest1 = new AdRequest();
@@ -102,11 +115,28 @@ public class AdControllerTest {
         adRequests.add(adRequest2);
         adRequests.add(adRequest1);
         adRequests.add(adRequest2);
+        final Csnmessages.AdResponses adResponses = Csnmessages.AdResponses.newBuilder()
+                .setServerId("specialid")
+                .addAdResponses(addMockAd(addMockAd(responseBuilder(adRequest1))).build())
+                .addAdResponses(addMockAd(responseBuilder(adRequest2)).build())
+                .build();
+        mockClient.addAdsResponse(adResponses);
         adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
             @Override
             public void onAds(List<Ad> ads) {
                 assertThat(ads, notNullValue());
                 assertThat(ads.size(), equalTo(4));
+                Ad ad1 = ads.get(0);
+                Ad ad2 = ads.get(1);
+                Ad ad3 = ads.get(2);
+                Ad ad4 = ads.get(3);
+                assertThat(ad1, notNullValue());
+                assertThat(ad2, notNullValue());
+                assertThat(ad3, notNullValue());
+                assertThat(ad4, nullValue());
+                assertThat(ad1.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(0).getAdId()));
+                assertThat(ad2.getAdID(), equalTo(adResponses.getAdResponses(1).getAds(0).getAdId()));
+                assertThat(ad3.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(1).getAdId()));
             }
         });
     }
