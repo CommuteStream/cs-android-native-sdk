@@ -11,6 +11,8 @@ import com.commutestream.nativeads.components.HeadlineComponent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+
 import static android.support.test.InstrumentationRegistry.getContext;
 
 @RunWith(AndroidJUnit4.class)
@@ -34,8 +36,8 @@ public class AdRendererTest {
                 .setComponentID(1)
                 .setBody("The Headline")
                 .build();
-        ActionComponent[] actionComponents = new ActionComponent[1];
-        actionComponents[0] = action1;
+        ArrayList<ActionComponent> actionComponents = new ArrayList<>(1);
+        actionComponents.add(action1);
         Ad ad = adBuilder.setAdID(1)
                 .setRequestID(1)
                 .setVersionID(1)

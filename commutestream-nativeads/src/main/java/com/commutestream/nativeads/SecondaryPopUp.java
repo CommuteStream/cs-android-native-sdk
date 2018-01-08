@@ -105,7 +105,7 @@ public class SecondaryPopUp {
 
         Float buttonFontSize = (float)14;
 
-        switch (ad.actions.length){
+        switch (ad.actions.size()){
             case 1:
                 buttonFontSize = (float)22;
                 break;

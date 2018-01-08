@@ -12,6 +12,11 @@ import com.commutestream.nativeads.components.SecondaryActionComponent;
 import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class Ad {
     protected long requestID;
     protected long adID;
@@ -19,7 +24,7 @@ public class Ad {
     protected Colors colors;
 
 
-    protected ActionComponent[] actions;
+    protected ArrayList<ActionComponent> actions;
     protected ViewComponent view;
     protected SecondaryActionComponent secondaryAction;
     protected LogoComponent logo;
@@ -50,7 +55,7 @@ public class Ad {
             return this;
         }
 
-        public Builder setActions(ActionComponent[] actions) {
+        public Builder setActions(ArrayList<ActionComponent> actions) {
             this.actions = actions;
             return this;
         }
@@ -108,7 +113,7 @@ public class Ad {
         adID = ad.getAdId();
         versionID = ad.getVersionId();
         colors = new Colors(ad.getColors());
-        //TODO actions
+        actions = new ArrayList<>(3);
         view = new ViewComponent(ad.getView());
         secondaryAction = new SecondaryActionComponent(ad.getSecondaryActionScreen());
         logo = new LogoComponent(ad.getLogo());
@@ -117,6 +122,9 @@ public class Ad {
         advertiser = new AdvertiserComponent(ad.getAdvertiser());
         location = new LocationComponent(ad.getLocation());
         hero = new HeroComponent(ad.getHero());
+        for (Csnmessages.ActionComponent action : ad.getActionsList()) {
+            actions.add(new ActionComponent(action));
+        }
     }
 
     public long getRequestID() {
@@ -135,7 +143,7 @@ public class Ad {
         return colors;
     }
 
-    public ActionComponent[] getActions() {
+    public List<ActionComponent> getActions() {
         return actions;
     }
 
