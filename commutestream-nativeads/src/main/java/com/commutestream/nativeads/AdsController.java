@@ -1,9 +1,11 @@
 package com.commutestream.nativeads;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.EncodingUtils;
 import com.commutestream.nativeads.reporting.ReportEngine;
@@ -36,27 +38,32 @@ public class AdsController {
     private boolean limitTracking = true;
     private Collection<InetAddress> ipAddresses = new ArrayList<>();
     private ReportEngine reportEngine;
-    private Context context;
+    private Activity activity;
     private Client client;
     private AdRenderer adRenderer;
+    private VisibilityMonitor visMonitor;
+    private SecondaryPopUp popUp;
 
-    public AdsController(Context context, Client client, UUID adUnit) {
-        init(context, client, adUnit);
+    public AdsController(Activity activity, Client client, UUID adUnit) {
+        init(activity, client, adUnit);
     }
 
-    public AdsController(Context context, UUID adUnit) {
+    public AdsController(Activity activity, UUID adUnit) {
         client = new HttpClient();
-        init(context, client, adUnit);
+        init(activity, client, adUnit);
     }
 
-    private void init(Context context, Client client, UUID adUnit) {
-        this.context = context;
+    private void init(Activity activity, Client client, UUID adUnit) {
+        this.activity = activity;
         this.client = client;
         this.adUnit = adUnit;
         reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
-        adRenderer = new AdRenderer(context);
+        adRenderer = new AdRenderer(activity);
+        visMonitor = new VisibilityMonitor(reportEngine);
+        popUp = new SecondaryPopUp(activity);
         loadIpAddresses();
         loadAaid();
+        visMonitor.startMonitoring();
         //TODO periodically update ip addresses and device id info, send reports
     }
 
@@ -102,11 +109,35 @@ public class AdsController {
         //TODO setup view monitoring
         //TODO setup click handling and reporting for secondary action
         try {
-            return adRenderer.render(viewGroup, viewBinder, ad);
+            View view = adRenderer.render(viewGroup, viewBinder, ad);
+            monitorView(view.findViewById(viewBinder.getLogo()), ad, ad.getLogo());
+            monitorView(view.findViewById(viewBinder.getHeadline()), ad, ad.getHeadline());
+            monitorView(view.findViewById(viewBinder.getBody()), ad, ad.getBody());
+            addClickHandler(view, ad, ad.getView());
+            return view;
         } catch (Exception e) {
             CSNLog.e("Failed to render ad: " + e);
             return null;
         }
+    }
+
+    private void monitorView(View view, Ad ad, Component component) {
+        visMonitor.addView(view, ad, component);
+    }
+
+    private void addClickHandler(final View view, final Ad ad, final Component component) {
+        final AdsController adsController = this;
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adsController.handleAdClick(view, ad, component);
+            }
+        });
+    }
+
+    private void handleAdClick(final View view, final Ad ad, final Component component) {
+        reportEngine.addInteraction(ad, component, Csnmessages.ComponentInteractionKind.Tap);
+        popUp.displayAd(ad);
     }
 
     private List<Ad> decodeResponses(List<AdRequest> requests, Csnmessages.AdResponses adResponses) throws NoSuchAlgorithmException {
@@ -214,7 +245,7 @@ public class AdsController {
 
     private void loadAaid() {
         final AdsController controller = this;
-        final Context context = this.context;
+        final Context context = this.activity;
         new Thread(new Runnable() {
             @Override
             public void run() {

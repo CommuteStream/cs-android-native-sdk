@@ -46,7 +46,7 @@ public class HeroComponent implements Component {
     }
 
     public static class Builder extends HeroComponent {
-        public Builder setComponentID(int componentID) {
+        public Builder setComponentID(long componentID) {
             this.componentID = componentID;
             return this;
         }

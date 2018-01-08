@@ -1,11 +1,8 @@
 package com.commutestream.nativeads;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.TabLayout;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;

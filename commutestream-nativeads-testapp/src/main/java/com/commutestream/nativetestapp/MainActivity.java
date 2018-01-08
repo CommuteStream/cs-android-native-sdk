@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.commutestream.nativeads.CSNLog;
+import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.reporting.ReportEngine;
 import com.commutestream.nativeads.SecondaryPopUp;
 import com.commutestream.nativeads.ViewBinder;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
@@ -47,43 +49,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // render fake
+        Random rnd = new Random();
         ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
                 .setHeadline(R.id.headlineView)
                 .setLogo(R.id.logoView)
                 .setBody(R.id.bodyView);
         Ad.Builder adBuilder = new Ad.Builder();
         final ActionComponent action1 = new ActionComponent.Builder()
-                .setComponentID(0)
+                .setComponentID(rnd.nextLong())
                 .setTitle("Wikipedia")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://wikipedia.com")
                 .setColors(new Colors(0xffffffff, 0xff0e9047))
                 .build();
+        ViewComponent viewComponent = new ViewComponent.Builder()
+                .setComponentID(rnd.nextLong())
+                .build();
         ActionComponent action2 = new ActionComponent.Builder()
-                .setComponentID(0)
+                .setComponentID(rnd.nextLong())
                 .setTitle("Google")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://google.com")
                 .setColors(new Colors(0xffffffff, 0xff137dd0))
                 .build();
         ActionComponent action3 = new ActionComponent.Builder()
-                .setComponentID(0)
+                .setComponentID(rnd.nextLong())
                 .setTitle("Yahoo")
                 .setKind(ActionComponent.ACTION_KIND_URL)
                 .setUrl("https://yahoo.com")
                 .setColors(new Colors(0xffffffff, 0xffedab1d))
                 .build();
         HeadlineComponent headlineComponent = new HeadlineComponent.Builder()
-                .setComponentID(1)
+                .setComponentID(rnd.nextLong())
                 .setHeadline("Look and feel your best")
                 .build();
         BodyComponent bodyComponent = new BodyComponent.Builder()
-                .setComponentID(1)
+                .setComponentID(rnd.nextLong())
                 .setBody("Get a free massage with purchase of any other service.")
                 .build();
-
         AdvertiserComponent advertiserComponent = new AdvertiserComponent.Builder()
-                .setComponentID(1)
+                .setComponentID(rnd.nextLong())
                 .setAdvertiser("Hand and Stone Massage")
                 .build();
 
@@ -96,17 +101,17 @@ public class MainActivity extends AppCompatActivity {
                 .setSubtitle("200 W Lake St is in Chicago")
                 .build();
         LogoComponent logoComponent = new LogoComponent.Builder()
-                .setComponentID(2)
+                .setComponentID(rnd.nextLong())
                 .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.test_logo))
                 .build();
         HeroComponent heroComponent = new HeroComponent.Builder()
-                .setComponentID(3)
+                .setComponentID(rnd.nextLong())
                 .setKind(HeroComponent.HERO_IMAGE)
                 .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero))
                 .build();
-        final Ad ad = adBuilder.setAdID(1)
-                .setRequestID(1)
-                .setVersionID(1)
+        final Ad ad = adBuilder.setAdID(rnd.nextLong())
+                .setRequestID(rnd.nextLong())
+                .setVersionID(rnd.nextLong())
                 .setHeadline(headlineComponent)
                 .setBody(bodyComponent)
                 .setAdvertiser(advertiserComponent)
@@ -114,9 +119,10 @@ public class MainActivity extends AppCompatActivity {
                 .setSecondaryAction(secondaryComponent)
                 .setHero(heroComponent)
                 .setActions(actionComponents)
+                .setView(viewComponent)
                 .build();
-        AdRenderer r = new AdRenderer(this);
-        final View view = r.render(null, viewBinder, ad);
+        AdRenderer adRenderer = new AdRenderer(this);
+        final View view = adRenderer.render(null, viewBinder, ad);
         final LinearLayout mainLayout = findViewById(R.id.main_layout);
         Button showPopup = findViewById(R.id.show_popup);
         final SecondaryPopUp popup = new SecondaryPopUp(this);
@@ -164,6 +170,9 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(timerTask, 10000);
 
         adsController = new AdsController(this, UUID.randomUUID());
+        final View view2 = adsController.renderAd(null, viewBinder, ad);
+        mainLayout.addView(view2);
+
 
         // get nearbytransit
 
