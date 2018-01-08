@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 .setAdvertiser("Hand and Stone Massage")
                 .build();
 
-        ActionComponent[] actionComponents = new ActionComponent[3];
-        actionComponents[0] = action1;
-        actionComponents[1] = action2;
-        actionComponents[2] = action3;
+        ArrayList<ActionComponent> actionComponents = new ArrayList<>(3);
+        actionComponents.add(action1);
+        actionComponents.add(action2);
+        actionComponents.add(action3);
         SecondaryActionComponent secondaryComponent = new SecondaryActionComponent.Builder()
                 .setTitle("Near Clark and Lake")
                 .setSubtitle("200 W Lake St is in Chicago")
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 .setActions(actionComponents)
                 .build();
         AdRenderer r = new AdRenderer(this);
-        final View view = r.render(null, ad, viewBinder);
+        final View view = r.render(null, viewBinder, ad);
         final LinearLayout mainLayout = findViewById(R.id.main_layout);
         Button showPopup = findViewById(R.id.show_popup);
         final SecondaryPopUp popup = new SecondaryPopUp(this);

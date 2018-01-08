@@ -1,6 +1,8 @@
 package com.commutestream.nativeads;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.EncodingUtils;
@@ -36,6 +38,7 @@ public class AdsController {
     private ReportEngine reportEngine;
     private Context context;
     private Client client;
+    private AdRenderer adRenderer;
 
     public AdsController(Context context, Client client, UUID adUnit) {
         init(context, client, adUnit);
@@ -51,8 +54,10 @@ public class AdsController {
         this.client = client;
         this.adUnit = adUnit;
         reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
+        adRenderer = new AdRenderer(context);
         loadIpAddresses();
         loadAaid();
+        //TODO periodically update ip addresses and device id info, send reports
     }
 
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
@@ -82,6 +87,25 @@ public class AdsController {
         } catch (Exception ex) {
             CSNLog.e("Failed to encode ad requests: " + ex);
             responseHandler.onAds(nullAds);
+        }
+    }
+
+
+    /**
+     * Render an Ad into a View using a ViewBinder. Returns null and logs the reason on failure.
+     * @param viewGroup
+     * @param viewBinder
+     * @param ad
+     * @return
+     */
+    public View renderAd(ViewGroup viewGroup, ViewBinder viewBinder, Ad ad) {
+        //TODO setup view monitoring
+        //TODO setup click handling and reporting for secondary action
+        try {
+            return adRenderer.render(viewGroup, viewBinder, ad);
+        } catch (Exception e) {
+            CSNLog.e("Failed to render ad: " + e);
+            return null;
         }
     }
 

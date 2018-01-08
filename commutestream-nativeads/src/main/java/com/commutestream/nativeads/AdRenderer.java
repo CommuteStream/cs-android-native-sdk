@@ -24,7 +24,7 @@ public class AdRenderer {
         this.context = context;
     }
 
-    public View render(ViewGroup viewGroup, Ad ad, ViewBinder binder) {
+    public View render(ViewGroup viewGroup, ViewBinder binder, Ad ad) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(binder.getLayout(), viewGroup);
         renderInto(view, ad, binder);
