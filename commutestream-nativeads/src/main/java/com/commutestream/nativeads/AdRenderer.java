@@ -27,11 +27,11 @@ public class AdRenderer {
     public View render(ViewGroup viewGroup, ViewBinder binder, Ad ad) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(binder.getLayout(), viewGroup);
-        renderInto(view, ad, binder);
+        renderInto(view, binder, ad);
         return view;
     }
 
-    public void renderInto(View view, Ad ad, ViewBinder binder) {
+    public void renderInto(View view, ViewBinder binder, Ad ad) {
         renderLogo(view, ad, binder);
         renderHeadline(view, ad, binder);
         renderBody(view, ad, binder);
@@ -44,7 +44,6 @@ public class AdRenderer {
             Bitmap logoBitmap = logo.getLogo();
             if(logoBitmap != null) {
                 logoView.setImageBitmap(logoBitmap);
-                monitorVisibility(ad, logo, logoView);
             }
         }
     }
@@ -54,7 +53,6 @@ public class AdRenderer {
         TextView headlineView = view.findViewById(binder.getHeadline());
         if(headlineView != null && headline != null) {
             headlineView.setText(headline.getHeadline());
-            monitorVisibility(ad, headline, headlineView);
         }
     }
 
@@ -63,25 +61,6 @@ public class AdRenderer {
         TextView bodyView = view.findViewById(binder.getBody());
         if(bodyView != null && body != null) {
             bodyView.setText(body.getBody());
-            monitorVisibility(ad, body, bodyView);
         }
-    }
-
-    private void monitorVisibility(Ad ad, Component component, View view) {
-        //TODO attach to VisibilityMonitor?
-        // visMon.addComponentView(ad, component, view);
-        view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
-            @Override
-            public void onViewAttachedToWindow(View view) {
-                // begin montitoring
-                // visMon.addComponentView(ad, ad.getLogo(), logoView);
-            }
-
-            @Override
-            public void onViewDetachedFromWindow(View view) {
-                // stop monitoring
-                // visMon.removeComponentView(ad, ad.getLogo(), logoView);
-            }
-        });
     }
 }

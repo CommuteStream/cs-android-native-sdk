@@ -1,12 +1,15 @@
 package com.commutestream.nativeads;
 
+import android.app.Activity;
 import android.support.test.filters.LargeTest;
 
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.google.protobuf.ByteString;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -16,24 +19,28 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-import static android.support.test.InstrumentationRegistry.getContext;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 
+
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class AdControllerTest {
+
+    @Rule
+    public ActivityTestRule<Activity> mActivityRule = new ActivityTestRule<>(Activity.class);
+
     @Test
     public void testDefaultConstructor() {
-        AdsController adsController = new AdsController(getContext(), UUID.randomUUID());
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), UUID.randomUUID());
     }
 
     @Test
     public void testFetchAdsNone() {
         MockClient mockClient = new MockClient();
-        AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
         ArrayList<AdRequest> adRequests = new ArrayList<>();
@@ -51,7 +58,7 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsOne() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
-        AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
         ArrayList<AdRequest> adRequests = new ArrayList<>();
@@ -76,7 +83,7 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsDuplicates() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
-        AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
         ArrayList<AdRequest> adRequests = new ArrayList<>();
@@ -105,7 +112,7 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsComplex() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
-        AdsController adsController = new AdsController(getContext(), mockClient, UUID.randomUUID());
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest1 = new AdRequest();
         adRequest1.addAgency("palmer");
         AdRequest adRequest2 = new AdRequest();

@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -42,6 +44,8 @@ import static android.view.ViewGroup.*;
 
 public class MainActivity extends AppCompatActivity {
 
+    final static String TAG = "Native Test App";
+    
     private AdsController adsController;
 
     @Override
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             for(InetAddress addr : Collections.list(intf.getInetAddresses())) {
                 if(!addr.isLoopbackAddress()) {
                     ipAddrs.add(addr);
-                    CSNLog.v("Ip Address: " + addr.toString());
+                    Log.v(TAG, "Ip Address: " + addr.toString());
                 }
             }
         }
@@ -169,20 +173,18 @@ public class MainActivity extends AppCompatActivity {
         };
         timer.schedule(timerTask, 10000);
 
-        adsController = new AdsController(this, UUID.randomUUID());
-        final View view2 = adsController.renderAd(null, viewBinder, ad);
+        adsController = new AdsController(this, UUID.fromString("c546ebee-6f2a-4f48-947b-e580c45e4f79"));
+        final View view2 = adsController.renderAd(null, viewBinder, ad, true);
         mainLayout.addView(view2);
+        final View view3 = adsController.renderAd(null, viewBinder, ad, false);
+        mainLayout.addView(view3);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view4 = inflater.inflate(R.layout.adlayout, null);
+        adsController.renderAdInto(view4, viewBinder, ad, true);
+        mainLayout.addView(view4);
+        View view5 = inflater.inflate(R.layout.adlayout, null);
+        adsController.renderAdInto(view5, viewBinder, ad, false);
+        mainLayout.addView(view5);
 
-
-        // get nearbytransit
-
-
-        //with nearby transit
-        //mAdsController.fetchAds(adContexts, new FetchAdsHandler {
-        //void onResponse() {
-         /// build out ad
-        // AdContext adContext = new AdContext();
-        //adContext.addStop("cta", "redline", "jackson");
-        //mAdsController.buildAd(adParentView, adContext)
     }
 }

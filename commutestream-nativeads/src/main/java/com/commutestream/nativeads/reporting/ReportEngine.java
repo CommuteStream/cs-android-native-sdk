@@ -3,6 +3,7 @@ package com.commutestream.nativeads.reporting;
 import android.util.Xml;
 
 import com.commutestream.nativeads.Ad;
+import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.google.protobuf.ByteString;
@@ -61,6 +62,7 @@ public class ReportEngine {
         AdReportKey key = new AdReportKey(ad);
         AdReportBuilder builder = adReportBuilders.get(key);
         if(builder == null) {
+            CSNLog.d("Ad Report Builder for " + ad.getAdID() + " not found");
             builder = new AdReportBuilder(ad);
             adReportBuilders.put(key, builder);
         }

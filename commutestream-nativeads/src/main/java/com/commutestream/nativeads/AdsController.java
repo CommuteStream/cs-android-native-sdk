@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.UUID;
 
 public class AdsController {
@@ -43,6 +45,7 @@ public class AdsController {
     private AdRenderer adRenderer;
     private VisibilityMonitor visMonitor;
     private SecondaryPopUp popUp;
+    private Timer periodicTimer;
 
     public AdsController(Activity activity, Client client, UUID adUnit) {
         init(activity, client, adUnit);
@@ -63,8 +66,49 @@ public class AdsController {
         popUp = new SecondaryPopUp(activity);
         loadIpAddresses();
         loadAaid();
+        startPeriodicTasks();
+    }
+
+    private void startPeriodicTasks() {
+        final AdsController adsController = this;
         visMonitor.startMonitoring();
-        //TODO periodically update ip addresses and device id info, send reports
+        periodicTimer = new Timer("CommuteStream AdsController", true);
+        adsController.loadAaid();
+        adsController.loadIpAddresses();
+        periodicTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                CSNLog.d("running periodic task");
+                adsController.loadAaid();
+                adsController.loadIpAddresses();
+                adsController.sendReports();
+            }
+        }, 30000, 30000);
+    }
+
+    private void stopPeriodicTasks() {
+        visMonitor.stopMonitoring();
+        periodicTimer.cancel();
+    }
+
+    private void sendReports() {
+        try {
+            Csnmessages.AdReports reports = reportEngine.build();
+            CSNLog.d("Reports " + reports);
+            this.client.sendReports(reports, new Client.AdReportsHandler() {
+                @Override
+                public void onResponse() {
+                    CSNLog.d("Sent reports");
+                }
+
+                @Override
+                public void onFailure() {
+                    CSNLog.w("Failed to send reports");
+                }
+            });
+        } catch (Exception ex) {
+            CSNLog.e("Failed to send reports: " + ex);
+        }
     }
 
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
@@ -105,15 +149,10 @@ public class AdsController {
      * @param ad
      * @return
      */
-    public View renderAd(ViewGroup viewGroup, ViewBinder viewBinder, Ad ad) {
-        //TODO setup view monitoring
-        //TODO setup click handling and reporting for secondary action
+    public View renderAd(ViewGroup viewGroup, ViewBinder viewBinder, Ad ad, boolean parentTouch) {
         try {
             View view = adRenderer.render(viewGroup, viewBinder, ad);
-            monitorView(view.findViewById(viewBinder.getLogo()), ad, ad.getLogo());
-            monitorView(view.findViewById(viewBinder.getHeadline()), ad, ad.getHeadline());
-            monitorView(view.findViewById(viewBinder.getBody()), ad, ad.getBody());
-            addClickHandler(view, ad, ad.getView());
+            setupAdViews(view, viewBinder, ad, parentTouch);
             return view;
         } catch (Exception e) {
             CSNLog.e("Failed to render ad: " + e);
@@ -121,8 +160,45 @@ public class AdsController {
         }
     }
 
+    /**
+     * Render an Ad into a given View using a ViewBinder. Logs the reason on failure.
+     * @param view
+     * @param viewBinder
+     * @param ad
+     * @return
+     */
+    public View renderAdInto(View view, ViewBinder viewBinder, Ad ad, boolean parentTouch) {
+        try {
+            adRenderer.renderInto(view, viewBinder, ad);
+            setupAdViews(view, viewBinder, ad, parentTouch);
+            return view;
+        } catch (Exception e) {
+            CSNLog.e("Failed to render ad: " + e);
+            return null;
+        }
+    }
+
+    private void setupAdViews(View view, ViewBinder viewBinder, Ad ad, boolean parentTouch) {
+        View logoView = view.findViewById(viewBinder.getLogo());
+        View headlineView = view.findViewById(viewBinder.getHeadline());
+        View bodyView = view.findViewById(viewBinder.getBody());
+        monitorView(view, ad, ad.getView());
+        monitorView(logoView, ad, ad.getLogo());
+        monitorView(headlineView, ad, ad.getHeadline());
+        monitorView(bodyView, ad, ad.getBody());
+        if(parentTouch) {
+            addClickHandler(view, ad, ad.getView());
+        } else {
+            addClickHandler(logoView, ad, ad.getLogo());
+            addClickHandler(headlineView, ad, ad.getHeadline());
+            addClickHandler(bodyView, ad, ad.getBody());
+        }
+    }
+
     private void monitorView(View view, Ad ad, Component component) {
-        visMonitor.addView(view, ad, component);
+        if(view != null && component != null) {
+            visMonitor.addView(view, ad, component);
+        }
     }
 
     private void addClickHandler(final View view, final Ad ad, final Component component) {
@@ -154,14 +230,11 @@ public class AdsController {
         for(AdRequest request : requests) {
             ArrayDeque<Ad> adQueue = adQueues.get(ByteBuffer.wrap(request.sha256()));
             if (adQueue == null) {
-                CSNLog.v("null queue");
                 ads.add(null);
             } else if (adQueue.isEmpty()) {
-                CSNLog.v("empty queue");
                 ads.add(null);
             } else {
                 Ad ad = adQueue.remove();
-                CSNLog.v("found ad " + ad);
                 ads.add(ad);
             }
         }

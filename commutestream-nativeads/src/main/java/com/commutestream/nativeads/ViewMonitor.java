@@ -38,7 +38,6 @@ public class ViewMonitor {
             screenVisible = (double)intersectArea / (double) windowArea;
             viewVisible = (double)intersectArea /  (double) viewArea;
         }
-        CSNLog.v("Ad: " + ad.getAdID() + " Component: " + component.getComponentID() + " Screen Visible: " + screenVisible + " View Visible: " + viewVisible);
         engine.addVisibility(ad, component, viewVisible, screenVisible);
     }
 }

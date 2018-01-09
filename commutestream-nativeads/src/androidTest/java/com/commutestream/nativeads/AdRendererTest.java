@@ -45,7 +45,7 @@ public class AdRendererTest {
                 .setActions(actionComponents)
                 .build();
         AdRenderer r = new AdRenderer(getContext());
-        View view = r.render(null, ad, viewBinder);
+        View view = r.render(null, viewBinder, ad);
         //TODO assert views contain correct data
         //TODO assert monitor matches views
         //TODO assert click handler is set appropriately

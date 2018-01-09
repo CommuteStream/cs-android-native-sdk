@@ -67,7 +67,7 @@ public class VisibilityMonitor {
             }
         };
         // schedule this task 1 second from now, every quarter of a second
-        timer.scheduleAtFixedRate(timerTask, 1000, 250);
+        timer.scheduleAtFixedRate(timerTask, 250, 250);
         checkViews();
     }
 

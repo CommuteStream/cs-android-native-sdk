@@ -1,6 +1,7 @@
 package com.commutestream.nativeads.reporting;
 
 import com.commutestream.nativeads.Ad;
+import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class AdReportBuilder {
         if (position == 0) {
             long viewSample = EncodingUtils.setVisibilitySample(0, 0, viewEncoded);
             long deviceSample = EncodingUtils.setVisibilitySample(0, 0, screenEncoded);
+            //CSNLog.d("Adding viewSample: " + viewSample + " deviceSample " + deviceSample);
             builder.addViewVisibilitySamples(viewSample);
             builder.addDeviceVisibilitySamples(deviceSample);
         } else {
@@ -39,6 +41,7 @@ public class AdReportBuilder {
             long curDeviceSample = builder.getDeviceVisibilitySamples(idx);
             long viewSample = EncodingUtils.setVisibilitySample(curViewSample, position, viewEncoded);
             long deviceSample = EncodingUtils.setVisibilitySample(curDeviceSample, position, screenEncoded);
+            //CSNLog.d("Setting viewSample: " + viewSample + " deviceSample " + deviceSample);
             builder.setViewVisibilitySamples(idx, viewSample);
             builder.setDeviceVisibilitySamples(idx, deviceSample);
         }
@@ -56,6 +59,7 @@ public class AdReportBuilder {
                 .build()
         );
         if (impressionDetector.addInteraction(kind)) {
+            CSNLog.d("Adding impression for ad " + adReportBuilder.getAdId());
             addImpression();
         }
     }
@@ -78,6 +82,7 @@ public class AdReportBuilder {
     private Csnmessages.ComponentReport.Builder getComponentBuilder(long componentID) {
         Csnmessages.ComponentReport.Builder builder = componentReportBuilders.get(Long.valueOf(componentID));
         if (builder == null) {
+            CSNLog.d("Builder for component " + componentID + " not found");
             builder = Csnmessages.ComponentReport.newBuilder()
                     .setComponentId(componentID);
             componentReportBuilders.put(Long.valueOf(componentID), builder);
