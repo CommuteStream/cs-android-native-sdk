@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.commutestream.nativeads.CSNLog;
+import com.commutestream.nativeads.components.HeroKind;
 import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.reporting.ReportEngine;
 import com.commutestream.nativeads.SecondaryPopUp;
@@ -45,7 +46,7 @@ import static android.view.ViewGroup.*;
 public class MainActivity extends AppCompatActivity {
 
     final static String TAG = "Native Test App";
-    
+
     private AdsController adsController;
 
     @Override
@@ -103,14 +104,14 @@ public class MainActivity extends AppCompatActivity {
         SecondaryActionComponent secondaryComponent = new SecondaryActionComponent.Builder()
                 .setTitle("Near Clark and Lake")
                 .setSubtitle("200 W Lake St is in Chicago")
-                .build();
+                .build()                ;
         LogoComponent logoComponent = new LogoComponent.Builder()
                 .setComponentID(rnd.nextLong())
                 .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.test_logo))
                 .build();
         HeroComponent heroComponent = new HeroComponent.Builder()
                 .setComponentID(rnd.nextLong())
-                .setKind(HeroComponent.HERO_IMAGE)
+                .setKind(HeroKind.Image)
                 .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero))
                 .build();
         final Ad ad = adBuilder.setAdID(rnd.nextLong())

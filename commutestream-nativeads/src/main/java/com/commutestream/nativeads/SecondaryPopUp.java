@@ -7,6 +7,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -30,6 +31,7 @@ public class SecondaryPopUp {
     private FrameLayout heroFrame;
     private ImageView heroImageView;
     private WebView heroWebView;
+    private WebChromeClient heroWebClient;
     private LinearLayout actionsLayout;
     private Button action1Button;
     private ImageButton closeButton;
@@ -94,11 +96,22 @@ public class SecondaryPopUp {
         bodyView.setText(ad.getBody().getBody());
         advertiserView.setText(ad.getAdvertiser().getAdvertiser());
 
-        //TODO add image or web view depending on hero kind
-        heroImageView = new ImageView(activity);
-        heroImageView.setImageBitmap(ad.getHero().getImage());
-        heroFrame.removeAllViews();
-        heroFrame.addView(heroImageView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        switch(ad.getHero().getKind()) {
+            case HTML:
+                //TODO enable/disable interactivity based on flag
+                heroWebView = new WebView(activity);
+                heroWebView.loadData(ad.getHero().getHtml(), "text/html", null);
+                heroFrame.removeAllViews();
+                heroFrame.addView(heroWebView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+                break;
+            case Image:
+                heroImageView = new ImageView(activity);
+                heroImageView.setImageBitmap(ad.getHero().getImage());
+                heroFrame.removeAllViews();
+                heroFrame.addView(heroImageView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+                break;
+        }
+
 
         Float buttonFontSize = (float)14;
 
