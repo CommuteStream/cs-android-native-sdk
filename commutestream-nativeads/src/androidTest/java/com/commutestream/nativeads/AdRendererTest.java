@@ -5,6 +5,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 
 import com.commutestream.nativeads.components.ActionComponent;
+import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.HeadlineComponent;
 
@@ -25,7 +26,7 @@ public class AdRendererTest {
         ActionComponent action1 = new ActionComponent.Builder()
                                 .setComponentID(0)
                                 .setTitle("Click Me")
-                                .setKind(ActionComponent.ACTION_KIND_URL)
+                                .setKind(ActionKind.Url)
                                 .setUrl("https://wikipedia.com")
                                 .build();
         HeadlineComponent headlineComponent = new HeadlineComponent.Builder()

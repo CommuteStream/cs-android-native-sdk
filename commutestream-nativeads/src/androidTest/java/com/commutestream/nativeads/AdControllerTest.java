@@ -7,6 +7,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.commutestream.nativeads.protobuf.Csnmessages;
+import com.commutestream.nativeads.test.TestActivity;
 import com.google.protobuf.ByteString;
 
 import org.junit.Rule;
@@ -30,7 +31,7 @@ import static org.hamcrest.Matchers.nullValue;
 public class AdControllerTest {
 
     @Rule
-    public ActivityTestRule<Activity> mActivityRule = new ActivityTestRule<>(Activity.class);
+    public ActivityTestRule<TestActivity> mActivityRule = new ActivityTestRule<>(TestActivity.class);
 
     @Test
     public void testDefaultConstructor() {

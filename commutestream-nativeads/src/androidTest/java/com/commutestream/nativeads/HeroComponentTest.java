@@ -5,6 +5,7 @@ import android.support.test.filters.SmallTest;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.commutestream.nativeads.components.HeroComponent;
+import com.commutestream.nativeads.components.HeroKind;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.google.protobuf.ByteString;
 
@@ -36,7 +37,7 @@ public class HeroComponentTest {
                 .build();
         HeroComponent hero = new HeroComponent(msg);
         assertThat(hero.getComponentID(), equalTo(componentID));
-        assertThat(hero.getKind(), equalTo(HeroComponent.HERO_IMAGE));
+        assertThat(hero.getKind(), equalTo(HeroKind.Image));
         assertThat(hero.getImage(), notNullValue());
         assertThat(hero.getHtml(), nullValue());
         assertThat(hero.getImage().getWidth(), equalTo(img.getWidth()));
@@ -55,7 +56,7 @@ public class HeroComponentTest {
                 .build();
         HeroComponent hero = new HeroComponent(msg);
         assertThat(hero.getComponentID(), equalTo(componentID));
-        assertThat(hero.getKind(), equalTo(HeroComponent.HERO_HTML));
+        assertThat(hero.getKind(), equalTo(HeroKind.HTML));
         assertThat(hero.getImage(), nullValue());
         assertThat(hero.getHtml(), notNullValue());
         assertThat(hero.getHtml(), equalTo(html));

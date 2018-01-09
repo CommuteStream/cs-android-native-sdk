@@ -1,13 +1,10 @@
 package com.commutestream.nativeads.components;
 
-import android.drm.DrmStore;
-
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class ActionComponent implements Component {
-    public static final String ACTION_KIND_URL = "url";
     protected long componentID;
-    protected String kind;
+    protected ActionKind kind;
     protected String url;
     protected String title;
     protected Colors colors;
@@ -20,7 +17,7 @@ public class ActionComponent implements Component {
             return this;
         }
 
-        public Builder setKind(String kind) {
+        public Builder setKind(ActionKind kind) {
             this.kind = kind;
             return this;
         }
@@ -50,8 +47,8 @@ public class ActionComponent implements Component {
     public ActionComponent(Csnmessages.ActionComponent msg) {
         componentID = msg.getComponentId();
         switch (msg.getKind()) {
-            case Url: kind = ACTION_KIND_URL;
-            default: kind = ACTION_KIND_URL;
+            case Url: kind = ActionKind.Url;
+            default: kind = ActionKind.Url;;
         }
         url = msg.getUrl();
         title = msg.getTitle();
@@ -63,7 +60,7 @@ public class ActionComponent implements Component {
         return componentID;
     }
 
-    public String getKind() {
+    public ActionKind getKind() {
         return kind;
     }
 

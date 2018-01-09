@@ -5,6 +5,8 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
 
+        <activity android:name="com.commutestream.nativeads.test.TestActivity" />
+
     </application>
 
 </manifest>
