@@ -174,8 +174,5 @@ public class SecondaryPopUp {
 
         popup.showAtLocation(activity.findViewById(android.R.id.content), Gravity.CENTER, 0, 0);
         popup.update();
-
-        //TODO monitor secondary visibility to match iOS?
-
     }
 }
