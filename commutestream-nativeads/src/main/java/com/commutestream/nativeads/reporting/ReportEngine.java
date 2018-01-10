@@ -55,6 +55,7 @@ public class ReportEngine {
     }
 
     public void addInteraction(Ad ad, Component component, Csnmessages.ComponentInteractionKind kind) {
+        CSNLog.d("Add interaction for ad: " + ad.getAdID() + " component: " + component.getComponentID());
         AdReportBuilder adReportBuilder = getAdReportBuilder(ad);
         adReportBuilder.addComponentInteraction(component.getComponentID(), kind);
     }
