@@ -42,6 +42,7 @@ message HeroComponent {
   uint64 component_id = 1;
   HeroKind kind = 2;
   bytes blob = 3;
+  bool interactive = 4;
 }
 
 enum ActionKind {
@@ -130,6 +131,7 @@ message AdRequests {
   repeated bytes ip_addresses = 3;
   string timezone = 4;
   repeated AdRequest ad_requests = 5;
+  string sdk_version = 6;
 }
 
 // AdResponse is a mapping between an AdRequest hash_id and the set of ads
@@ -151,6 +153,13 @@ message DeviceID  {
   }
   Type device_id_type = 1;
   bytes device_id = 2;
+}
+
+message DeviceLocation {
+  Location location = 1;
+  uint64 timestamp = 2;
+  double longitude_accuracy = 3;
+  double latitude_accuracy = 4;
 }
 
 enum ComponentInteractionKind {
@@ -190,6 +199,8 @@ message AdReports {
   repeated bytes ip_addresses = 4;
   uint64 device_time = 5;
   repeated AdReport ad_reports = 6;
+  string sdk_version = 7;
+  repeated DeviceLocation device_locations = 8;
 }
 
 message AdTransaction {
