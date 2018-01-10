@@ -69,6 +69,7 @@ public class AdsController {
      * Pause all background activity. Should be called in Activity onPause
      */
     public void pause() {
+        sendReports();
         stopPeriodicTasks();
     }
 
@@ -153,7 +154,7 @@ public class AdsController {
         reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
         adRenderer = new AdRenderer(activity);
         visMonitor = new VisibilityMonitor(reportEngine);
-        popUp = new SecondaryPopUp(activity);
+        popUp = new SecondaryPopUp(activity, reportEngine);
         loadIpAddresses();
         loadAaid();
         resume();
@@ -376,7 +377,7 @@ public class AdsController {
 
     private void loadDeviceLocation() {
         Location location = DeviceLocation.getBestLocation(activity);
-        if(location != null && limitTracking == false) {
+        if(location != null && !limitTracking) {
             addDeviceLocation(location);
         }
     }

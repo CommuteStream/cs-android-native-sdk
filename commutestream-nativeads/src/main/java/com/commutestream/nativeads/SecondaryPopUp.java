@@ -19,9 +19,12 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.commutestream.nativeads.components.ActionComponent;
+import com.commutestream.nativeads.protobuf.Csnmessages;
+import com.commutestream.nativeads.reporting.ReportEngine;
 
 public class SecondaryPopUp {
     private Activity activity;
+    private ReportEngine reportEngine;
     private PopupWindow popup;
     private ImageView logoView;
     private TextView titleView;
@@ -41,7 +44,8 @@ public class SecondaryPopUp {
 
 
 
-    public SecondaryPopUp(Activity activity) {
+    public SecondaryPopUp(Activity activity, ReportEngine reportEngine) {
+        this.reportEngine = reportEngine;
         this.activity = activity;
         View view = activity.getLayoutInflater().inflate(R.layout.secondary_view, null);
         popup = new PopupWindow(view, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT, true);
@@ -89,7 +93,7 @@ public class SecondaryPopUp {
 
 
 
-    public void displayAd(Ad ad) {
+    public void displayAd(final Ad ad) {
         titleView.setText(ad.getSecondaryAction().getTitle());
         subtitleView.setText(ad.getSecondaryAction().getSubtitle());
         logoView.setImageBitmap(ad.getLogo().getLogo());
@@ -154,6 +158,7 @@ public class SecondaryPopUp {
             actionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    reportEngine.addInteraction(ad, action, Csnmessages.ComponentInteractionKind.Tap);
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(action.getUrl()));
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -169,6 +174,8 @@ public class SecondaryPopUp {
 
         popup.showAtLocation(activity.findViewById(android.R.id.content), Gravity.CENTER, 0, 0);
         popup.update();
+
+        //TODO monitor secondary visibility to match iOS?
 
     }
 }

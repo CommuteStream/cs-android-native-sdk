@@ -5,7 +5,11 @@ import com.commutestream.nativeads.AdRenderer;
 import com.commutestream.nativeads.AdsController;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +37,7 @@ import com.commutestream.nativeads.components.SecondaryActionComponent;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.security.Security;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -147,16 +152,6 @@ public class MainActivity extends AppCompatActivity {
         final View view = adRenderer.render(null, viewBinder, ad);
         final LinearLayout mainLayout = findViewById(R.id.main_layout);
         Button showPopup = findViewById(R.id.show_popup);
-        final SecondaryPopUp popup = new SecondaryPopUp(this);
-        showPopup.setOnClickListener(
-                new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popup.displayAd(ad);
-                    }
-                }
-        );
-        mainLayout.addView(view);
         HashSet<InetAddress> ipAddrs = new HashSet();
         List<NetworkInterface> interfaces = null;
         try {
@@ -173,6 +168,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         ReportEngine reportEngine = new ReportEngine(UUID.randomUUID(), UUID.randomUUID(), false, ipAddrs);
+        final SecondaryPopUp popup = new SecondaryPopUp(this, reportEngine);
+        showPopup.setOnClickListener(
+                new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popup.displayAd(ad);
+                    }
+                }
+        );
+        mainLayout.addView(view);
+
         VisibilityMonitor visMonitor = new VisibilityMonitor(reportEngine);
         visMonitor.addView(view, ad, ad.getLogo());
         visMonitor.startMonitoring();
@@ -212,5 +218,66 @@ public class MainActivity extends AppCompatActivity {
         Ad ad4 = generateAd(rnd, true, true, true);
         View view8 = adsController.renderAd(null, viewBinder, ad4, true);
         mainLayout.addView(view8);
+        final LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        try {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000L, 5.0f, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    Log.v(TAG, "GPS Location changed");
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+
+                }
+            });
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000L, 5.0f, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    Log.v(TAG, "Network Location changed");
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+
+                }
+            });
+        } catch (SecurityException e) {
+        } catch (Exception e) {
+
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.adsController.resume();
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        this.adsController.pause();
     }
 }
