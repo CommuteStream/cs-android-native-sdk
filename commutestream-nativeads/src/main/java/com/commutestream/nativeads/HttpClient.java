@@ -65,7 +65,7 @@ public class HttpClient implements Client {
     public void getAds(AdRequests requests, final AdResponseHandler handler) {
         HttpUrl url = mBaseURL.newBuilder("/v2/native_ads")
                 .build();
-        RequestBody body = RequestBody.create(MediaType.parse("application/x-test_logo-protobuf"), requests.toByteArray());
+        RequestBody body = RequestBody.create(MediaType.parse("application/x-protobuf"), requests.toByteArray());
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
@@ -93,7 +93,7 @@ public class HttpClient implements Client {
     public void sendReports(AdReports reports, final AdReportsHandler handler) {
         HttpUrl url = mBaseURL.newBuilder("/v2/native_reports")
                 .build();
-        RequestBody body = RequestBody.create(MediaType.parse("application/x-test_logo-protobuf"), "test");
+        RequestBody body = RequestBody.create(MediaType.parse("application/x-protobuf"), reports.toByteArray());
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)

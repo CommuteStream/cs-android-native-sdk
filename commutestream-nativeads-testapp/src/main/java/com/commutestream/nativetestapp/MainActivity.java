@@ -50,17 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AdsController adsController;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        // render fake
-        Random rnd = new Random();
-        ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
-                .setHeadline(R.id.headlineView)
-                .setLogo(R.id.logoView)
-                .setBody(R.id.bodyView);
-        Ad.Builder adBuilder = new Ad.Builder();
+    private Ad generateAd(Random rnd, boolean htmlHero, boolean interactiveHero, boolean fancyHero) {
+                Ad.Builder adBuilder = new Ad.Builder();
         final ActionComponent action1 = new ActionComponent.Builder()
                 .setComponentID(rnd.nextLong())
                 .setTitle("Wikipedia")
@@ -87,15 +78,15 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         HeadlineComponent headlineComponent = new HeadlineComponent.Builder()
                 .setComponentID(rnd.nextLong())
-                .setHeadline("Look and feel your best")
+                .setHeadline("Look and feel your best " + rnd.nextLong())
                 .build();
         BodyComponent bodyComponent = new BodyComponent.Builder()
                 .setComponentID(rnd.nextLong())
-                .setBody("Get a free massage with purchase of any other service.")
+                .setBody("Get a free massage with purchase of any other service " + rnd.nextLong())
                 .build();
         AdvertiserComponent advertiserComponent = new AdvertiserComponent.Builder()
                 .setComponentID(rnd.nextLong())
-                .setAdvertiser("Hand and Stone Massage")
+                .setAdvertiser("Hand and Stone Massage " + rnd.nextLong())
                 .build();
 
         ArrayList<ActionComponent> actionComponents = new ArrayList<>(3);
@@ -110,12 +101,22 @@ public class MainActivity extends AppCompatActivity {
                 .setComponentID(rnd.nextLong())
                 .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.test_logo))
                 .build();
-        HeroComponent heroComponent = new HeroComponent.Builder()
-                .setComponentID(rnd.nextLong())
-                .setKind(HeroKind.Image)
-                .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero))
-                .build();
-        final Ad ad = adBuilder.setAdID(rnd.nextLong())
+        HeroComponent.Builder heroComponentBuilder = new HeroComponent.Builder()
+                .setComponentID(rnd.nextLong());
+        if(!htmlHero) {
+                heroComponentBuilder.setKind(HeroKind.Image)
+                    .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero));
+        } else {
+            String html = "<html><body>Interactive: " + interactiveHero + "<br/> <a href=\"https://commutestream.com\"><h1>CommuteStream</h1></a></body></html>";
+            if(fancyHero) {
+                html = "<html><body>Interactive: " + interactiveHero + "<br/><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IuEEEwgdAZs\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe></body></html>";
+            }
+            heroComponentBuilder.setKind(HeroKind.HTML)
+                    .setHtml(html)
+                    .setInteractive(interactiveHero);
+        }
+        HeroComponent heroComponent = heroComponentBuilder.build();
+        return adBuilder.setAdID(rnd.nextLong())
                 .setRequestID(rnd.nextLong())
                 .setVersionID(rnd.nextLong())
                 .setHeadline(headlineComponent)
@@ -127,6 +128,21 @@ public class MainActivity extends AppCompatActivity {
                 .setActions(actionComponents)
                 .setView(viewComponent)
                 .build();
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        // render fake
+        Random rnd = new Random();
+        final Ad ad = generateAd(rnd, false, false, false);
+        ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
+                .setHeadline(R.id.headlineView)
+                .setLogo(R.id.logoView)
+                .setBody(R.id.bodyView);
+
         AdRenderer adRenderer = new AdRenderer(this);
         final View view = adRenderer.render(null, viewBinder, ad);
         final LinearLayout mainLayout = findViewById(R.id.main_layout);
@@ -158,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         }
         ReportEngine reportEngine = new ReportEngine(UUID.randomUUID(), UUID.randomUUID(), false, ipAddrs);
         VisibilityMonitor visMonitor = new VisibilityMonitor(reportEngine);
-        visMonitor.addView(view, ad, logoComponent);
+        visMonitor.addView(view, ad, ad.getLogo());
         visMonitor.startMonitoring();
         final Activity activity = this;
         Timer timer = new Timer();
@@ -187,6 +203,14 @@ public class MainActivity extends AppCompatActivity {
         View view5 = inflater.inflate(R.layout.adlayout, null);
         adsController.renderAdInto(view5, viewBinder, ad, false);
         mainLayout.addView(view5);
-
+        Ad ad2 = generateAd(rnd, true, false, false);
+        View view6 = adsController.renderAd(null, viewBinder, ad2, true);
+        mainLayout.addView(view6);
+        Ad ad3 = generateAd(rnd, true, true, false);
+        View view7 = adsController.renderAd(null, viewBinder, ad3, true);
+        mainLayout.addView(view7);
+        Ad ad4 = generateAd(rnd, true, true, true);
+        View view8 = adsController.renderAd(null, viewBinder, ad4, true);
+        mainLayout.addView(view8);
     }
 }

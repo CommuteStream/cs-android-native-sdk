@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.webkit.WebChromeClient;
@@ -100,7 +101,17 @@ public class SecondaryPopUp {
             case HTML:
                 //TODO enable/disable interactivity based on flag
                 heroWebView = new WebView(activity);
+                heroWebView.getSettings().setJavaScriptEnabled(true);
+                heroWebView.getSettings().setDomStorageEnabled(true);
                 heroWebView.loadData(ad.getHero().getHtml(), "text/html", null);
+                if(!ad.getHero().getInteractive()) {
+                    heroWebView.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            return true;
+                        }
+                    });
+                }
                 heroFrame.removeAllViews();
                 heroFrame.addView(heroWebView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
                 break;
