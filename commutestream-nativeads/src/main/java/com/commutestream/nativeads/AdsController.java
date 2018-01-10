@@ -2,11 +2,13 @@ package com.commutestream.nativeads;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Location;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.protobuf.Csnmessages;
+import com.commutestream.nativeads.reporting.DeviceLocation;
 import com.commutestream.nativeads.reporting.EncodingUtils;
 import com.commutestream.nativeads.reporting.ReportEngine;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
@@ -56,61 +58,27 @@ public class AdsController {
         init(activity, client, adUnit);
     }
 
-    private void init(Activity activity, Client client, UUID adUnit) {
-        this.activity = activity;
-        this.client = client;
-        this.adUnit = adUnit;
-        reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
-        adRenderer = new AdRenderer(activity);
-        visMonitor = new VisibilityMonitor(reportEngine);
-        popUp = new SecondaryPopUp(activity);
-        loadIpAddresses();
-        loadAaid();
+    /**
+     * Start all background activity. Should be called in Activity onResume
+     */
+    public void resume() {
         startPeriodicTasks();
     }
 
-    private void startPeriodicTasks() {
-        final AdsController adsController = this;
-        visMonitor.startMonitoring();
-        periodicTimer = new Timer("CommuteStream AdsController", true);
-        adsController.loadAaid();
-        adsController.loadIpAddresses();
-        periodicTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                CSNLog.d("running periodic task");
-                adsController.loadAaid();
-                adsController.loadIpAddresses();
-                adsController.sendReports();
-            }
-        }, 30000, 30000);
+    /**
+     * Pause all background activity. Should be called in Activity onPause
+     */
+    public void pause() {
+        stopPeriodicTasks();
     }
 
-    private void stopPeriodicTasks() {
-        visMonitor.stopMonitoring();
-        periodicTimer.cancel();
-    }
-
-    private void sendReports() {
-        try {
-            Csnmessages.AdReports reports = reportEngine.build();
-            CSNLog.d("Reports " + reports);
-            this.client.sendReports(reports, new Client.AdReportsHandler() {
-                @Override
-                public void onResponse() {
-                    CSNLog.d("Sent reports");
-                }
-
-                @Override
-                public void onFailure() {
-                    CSNLog.w("Failed to send reports");
-                }
-            });
-        } catch (Exception ex) {
-            CSNLog.e("Failed to send reports: " + ex);
-        }
-    }
-
+    /**
+     * Fetch ads from the remote server. Returns a List compliant container where each location
+     * contains the resulting Ad or null for each AdRequest. The results are passed to the response
+     * handler similar to a callback.
+     * @param requests
+     * @param responseHandler
+     */
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
         final ArrayList<Ad> nullAds = new ArrayList<>(requests.size());
         for(AdRequest request : requests) {
@@ -175,6 +143,66 @@ public class AdsController {
         } catch (Exception e) {
             CSNLog.e("Failed to render ad: " + e);
             return null;
+        }
+    }
+
+    private void init(Activity activity, Client client, UUID adUnit) {
+        this.activity = activity;
+        this.client = client;
+        this.adUnit = adUnit;
+        reportEngine = new ReportEngine(adUnit, aaid, limitTracking, ipAddresses);
+        adRenderer = new AdRenderer(activity);
+        visMonitor = new VisibilityMonitor(reportEngine);
+        popUp = new SecondaryPopUp(activity);
+        loadIpAddresses();
+        loadAaid();
+        resume();
+    }
+
+    private void startPeriodicTasks() {
+        if(periodicTimer != null) {
+            return;
+        }
+        final AdsController adsController = this;
+        visMonitor.startMonitoring();
+        periodicTimer = new Timer("CommuteStream AdsController", true);
+        adsController.loadAaid();
+        adsController.loadIpAddresses();
+        periodicTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                CSNLog.d("running periodic task");
+                adsController.loadAaid();
+                adsController.loadIpAddresses();
+                adsController.loadDeviceLocation();
+                adsController.sendReports();
+            }
+        }, 30000, 30000);
+    }
+
+    private void stopPeriodicTasks() {
+        visMonitor.stopMonitoring();
+        periodicTimer.cancel();
+        periodicTimer = null;
+    }
+
+    private void sendReports() {
+        try {
+            Csnmessages.AdReports reports = reportEngine.build();
+            CSNLog.d("Reports " + reports);
+            this.client.sendReports(reports, new Client.AdReportsHandler() {
+                @Override
+                public void onResponse() {
+                    CSNLog.d("Sent reports");
+                }
+
+                @Override
+                public void onFailure() {
+                    CSNLog.w("Failed to send reports");
+                }
+            });
+        } catch (Exception ex) {
+            CSNLog.e("Failed to send reports: " + ex);
         }
     }
 
@@ -339,12 +367,23 @@ public class AdsController {
         }).start();
     }
 
-
     private synchronized void setDeviceInfo(UUID aaid, boolean limitTracking) {
         CSNLog.v("Set AAID: " + aaid + " Limit Tracking: " + limitTracking);
         this.aaid = aaid;
         this.limitTracking = limitTracking;
         this.reportEngine.setDeviceInfo(aaid, limitTracking);
+    }
+
+    private void loadDeviceLocation() {
+        Location location = DeviceLocation.getBestLocation(activity);
+        if(location != null && limitTracking == false) {
+            addDeviceLocation(location);
+        }
+    }
+
+    private synchronized void addDeviceLocation(Location location) {
+        CSNLog.v("Added location: " + location);
+        this.reportEngine.addLocation(location);
     }
 
 }

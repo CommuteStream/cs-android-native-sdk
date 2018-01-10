@@ -3,7 +3,6 @@ package com.commutestream.nativeads.components;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 public class HeroComponent implements Component {
@@ -11,6 +10,7 @@ public class HeroComponent implements Component {
     protected HeroKind kind;
     protected Bitmap image;
     protected String html;
+    protected boolean interactive;
 
     public HeroComponent(Csnmessages.HeroComponent msg) {
         componentID = msg.getComponentId();
@@ -21,6 +21,7 @@ public class HeroComponent implements Component {
             kind = HeroKind.Image;
             image = BitmapFactory.decodeByteArray(msg.getBlob().toByteArray(), 0, msg.getBlob().size());
         }
+        interactive = msg.getInteractive();
     }
 
     protected HeroComponent() {
@@ -43,6 +44,8 @@ public class HeroComponent implements Component {
         return image;
     }
 
+    public boolean getInteractive() { return interactive; }
+
     public static class Builder extends HeroComponent {
         public Builder setComponentID(long componentID) {
             this.componentID = componentID;
@@ -61,6 +64,11 @@ public class HeroComponent implements Component {
 
         public Builder setHtml(String html) {
             this.html = html;
+            return this;
+        }
+
+        public Builder setInteractive(boolean interactive) {
+            this.interactive = interactive;
             return this;
         }
 

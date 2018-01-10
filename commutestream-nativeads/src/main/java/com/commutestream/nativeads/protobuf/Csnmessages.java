@@ -18126,6 +18126,11 @@ public final class Csnmessages {
      * <code>bytes device_id = 2;</code>
      */
     com.google.protobuf.ByteString getDeviceId();
+
+    /**
+     * <code>bool limit_tracking = 3;</code>
+     */
+    boolean getLimitTracking();
   }
   /**
    * Protobuf type {@code google.protobuf.DeviceID}
@@ -18142,6 +18147,7 @@ public final class Csnmessages {
     private DeviceID() {
       deviceIdType_ = 0;
       deviceId_ = com.google.protobuf.ByteString.EMPTY;
+      limitTracking_ = false;
     }
 
     @java.lang.Override
@@ -18184,6 +18190,11 @@ public final class Csnmessages {
             case 18: {
 
               deviceId_ = input.readBytes();
+              break;
+            }
+            case 24: {
+
+              limitTracking_ = input.readBool();
               break;
             }
           }
@@ -18333,6 +18344,15 @@ public final class Csnmessages {
       return deviceId_;
     }
 
+    public static final int LIMIT_TRACKING_FIELD_NUMBER = 3;
+    private boolean limitTracking_;
+    /**
+     * <code>bool limit_tracking = 3;</code>
+     */
+    public boolean getLimitTracking() {
+      return limitTracking_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -18351,6 +18371,9 @@ public final class Csnmessages {
       if (!deviceId_.isEmpty()) {
         output.writeBytes(2, deviceId_);
       }
+      if (limitTracking_ != false) {
+        output.writeBool(3, limitTracking_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -18366,6 +18389,10 @@ public final class Csnmessages {
       if (!deviceId_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, deviceId_);
+      }
+      if (limitTracking_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, limitTracking_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18386,6 +18413,8 @@ public final class Csnmessages {
       result = result && deviceIdType_ == other.deviceIdType_;
       result = result && getDeviceId()
           .equals(other.getDeviceId());
+      result = result && (getLimitTracking()
+          == other.getLimitTracking());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -18401,6 +18430,9 @@ public final class Csnmessages {
       hash = (53 * hash) + deviceIdType_;
       hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + LIMIT_TRACKING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getLimitTracking());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18534,6 +18566,8 @@ public final class Csnmessages {
 
         deviceId_ = com.google.protobuf.ByteString.EMPTY;
 
+        limitTracking_ = false;
+
         return this;
       }
 
@@ -18558,6 +18592,7 @@ public final class Csnmessages {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceID result = new com.commutestream.nativeads.protobuf.Csnmessages.DeviceID(this);
         result.deviceIdType_ = deviceIdType_;
         result.deviceId_ = deviceId_;
+        result.limitTracking_ = limitTracking_;
         onBuilt();
         return result;
       }
@@ -18604,6 +18639,9 @@ public final class Csnmessages {
         }
         if (other.getDeviceId() != com.google.protobuf.ByteString.EMPTY) {
           setDeviceId(other.getDeviceId());
+        }
+        if (other.getLimitTracking() != false) {
+          setLimitTracking(other.getLimitTracking());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18704,6 +18742,32 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+
+      private boolean limitTracking_ ;
+      /**
+       * <code>bool limit_tracking = 3;</code>
+       */
+      public boolean getLimitTracking() {
+        return limitTracking_;
+      }
+      /**
+       * <code>bool limit_tracking = 3;</code>
+       */
+      public Builder setLimitTracking(boolean value) {
+        
+        limitTracking_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool limit_tracking = 3;</code>
+       */
+      public Builder clearLimitTracking() {
+        
+        limitTracking_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -18758,32 +18822,64 @@ public final class Csnmessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    boolean hasLocation();
-    /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation();
-    /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder();
-
-    /**
-     * <code>uint64 timestamp = 2;</code>
+     * <code>uint64 timestamp = 1;</code>
      */
     long getTimestamp();
 
     /**
-     * <code>double longitude_accuracy = 3;</code>
+     * <code>double latitude = 2;</code>
      */
-    double getLongitudeAccuracy();
+    double getLatitude();
 
     /**
-     * <code>double latitude_accuracy = 4;</code>
+     * <code>double longitude = 3;</code>
      */
-    double getLatitudeAccuracy();
+    double getLongitude();
+
+    /**
+     * <code>double altitude = 4;</code>
+     */
+    double getAltitude();
+
+    /**
+     * <code>double bearing = 5;</code>
+     */
+    double getBearing();
+
+    /**
+     * <code>double speed = 6;</code>
+     */
+    double getSpeed();
+
+    /**
+     * <code>double horizontal_accuracy = 7;</code>
+     */
+    double getHorizontalAccuracy();
+
+    /**
+     * <code>double vertical_accuracy = 8;</code>
+     */
+    double getVerticalAccuracy();
+
+    /**
+     * <code>double bearing_accuracy = 9;</code>
+     */
+    double getBearingAccuracy();
+
+    /**
+     * <code>double speed_accuracy = 10;</code>
+     */
+    double getSpeedAccuracy();
+
+    /**
+     * <code>string provider = 11;</code>
+     */
+    java.lang.String getProvider();
+    /**
+     * <code>string provider = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getProviderBytes();
   }
   /**
    * Protobuf type {@code google.protobuf.DeviceLocation}
@@ -18799,8 +18895,16 @@ public final class Csnmessages {
     }
     private DeviceLocation() {
       timestamp_ = 0L;
-      longitudeAccuracy_ = 0D;
-      latitudeAccuracy_ = 0D;
+      latitude_ = 0D;
+      longitude_ = 0D;
+      altitude_ = 0D;
+      bearing_ = 0D;
+      speed_ = 0D;
+      horizontalAccuracy_ = 0D;
+      verticalAccuracy_ = 0D;
+      bearingAccuracy_ = 0D;
+      speedAccuracy_ = 0D;
+      provider_ = "";
     }
 
     @java.lang.Override
@@ -18834,32 +18938,60 @@ public final class Csnmessages {
               }
               break;
             }
-            case 10: {
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder subBuilder = null;
-              if (location_ != null) {
-                subBuilder = location_.toBuilder();
-              }
-              location_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
+            case 8: {
 
               timestamp_ = input.readUInt64();
               break;
             }
+            case 17: {
+
+              latitude_ = input.readDouble();
+              break;
+            }
             case 25: {
 
-              longitudeAccuracy_ = input.readDouble();
+              longitude_ = input.readDouble();
               break;
             }
             case 33: {
 
-              latitudeAccuracy_ = input.readDouble();
+              altitude_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              bearing_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              speed_ = input.readDouble();
+              break;
+            }
+            case 57: {
+
+              horizontalAccuracy_ = input.readDouble();
+              break;
+            }
+            case 65: {
+
+              verticalAccuracy_ = input.readDouble();
+              break;
+            }
+            case 73: {
+
+              bearingAccuracy_ = input.readDouble();
+              break;
+            }
+            case 81: {
+
+              speedAccuracy_ = input.readDouble();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              provider_ = s;
               break;
             }
           }
@@ -18886,52 +19018,128 @@ public final class Csnmessages {
               com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.class, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder.class);
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 1;
-    private com.commutestream.nativeads.protobuf.Csnmessages.Location location_;
-    /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    public boolean hasLocation() {
-      return location_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation() {
-      return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
-    }
-    /**
-     * <code>.google.protobuf.Location location = 1;</code>
-     */
-    public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder() {
-      return getLocation();
-    }
-
-    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    public static final int TIMESTAMP_FIELD_NUMBER = 1;
     private long timestamp_;
     /**
-     * <code>uint64 timestamp = 2;</code>
+     * <code>uint64 timestamp = 1;</code>
      */
     public long getTimestamp() {
       return timestamp_;
     }
 
-    public static final int LONGITUDE_ACCURACY_FIELD_NUMBER = 3;
-    private double longitudeAccuracy_;
+    public static final int LATITUDE_FIELD_NUMBER = 2;
+    private double latitude_;
     /**
-     * <code>double longitude_accuracy = 3;</code>
+     * <code>double latitude = 2;</code>
      */
-    public double getLongitudeAccuracy() {
-      return longitudeAccuracy_;
+    public double getLatitude() {
+      return latitude_;
     }
 
-    public static final int LATITUDE_ACCURACY_FIELD_NUMBER = 4;
-    private double latitudeAccuracy_;
+    public static final int LONGITUDE_FIELD_NUMBER = 3;
+    private double longitude_;
     /**
-     * <code>double latitude_accuracy = 4;</code>
+     * <code>double longitude = 3;</code>
      */
-    public double getLatitudeAccuracy() {
-      return latitudeAccuracy_;
+    public double getLongitude() {
+      return longitude_;
+    }
+
+    public static final int ALTITUDE_FIELD_NUMBER = 4;
+    private double altitude_;
+    /**
+     * <code>double altitude = 4;</code>
+     */
+    public double getAltitude() {
+      return altitude_;
+    }
+
+    public static final int BEARING_FIELD_NUMBER = 5;
+    private double bearing_;
+    /**
+     * <code>double bearing = 5;</code>
+     */
+    public double getBearing() {
+      return bearing_;
+    }
+
+    public static final int SPEED_FIELD_NUMBER = 6;
+    private double speed_;
+    /**
+     * <code>double speed = 6;</code>
+     */
+    public double getSpeed() {
+      return speed_;
+    }
+
+    public static final int HORIZONTAL_ACCURACY_FIELD_NUMBER = 7;
+    private double horizontalAccuracy_;
+    /**
+     * <code>double horizontal_accuracy = 7;</code>
+     */
+    public double getHorizontalAccuracy() {
+      return horizontalAccuracy_;
+    }
+
+    public static final int VERTICAL_ACCURACY_FIELD_NUMBER = 8;
+    private double verticalAccuracy_;
+    /**
+     * <code>double vertical_accuracy = 8;</code>
+     */
+    public double getVerticalAccuracy() {
+      return verticalAccuracy_;
+    }
+
+    public static final int BEARING_ACCURACY_FIELD_NUMBER = 9;
+    private double bearingAccuracy_;
+    /**
+     * <code>double bearing_accuracy = 9;</code>
+     */
+    public double getBearingAccuracy() {
+      return bearingAccuracy_;
+    }
+
+    public static final int SPEED_ACCURACY_FIELD_NUMBER = 10;
+    private double speedAccuracy_;
+    /**
+     * <code>double speed_accuracy = 10;</code>
+     */
+    public double getSpeedAccuracy() {
+      return speedAccuracy_;
+    }
+
+    public static final int PROVIDER_FIELD_NUMBER = 11;
+    private volatile java.lang.Object provider_;
+    /**
+     * <code>string provider = 11;</code>
+     */
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string provider = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -18946,17 +19154,38 @@ public final class Csnmessages {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (location_ != null) {
-        output.writeMessage(1, getLocation());
-      }
       if (timestamp_ != 0L) {
-        output.writeUInt64(2, timestamp_);
+        output.writeUInt64(1, timestamp_);
       }
-      if (longitudeAccuracy_ != 0D) {
-        output.writeDouble(3, longitudeAccuracy_);
+      if (latitude_ != 0D) {
+        output.writeDouble(2, latitude_);
       }
-      if (latitudeAccuracy_ != 0D) {
-        output.writeDouble(4, latitudeAccuracy_);
+      if (longitude_ != 0D) {
+        output.writeDouble(3, longitude_);
+      }
+      if (altitude_ != 0D) {
+        output.writeDouble(4, altitude_);
+      }
+      if (bearing_ != 0D) {
+        output.writeDouble(5, bearing_);
+      }
+      if (speed_ != 0D) {
+        output.writeDouble(6, speed_);
+      }
+      if (horizontalAccuracy_ != 0D) {
+        output.writeDouble(7, horizontalAccuracy_);
+      }
+      if (verticalAccuracy_ != 0D) {
+        output.writeDouble(8, verticalAccuracy_);
+      }
+      if (bearingAccuracy_ != 0D) {
+        output.writeDouble(9, bearingAccuracy_);
+      }
+      if (speedAccuracy_ != 0D) {
+        output.writeDouble(10, speedAccuracy_);
+      }
+      if (!getProviderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, provider_);
       }
       unknownFields.writeTo(output);
     }
@@ -18966,21 +19195,48 @@ public final class Csnmessages {
       if (size != -1) return size;
 
       size = 0;
-      if (location_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLocation());
-      }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, timestamp_);
+          .computeUInt64Size(1, timestamp_);
       }
-      if (longitudeAccuracy_ != 0D) {
+      if (latitude_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, longitudeAccuracy_);
+          .computeDoubleSize(2, latitude_);
       }
-      if (latitudeAccuracy_ != 0D) {
+      if (longitude_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, latitudeAccuracy_);
+          .computeDoubleSize(3, longitude_);
+      }
+      if (altitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, altitude_);
+      }
+      if (bearing_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, bearing_);
+      }
+      if (speed_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, speed_);
+      }
+      if (horizontalAccuracy_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, horizontalAccuracy_);
+      }
+      if (verticalAccuracy_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, verticalAccuracy_);
+      }
+      if (bearingAccuracy_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(9, bearingAccuracy_);
+      }
+      if (speedAccuracy_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(10, speedAccuracy_);
+      }
+      if (!getProviderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, provider_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -18998,21 +19254,46 @@ public final class Csnmessages {
       com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation other = (com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation) obj;
 
       boolean result = true;
-      result = result && (hasLocation() == other.hasLocation());
-      if (hasLocation()) {
-        result = result && getLocation()
-            .equals(other.getLocation());
-      }
       result = result && (getTimestamp()
           == other.getTimestamp());
       result = result && (
-          java.lang.Double.doubleToLongBits(getLongitudeAccuracy())
+          java.lang.Double.doubleToLongBits(getLatitude())
           == java.lang.Double.doubleToLongBits(
-              other.getLongitudeAccuracy()));
+              other.getLatitude()));
       result = result && (
-          java.lang.Double.doubleToLongBits(getLatitudeAccuracy())
+          java.lang.Double.doubleToLongBits(getLongitude())
           == java.lang.Double.doubleToLongBits(
-              other.getLatitudeAccuracy()));
+              other.getLongitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getAltitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getAltitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getBearing())
+          == java.lang.Double.doubleToLongBits(
+              other.getBearing()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getSpeed())
+          == java.lang.Double.doubleToLongBits(
+              other.getSpeed()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getHorizontalAccuracy())
+          == java.lang.Double.doubleToLongBits(
+              other.getHorizontalAccuracy()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getVerticalAccuracy())
+          == java.lang.Double.doubleToLongBits(
+              other.getVerticalAccuracy()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getBearingAccuracy())
+          == java.lang.Double.doubleToLongBits(
+              other.getBearingAccuracy()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getSpeedAccuracy())
+          == java.lang.Double.doubleToLongBits(
+              other.getSpeedAccuracy()));
+      result = result && getProvider()
+          .equals(other.getProvider());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -19024,19 +19305,38 @@ public final class Csnmessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLocation()) {
-        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
-        hash = (53 * hash) + getLocation().hashCode();
-      }
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
-      hash = (37 * hash) + LONGITUDE_ACCURACY_FIELD_NUMBER;
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitudeAccuracy()));
-      hash = (37 * hash) + LATITUDE_ACCURACY_FIELD_NUMBER;
+          java.lang.Double.doubleToLongBits(getLatitude()));
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitudeAccuracy()));
+          java.lang.Double.doubleToLongBits(getLongitude()));
+      hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAltitude()));
+      hash = (37 * hash) + BEARING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getBearing()));
+      hash = (37 * hash) + SPEED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getSpeed()));
+      hash = (37 * hash) + HORIZONTAL_ACCURACY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getHorizontalAccuracy()));
+      hash = (37 * hash) + VERTICAL_ACCURACY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getVerticalAccuracy()));
+      hash = (37 * hash) + BEARING_ACCURACY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getBearingAccuracy()));
+      hash = (37 * hash) + SPEED_ACCURACY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getSpeedAccuracy()));
+      hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getProvider().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19166,17 +19466,27 @@ public final class Csnmessages {
       }
       public Builder clear() {
         super.clear();
-        if (locationBuilder_ == null) {
-          location_ = null;
-        } else {
-          location_ = null;
-          locationBuilder_ = null;
-        }
         timestamp_ = 0L;
 
-        longitudeAccuracy_ = 0D;
+        latitude_ = 0D;
 
-        latitudeAccuracy_ = 0D;
+        longitude_ = 0D;
+
+        altitude_ = 0D;
+
+        bearing_ = 0D;
+
+        speed_ = 0D;
+
+        horizontalAccuracy_ = 0D;
+
+        verticalAccuracy_ = 0D;
+
+        bearingAccuracy_ = 0D;
+
+        speedAccuracy_ = 0D;
+
+        provider_ = "";
 
         return this;
       }
@@ -19200,14 +19510,17 @@ public final class Csnmessages {
 
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation result = new com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation(this);
-        if (locationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = locationBuilder_.build();
-        }
         result.timestamp_ = timestamp_;
-        result.longitudeAccuracy_ = longitudeAccuracy_;
-        result.latitudeAccuracy_ = latitudeAccuracy_;
+        result.latitude_ = latitude_;
+        result.longitude_ = longitude_;
+        result.altitude_ = altitude_;
+        result.bearing_ = bearing_;
+        result.speed_ = speed_;
+        result.horizontalAccuracy_ = horizontalAccuracy_;
+        result.verticalAccuracy_ = verticalAccuracy_;
+        result.bearingAccuracy_ = bearingAccuracy_;
+        result.speedAccuracy_ = speedAccuracy_;
+        result.provider_ = provider_;
         onBuilt();
         return result;
       }
@@ -19249,17 +19562,39 @@ public final class Csnmessages {
 
       public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation other) {
         if (other == com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.getDefaultInstance()) return this;
-        if (other.hasLocation()) {
-          mergeLocation(other.getLocation());
-        }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.getLongitudeAccuracy() != 0D) {
-          setLongitudeAccuracy(other.getLongitudeAccuracy());
+        if (other.getLatitude() != 0D) {
+          setLatitude(other.getLatitude());
         }
-        if (other.getLatitudeAccuracy() != 0D) {
-          setLatitudeAccuracy(other.getLatitudeAccuracy());
+        if (other.getLongitude() != 0D) {
+          setLongitude(other.getLongitude());
+        }
+        if (other.getAltitude() != 0D) {
+          setAltitude(other.getAltitude());
+        }
+        if (other.getBearing() != 0D) {
+          setBearing(other.getBearing());
+        }
+        if (other.getSpeed() != 0D) {
+          setSpeed(other.getSpeed());
+        }
+        if (other.getHorizontalAccuracy() != 0D) {
+          setHorizontalAccuracy(other.getHorizontalAccuracy());
+        }
+        if (other.getVerticalAccuracy() != 0D) {
+          setVerticalAccuracy(other.getVerticalAccuracy());
+        }
+        if (other.getBearingAccuracy() != 0D) {
+          setBearingAccuracy(other.getBearingAccuracy());
+        }
+        if (other.getSpeedAccuracy() != 0D) {
+          setSpeedAccuracy(other.getSpeedAccuracy());
+        }
+        if (!other.getProvider().isEmpty()) {
+          provider_ = other.provider_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19288,132 +19623,15 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Location location_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> locationBuilder_;
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public boolean hasLocation() {
-        return locationBuilder_ != null || location_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location getLocation() {
-        if (locationBuilder_ == null) {
-          return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
-        } else {
-          return locationBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public Builder setLocation(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          location_ = value;
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public Builder setLocation(
-          com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder builderForValue) {
-        if (locationBuilder_ == null) {
-          location_ = builderForValue.build();
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public Builder mergeLocation(com.commutestream.nativeads.protobuf.Csnmessages.Location value) {
-        if (locationBuilder_ == null) {
-          if (location_ != null) {
-            location_ =
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.newBuilder(location_).mergeFrom(value).buildPartial();
-          } else {
-            location_ = value;
-          }
-          onChanged();
-        } else {
-          locationBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public Builder clearLocation() {
-        if (locationBuilder_ == null) {
-          location_ = null;
-          onChanged();
-        } else {
-          location_ = null;
-          locationBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder getLocationBuilder() {
-        
-        onChanged();
-        return getLocationFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      public com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder getLocationOrBuilder() {
-        if (locationBuilder_ != null) {
-          return locationBuilder_.getMessageOrBuilder();
-        } else {
-          return location_ == null ?
-              com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance() : location_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Location location = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> 
-          getLocationFieldBuilder() {
-        if (locationBuilder_ == null) {
-          locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder>(
-                  getLocation(),
-                  getParentForChildren(),
-                  isClean());
-          location_ = null;
-        }
-        return locationBuilder_;
-      }
-
       private long timestamp_ ;
       /**
-       * <code>uint64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 1;</code>
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>uint64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 1;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -19422,7 +19640,7 @@ public final class Csnmessages {
         return this;
       }
       /**
-       * <code>uint64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 1;</code>
        */
       public Builder clearTimestamp() {
         
@@ -19431,54 +19649,305 @@ public final class Csnmessages {
         return this;
       }
 
-      private double longitudeAccuracy_ ;
+      private double latitude_ ;
       /**
-       * <code>double longitude_accuracy = 3;</code>
+       * <code>double latitude = 2;</code>
        */
-      public double getLongitudeAccuracy() {
-        return longitudeAccuracy_;
+      public double getLatitude() {
+        return latitude_;
       }
       /**
-       * <code>double longitude_accuracy = 3;</code>
+       * <code>double latitude = 2;</code>
        */
-      public Builder setLongitudeAccuracy(double value) {
+      public Builder setLatitude(double value) {
         
-        longitudeAccuracy_ = value;
+        latitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double longitude_accuracy = 3;</code>
+       * <code>double latitude = 2;</code>
        */
-      public Builder clearLongitudeAccuracy() {
+      public Builder clearLatitude() {
         
-        longitudeAccuracy_ = 0D;
+        latitude_ = 0D;
         onChanged();
         return this;
       }
 
-      private double latitudeAccuracy_ ;
+      private double longitude_ ;
       /**
-       * <code>double latitude_accuracy = 4;</code>
+       * <code>double longitude = 3;</code>
        */
-      public double getLatitudeAccuracy() {
-        return latitudeAccuracy_;
+      public double getLongitude() {
+        return longitude_;
       }
       /**
-       * <code>double latitude_accuracy = 4;</code>
+       * <code>double longitude = 3;</code>
        */
-      public Builder setLatitudeAccuracy(double value) {
+      public Builder setLongitude(double value) {
         
-        latitudeAccuracy_ = value;
+        longitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double latitude_accuracy = 4;</code>
+       * <code>double longitude = 3;</code>
        */
-      public Builder clearLatitudeAccuracy() {
+      public Builder clearLongitude() {
         
-        latitudeAccuracy_ = 0D;
+        longitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double altitude_ ;
+      /**
+       * <code>double altitude = 4;</code>
+       */
+      public double getAltitude() {
+        return altitude_;
+      }
+      /**
+       * <code>double altitude = 4;</code>
+       */
+      public Builder setAltitude(double value) {
+        
+        altitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double altitude = 4;</code>
+       */
+      public Builder clearAltitude() {
+        
+        altitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double bearing_ ;
+      /**
+       * <code>double bearing = 5;</code>
+       */
+      public double getBearing() {
+        return bearing_;
+      }
+      /**
+       * <code>double bearing = 5;</code>
+       */
+      public Builder setBearing(double value) {
+        
+        bearing_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double bearing = 5;</code>
+       */
+      public Builder clearBearing() {
+        
+        bearing_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double speed_ ;
+      /**
+       * <code>double speed = 6;</code>
+       */
+      public double getSpeed() {
+        return speed_;
+      }
+      /**
+       * <code>double speed = 6;</code>
+       */
+      public Builder setSpeed(double value) {
+        
+        speed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double speed = 6;</code>
+       */
+      public Builder clearSpeed() {
+        
+        speed_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double horizontalAccuracy_ ;
+      /**
+       * <code>double horizontal_accuracy = 7;</code>
+       */
+      public double getHorizontalAccuracy() {
+        return horizontalAccuracy_;
+      }
+      /**
+       * <code>double horizontal_accuracy = 7;</code>
+       */
+      public Builder setHorizontalAccuracy(double value) {
+        
+        horizontalAccuracy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double horizontal_accuracy = 7;</code>
+       */
+      public Builder clearHorizontalAccuracy() {
+        
+        horizontalAccuracy_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double verticalAccuracy_ ;
+      /**
+       * <code>double vertical_accuracy = 8;</code>
+       */
+      public double getVerticalAccuracy() {
+        return verticalAccuracy_;
+      }
+      /**
+       * <code>double vertical_accuracy = 8;</code>
+       */
+      public Builder setVerticalAccuracy(double value) {
+        
+        verticalAccuracy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double vertical_accuracy = 8;</code>
+       */
+      public Builder clearVerticalAccuracy() {
+        
+        verticalAccuracy_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double bearingAccuracy_ ;
+      /**
+       * <code>double bearing_accuracy = 9;</code>
+       */
+      public double getBearingAccuracy() {
+        return bearingAccuracy_;
+      }
+      /**
+       * <code>double bearing_accuracy = 9;</code>
+       */
+      public Builder setBearingAccuracy(double value) {
+        
+        bearingAccuracy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double bearing_accuracy = 9;</code>
+       */
+      public Builder clearBearingAccuracy() {
+        
+        bearingAccuracy_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double speedAccuracy_ ;
+      /**
+       * <code>double speed_accuracy = 10;</code>
+       */
+      public double getSpeedAccuracy() {
+        return speedAccuracy_;
+      }
+      /**
+       * <code>double speed_accuracy = 10;</code>
+       */
+      public Builder setSpeedAccuracy(double value) {
+        
+        speedAccuracy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double speed_accuracy = 10;</code>
+       */
+      public Builder clearSpeedAccuracy() {
+        
+        speedAccuracy_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object provider_ = "";
+      /**
+       * <code>string provider = 11;</code>
+       */
+      public java.lang.String getProvider() {
+        java.lang.Object ref = provider_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          provider_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string provider = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProviderBytes() {
+        java.lang.Object ref = provider_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          provider_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string provider = 11;</code>
+       */
+      public Builder setProvider(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        provider_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 11;</code>
+       */
+      public Builder clearProvider() {
+        
+        provider_ = getDefaultInstance().getProvider();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 11;</code>
+       */
+      public Builder setProviderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        provider_ = value;
         onChanged();
         return this;
       }
@@ -26002,40 +26471,43 @@ public final class Csnmessages {
       "id\030\001 \001(\014\022&\n\003ads\030\002 \003(\0132\031.google.protobuf." +
       "NativeAd\"S\n\013AdResponses\022\021\n\tserver_id\030\001 \001" +
       "(\t\0221\n\014ad_responses\030\002 \003(\0132\033.google.protob" +
-      "uf.AdResponse\"q\n\010DeviceID\0226\n\016device_id_t" +
-      "ype\030\001 \001(\0162\036.google.protobuf.DeviceID.Typ" +
-      "e\022\021\n\tdevice_id\030\002 \001(\014\"\032\n\004Type\022\010\n\004IDFA\020\000\022\010" +
-      "\n\004AAID\020\001\"\207\001\n\016DeviceLocation\022+\n\010location\030" +
-      "\001 \001(\0132\031.google.protobuf.Location\022\021\n\ttime" +
-      "stamp\030\002 \001(\004\022\032\n\022longitude_accuracy\030\003 \001(\001\022" +
-      "\031\n\021latitude_accuracy\030\004 \001(\001\"d\n\024ComponentI" +
-      "nteraction\022\023\n\013device_time\030\001 \001(\004\0227\n\004kind\030" +
-      "\002 \001(\0162).google.protobuf.ComponentInterac" +
-      "tionKind\"\343\001\n\017ComponentReport\022\024\n\014componen" +
-      "t_id\030\001 \001(\004\022\030\n\020visibility_epoch\030\002 \001(\004\022\037\n\027" +
-      "visibility_sample_count\030\003 \001(\004\022\037\n\027view_vi" +
-      "sibility_samples\030\004 \003(\004\022!\n\031device_visibil" +
-      "ity_samples\030\005 \003(\004\022;\n\014interactions\030\006 \003(\0132" +
-      "%.google.protobuf.ComponentInteraction\"#" +
-      "\n\014AdImpression\022\023\n\013device_time\030\001 \001(\004\"\253\001\n\010" +
-      "AdReport\022\022\n\nrequest_id\030\001 \001(\004\022\r\n\005ad_id\030\002 " +
-      "\001(\004\022\022\n\nversion_id\030\003 \001(\004\0224\n\ncomponents\030\004 " +
-      "\003(\0132 .google.protobuf.ComponentReport\0222\n" +
-      "\013impressions\030\005 \003(\0132\035.google.protobuf.AdI" +
-      "mpression\"\206\002\n\tAdReports\022\017\n\007ad_unit\030\001 \001(\014" +
-      "\022,\n\tdevice_id\030\002 \001(\0132\031.google.protobuf.De" +
-      "viceID\022\020\n\010timezone\030\003 \001(\t\022\024\n\014ip_addresses" +
-      "\030\004 \003(\014\022\023\n\013device_time\030\005 \001(\004\022-\n\nad_report" +
-      "s\030\006 \003(\0132\031.google.protobuf.AdReport\022\023\n\013sd" +
-      "k_version\030\007 \001(\t\0229\n\020device_locations\030\010 \003(" +
-      "\0132\037.google.protobuf.DeviceLocation\"o\n\rAd" +
-      "Transaction\022-\n\010requests\030\001 \001(\0132\033.google.p" +
-      "rotobuf.AdRequests\022/\n\tresponses\030\002 \001(\0132\034." +
-      "google.protobuf.AdResponses*\037\n\010HeroKind\022" +
-      "\t\n\005Image\020\000\022\010\n\004HTML\020\001*\025\n\nActionKind\022\007\n\003Ur" +
-      "l\020\000*#\n\030ComponentInteractionKind\022\007\n\003Tap\020\000" +
-      "B-\n$com.commutestream.nativeads.protobuf" +
-      "\242\002\004CSNPb\006proto3"
+      "uf.AdResponse\"\211\001\n\010DeviceID\0226\n\016device_id_" +
+      "type\030\001 \001(\0162\036.google.protobuf.DeviceID.Ty" +
+      "pe\022\021\n\tdevice_id\030\002 \001(\014\022\026\n\016limit_tracking\030" +
+      "\003 \001(\010\"\032\n\004Type\022\010\n\004IDFA\020\000\022\010\n\004AAID\020\001\"\366\001\n\016De" +
+      "viceLocation\022\021\n\ttimestamp\030\001 \001(\004\022\020\n\010latit" +
+      "ude\030\002 \001(\001\022\021\n\tlongitude\030\003 \001(\001\022\020\n\010altitude" +
+      "\030\004 \001(\001\022\017\n\007bearing\030\005 \001(\001\022\r\n\005speed\030\006 \001(\001\022\033" +
+      "\n\023horizontal_accuracy\030\007 \001(\001\022\031\n\021vertical_" +
+      "accuracy\030\010 \001(\001\022\030\n\020bearing_accuracy\030\t \001(\001" +
+      "\022\026\n\016speed_accuracy\030\n \001(\001\022\020\n\010provider\030\013 \001" +
+      "(\t\"d\n\024ComponentInteraction\022\023\n\013device_tim" +
+      "e\030\001 \001(\004\0227\n\004kind\030\002 \001(\0162).google.protobuf." +
+      "ComponentInteractionKind\"\343\001\n\017ComponentRe" +
+      "port\022\024\n\014component_id\030\001 \001(\004\022\030\n\020visibility" +
+      "_epoch\030\002 \001(\004\022\037\n\027visibility_sample_count\030" +
+      "\003 \001(\004\022\037\n\027view_visibility_samples\030\004 \003(\004\022!" +
+      "\n\031device_visibility_samples\030\005 \003(\004\022;\n\014int" +
+      "eractions\030\006 \003(\0132%.google.protobuf.Compon" +
+      "entInteraction\"#\n\014AdImpression\022\023\n\013device" +
+      "_time\030\001 \001(\004\"\253\001\n\010AdReport\022\022\n\nrequest_id\030\001" +
+      " \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022\n\nversion_id\030\003 \001(\004\022" +
+      "4\n\ncomponents\030\004 \003(\0132 .google.protobuf.Co" +
+      "mponentReport\0222\n\013impressions\030\005 \003(\0132\035.goo" +
+      "gle.protobuf.AdImpression\"\206\002\n\tAdReports\022" +
+      "\017\n\007ad_unit\030\001 \001(\014\022,\n\tdevice_id\030\002 \001(\0132\031.go" +
+      "ogle.protobuf.DeviceID\022\020\n\010timezone\030\003 \001(\t" +
+      "\022\024\n\014ip_addresses\030\004 \003(\014\022\023\n\013device_time\030\005 " +
+      "\001(\004\022-\n\nad_reports\030\006 \003(\0132\031.google.protobu" +
+      "f.AdReport\022\023\n\013sdk_version\030\007 \001(\t\0229\n\020devic" +
+      "e_locations\030\010 \003(\0132\037.google.protobuf.Devi" +
+      "ceLocation\"o\n\rAdTransaction\022-\n\010requests\030" +
+      "\001 \001(\0132\033.google.protobuf.AdRequests\022/\n\tre" +
+      "sponses\030\002 \001(\0132\034.google.protobuf.AdRespon" +
+      "ses*\037\n\010HeroKind\022\t\n\005Image\020\000\022\010\n\004HTML\020\001*\025\n\n" +
+      "ActionKind\022\007\n\003Url\020\000*#\n\030ComponentInteract" +
+      "ionKind\022\007\n\003Tap\020\000B-\n$com.commutestream.na" +
+      "tiveads.protobuf\242\002\004CSNPb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26174,13 +26646,13 @@ public final class Csnmessages {
     internal_static_google_protobuf_DeviceID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DeviceID_descriptor,
-        new java.lang.String[] { "DeviceIdType", "DeviceId", });
+        new java.lang.String[] { "DeviceIdType", "DeviceId", "LimitTracking", });
     internal_static_google_protobuf_DeviceLocation_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_google_protobuf_DeviceLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DeviceLocation_descriptor,
-        new java.lang.String[] { "Location", "Timestamp", "LongitudeAccuracy", "LatitudeAccuracy", });
+        new java.lang.String[] { "Timestamp", "Latitude", "Longitude", "Altitude", "Bearing", "Speed", "HorizontalAccuracy", "VerticalAccuracy", "BearingAccuracy", "SpeedAccuracy", "Provider", });
     internal_static_google_protobuf_ComponentInteraction_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable = new

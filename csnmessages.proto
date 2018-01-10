@@ -153,13 +153,21 @@ message DeviceID  {
   }
   Type device_id_type = 1;
   bytes device_id = 2;
+  bool limit_tracking = 3;
 }
 
 message DeviceLocation {
-  Location location = 1;
-  uint64 timestamp = 2;
-  double longitude_accuracy = 3;
-  double latitude_accuracy = 4;
+  uint64 timestamp = 1;
+  double latitude = 2;
+  double longitude = 3;
+  double altitude = 4;
+  double bearing = 5;
+  double speed = 6;
+  double horizontal_accuracy = 7;
+  double vertical_accuracy = 8;
+  double bearing_accuracy = 9;
+  double speed_accuracy = 10;
+  string provider = 11;
 }
 
 enum ComponentInteractionKind {

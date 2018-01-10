@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.commutestream.nativeads.CSNLog;
+import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.HeroKind;
 import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.reporting.ReportEngine;
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         final ActionComponent action1 = new ActionComponent.Builder()
                 .setComponentID(rnd.nextLong())
                 .setTitle("Wikipedia")
-                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setKind(ActionKind.Url)
                 .setUrl("https://wikipedia.com")
                 .setColors(new Colors(0xffffffff, 0xff0e9047))
                 .build();
@@ -73,14 +74,14 @@ public class MainActivity extends AppCompatActivity {
         ActionComponent action2 = new ActionComponent.Builder()
                 .setComponentID(rnd.nextLong())
                 .setTitle("Google")
-                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setKind(ActionKind.Url)
                 .setUrl("https://google.com")
                 .setColors(new Colors(0xffffffff, 0xff137dd0))
                 .build();
         ActionComponent action3 = new ActionComponent.Builder()
                 .setComponentID(rnd.nextLong())
                 .setTitle("Yahoo")
-                .setKind(ActionComponent.ACTION_KIND_URL)
+                .setKind(ActionKind.Url)
                 .setUrl("https://yahoo.com")
                 .setColors(new Colors(0xffffffff, 0xffedab1d))
                 .build();
