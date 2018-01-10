@@ -1,7 +1,5 @@
 package com.commutestream.nativeads;
 
-import android.os.SystemClock;
-
 import com.commutestream.nativeads.components.ViewComponent;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.ReportEngine;
@@ -15,7 +13,6 @@ import java.util.UUID;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
@@ -38,6 +35,8 @@ public class ReportEngineTest {
         assertThat(reports.getAdReports(0).getAdId(), equalTo(ad.getAdID()));
         assertThat(reports.getAdReports(0).getComponentsCount(), equalTo(1));
         assertThat(reports.getAdReports(0).getComponents(0).getInteractionsCount(), equalTo(2));
+        Csnmessages.AdReports reportsEmpty = re.build();
+        assertThat(reportsEmpty.getAdReportsCount(), equalTo(0));
     }
 
     @Test
@@ -63,5 +62,7 @@ public class ReportEngineTest {
         assertThat(reports.getAdReports(0).getComponents(0).getVisibilitySampleCount(), equalTo(2L));
         assertThat(reports.getAdReports(0).getComponents(0).getViewVisibilitySamplesCount(), equalTo(1));
         assertThat(reports.getAdReports(0).getComponents(0).getDeviceVisibilitySamplesCount(), equalTo(1));
+        Csnmessages.AdReports reportsEmpty = re.build();
+        assertThat(reportsEmpty.getAdReportsCount(), equalTo(0));
     }
 }
