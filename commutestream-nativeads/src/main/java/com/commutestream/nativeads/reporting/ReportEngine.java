@@ -55,7 +55,6 @@ public class ReportEngine {
     }
 
     public void addInteraction(Ad ad, Component component, Csnmessages.ComponentInteractionKind kind) {
-        CSNLog.d("Add interaction for ad: " + ad.getAdID() + " component: " + component.getComponentID());
         AdReportBuilder adReportBuilder = getAdReportBuilder(ad);
         adReportBuilder.addComponentInteraction(component.getComponentID(), kind);
     }
@@ -84,7 +83,6 @@ public class ReportEngine {
         AdReportKey key = new AdReportKey(ad);
         AdReportBuilder builder = adReportBuilders.get(key);
         if(builder == null) {
-            CSNLog.d("Ad Report Builder for " + ad.getAdID() + " not found");
             builder = new AdReportBuilder(ad);
             adReportBuilders.put(key, builder);
         }

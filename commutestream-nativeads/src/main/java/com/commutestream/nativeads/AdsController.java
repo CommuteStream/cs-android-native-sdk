@@ -340,7 +340,6 @@ public class AdsController {
     }
 
     private synchronized void setIpAddresses(Collection<InetAddress> ipAddresses) {
-        CSNLog.v("Set Ip Addresses: " + ipAddresses.toString());
         this.ipAddresses = ipAddresses;
         reportEngine.setIpAddresses(ipAddresses);
     }
@@ -383,7 +382,6 @@ public class AdsController {
     }
 
     private synchronized void addDeviceLocation(Location location) {
-        CSNLog.v("Added location: " + location);
         this.reportEngine.addLocation(location);
     }
 

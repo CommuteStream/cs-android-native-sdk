@@ -36,7 +36,7 @@ public class VisibilityMonitor {
             @Override
             public void onViewDetachedFromWindow(View v) {
                 monitor.removeViewMonitor(viewMonitor);
-                CSNLog.v("Component View Removed for ad: " + ad.getAdID() + " component: " + component.getComponentID());
+                CSNLog.v("Component View Removed for Ad: " + ad.getAdID() + " Component: " + component.getComponentID());
             }
         });
     }
