@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
 import android.os.Handler;
-import android.support.annotation.MainThread;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -39,6 +38,7 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
+    public final static String SDK_VERSION = "1.2.1";
     private UUID adUnit;
     private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private boolean limitTracking = true;
@@ -302,7 +302,8 @@ public class AdsController {
                         .setDeviceId(ByteString.copyFrom(EncodingUtils.encodeUUID(aaid)))
                         .build())
                 .setAdUnit(ByteString.copyFrom(EncodingUtils.encodeUUID(adUnit)))
-                .setTimezone(TimeZone.getDefault().getID());
+                .setTimezone(TimeZone.getDefault().getID())
+                .setSdkVersion(SDK_VERSION);
 
         for(InetAddress addr : ipAddresses) {
             builder.addIpAddresses(ByteString.copyFrom(addr.getAddress()));

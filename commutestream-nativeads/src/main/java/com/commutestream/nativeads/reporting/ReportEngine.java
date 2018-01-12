@@ -4,6 +4,7 @@ import android.location.Location;
 import android.os.Build;
 
 import com.commutestream.nativeads.Ad;
+import com.commutestream.nativeads.AdsController;
 import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.protobuf.Csnmessages;
@@ -19,7 +20,7 @@ import java.util.TimeZone;
 import java.util.UUID;
 
 public class ReportEngine {
-    private final String SDK_VERSION = "1.2.0";
+
     private ByteString adUnit;
     private Csnmessages.DeviceID deviceID;
     private boolean limitTracking;
@@ -97,7 +98,7 @@ public class ReportEngine {
                 .setDeviceId(deviceID)
                 .setTimezone(timezone)
                 .setDeviceTime(time)
-                .setSdkVersion(SDK_VERSION)
+                .setSdkVersion(AdsController.SDK_VERSION)
                 .addAllDeviceLocations(locations)
                 .addAllIpAddresses(ipAddresses);
         for(Map.Entry<AdReportKey, AdReportBuilder> adEntry : adReportBuilders.entrySet()) {
