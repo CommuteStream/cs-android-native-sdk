@@ -3,6 +3,8 @@ package com.commutestream.nativeads;
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
+import android.os.Handler;
+import android.support.annotation.MainThread;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -85,31 +87,43 @@ public class AdsController {
         for(AdRequest request : requests) {
             nullAds.add(null);
         }
+        final Handler mainHandler = new Handler(activity.getMainLooper());
+        final Runnable nullAdsRunner = new Runnable() {
+            @Override
+            public void run() {
+                responseHandler.onAds(nullAds);
+            }
+        };
         try {
             Csnmessages.AdRequests msg = buildRequestsMessage(requests);
             client.getAds(msg, new Client.AdResponseHandler() {
                 @Override
                 public void onResponse(Csnmessages.AdResponses responses) {
                     try {
-                        List<Ad> ads = decodeResponses(requests, responses);
-                        responseHandler.onAds(ads);
+                        final List<Ad> ads = decodeResponses(requests, responses);
+                        Runnable adsRunner = new Runnable() {
+                            @Override
+                            public void run() {
+                                responseHandler.onAds(ads);
+                            }
+                        };
+                        mainHandler.post(adsRunner);
                     } catch (Exception ex) {
                         CSNLog.e("Failed to decode ad responses: " + ex);
-                        responseHandler.onAds(nullAds);
+                        mainHandler.post(nullAdsRunner);
                     }
                 }
 
                 @Override
                 public void onFailure() {
-                    responseHandler.onAds(nullAds);
+                    mainHandler.post(nullAdsRunner);
                 }
             });
         } catch (Exception ex) {
             CSNLog.e("Failed to encode ad requests: " + ex);
-            responseHandler.onAds(nullAds);
+            mainHandler.post(nullAdsRunner);
         }
     }
-
 
     /**
      * Render an Ad into a View using a ViewBinder. Returns null and logs the reason on failure.

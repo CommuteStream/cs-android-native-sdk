@@ -2,6 +2,7 @@ package com.commutestream.nativetestapp;
 
 import com.commutestream.nativeads.Ad;
 import com.commutestream.nativeads.AdRenderer;
+import com.commutestream.nativeads.AdRequest;
 import com.commutestream.nativeads.AdsController;
 
 import android.Manifest;
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         // render fake
         Random rnd = new Random();
         final Ad ad = generateAd(rnd, false, false, false);
-        ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
+        final ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
                 .setHeadline(R.id.headlineView)
                 .setLogo(R.id.logoView)
                 .setBody(R.id.bodyView);
@@ -223,6 +224,20 @@ public class MainActivity extends AppCompatActivity {
         View view8 = adsController.renderAd(null, viewBinder, ad4, true);
         mainLayout.addView(view8);
         locationListen();
+
+        ArrayList<AdRequest> adRequests = new ArrayList<>(1);
+        AdRequest handAndStone = new AdRequest();
+        handAndStone.addStop("cta", "", "1580");
+        adRequests.add(handAndStone);
+        adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
+            @Override
+            public void onAds(List<Ad> ads) {
+                Ad ad = ads.get(0);
+                if(ad != null) {
+                    mainLayout.addView(adsController.renderAd(null, viewBinder, ad, true));
+                }
+            }
+        });
 
     }
 

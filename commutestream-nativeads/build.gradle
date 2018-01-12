@@ -1,4 +1,31 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'commutestream-sdk'
+    bintrayName = 'commutestream-nativeads'
+    bintrayOrg = 'commutestream'
+
+    publishedGroupId = 'com.commutestream.nativeads'
+    libraryName = 'CommuteStream SDK for Native Ads'
+    artifact = 'commutestream-nativeads'
+
+    libraryDescription = 'SDK that This allows you to add CommuteStream native ads to your app'
+
+    siteUrl = 'https://github.com/commutestream/cs-android-native-sdk'
+    gitUrl = 'https://github.com/commutestream/cs-android-native-sdk.git'
+
+    libraryVersion = '1.2.0'
+
+    developerId = ''
+    developerName = 'CommuteStream'
+    developerEmail = 'support@commutestream.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 26
@@ -42,3 +69,6 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
     androidTestCompile 'com.android.support.test:runner:1.0.1'
 }
+
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'

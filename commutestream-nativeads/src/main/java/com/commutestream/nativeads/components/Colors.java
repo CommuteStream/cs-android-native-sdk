@@ -19,7 +19,7 @@ public class Colors {
     }
 
     public static int pack(int red, int green, int blue) {
-        return (red & 0xff) << 16 | (green & 0xff) << 8 | (blue & 0xff);
+        return 0xff << 24 | (red & 0xff) << 16 | (green & 0xff) << 8 | (blue & 0xff);
     }
 
     public static int unpackRed(int color) {
