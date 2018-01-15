@@ -61,23 +61,8 @@ public class ReportEngine {
     }
 
     public void addLocation(Location location) {
-        // All units are in *meters* and *degrees*
-        Csnmessages.DeviceLocation.Builder locationBuilder = Csnmessages.DeviceLocation.newBuilder()
-                .setTimestamp(location.getTime())
-                .setLatitude(location.getLatitude())
-                .setLongitude(location.getLongitude())
-                .setAltitude(location.getAccuracy())
-                .setBearing(location.getBearing())
-                .setSpeed(location.getSpeed())
-                .setHorizontalAccuracy(location.getAccuracy())
-                .setProvider(location.getProvider());
-        if(Build.VERSION.SDK_INT >= 26) {
-            locationBuilder
-                    .setVerticalAccuracy(location.getVerticalAccuracyMeters())
-                    .setBearingAccuracy(location.getBearingAccuracyDegrees())
-                    .setSpeedAccuracy(location.getSpeedAccuracyMetersPerSecond());
-        }
-        locations.add(locationBuilder.build());
+
+        locations.add(EncodingUtils.encodeDeviceLocation(location));
     }
 
     private AdReportBuilder getAdReportBuilder(Ad ad) {

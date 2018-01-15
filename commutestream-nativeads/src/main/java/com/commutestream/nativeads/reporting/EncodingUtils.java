@@ -1,5 +1,10 @@
 package com.commutestream.nativeads.reporting;
 
+import android.location.Location;
+import android.os.Build;
+
+import com.commutestream.nativeads.protobuf.Csnmessages;
+
 import java.nio.ByteBuffer;
 import java.util.UUID;
 
@@ -26,5 +31,25 @@ public class EncodingUtils {
 
     public static byte[] encodeUUID(UUID uuid) {
         return ByteBuffer.allocate(16).putLong(uuid.getMostSignificantBits()).putLong(uuid.getLeastSignificantBits()).array();
+    }
+
+    public static Csnmessages.DeviceLocation encodeDeviceLocation(Location location) {
+        // All units are in *meters* and *degrees*
+        Csnmessages.DeviceLocation.Builder locationBuilder = Csnmessages.DeviceLocation.newBuilder()
+                .setTimestamp(location.getTime())
+                .setLatitude(location.getLatitude())
+                .setLongitude(location.getLongitude())
+                .setAltitude(location.getAccuracy())
+                .setBearing(location.getBearing())
+                .setSpeed(location.getSpeed())
+                .setHorizontalAccuracy(location.getAccuracy())
+                .setProvider(location.getProvider());
+        if(Build.VERSION.SDK_INT >= 26) {
+            locationBuilder
+                    .setVerticalAccuracy(location.getVerticalAccuracyMeters())
+                    .setBearingAccuracy(location.getBearingAccuracyDegrees())
+                    .setSpeedAccuracy(location.getSpeedAccuracyMetersPerSecond());
+        }
+        return locationBuilder.build();
     }
 }

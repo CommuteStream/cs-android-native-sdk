@@ -132,6 +132,7 @@ message AdRequests {
   string timezone = 4;
   repeated AdRequest ad_requests = 5;
   string sdk_version = 6;
+  repeated DeviceLocation device_locations = 7;
 }
 
 // AdResponse is a mapping between an AdRequest hash_id and the set of ads

@@ -14992,6 +14992,30 @@ public final class Csnmessages {
      */
     com.google.protobuf.ByteString
         getSdkVersionBytes();
+
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> 
+        getDeviceLocationsList();
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation getDeviceLocations(int index);
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    int getDeviceLocationsCount();
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder> 
+        getDeviceLocationsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder getDeviceLocationsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -15015,6 +15039,7 @@ public final class Csnmessages {
       timezone_ = "";
       adRequests_ = java.util.Collections.emptyList();
       sdkVersion_ = "";
+      deviceLocations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -15095,6 +15120,15 @@ public final class Csnmessages {
               sdkVersion_ = s;
               break;
             }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              deviceLocations_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -15108,6 +15142,9 @@ public final class Csnmessages {
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           adRequests_ = java.util.Collections.unmodifiableList(adRequests_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -15281,6 +15318,41 @@ public final class Csnmessages {
       }
     }
 
+    public static final int DEVICE_LOCATIONS_FIELD_NUMBER = 7;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> deviceLocations_;
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> getDeviceLocationsList() {
+      return deviceLocations_;
+    }
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder> 
+        getDeviceLocationsOrBuilderList() {
+      return deviceLocations_;
+    }
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    public int getDeviceLocationsCount() {
+      return deviceLocations_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation getDeviceLocations(int index) {
+      return deviceLocations_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder getDeviceLocationsOrBuilder(
+        int index) {
+      return deviceLocations_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -15310,6 +15382,9 @@ public final class Csnmessages {
       }
       if (!getSdkVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sdkVersion_);
+      }
+      for (int i = 0; i < deviceLocations_.size(); i++) {
+        output.writeMessage(7, deviceLocations_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -15346,6 +15421,10 @@ public final class Csnmessages {
       if (!getSdkVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sdkVersion_);
       }
+      for (int i = 0; i < deviceLocations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, deviceLocations_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -15377,6 +15456,8 @@ public final class Csnmessages {
           .equals(other.getAdRequestsList());
       result = result && getSdkVersion()
           .equals(other.getSdkVersion());
+      result = result && getDeviceLocationsList()
+          .equals(other.getDeviceLocationsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -15406,6 +15487,10 @@ public final class Csnmessages {
       }
       hash = (37 * hash) + SDK_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getSdkVersion().hashCode();
+      if (getDeviceLocationsCount() > 0) {
+        hash = (37 * hash) + DEVICE_LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceLocationsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15536,6 +15621,7 @@ public final class Csnmessages {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getAdRequestsFieldBuilder();
+          getDeviceLocationsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -15560,6 +15646,12 @@ public final class Csnmessages {
         }
         sdkVersion_ = "";
 
+        if (deviceLocationsBuilder_ == null) {
+          deviceLocations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          deviceLocationsBuilder_.clear();
+        }
         return this;
       }
 
@@ -15606,6 +15698,15 @@ public final class Csnmessages {
           result.adRequests_ = adRequestsBuilder_.build();
         }
         result.sdkVersion_ = sdkVersion_;
+        if (deviceLocationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.deviceLocations_ = deviceLocations_;
+        } else {
+          result.deviceLocations_ = deviceLocationsBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -15697,6 +15798,32 @@ public final class Csnmessages {
         if (!other.getSdkVersion().isEmpty()) {
           sdkVersion_ = other.sdkVersion_;
           onChanged();
+        }
+        if (deviceLocationsBuilder_ == null) {
+          if (!other.deviceLocations_.isEmpty()) {
+            if (deviceLocations_.isEmpty()) {
+              deviceLocations_ = other.deviceLocations_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureDeviceLocationsIsMutable();
+              deviceLocations_.addAll(other.deviceLocations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.deviceLocations_.isEmpty()) {
+            if (deviceLocationsBuilder_.isEmpty()) {
+              deviceLocationsBuilder_.dispose();
+              deviceLocationsBuilder_ = null;
+              deviceLocations_ = other.deviceLocations_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              deviceLocationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDeviceLocationsFieldBuilder() : null;
+            } else {
+              deviceLocationsBuilder_.addAllMessages(other.deviceLocations_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16320,6 +16447,246 @@ public final class Csnmessages {
         sdkVersion_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> deviceLocations_ =
+        java.util.Collections.emptyList();
+      private void ensureDeviceLocationsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>(deviceLocations_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder> deviceLocationsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> getDeviceLocationsList() {
+        if (deviceLocationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(deviceLocations_);
+        } else {
+          return deviceLocationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public int getDeviceLocationsCount() {
+        if (deviceLocationsBuilder_ == null) {
+          return deviceLocations_.size();
+        } else {
+          return deviceLocationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation getDeviceLocations(int index) {
+        if (deviceLocationsBuilder_ == null) {
+          return deviceLocations_.get(index);
+        } else {
+          return deviceLocationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder setDeviceLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation value) {
+        if (deviceLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.set(index, value);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder setDeviceLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder builderForValue) {
+        if (deviceLocationsBuilder_ == null) {
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder addDeviceLocations(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation value) {
+        if (deviceLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.add(value);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder addDeviceLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation value) {
+        if (deviceLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.add(index, value);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder addDeviceLocations(
+          com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder builderForValue) {
+        if (deviceLocationsBuilder_ == null) {
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder addDeviceLocations(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder builderForValue) {
+        if (deviceLocationsBuilder_ == null) {
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder addAllDeviceLocations(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> values) {
+        if (deviceLocationsBuilder_ == null) {
+          ensureDeviceLocationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, deviceLocations_);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder clearDeviceLocations() {
+        if (deviceLocationsBuilder_ == null) {
+          deviceLocations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public Builder removeDeviceLocations(int index) {
+        if (deviceLocationsBuilder_ == null) {
+          ensureDeviceLocationsIsMutable();
+          deviceLocations_.remove(index);
+          onChanged();
+        } else {
+          deviceLocationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder getDeviceLocationsBuilder(
+          int index) {
+        return getDeviceLocationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder getDeviceLocationsOrBuilder(
+          int index) {
+        if (deviceLocationsBuilder_ == null) {
+          return deviceLocations_.get(index);  } else {
+          return deviceLocationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder> 
+           getDeviceLocationsOrBuilderList() {
+        if (deviceLocationsBuilder_ != null) {
+          return deviceLocationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(deviceLocations_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder addDeviceLocationsBuilder() {
+        return getDeviceLocationsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder addDeviceLocationsBuilder(
+          int index) {
+        return getDeviceLocationsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.DeviceLocation device_locations = 7;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder> 
+           getDeviceLocationsBuilderList() {
+        return getDeviceLocationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder> 
+          getDeviceLocationsFieldBuilder() {
+        if (deviceLocationsBuilder_ == null) {
+          deviceLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder>(
+                  deviceLocations_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          deviceLocations_ = null;
+        }
+        return deviceLocationsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -26462,52 +26829,54 @@ public final class Csnmessages {
       "ocation\0220\n\010agencies\030\004 \003(\0132\036.google.proto" +
       "buf.TransitAgency\022-\n\006routes\030\005 \003(\0132\035.goog" +
       "le.protobuf.TransitRoute\022+\n\005stops\030\006 \003(\0132" +
-      "\034.google.protobuf.TransitStop\"\271\001\n\nAdRequ" +
+      "\034.google.protobuf.TransitStop\"\364\001\n\nAdRequ" +
       "ests\022\017\n\007ad_unit\030\001 \001(\014\022,\n\tdevice_id\030\002 \001(\013" +
       "2\031.google.protobuf.DeviceID\022\024\n\014ip_addres" +
       "ses\030\003 \003(\014\022\020\n\010timezone\030\004 \001(\t\022/\n\013ad_reques" +
       "ts\030\005 \003(\0132\032.google.protobuf.AdRequest\022\023\n\013" +
-      "sdk_version\030\006 \001(\t\"E\n\nAdResponse\022\017\n\007hash_" +
-      "id\030\001 \001(\014\022&\n\003ads\030\002 \003(\0132\031.google.protobuf." +
-      "NativeAd\"S\n\013AdResponses\022\021\n\tserver_id\030\001 \001" +
-      "(\t\0221\n\014ad_responses\030\002 \003(\0132\033.google.protob" +
-      "uf.AdResponse\"\211\001\n\010DeviceID\0226\n\016device_id_" +
-      "type\030\001 \001(\0162\036.google.protobuf.DeviceID.Ty" +
-      "pe\022\021\n\tdevice_id\030\002 \001(\014\022\026\n\016limit_tracking\030" +
-      "\003 \001(\010\"\032\n\004Type\022\010\n\004IDFA\020\000\022\010\n\004AAID\020\001\"\366\001\n\016De" +
-      "viceLocation\022\021\n\ttimestamp\030\001 \001(\004\022\020\n\010latit" +
-      "ude\030\002 \001(\001\022\021\n\tlongitude\030\003 \001(\001\022\020\n\010altitude" +
-      "\030\004 \001(\001\022\017\n\007bearing\030\005 \001(\001\022\r\n\005speed\030\006 \001(\001\022\033" +
-      "\n\023horizontal_accuracy\030\007 \001(\001\022\031\n\021vertical_" +
-      "accuracy\030\010 \001(\001\022\030\n\020bearing_accuracy\030\t \001(\001" +
-      "\022\026\n\016speed_accuracy\030\n \001(\001\022\020\n\010provider\030\013 \001" +
-      "(\t\"d\n\024ComponentInteraction\022\023\n\013device_tim" +
-      "e\030\001 \001(\004\0227\n\004kind\030\002 \001(\0162).google.protobuf." +
-      "ComponentInteractionKind\"\343\001\n\017ComponentRe" +
-      "port\022\024\n\014component_id\030\001 \001(\004\022\030\n\020visibility" +
-      "_epoch\030\002 \001(\004\022\037\n\027visibility_sample_count\030" +
-      "\003 \001(\004\022\037\n\027view_visibility_samples\030\004 \003(\004\022!" +
-      "\n\031device_visibility_samples\030\005 \003(\004\022;\n\014int" +
-      "eractions\030\006 \003(\0132%.google.protobuf.Compon" +
-      "entInteraction\"#\n\014AdImpression\022\023\n\013device" +
-      "_time\030\001 \001(\004\"\253\001\n\010AdReport\022\022\n\nrequest_id\030\001" +
-      " \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022\n\nversion_id\030\003 \001(\004\022" +
-      "4\n\ncomponents\030\004 \003(\0132 .google.protobuf.Co" +
-      "mponentReport\0222\n\013impressions\030\005 \003(\0132\035.goo" +
-      "gle.protobuf.AdImpression\"\206\002\n\tAdReports\022" +
-      "\017\n\007ad_unit\030\001 \001(\014\022,\n\tdevice_id\030\002 \001(\0132\031.go" +
-      "ogle.protobuf.DeviceID\022\020\n\010timezone\030\003 \001(\t" +
-      "\022\024\n\014ip_addresses\030\004 \003(\014\022\023\n\013device_time\030\005 " +
-      "\001(\004\022-\n\nad_reports\030\006 \003(\0132\031.google.protobu" +
-      "f.AdReport\022\023\n\013sdk_version\030\007 \001(\t\0229\n\020devic" +
-      "e_locations\030\010 \003(\0132\037.google.protobuf.Devi" +
-      "ceLocation\"o\n\rAdTransaction\022-\n\010requests\030" +
-      "\001 \001(\0132\033.google.protobuf.AdRequests\022/\n\tre" +
-      "sponses\030\002 \001(\0132\034.google.protobuf.AdRespon" +
-      "ses*\037\n\010HeroKind\022\t\n\005Image\020\000\022\010\n\004HTML\020\001*\025\n\n" +
-      "ActionKind\022\007\n\003Url\020\000*#\n\030ComponentInteract" +
-      "ionKind\022\007\n\003Tap\020\000B-\n$com.commutestream.na" +
-      "tiveads.protobuf\242\002\004CSNPb\006proto3"
+      "sdk_version\030\006 \001(\t\0229\n\020device_locations\030\007 " +
+      "\003(\0132\037.google.protobuf.DeviceLocation\"E\n\n" +
+      "AdResponse\022\017\n\007hash_id\030\001 \001(\014\022&\n\003ads\030\002 \003(\013" +
+      "2\031.google.protobuf.NativeAd\"S\n\013AdRespons" +
+      "es\022\021\n\tserver_id\030\001 \001(\t\0221\n\014ad_responses\030\002 " +
+      "\003(\0132\033.google.protobuf.AdResponse\"\211\001\n\010Dev" +
+      "iceID\0226\n\016device_id_type\030\001 \001(\0162\036.google.p" +
+      "rotobuf.DeviceID.Type\022\021\n\tdevice_id\030\002 \001(\014" +
+      "\022\026\n\016limit_tracking\030\003 \001(\010\"\032\n\004Type\022\010\n\004IDFA" +
+      "\020\000\022\010\n\004AAID\020\001\"\366\001\n\016DeviceLocation\022\021\n\ttimes" +
+      "tamp\030\001 \001(\004\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongitud" +
+      "e\030\003 \001(\001\022\020\n\010altitude\030\004 \001(\001\022\017\n\007bearing\030\005 \001" +
+      "(\001\022\r\n\005speed\030\006 \001(\001\022\033\n\023horizontal_accuracy" +
+      "\030\007 \001(\001\022\031\n\021vertical_accuracy\030\010 \001(\001\022\030\n\020bea" +
+      "ring_accuracy\030\t \001(\001\022\026\n\016speed_accuracy\030\n " +
+      "\001(\001\022\020\n\010provider\030\013 \001(\t\"d\n\024ComponentIntera" +
+      "ction\022\023\n\013device_time\030\001 \001(\004\0227\n\004kind\030\002 \001(\016" +
+      "2).google.protobuf.ComponentInteractionK" +
+      "ind\"\343\001\n\017ComponentReport\022\024\n\014component_id\030" +
+      "\001 \001(\004\022\030\n\020visibility_epoch\030\002 \001(\004\022\037\n\027visib" +
+      "ility_sample_count\030\003 \001(\004\022\037\n\027view_visibil" +
+      "ity_samples\030\004 \003(\004\022!\n\031device_visibility_s" +
+      "amples\030\005 \003(\004\022;\n\014interactions\030\006 \003(\0132%.goo" +
+      "gle.protobuf.ComponentInteraction\"#\n\014AdI" +
+      "mpression\022\023\n\013device_time\030\001 \001(\004\"\253\001\n\010AdRep" +
+      "ort\022\022\n\nrequest_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022" +
+      "\n\nversion_id\030\003 \001(\004\0224\n\ncomponents\030\004 \003(\0132 " +
+      ".google.protobuf.ComponentReport\0222\n\013impr" +
+      "essions\030\005 \003(\0132\035.google.protobuf.AdImpres" +
+      "sion\"\206\002\n\tAdReports\022\017\n\007ad_unit\030\001 \001(\014\022,\n\td" +
+      "evice_id\030\002 \001(\0132\031.google.protobuf.DeviceI" +
+      "D\022\020\n\010timezone\030\003 \001(\t\022\024\n\014ip_addresses\030\004 \003(" +
+      "\014\022\023\n\013device_time\030\005 \001(\004\022-\n\nad_reports\030\006 \003" +
+      "(\0132\031.google.protobuf.AdReport\022\023\n\013sdk_ver" +
+      "sion\030\007 \001(\t\0229\n\020device_locations\030\010 \003(\0132\037.g" +
+      "oogle.protobuf.DeviceLocation\"o\n\rAdTrans" +
+      "action\022-\n\010requests\030\001 \001(\0132\033.google.protob" +
+      "uf.AdRequests\022/\n\tresponses\030\002 \001(\0132\034.googl" +
+      "e.protobuf.AdResponses*\037\n\010HeroKind\022\t\n\005Im" +
+      "age\020\000\022\010\n\004HTML\020\001*\025\n\nActionKind\022\007\n\003Url\020\000*#" +
+      "\n\030ComponentInteractionKind\022\007\n\003Tap\020\000B-\n$c" +
+      "om.commutestream.nativeads.protobuf\242\002\004CS" +
+      "NPb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26628,7 +26997,7 @@ public final class Csnmessages {
     internal_static_google_protobuf_AdRequests_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdRequests_descriptor,
-        new java.lang.String[] { "AdUnit", "DeviceId", "IpAddresses", "Timezone", "AdRequests", "SdkVersion", });
+        new java.lang.String[] { "AdUnit", "DeviceId", "IpAddresses", "Timezone", "AdRequests", "SdkVersion", "DeviceLocations", });
     internal_static_google_protobuf_AdResponse_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_google_protobuf_AdResponse_fieldAccessorTable = new

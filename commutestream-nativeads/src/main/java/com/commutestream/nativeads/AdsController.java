@@ -300,11 +300,15 @@ public class AdsController {
                 .setDeviceId(Csnmessages.DeviceID.newBuilder()
                         .setDeviceIdType(Csnmessages.DeviceID.Type.AAID)
                         .setDeviceId(ByteString.copyFrom(EncodingUtils.encodeUUID(aaid)))
+                        .setLimitTracking(limitTracking)
                         .build())
                 .setAdUnit(ByteString.copyFrom(EncodingUtils.encodeUUID(adUnit)))
                 .setTimezone(TimeZone.getDefault().getID())
                 .setSdkVersion(SDK_VERSION);
-
+        Location location = DeviceLocation.getBestLocation(activity);
+        if(location != null) {
+            builder.addDeviceLocations(EncodingUtils.encodeDeviceLocation(location));
+        }
         for(InetAddress addr : ipAddresses) {
             builder.addIpAddresses(ByteString.copyFrom(addr.getAddress()));
         }
@@ -391,7 +395,7 @@ public class AdsController {
 
     private void loadDeviceLocation() {
         Location location = DeviceLocation.getBestLocation(activity);
-        if(location != null && !limitTracking) {
+        if(location != null) {
             addDeviceLocation(location);
         }
     }
