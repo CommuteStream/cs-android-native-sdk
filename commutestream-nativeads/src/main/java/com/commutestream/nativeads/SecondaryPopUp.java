@@ -41,10 +41,11 @@ public class SecondaryPopUp {
     private ImageButton closeButton;
     private ViewTreeObserver heroFrameTreeObserver;
     private Boolean heroHeightAdjusted;
+    private ImageButton poweredByCSButton;
 
 
 
-    public SecondaryPopUp(Activity activity, ReportEngine reportEngine) {
+    public SecondaryPopUp(final Activity activity, ReportEngine reportEngine) {
         this.reportEngine = reportEngine;
         this.activity = activity;
         View view = activity.getLayoutInflater().inflate(R.layout.secondary_view, null);
@@ -65,6 +66,18 @@ public class SecondaryPopUp {
                 popup.dismiss();
             }
         });
+        poweredByCSButton = view.findViewById(R.id.powered_by_cs_button);
+        poweredByCSButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                String url = "https://commutestream.com";
+                i.setData(Uri.parse(url));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                activity.startActivity(i);
+            }
+        });
+
 
         heroHeightAdjusted = false;
         heroFrameTreeObserver = heroFrame.getViewTreeObserver();
