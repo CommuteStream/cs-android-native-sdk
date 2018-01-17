@@ -76,7 +76,7 @@ for your Native Ad.
 You may then tell the SDK which Views are to be used for which components using the ViewBinder class
 
 **Java**
-```
+```java
 ViewBinder viewBinder = new ViewBinder(R.layout.my_cs_native_layout);
 viewBinder.setLogo(R.id.my_cs_native_logo);
 viewBinder.setHeadline(R.id.my_cs_native_headline);
@@ -90,13 +90,24 @@ This ViewBinder instance is then used when building an Ad view later.
 Once you've create your ad layout and a view binder to tell our SDK which views match each component, you'll need to request a list of native ads to populate them. For this you will create an individual **AdRequest**, packaged with transit information that matches what's showing on the screen.
 
 The AdRequest contains all the context we use to find the best matching Ad. There are many ways you may use this to
-display ads in different locations in your application. We support matching an Ad for a transit agency, transit route, and a transit stop. We use GTFS route and stop ids to target ads along with a CommuteStream supplied agency id.
+display ads in different locati @Override
+    public void onResume() {
+        super.onResume();
+        this.adsController.resume();
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        this.adsController.pause();
+    }ons in your application. We support matching an Ad for a transit agency, transit route, and a transit stop. We use GTFS route and stop ids to target ads along with a CommuteStream supplied agency id.
 
 An example of a single stop matched AdRequest would be:
 
 #### Single Stop Target AdRequest
 **Java**
-```
+```java
 AdRequest stopAdRequest = new AdRequest().addStop("cta", "red", "1240");
 ```
 
@@ -106,7 +117,7 @@ Only ads that target that particular stop will be returned for that request.
 
 An example of an AdRequest to fill a wider Agency or Route level request would be:
 **Java**
-```
+```java
 AdRequest adRequest = new AdRequest().addAgency("cta").addRoute("cta", "red");
 ```
 
@@ -119,7 +130,7 @@ For each Ad you wish to display a corresponding AdRequest should be created and 
 For example if we have two Ads we might want to show on a particular screen we would do something like:
 
 **Java**
-```
+```java
 AdRequest stopAdRequest = new AdRequest().addStop("cta", "red", "1240");
 AdRequest agencyRouteAdRequest = new AdRequest().addAgency("cta").addRoute("cta", "red");
 ArrayList<AdRequest> adRequests = new ArrayList<AdRequest();
@@ -135,7 +146,7 @@ The **ads** list has the same object count and order as the adRequests list prov
 All indexes in the list have a **Ad**, and each one is either a null when an ad could not be found or an instance of the Ad class when one is found. You will use this list along with an instance of the ViewBinder to display ad content in the components you added to your ad layout. The AdsController should be a member variable of each Activity you use in your application and instantiated in the onCreate Activity method. It is important to ensure your app correctly reports information and pauses background tasks to call appropriate methods in your Activity onPause and onResume methods as well.
 
 **Java**
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
