@@ -14,7 +14,7 @@ These instructions assume you have already followed the instructions at: [https:
 Add the SDK as a gradle dependency in the build.gradle dependencies block, as an example:
 
 **Gradle**
-```
+```groovy
 dependencies {
     implementation 'com.commutestream.sdk:native-sdk:1.2.2'
 }
@@ -90,18 +90,7 @@ This ViewBinder instance is then used when building an Ad view later.
 Once you've create your ad layout and a view binder to tell our SDK which views match each component, you'll need to request a list of native ads to populate them. For this you will create an individual **AdRequest**, packaged with transit information that matches what's showing on the screen.
 
 The AdRequest contains all the context we use to find the best matching Ad. There are many ways you may use this to
-display ads in different locati @Override
-    public void onResume() {
-        super.onResume();
-        this.adsController.resume();
-
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        this.adsController.pause();
-    }ons in your application. We support matching an Ad for a transit agency, transit route, and a transit stop. We use GTFS route and stop ids to target ads along with a CommuteStream supplied agency id.
+display ads in different locations in your application. We support matching an Ad for a transit agency, transit route, and a transit stop. We use GTFS route and stop ids to target ads along with a CommuteStream supplied agency id.
 
 An example of a single stop matched AdRequest would be:
 
