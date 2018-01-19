@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.commutestream.nativeads.CSNLog;
 import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.HeroKind;
 import com.commutestream.nativeads.components.ViewComponent;

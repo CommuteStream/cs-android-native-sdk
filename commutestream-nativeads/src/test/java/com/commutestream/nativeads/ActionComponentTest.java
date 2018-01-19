@@ -1,6 +1,7 @@
 package com.commutestream.nativeads;
 
 import com.commutestream.nativeads.components.ActionComponent;
+import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.Colors;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
@@ -34,7 +35,7 @@ public class ActionComponentTest {
                 .build();
         ActionComponent action = new ActionComponent(msg);
         assertThat(action.getComponentID(), equalTo(componentID));
-        assertThat(action.getKind(), equalTo(ActionComponent.ACTION_KIND_URL));
+        assertThat(action.getKind(), equalTo(ActionKind.Url));
         assertThat(action.getTitle(), equalTo(title));
         assertThat(action.getUrl(), equalTo(url));
         Colors colors2 = action.getColors();
