@@ -33,7 +33,7 @@ public class FakeModelAdapter extends RecyclerView.Adapter<FakeModelAdapter.View
             super(itemView);
 
             rowIdxView = (TextView) itemView.findViewById(R.id.row_idx);
-            logoView = (ImageView) itemView.findViewById(R.id.native_ad_logo);
+            logoView = (ImageView) itemView.findViewById(R.id.logoView);
         }
     }
 
@@ -85,9 +85,11 @@ public class FakeModelAdapter extends RecyclerView.Adapter<FakeModelAdapter.View
         Ad ad = fakeModel.getAd();
         if(ad != null) {
             Log.v("TESTING", "ad is not null " + fakeModel.getIdx());
+            viewHolder.logoView.setVisibility(View.VISIBLE);
             mAdsController.renderAdInto(viewHolder.itemView, mViewBinder, ad, true);
         } else {
             Log.v("TESTING", "ad is null " + fakeModel.getIdx());
+            viewHolder.logoView.setVisibility(View.INVISIBLE);
         }
     }
 
