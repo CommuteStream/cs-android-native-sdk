@@ -17,11 +17,14 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.HeroKind;
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     final static String TAG = "Native Test App";
 
     private AdsController adsController;
+    private ArrayList<FakeModel> fakeModels;
 
     private Ad generateAd(Random rnd, boolean htmlHero, boolean interactiveHero, boolean fancyHero) {
                 Ad.Builder adBuilder = new Ad.Builder();
@@ -144,6 +148,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mainLayout);
+
+        fakeModels = new ArrayList<>(40);
+        for(int i = 0; i < 40; i++) {
+            fakeModels.add(new FakeModel(i, null));
+        }
+        adsController = new AdsController(this, UUID.fromString("c546ebee-6f2a-4f48-947b-e580c45e4f79"));
+        final FakeModelAdapter adapter = new FakeModelAdapter(this, fakeModels, adsController);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         // render fake
         Random rnd = new Random();
         final Ad ad = generateAd(rnd, false, false, false);
@@ -152,9 +168,11 @@ public class MainActivity extends AppCompatActivity {
                 .setLogo(R.id.logoView)
                 .setBody(R.id.bodyView);
 
+
+        /*
         AdRenderer adRenderer = new AdRenderer(this);
         final View view = adRenderer.render(null, viewBinder, ad);
-        final LinearLayout mainLayout = findViewById(R.id.main_layout);
+
         Button showPopup = findViewById(R.id.show_popup);
         HashSet<InetAddress> ipAddrs = new HashSet();
         List<NetworkInterface> interfaces = null;
@@ -201,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         };
         timer.schedule(timerTask, 10000);
 
-        adsController = new AdsController(this, UUID.fromString("c546ebee-6f2a-4f48-947b-e580c45e4f79"));
+
         final View view2 = adsController.renderAd(null, viewBinder, ad, true);
         mainLayout.addView(view2);
         final View view3 = adsController.renderAd(null, viewBinder, ad, false);
@@ -222,7 +240,11 @@ public class MainActivity extends AppCompatActivity {
         Ad ad4 = generateAd(rnd, true, true, true);
         View view8 = adsController.renderAd(null, viewBinder, ad4, true);
         mainLayout.addView(view8);
+        */
         locationListen();
+
+        fakeModels.add(new FakeModel(40, generateAd(rnd, true, true, true)));
+        adapter.notifyItemChanged(40);
 
         ArrayList<AdRequest> adRequests = new ArrayList<>(1);
         AdRequest handAndStone = new AdRequest();
@@ -233,10 +255,13 @@ public class MainActivity extends AppCompatActivity {
             public void onAds(List<Ad> ads) {
                 Ad ad = ads.get(0);
                 if(ad != null) {
-                    mainLayout.addView(adsController.renderAd(null, viewBinder, ad, true));
+                    Log.v("TESTING", "GOT AD");
+                    fakeModels.add(new FakeModel(41, ad));
+                    adapter.notifyItemChanged(41);
                 }
             }
         });
+
 
     }
 

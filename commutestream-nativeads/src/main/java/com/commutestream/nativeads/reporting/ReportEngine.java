@@ -51,17 +51,19 @@ public class ReportEngine {
     }
 
     public void addVisibility(Ad ad, Component component, double viewVisible, double screenVisible) {
+        CSNLog.v("added visibility  " + ad.getAdID() + ":" + component.getComponentID() + ":" + viewVisible + ":" + screenVisible);
         AdReportBuilder adReportBuilder = getAdReportBuilder(ad);
         adReportBuilder.addComponentVisibility(component.getComponentID(), viewVisible, screenVisible);
     }
 
     public void addInteraction(Ad ad, Component component, Csnmessages.ComponentInteractionKind kind) {
+        CSNLog.v("added interaction  " + ad.getAdID() + ":" + component.getComponentID() + ":" + kind);
         AdReportBuilder adReportBuilder = getAdReportBuilder(ad);
         adReportBuilder.addComponentInteraction(component.getComponentID(), kind);
     }
 
     public void addLocation(Location location) {
-
+        CSNLog.v("added location " + location);
         locations.add(EncodingUtils.encodeDeviceLocation(location));
     }
 

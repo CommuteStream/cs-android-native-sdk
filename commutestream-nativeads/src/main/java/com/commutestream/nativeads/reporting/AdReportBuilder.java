@@ -45,6 +45,7 @@ public class AdReportBuilder {
         }
         builder.setVisibilitySampleCount(builder.getVisibilitySampleCount() + 1);
         if (impressionDetector.addVisibility(viewVisible, screenVisible)) {
+            CSNLog.v("added impression " + adReportBuilder.getAdId() + ":" + componentID);
             addImpression();
         }
     }
@@ -57,6 +58,7 @@ public class AdReportBuilder {
                 .build()
         );
         if (impressionDetector.addInteraction(kind)) {
+            CSNLog.v("added impression " + adReportBuilder.getAdId() + ":" + componentID);
             addImpression();
         }
     }

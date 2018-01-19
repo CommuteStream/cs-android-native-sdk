@@ -40,6 +40,7 @@ public class AdRenderer {
     protected void renderLogo(View view, Ad ad, ViewBinder binder) {
         LogoComponent logo = ad.getLogo();
         ImageView logoView = view.findViewById(binder.getLogo());
+        CSNLog.v("Logo View: " + logoView);
         if(logoView != null && logo != null) {
             Bitmap logoBitmap = logo.getLogo();
             if(logoBitmap != null) {
