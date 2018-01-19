@@ -7,8 +7,9 @@ These instructions assume you have already followed the instructions at: [https:
 
 ## Requirements
 
-- API 16 (Android 4.1)
+- Minimum API 16 (Android 4.1)
 - Most likely requires multidex enabled for any significantly large application
+- ```<uses-permission android:name="android.permission.INTERNET" /> in AndroidManifest.xml```
 
 ## Adding the SDK 
 Add the SDK as a gradle dependency in the build.gradle dependencies block, as an example:
@@ -16,7 +17,7 @@ Add the SDK as a gradle dependency in the build.gradle dependencies block, as an
 **Gradle**
 ```groovy
 dependencies {
-    implementation 'com.commutestream.sdk:native-sdk:1.2.2'
+    implementation 'com.commutestream.sdk:native-sdk:1.2.6'
 }
 ```
 
