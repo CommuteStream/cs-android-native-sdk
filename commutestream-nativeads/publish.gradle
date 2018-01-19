@@ -29,6 +29,28 @@ ext {
 version libraryVersion
 group publishGroup
 
+def pomConfig = {
+    // Set your license
+    licenses {
+        license {
+            name licenseName
+            url licenseUrl
+        }
+    }
+    developers {
+        developer {
+            id developerId
+            name developerName
+            email developerEmail
+        }
+    }
+    scm {
+        connection gitUrl
+        developerConnection gitUrl
+        url siteUrl
+    }
+}
+
 publishing {
     publications {
         Production(MavenPublication) {
@@ -38,35 +60,13 @@ publishing {
             version libraryVersion
             description libraryDescription
 
-            // Add your description here
-            //name libraryName
-
-            //url siteUrl
-
-            // Set your license
-            /*licenses {
-                license {
-                    name licenseName
-                    url licenseUrl
-                }
-            }
-            developers {
-                developer {
-                    id developerId
-                    name developerName
-                    email developerEmail
-                }
-            }
-            scm {
-                connection gitUrl
-                developerConnection gitUrl
-                url siteUrl
-
-            }
-            */
-
             pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
+                def root = asNode()
+                root.appendNode('description', libraryDescription)
+                root.appendNode('name', libraryName)
+                root.appendNode('url', siteUrl)
+                root.children().last() + pomConfig
+                def dependenciesNode = root.appendNode('dependencies')
 
                 // Iterate over the implementation dependencies (we don't want the test ones), adding a <dependency> node for each
                 configurations.implementation.allDependencies.each {
@@ -78,6 +78,7 @@ publishing {
                         dependencyNode.appendNode('version', it.version)
                     }
                 }
+
             }
         }
     }
@@ -87,24 +88,37 @@ publishing {
 
 bintray {
     user = project.hasProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ?: System.getenv('BINTRAY_API_KEY')
+    key = project.hasProperty('bintrayApiKey') ?: System.getenv('BINTRAY_KEY')
     publications = ['Production']
     configurations = ['archives']
     override = true
     pkg {
         repo = bintrayRepo
         name = bintrayName
-        description = libraryDescription
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
         publish = true
         publicDownloadNumbers = true
-        licenses = allLicenses
-        vcsUrl = gitUrl
-        dryRun = true
+        dryRun = false
         version {
-            name = this.version
-            desc = "${this.version}"
+            desc = libraryDescription
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = System.getenv("BINTRAY_GPG_PASSPHRASE")
+                //Optional. The passphrase for GPG signing'
+            }
+            name = libraryVersion
+            desc = "${libraryVersion}"
             released = new Date()
-            vcsTag = this.version
+            vcsTag = libraryVersion
         }
     }
 }
+
+if(System.getenv("BINTRAY_ORG")) {
+    bintray.pkg.userOrg = System.getenv("BINTRAY_ORG")
+}
+
+bintrayUpload.dependsOn("assembleRelease")
