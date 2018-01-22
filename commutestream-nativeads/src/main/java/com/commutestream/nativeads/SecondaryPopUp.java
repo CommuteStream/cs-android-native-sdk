@@ -119,10 +119,11 @@ public class SecondaryPopUp {
 
         switch(ad.getHero().getKind()) {
             case HTML:
-                //TODO enable/disable interactivity based on flag
                 heroWebView = new WebView(activity);
                 heroWebView.getSettings().setJavaScriptEnabled(true);
                 heroWebView.getSettings().setDomStorageEnabled(true);
+                heroWebView.getSettings().setUseWideViewPort(true);
+                heroWebView.getSettings().setLoadWithOverviewMode(true);
                 heroWebView.loadData(ad.getHero().getHtml(), "text/html", null);
                 if(!ad.getHero().getInteractive()) {
                     heroWebView.setOnTouchListener(new View.OnTouchListener() {
