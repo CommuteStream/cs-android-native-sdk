@@ -22,6 +22,9 @@ import com.commutestream.nativeads.components.ActionComponent;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.ReportEngine;
 
+import android.os.Handler;
+import java.util.logging.LogRecord;
+
 public class SecondaryPopUp {
     private Activity activity;
     private ReportEngine reportEngine;
@@ -170,11 +173,21 @@ public class SecondaryPopUp {
 
             actionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(final View v) {
                     reportEngine.addInteraction(ad, action, Csnmessages.ComponentInteractionKind.Tap);
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(action.getUrl()));
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    v.getBackground().setAlpha(120);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            v.getBackground().setAlpha(255);
+                        }
+                    }, 300);
+
+
                     activity.startActivity(i);
                 }
             });
