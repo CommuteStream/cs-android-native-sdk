@@ -3,6 +3,7 @@ package com.commutestream.nativeads;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -124,6 +125,9 @@ public class SecondaryPopUp {
                 heroWebView.getSettings().setDomStorageEnabled(true);
                 heroWebView.getSettings().setUseWideViewPort(true);
                 heroWebView.getSettings().setLoadWithOverviewMode(true);
+                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+                    heroWebView.setWebContentsDebuggingEnabled(true);
+                }
                 heroWebView.loadData(ad.getHero().getHtml(), "text/html", null);
                 if(!ad.getHero().getInteractive()) {
                     heroWebView.setOnTouchListener(new View.OnTouchListener() {
