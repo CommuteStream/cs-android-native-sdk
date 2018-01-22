@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -125,6 +126,9 @@ public class SecondaryPopUp {
                 heroWebView.getSettings().setDomStorageEnabled(true);
                 heroWebView.getSettings().setUseWideViewPort(true);
                 heroWebView.getSettings().setLoadWithOverviewMode(true);
+                heroWebView.getSettings().setAppCacheEnabled(true);
+                heroWebView.getSettings().setAppCachePath(activity.getCacheDir().getAbsolutePath());
+                heroWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
                 if(Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
                     heroWebView.setWebContentsDebuggingEnabled(true);
                 }

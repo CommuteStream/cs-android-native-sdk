@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AdsController adsController;
 
-    private Ad generateAd(Random rnd, boolean htmlHero, boolean interactiveHero, boolean fancyHero) {
+    private Ad generateAd(Random rnd, int heroVariant, boolean interactiveHero) {
                 Ad.Builder adBuilder = new Ad.Builder();
         final ActionComponent action1 = new ActionComponent.Builder()
                 .setComponentID(rnd.nextLong())
@@ -112,17 +112,33 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         HeroComponent.Builder heroComponentBuilder = new HeroComponent.Builder()
                 .setComponentID(rnd.nextLong());
-        if(!htmlHero) {
-                heroComponentBuilder.setKind(HeroKind.Image)
-                    .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero));
-        } else {
-            String html = "<!DOCTYPE html><html><head></head><body style=\"margin:0px\"><a href=\"https://commutestream.com\"><img style=\"display: block;\" src=\"https://s3.amazonaws.com/commutestream-cdn/test_image_3px.jpg\"></a></body></html>";
-            if(fancyHero) {
+        String html = "";
+        switch(heroVariant) {
+            case 1:
+                html = "<!DOCTYPE html><html><head></head><body style=\"margin:0px\"><a href=\"https://commutestream.com\"><img style=\"display: block;\" src=\"https://s3.amazonaws.com/commutestream-cdn/test_image_3px.jpg\"></a></body></html>";
+                heroComponentBuilder.setKind(HeroKind.HTML)
+                        .setHtml(html)
+                        .setInteractive(interactiveHero);
+                break;
+            case 2:
                 html = "<!DOCTYPE html><html><body style=\"margin:0px\"><iframe style=\"display: block;\" width=\"1200\" height=\"627\" src=\"https://www.youtube.com/embed/CLsMnItzhC0?rel=0&amp;start=1&amp;autoplay=1;loop=1\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
-            }
-            heroComponentBuilder.setKind(HeroKind.HTML)
-                    .setHtml(html)
-                    .setInteractive(interactiveHero);
+                heroComponentBuilder.setKind(HeroKind.HTML)
+                        .setHtml(html)
+                        .setInteractive(interactiveHero);
+                break;
+            case 3:
+                html = "<!DOCTYPE html><html><body><video width=\"100%\" autoplay=\"autoplay\" loop=\"loop\" muted=\"muted\">\n" +
+                        "       <source src=\"https://commutestream.com/video/website_masthead_video_bkg.mp4\" type=\"video/mp4\" />\n" +
+                        "       <source src=\"https://commutestream.com/video/website_masthead_video_bkg.webm\" type=\"video/webm\">\n" +
+                        "</body></html>";
+                heroComponentBuilder.setKind(HeroKind.HTML)
+                        .setHtml(html)
+                        .setInteractive(interactiveHero);
+                break;
+            default:
+                heroComponentBuilder.setKind(HeroKind.Image)
+                        .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero));
+
         }
         HeroComponent heroComponent = heroComponentBuilder.build();
         return adBuilder.setAdID(rnd.nextLong())
@@ -146,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // render fake
         Random rnd = new Random();
-        final Ad ad = generateAd(rnd, false, false, false);
+        final Ad ad = generateAd(rnd, 0, false);
         final ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
                 .setHeadline(R.id.headlineView)
                 .setLogo(R.id.logoView)
@@ -213,13 +229,13 @@ public class MainActivity extends AppCompatActivity {
         View view5 = inflater.inflate(R.layout.adlayout, null);
         adsController.renderAdInto(view5, viewBinder, ad, false);
         mainLayout.addView(view5);
-        Ad ad2 = generateAd(rnd, true, false, false);
+        Ad ad2 = generateAd(rnd, 1, false);
         View view6 = adsController.renderAd(null, viewBinder, ad2, true);
         mainLayout.addView(view6);
-        Ad ad3 = generateAd(rnd, true, true, false);
+        Ad ad3 = generateAd(rnd, 2, true);
         View view7 = adsController.renderAd(null, viewBinder, ad3, true);
         mainLayout.addView(view7);
-        Ad ad4 = generateAd(rnd, true, true, true);
+        Ad ad4 = generateAd(rnd, 3, true);
         View view8 = adsController.renderAd(null, viewBinder, ad4, true);
         mainLayout.addView(view8);
         locationListen();
