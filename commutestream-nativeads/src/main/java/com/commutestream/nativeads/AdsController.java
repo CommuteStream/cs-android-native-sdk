@@ -38,7 +38,7 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
-    public final static String SDK_VERSION = "1.2.7";
+    public final static String SDK_VERSION = "1.2.8";
     private UUID adUnit;
     private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private boolean limitTracking = true;
@@ -186,7 +186,6 @@ public class AdsController {
         periodicTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                CSNLog.d("running periodic task");
                 adsController.loadAaid();
                 adsController.loadIpAddresses();
                 adsController.loadDeviceLocation();
@@ -204,11 +203,10 @@ public class AdsController {
     private void sendReports() {
         try {
             Csnmessages.AdReports reports = reportEngine.build();
-            CSNLog.d("Reports " + reports);
             this.client.sendReports(reports, new Client.AdReportsHandler() {
                 @Override
                 public void onResponse() {
-                    CSNLog.d("Sent reports");
+
                 }
 
                 @Override
