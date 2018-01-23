@@ -248,8 +248,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAds(List<Ad> ads) {
                 Ad ad = ads.get(0);
-                if(ad != null) {
+
+                Boolean hasAds = false;
+
+                for(int i = 0; i < ads.size(); i++){
+                    if(ads.get(i) !=  null){
+                        hasAds = true;
+                        break;
+                    }
+                }
+
+                if(hasAds){
+                    Log.v(TAG, "has ads");
                     mainLayout.addView(adsController.renderAd(null, viewBinder, ad, true));
+                }
+
+                if(ad != null) {
+
                 }
             }
         });

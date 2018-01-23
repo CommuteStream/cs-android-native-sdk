@@ -28,7 +28,7 @@ CommuteStream Native Ads were built specifically for transit apps. Our SDK is pa
 
 Components are meant to be used where the publisher sees fit, but should be placed with the understanding that the ad data they display, will be relevant to the transit data surrounding them. The following components are available and listed in order of usage priority:
 
-<img width="500px" style="margin: 40px auto; display: block;" src="https://s3.amazonaws.com/commutestream-cdn/native-ad-sdk-readme-assets/components_example.png">
+<img width="500px" style="margin: 40px auto; display: block;" src="https://s3.amazonaws.com/commutestream-cdn/native-ad-sdk-readme-assets/android_components_diagram.png">
 
 - Headline - Displays a strong call-to-action or phrase that relates the value of the offer in as few words as possible –e.g., *"Free 12 oz. Coffee"*
 
@@ -44,7 +44,7 @@ When a user taps any of these components or grouping of them, an *Action Card* i
 
 Floats above the contents of the app and keeps the user experience and related transit information in context. The action card cannot be customized by the publisher.
 
-<img width="550px" style="margin: 40px auto; display: block;" src="https://s3.amazonaws.com/commutestream-cdn/native-ad-sdk-readme-assets/action_card_example.png">
+<img width="550px" style="margin: 40px auto; display: block;" src="https://s3.amazonaws.com/commutestream-cdn/native-ad-sdk-readme-assets/android_action_card.png">
 
 ## Adding Components to a Layout
 
