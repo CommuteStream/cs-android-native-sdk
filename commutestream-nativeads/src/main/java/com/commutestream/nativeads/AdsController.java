@@ -38,7 +38,7 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
-    public final static String SDK_VERSION = "1.2.8";
+    public final static String SDK_VERSION = "1.2.9";
     private UUID adUnit;
     private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private boolean limitTracking = true;
