@@ -348,7 +348,7 @@ public class AdsController {
         }
         for (NetworkInterface intf : interfaces) {
             for(InetAddress addr : Collections.list(intf.getInetAddresses())) {
-                if(!addr.isLoopbackAddress()) {
+                if(!addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) {
                     ipAddresses.add(addr);
                 }
             }
