@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 heroComponentBuilder.setKind(HeroKind.Image)
                     .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero));
         } else {
-            String html = "<!DOCTYPE html><html><head></head><body style=\"margin:0px\"><a href=\"https://commutestream.com\"><img style=\"padding:0px\" src=\"https://ncusar.org/modelarableague/wordpress/wp-content/uploads/2013/04/busacc-1200x627.jpg\"></a></body></html>";
+            String html = "<!DOCTYPE html><html style=\"padding:0px; margin: 0px;\"><body style=\"padding:0px; margin: 0px;\"><a border=\"0\" style=\"padding:0px; margin: 0px;\" href=\"https://commutestream.com\"><img border=\"0\" style=\"padding:0px; margin: 0px;\" src=\"https://ncusar.org/modelarableague/wordpress/wp-content/uploads/2013/04/busacc-1200x627.jpg\"></a></body></html>";
             if(fancyHero) {
                 html = "<!DOCTYPE html><html><body style=\"margin:0px\"><iframe width=\"1200\" height=\"627\" src=\"https://www.youtube.com/embed/CLsMnItzhC0?rel=0&amp;start=1&amp;autoplay=1;loop=1\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
             }
