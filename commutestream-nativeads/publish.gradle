@@ -122,3 +122,4 @@ if(System.getenv("BINTRAY_ORG")) {
 }
 
 bintrayUpload.dependsOn("assembleRelease")
+bintrayUpload.dependsOn("generatePomFileForProductionPublication")
