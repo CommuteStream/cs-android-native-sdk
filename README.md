@@ -17,7 +17,7 @@ Add the SDK as a gradle dependency in the build.gradle dependencies block:
 **Gradle**
 ```groovy
 dependencies {
-    implementation 'com.commutestream.sdk:native-sdk:1.2.10'
+    implementation 'com.commutestream.nativeads:native-sdk:1.2.10'
 }
 ```
 
