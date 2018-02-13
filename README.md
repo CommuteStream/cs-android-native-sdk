@@ -8,6 +8,7 @@ These instructions assume you have already followed the instructions at: [https:
 ## Requirements
 
 - Minimum API 14 (Android 4.0)
+- Google Play Services through Maven
 - Most likely requires multidex enabled for any significantly large application
 - ```<uses-permission android:name="android.permission.INTERNET" /> in AndroidManifest.xml```
 
