@@ -177,3 +177,40 @@ The ``renderAd`` method accepts four parameters:
 ```java
 mainLayout.addView(adsController.renderAd(null, viewBinder, ad, true));
 ```
+
+## Agency IDs
+The following ids are to be used in the various method calls above where "agency_id" is required. We are adding new markets reguarly; the current list is availible [here](https://commutestream.com/markets).
+
+| Description   | Agency ID / CS ID  |
+| ------------- | -----|
+| Chicago CTA | cta |
+| Chicago Metra | METRA |
+| Chicago PACE | PACE |
+| Boston MBTA | MBTA |
+| Pittsburgh PAAC | PAAC |
+| Minneapolis / St. Paul Area | MINNEAPOLIS |
+| Washington DC Area | DC |
+| Los Angeles County | LA |
+| Philadelphia - SEPTA Bus | SEPTABUS |
+| Philadelphia - SEPTA Rail | SEPTARAIL |
+| Seattle Area (King County Metro) | SEATTLE |
+| Miami-Dade County Metro | MIAMI |
+| Portland - TriMet | TRIMET |
+| Salt Lake City Area - UTA | UTA |
+| Utah - Cache Valley Transit District | CVTD |
+| NYC - MTA Subway | MTA_SUBWAY |
+| NYC - MTA Bus | MTA_BUS |
+| NYC - MTA Metro North | MTA_METRO_NORTH |
+| NYC - MTA Long Island Railroad | MTA_LONG_ISLAND |
+| New Jersey - NJ Transit Rail | NJT_RAIL |
+| New Jersey - NJ Transit Bus | NJT_BUS |
+| San Diego - Metropolitan Transit System | MTS |
+| San Francisco - SFMTA | SFMTA |
+| San Francisco - Bay Area Rapid Transit | BART |
+| San Francisco - AC Transit | AC |
+| Baltimore - Maryland Transit Administration | MARYLAND |
+| Las Vegas - RTC | RTC |
+| Tampa - Hillsborough Area Regional Transit | HART |
+| London - Transport for London | TFL |
+| Toronto - Toronto Transit Commission | TTC |
+
