@@ -179,7 +179,7 @@ mainLayout.addView(adsController.renderAd(null, viewBinder, ad, true));
 ```
 
 ## Agency IDs
-The following ids are to be used in the various method calls above where "agency_id" is required. We are adding new markets reguarly; the current list is availible [here](https://commutestream.com/markets).
+The following ids are to be used in the various method calls above where "agency_id" is required. We are adding new markets reguarly.
 
 | Description   | Agency ID / CS ID  |
 | ------------- | -----|
