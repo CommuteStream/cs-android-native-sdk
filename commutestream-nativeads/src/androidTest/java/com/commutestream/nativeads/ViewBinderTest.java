@@ -12,10 +12,11 @@ import org.junit.runner.RunWith;
 public class ViewBinderTest {
     @Test
     public void newViewBinder() {
-        ViewBinder v = new ViewBinder(R.layout.csn_ad_test)
-                .setLogo(R.id.native_ad_logo)
-                .setHeadline(R.id.native_ad_headline)
-                .setBody(R.id.native_ad_body);
+        ViewBinder v = new ViewBinder(R.layout.csn_test_ad_layout)
+                .setLogo(R.id.csn_test_ad_logo)
+                .setHeadline(R.id.csn_test_ad_headline)
+                .setBody(R.id.csn_test_ad_body)
+                .setAdvertiser(R.id.csn_test_ad_advertiser);
         //TODO assert bindings
     }
 }

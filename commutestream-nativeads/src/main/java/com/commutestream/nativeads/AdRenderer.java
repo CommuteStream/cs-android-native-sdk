@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.commutestream.nativeads.components.AdvertiserComponent;
 import com.commutestream.nativeads.components.BodyComponent;
 import com.commutestream.nativeads.components.Component;
 import com.commutestream.nativeads.components.HeadlineComponent;
@@ -61,6 +62,14 @@ public class AdRenderer {
         TextView bodyView = view.findViewById(binder.getBody());
         if(bodyView != null && body != null) {
             bodyView.setText(body.getBody());
+        }
+    }
+
+    protected void renderAdvertiser(View view, Ad ad, ViewBinder binder) {
+        AdvertiserComponent advertiser = ad.getAdvertiser();
+        TextView advertiserView = view.findViewById(binder.getAdvertiser());
+        if(advertiserView != null && advertiser != null) {
+            advertiserView.setText(advertiser.getAdvertiser());
         }
     }
 }

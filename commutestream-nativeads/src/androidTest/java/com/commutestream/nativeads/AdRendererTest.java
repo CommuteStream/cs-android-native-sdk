@@ -21,7 +21,7 @@ import static android.support.test.InstrumentationRegistry.getContext;
 public class AdRendererTest {
     @Test
     public void newAdRenderer() {
-        ViewBinder viewBinder = new ViewBinder(R.layout.csn_ad_test);
+        ViewBinder viewBinder = new ViewBinder(R.layout.csn_test_ad_layout);
         Ad.Builder adBuilder = new Ad.Builder();
         ActionComponent action1 = new ActionComponent.Builder()
                                 .setComponentID(0)

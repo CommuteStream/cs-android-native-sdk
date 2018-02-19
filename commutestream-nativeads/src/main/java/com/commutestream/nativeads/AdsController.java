@@ -38,7 +38,7 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
-    public final static String SDK_VERSION = "1.2.10";
+    public final static String SDK_VERSION = "1.2.11";
     private UUID adUnit;
     private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private boolean limitTracking = true;
@@ -223,16 +223,19 @@ public class AdsController {
         View logoView = view.findViewById(viewBinder.getLogo());
         View headlineView = view.findViewById(viewBinder.getHeadline());
         View bodyView = view.findViewById(viewBinder.getBody());
+        View advertiserView = view.findViewById(viewBinder.getAdvertiser());
         monitorView(view, ad, ad.getView());
         monitorView(logoView, ad, ad.getLogo());
         monitorView(headlineView, ad, ad.getHeadline());
         monitorView(bodyView, ad, ad.getBody());
+        monitorView(advertiserView, ad, ad.getAdvertiser());
         if(parentTouch) {
             addClickHandler(view, ad, ad.getView());
         } else {
             addClickHandler(logoView, ad, ad.getLogo());
             addClickHandler(headlineView, ad, ad.getHeadline());
             addClickHandler(bodyView, ad, ad.getBody());
+            addClickHandler(advertiserView, ad, ad.getBody());
         }
     }
 

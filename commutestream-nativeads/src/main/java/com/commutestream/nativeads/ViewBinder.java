@@ -8,6 +8,7 @@ public class ViewBinder {
     private int logo = 0;
     private int headline = 0;
     private int body = 0;
+    private int advertiser = 0;
 
     public ViewBinder(int layout) {
         this.layout = layout;
@@ -41,6 +42,15 @@ public class ViewBinder {
 
     public ViewBinder setBody(int body) {
         this.body = body;
+        return this;
+    }
+
+    public int getAdvertiser() {
+        return advertiser;
+    }
+
+    public ViewBinder setAdvertiser(int advertiser) {
+        this.advertiser = advertiser;
         return this;
     }
 }

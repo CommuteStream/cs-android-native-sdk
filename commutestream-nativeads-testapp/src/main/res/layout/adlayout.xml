@@ -34,6 +34,12 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
             android:text="Body"/>
+        <TextView
+            android:id="@+id/advertiserView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Advertiser"/>
     </LinearLayout>
 
 </LinearLayout>

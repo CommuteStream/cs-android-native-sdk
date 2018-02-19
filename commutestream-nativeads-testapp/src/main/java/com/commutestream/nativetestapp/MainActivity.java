@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 .build()                ;
         LogoComponent logoComponent = new LogoComponent.Builder()
                 .setComponentID(rnd.nextLong())
-                .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.test_logo))
+                .setLogo(BitmapFactory.decodeResource(getResources(), R.drawable.csn_test_logo))
                 .build();
         HeroComponent.Builder heroComponentBuilder = new HeroComponent.Builder()
                 .setComponentID(rnd.nextLong());
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 heroComponentBuilder.setKind(HeroKind.Image)
-                        .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.test_hero));
+                        .setImage(BitmapFactory.decodeResource(getResources(), R.drawable.csn_test_hero));
 
         }
         HeroComponent heroComponent = heroComponentBuilder.build();
@@ -166,7 +166,8 @@ public class MainActivity extends AppCompatActivity {
         final ViewBinder viewBinder = new ViewBinder(R.layout.adlayout)
                 .setHeadline(R.id.headlineView)
                 .setLogo(R.id.logoView)
-                .setBody(R.id.bodyView);
+                .setBody(R.id.bodyView)
+                .setAdvertiser(R.id.advertiserView);
 
         AdRenderer adRenderer = new AdRenderer(this);
         final View view = adRenderer.render(null, viewBinder, ad);

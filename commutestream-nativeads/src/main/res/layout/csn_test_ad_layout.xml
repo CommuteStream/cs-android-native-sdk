@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/native_ad_logo"
+        android:id="@+id/csn_test_ad_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:color/transparent"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="49dp" />
 
     <TextView
-        android:id="@+id/native_ad_headline"
+        android:id="@+id/csn_test_ad_headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -23,7 +23,15 @@
         tools:layout_editor_absoluteY="49dp" />
 
     <TextView
-        android:id="@+id/native_ad_body"
+        android:id="@+id/csn_test_ad_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <TextView
+        android:id="@+id/csn_test_ad_advertiser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
