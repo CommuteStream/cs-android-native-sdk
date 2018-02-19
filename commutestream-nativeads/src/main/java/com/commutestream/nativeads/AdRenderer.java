@@ -36,6 +36,7 @@ public class AdRenderer {
         renderLogo(view, ad, binder);
         renderHeadline(view, ad, binder);
         renderBody(view, ad, binder);
+        renderAdvertiser(view, ad, binder);
     }
 
     protected void renderLogo(View view, Ad ad, ViewBinder binder) {

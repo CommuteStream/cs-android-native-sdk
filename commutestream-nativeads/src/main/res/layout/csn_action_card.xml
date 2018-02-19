@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerVertical="true"
-    android:layout_gravity="center_vertical"
-    android:background="#aa000000"
-    >
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerVertical="true"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#aa000000">
 
         <LinearLayout
             android:id="@+id/csn_action_card_layout"
@@ -34,6 +30,8 @@
                 android:layout_marginBottom="6dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginRight="80dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Powered By CommuteStream"
                 android:scaleType="fitCenter"
                 android:src="@drawable/csn_power_by" />
 
@@ -80,6 +78,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_gravity="top"
+                        android:contentDescription="Hero"
                         android:scaleType="centerCrop"
                         android:src="@drawable/csn_test_hero" />
                 </FrameLayout>
@@ -97,6 +96,7 @@
                         android:layout_height="55dp"
                         android:layout_gravity="top|center"
                         android:layout_weight="1"
+                        android:contentDescription="Logo"
                         android:padding="5dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/csn_test_logo" />
@@ -133,7 +133,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="1dp"
                             android:gravity="center_vertical"
-                            android:text="Body Text"
+                            android:text="Advertiser Text"
                             android:textColor="#999999"
                             android:textSize="10sp" />
 
@@ -160,8 +160,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="0dp"
             android:layout_marginTop="35dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Close"
             android:scaleType="fitCenter"
             android:src="@drawable/csn_close_action_card" />
     </LinearLayout>
-
-</FrameLayout>
