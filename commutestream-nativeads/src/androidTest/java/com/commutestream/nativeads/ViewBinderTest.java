@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 public class ViewBinderTest {
     @Test
     public void newViewBinder() {
-        ViewBinder v = new ViewBinder(R.layout.test_layout)
+        ViewBinder v = new ViewBinder(R.layout.csn_ad_test)
                 .setLogo(R.id.native_ad_logo)
                 .setHeadline(R.id.native_ad_headline)
                 .setBody(R.id.native_ad_body);

@@ -35,7 +35,7 @@
                 android:layout_marginLeft="80dp"
                 android:layout_marginRight="80dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/powered_by_commutestream" />
+                android:src="@drawable/csn_power_by" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                         android:layout_height="fill_parent"
                         android:layout_gravity="top"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/test_hero" />
+                        android:src="@drawable/csn_test_hero" />
                 </FrameLayout>
 
                 <LinearLayout
@@ -99,7 +99,7 @@
                         android:layout_weight="1"
                         android:padding="5dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/test_logo" />
+                        android:src="@drawable/csn_test_logo" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -161,7 +161,7 @@
             android:layout_marginBottom="0dp"
             android:layout_marginTop="35dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/close_action_card" />
+            android:src="@drawable/csn_close_action_card" />
     </LinearLayout>
 
 </FrameLayout>

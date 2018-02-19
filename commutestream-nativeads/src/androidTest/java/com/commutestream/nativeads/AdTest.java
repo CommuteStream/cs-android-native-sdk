@@ -3,7 +3,6 @@ package com.commutestream.nativeads;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.test.filters.SmallTest;
@@ -109,8 +108,8 @@ public class AdTest {
     }
 
     private Csnmessages.NativeAd randomAd(Random r) {
-        byte[] logoBytes = getDrawable(R.drawable.test_logo, Bitmap.CompressFormat.PNG);
-        byte[] heroBytes = getDrawable(R.drawable.test_hero, Bitmap.CompressFormat.JPEG);
+        byte[] logoBytes = getDrawable(R.drawable.csn_test_logo, Bitmap.CompressFormat.PNG);
+        byte[] heroBytes = getDrawable(R.drawable.csn_test_hero, Bitmap.CompressFormat.JPEG);
         return Csnmessages.NativeAd.newBuilder()
                 .setRequestId(r.nextLong())
                 .setAdId(r.nextLong())

@@ -25,7 +25,6 @@ import com.commutestream.nativeads.protobuf.Csnmessages;
 import com.commutestream.nativeads.reporting.ReportEngine;
 
 import android.os.Handler;
-import java.util.logging.LogRecord;
 
 public class SecondaryPopUp {
     private Activity activity;
@@ -53,7 +52,7 @@ public class SecondaryPopUp {
     public SecondaryPopUp(final Activity activity, ReportEngine reportEngine) {
         this.reportEngine = reportEngine;
         this.activity = activity;
-        View view = activity.getLayoutInflater().inflate(R.layout.secondary_view, null);
+        View view = activity.getLayoutInflater().inflate(R.layout.csn_action_card, null);
         popup = new PopupWindow(view, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT, true);
         popup.setContentView(view);
         titleView = view.findViewById(R.id.secondary_ad_title);

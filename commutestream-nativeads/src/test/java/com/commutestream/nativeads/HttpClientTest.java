@@ -151,7 +151,7 @@ public class HttpClientTest {
 
         server.enqueue(new MockResponse()
                 .setResponseCode(200)
-                .setHeader("Content-Type", "application/x-test_logo-protobuf")
+                .setHeader("Content-Type", "application/x-csn_test_logo-protobuf")
                 .setBody(body));
         HttpUrl baseUrl = server.url("/");
         HttpClient client = new HttpClient(baseUrl);
