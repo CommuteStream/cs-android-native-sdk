@@ -55,22 +55,22 @@ public class SecondaryPopUp {
         View view = activity.getLayoutInflater().inflate(R.layout.csn_action_card, null);
         popup = new PopupWindow(view, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT, true);
         popup.setContentView(view);
-        titleView = view.findViewById(R.id.secondary_ad_title);
-        subtitleView = view.findViewById(R.id.secondary_ad_subtitle);
-        logoView = view.findViewById(R.id.secondary_ad_logo);
-        headlineView = view.findViewById(R.id.secondary_ad_headline);
-        bodyView = view.findViewById(R.id.secondary_ad_body);
-        advertiserView = view.findViewById(R.id.secondary_ad_advertiser);
-        heroFrame = view.findViewById(R.id.secondary_ad_hero);
-        actionsLayout = view.findViewById(R.id.secondary_ad_actions);
-        closeButton = view.findViewById(R.id.secondary_ad_close);
+        titleView = view.findViewById(R.id.csn_action_card_title);
+        subtitleView = view.findViewById(R.id.csn_action_card_subtitle);
+        logoView = view.findViewById(R.id.csn_action_card_logo);
+        headlineView = view.findViewById(R.id.csn_action_card_headline);
+        bodyView = view.findViewById(R.id.csn_action_card_body);
+        advertiserView = view.findViewById(R.id.csn_action_card_advertiser);
+        heroFrame = view.findViewById(R.id.csn_action_card_hero);
+        actionsLayout = view.findViewById(R.id.csn_action_card_actions);
+        closeButton = view.findViewById(R.id.csn_action_card_close_btn);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popup.dismiss();
             }
         });
-        poweredByCSButton = view.findViewById(R.id.powered_by_cs_button);
+        poweredByCSButton = view.findViewById(R.id.csn_action_card_power_by_btn);
         poweredByCSButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
