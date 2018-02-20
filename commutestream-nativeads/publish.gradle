@@ -11,7 +11,7 @@ ext {
     publishArtifact = 'commutestream-nativeads'
 
     libraryName = 'CommuteStream SDK for Native Ads'
-    libraryVersion = '1.2.11'
+    libraryVersion = '1.2.12'
     libraryDescription = 'SDK that This allows you to add CommuteStream native ads to your app'
 
     siteUrl = 'https://github.com/commutestream/cs-android-native-sdk'

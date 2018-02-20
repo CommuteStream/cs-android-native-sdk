@@ -38,7 +38,7 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
-    public final static String SDK_VERSION = "1.2.11";
+    public final static String SDK_VERSION = "1.2.12";
     private UUID adUnit;
     private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private boolean limitTracking = true;
@@ -73,6 +73,15 @@ public class AdsController {
     public void pause() {
         sendReports();
         stopPeriodicTasks();
+    }
+
+    /**
+     * Close action card if open, can be used in Activity onBackPressed for better ergonomics
+     *
+     * @return true if the pop was open and closed by this call, false otherwise
+     */
+    public boolean closeActionCard() {
+        return popUp.close();
     }
 
     /**

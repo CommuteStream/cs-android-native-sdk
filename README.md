@@ -18,7 +18,7 @@ Add the SDK as a gradle dependency in the build.gradle dependencies block:
 **Gradle**
 ```groovy
 dependencies {
-    implementation 'com.commutestream.nativeads:commutestream-nativeads:1.2.10'
+    implementation 'com.commutestream.nativeads:commutestream-nativeads:1.2.12'
 }
 ```
 
@@ -160,6 +160,13 @@ public void onResume() {
 public void onPause() {
     super.onPause();
     adsController.pause();
+}
+
+@Override
+public void onBackPressed() {
+    if(!adsController.closeActionCard()) {
+        super.onBackPressed();
+    }
 }
 ```
 

@@ -344,4 +344,11 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         this.adsController.pause();
     }
+
+    @Override
+    public void onBackPressed() {
+        if(!this.adsController.closeActionCard()) {
+            super.onBackPressed();
+        }
+    }
 }

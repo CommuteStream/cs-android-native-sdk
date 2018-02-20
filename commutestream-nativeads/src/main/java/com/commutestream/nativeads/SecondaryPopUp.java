@@ -108,8 +108,22 @@ public class SecondaryPopUp {
         });
     }
 
+    /**
+     * Close pop up, returns true if closed
+     */
+    public boolean close() {
+        if(popup.isShowing()) {
+            popup.dismiss();
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-
+    /**
+     * Create pop up with given ad
+     * @param ad
+     */
     public void displayAd(final Ad ad) {
         titleView.setText(ad.getSecondaryAction().getTitle());
         subtitleView.setText(ad.getSecondaryAction().getSubtitle());
