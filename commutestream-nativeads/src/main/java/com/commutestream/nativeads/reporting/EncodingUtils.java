@@ -6,6 +6,7 @@ import android.os.Build;
 import com.commutestream.nativeads.protobuf.Csnmessages;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.UUID;
 
 public class EncodingUtils {
@@ -30,7 +31,10 @@ public class EncodingUtils {
     }
 
     public static byte[] encodeUUID(UUID uuid) {
-        return ByteBuffer.allocate(16).putLong(uuid.getMostSignificantBits()).putLong(uuid.getLeastSignificantBits()).array();
+        ByteBuffer bb = ByteBuffer.allocate(16);
+        bb.putLong(uuid.getMostSignificantBits());
+        bb.putLong(uuid.getLeastSignificantBits());
+        return bb.array();
     }
 
     public static Csnmessages.DeviceLocation encodeDeviceLocation(Location location) {

@@ -38,9 +38,10 @@ public class AdsController {
         void onAds(List<Ad> ads);
     }
 
-    public final static String SDK_VERSION = "1.2.12";
+    public final static String SDK_VERSION = "1.2.13";
+    private final UUID EMPTY_UUID = UUID.fromString("00000000-0000-0000-0000-000000000000");
     private UUID adUnit;
-    private UUID aaid = UUID.fromString("00000000-0000-0000-0000-000000000000");
+    private UUID aaid = EMPTY_UUID;
     private boolean limitTracking = true;
     private Collection<InetAddress> ipAddresses = new ArrayList<>();
     private ReportEngine reportEngine;
@@ -50,6 +51,16 @@ public class AdsController {
     private VisibilityMonitor visMonitor;
     private SecondaryPopUp popUp;
     private Timer periodicTimer;
+    private class PendingAdsRequest {
+        List<AdRequest> adRequests;
+        AdResponseHandler responseHandler;
+
+        public PendingAdsRequest(List<AdRequest> adRequests, AdResponseHandler responseHandler) {
+            this.adRequests = adRequests;
+            this.responseHandler = responseHandler;
+        }
+    }
+    private ArrayList<PendingAdsRequest> pendingAdRequests;
 
     public AdsController(Activity activity, Client client, UUID adUnit) {
         init(activity, client, adUnit);
@@ -92,6 +103,10 @@ public class AdsController {
      * @param responseHandler
      */
     public void fetchAds(final List<AdRequest> requests, final AdResponseHandler responseHandler) {
+        if(!isReady()) {
+            this.pendingAdRequests.add(new PendingAdsRequest(requests, responseHandler));
+            return;
+        }
         final ArrayList<Ad> nullAds = new ArrayList<>(requests.size());
         for(AdRequest request : requests) {
             nullAds.add(null);
@@ -178,9 +193,14 @@ public class AdsController {
         adRenderer = new AdRenderer(activity);
         visMonitor = new VisibilityMonitor(reportEngine);
         popUp = new SecondaryPopUp(activity, reportEngine);
+        pendingAdRequests = new ArrayList<>(2);
         loadIpAddresses();
         loadAaid();
         resume();
+    }
+
+    private boolean isReady() {
+        return this.aaid != EMPTY_UUID;
     }
 
     private void startPeriodicTasks() {
@@ -210,6 +230,9 @@ public class AdsController {
     }
 
     private void sendReports() {
+        if(!isReady()) {
+            return;
+        }
         try {
             Csnmessages.AdReports reports = reportEngine.build();
             this.client.sendReports(reports, new Client.AdReportsHandler() {
@@ -390,7 +413,6 @@ public class AdsController {
                 final String aaidStr = adInfo.getId();
                 final UUID aaid = UUID.fromString(aaidStr);
                 final boolean limitTracking = adInfo.isLimitAdTrackingEnabled();
-
                 controller.setDeviceInfo(aaid,limitTracking);
             }
         }).start();
@@ -401,6 +423,14 @@ public class AdsController {
         this.aaid = aaid;
         this.limitTracking = limitTracking;
         this.reportEngine.setDeviceInfo(aaid, limitTracking);
+        performPending();
+    }
+
+    private synchronized void performPending() {
+        for(PendingAdsRequest pendingRequest : pendingAdRequests) {
+            fetchAds(pendingRequest.adRequests, pendingRequest.responseHandler);
+        }
+        pendingAdRequests.clear();
     }
 
     private void loadDeviceLocation() {

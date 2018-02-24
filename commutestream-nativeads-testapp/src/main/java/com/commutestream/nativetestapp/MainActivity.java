@@ -219,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(timerTask, 10000);
 
         adsController = new AdsController(this, UUID.fromString("c546ebee-6f2a-4f48-947b-e580c45e4f79"));
+
+        /*
         final View view2 = adsController.renderAd(null, viewBinder, ad, true);
         mainLayout.addView(view2);
         final View view3 = adsController.renderAd(null, viewBinder, ad, false);
@@ -239,12 +241,13 @@ public class MainActivity extends AppCompatActivity {
         Ad ad4 = generateAd(rnd, 3, true);
         View view8 = adsController.renderAd(null, viewBinder, ad4, true);
         mainLayout.addView(view8);
+        */
         locationListen();
 
         ArrayList<AdRequest> adRequests = new ArrayList<>(1);
-        AdRequest handAndStone = new AdRequest();
-        handAndStone.addStop("cta", "", "1580");
-        adRequests.add(handAndStone);
+        AdRequest testAgency = new AdRequest();
+        testAgency.addAgency("MTA_BUS");
+        adRequests.add(testAgency);
         adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
             @Override
             public void onAds(List<Ad> ads) {
