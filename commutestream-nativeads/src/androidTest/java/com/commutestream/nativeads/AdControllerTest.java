@@ -16,6 +16,8 @@ import org.junit.runner.RunWith;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -33,19 +35,18 @@ public class AdControllerTest {
     @Rule
     public ActivityTestRule<TestActivity> mActivityRule = new ActivityTestRule<>(TestActivity.class);
 
-    @Test
-    public void testDefaultConstructor() {
-        AdsController adsController = new AdsController(mActivityRule.getActivity(), UUID.randomUUID());
-    }
 
     @Test
     public void testFetchAdsNone() {
         MockClient mockClient = new MockClient();
+        mockClient.addMarketsResponse(new HashSet<String>(Arrays.asList("bogus")));
+
         AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
         ArrayList<AdRequest> adRequests = new ArrayList<>();
         adRequests.add(adRequest);
+
         adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
             @Override
             public void onAds(List<Ad> ads) {
@@ -59,6 +60,8 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsOne() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
+        mockClient.addMarketsResponse(new HashSet<String>(Arrays.asList("bogus")));
+
         AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
@@ -84,6 +87,8 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsDuplicates() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
+        mockClient.addMarketsResponse(new HashSet<String>(Arrays.asList("bogus")));
+
         AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest = new AdRequest();
         adRequest.addAgency("bogus");
@@ -113,6 +118,8 @@ public class AdControllerTest {
     @Test
     public void testFetchAdsComplex() throws NoSuchAlgorithmException {
         MockClient mockClient = new MockClient();
+        mockClient.addMarketsResponse(new HashSet<String>(Arrays.asList("palmer", "arnold")));
+
         AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
         AdRequest adRequest1 = new AdRequest();
         adRequest1.addAgency("palmer");
@@ -145,6 +152,27 @@ public class AdControllerTest {
                 assertThat(ad1.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(0).getAdId()));
                 assertThat(ad2.getAdID(), equalTo(adResponses.getAdResponses(1).getAds(0).getAdId()));
                 assertThat(ad3.getAdID(), equalTo(adResponses.getAdResponses(0).getAds(1).getAdId()));
+            }
+        });
+    }
+
+    @Test
+    public void testFetchAdsFilteredMarket() throws NoSuchAlgorithmException {
+        MockClient mockClient = new MockClient();
+        mockClient.addMarketsResponse(new HashSet<String>(Arrays.asList("arnold")));
+
+        AdsController adsController = new AdsController(mActivityRule.getActivity(), mockClient, UUID.randomUUID());
+        AdRequest adRequest1 = new AdRequest();
+        adRequest1.addAgency("palmer");
+        ArrayList<AdRequest> adRequests = new ArrayList<>();
+        adRequests.add(adRequest1);
+        adsController.fetchAds(adRequests, new AdsController.AdResponseHandler() {
+            @Override
+            public void onAds(List<Ad> ads) {
+                assertThat(ads, notNullValue());
+                assertThat(ads.size(), equalTo(1));
+                Ad ad1 = ads.get(0);
+                assertThat(ad1, nullValue());
             }
         });
     }

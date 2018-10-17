@@ -53,6 +53,32 @@ public class AdRequest {
         return stops;
     }
 
+    public int numOfTransit() { return agencies.size() + routes.size() + stops.size(); };
+
+    public void removeUnknownAgencies(HashSet<String> knownAgencies) {
+        HashSet<TransitAgency> newAgencies = new HashSet<>();
+        HashSet<TransitRoute> newRoutes = new HashSet<>();
+        HashSet<TransitStop> newStops = new HashSet<>();
+        for(TransitAgency agency : this.agencies) {
+            if (knownAgencies.contains(agency.getAgencyID())) {
+                newAgencies.add(agency);
+            }
+        }
+        for(TransitRoute route : this.routes) {
+            if (knownAgencies.contains(route.getAgencyID())) {
+                newRoutes.add(route);
+            }
+        }
+        for(TransitStop stop : this.stops) {
+            if (knownAgencies.contains(stop.getAgencyID())) {
+                newStops.add(stop);
+            }
+        }
+        this.agencies = newAgencies;
+        this.routes = newRoutes;
+        this.stops = newStops;
+    }
+
     public byte[] sha256() throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         for(TransitAgency agency : agencies) {

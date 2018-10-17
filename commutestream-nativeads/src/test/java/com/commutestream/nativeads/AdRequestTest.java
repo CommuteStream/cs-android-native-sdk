@@ -3,8 +3,12 @@ package com.commutestream.nativeads;
 import org.junit.Test;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.HashSet;
+
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 
 public class AdRequestTest {
@@ -56,5 +60,24 @@ public class AdRequestTest {
         hash = ar.sha256();
         ar.addStop("bogus", "route", "stop");
         assertThat(hash, not(ar.sha256()));
+    }
+
+    @Test
+    public void testRemoveUnknownAgencies() throws NoSuchAlgorithmException {
+        AdRequest ar = new AdRequest();
+        byte[] hash = ar.sha256();
+        ar.addAgency("band");
+        assertThat(hash, not(ar.sha256()));
+        hash = ar.sha256();
+        ar.addRoute("heart", "route");
+        assertThat(hash, not(ar.sha256()));
+        hash = ar.sha256();
+        ar.addStop("acdc", "route", "stop");
+        assertThat(hash, not(ar.sha256()));
+        assertThat(ar.numOfTransit(), equalTo(3));
+        ar.removeUnknownAgencies(new HashSet<String>(Arrays.asList("band", "heart", "acdc")));
+        assertThat(ar.numOfTransit(), equalTo(3));
+        ar.removeUnknownAgencies(new HashSet<String>(Arrays.asList("palmer")));
+        assertThat(ar.numOfTransit(), equalTo(0));
     }
 }

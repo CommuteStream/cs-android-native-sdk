@@ -16,6 +16,7 @@ import com.google.protobuf.ByteString;
 import org.junit.Test;
 
 
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
@@ -27,6 +28,8 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
+
+import java.util.HashSet;
 
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
@@ -81,6 +84,27 @@ public class HttpClientTest {
         public void onResponse() {
             synchronized (this) {
                 this.response_count += 1;
+                notifyAll();
+            }
+        }
+        @Override
+        public void onFailure() {
+            synchronized (this) {
+                this.failure_count += 1;
+                notifyAll();
+            }
+        }
+    }
+
+    class TestMarketsHandler implements Client.MarketsHandler {
+        int response_count = 0;
+        int failure_count = 0;
+        HashSet<String> markets;
+        @Override
+        public void onResponse(HashSet<String> markets) {
+            synchronized (this) {
+                this.response_count += 1;
+                this.markets = markets;
                 notifyAll();
             }
         }
@@ -275,6 +299,43 @@ public class HttpClientTest {
         server.shutdown();
         TestAdReportsHandler handler = new TestAdReportsHandler();
         client.sendReports(reports, handler);
+        assertThat(handler.failure_count, greaterThan(0));
+    }
+
+    @Test
+    public void getMarketsSuccess() throws Exception {
+        MockWebServer server = new MockWebServer();
+        server.enqueue(new MockResponse()
+                .setResponseCode(200)
+                .setHeader("Content-Type", "application/json")
+                .setBody("[\"test\"]"));
+        HttpUrl baseUrl = server.url("/");
+        HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
+        TestMarketsHandler handler = new TestMarketsHandler();
+        client.getMarkets(handler);
+        assertThat(handler.response_count, greaterThan(0));
+        assertThat(handler.markets, contains("test"));
+    }
+
+    @Test
+    public void getMarketsFailure() throws Exception {
+        MockWebServer server = new MockWebServer();
+        HttpUrl baseUrl = server.url("/");
+        HttpClient client = new HttpClient(baseUrl);
+        client.setAsync(false);
+
+        int[] codes = {400, 500, 503};
+        for(int code : codes) {
+            server.enqueue(new MockResponse()
+                    .setResponseCode(code));
+            TestMarketsHandler handler = new TestMarketsHandler();
+            client.getMarkets(handler);
+            assertThat(handler.failure_count, greaterThan(0));
+        }
+        server.shutdown();
+        TestMarketsHandler handler = new TestMarketsHandler();
+        client.getMarkets(handler);
         assertThat(handler.failure_count, greaterThan(0));
     }
 }

@@ -44,6 +44,7 @@ public class AdsController {
     private UUID aaid = EMPTY_UUID;
     private boolean limitTracking = true;
     private Collection<InetAddress> ipAddresses = new ArrayList<>();
+    private HashSet<String> markets;
     private ReportEngine reportEngine;
     private Activity activity;
     private Client client;
@@ -120,29 +121,33 @@ public class AdsController {
         };
         try {
             Csnmessages.AdRequests msg = buildRequestsMessage(requests);
-            client.getAds(msg, new Client.AdResponseHandler() {
-                @Override
-                public void onResponse(Csnmessages.AdResponses responses) {
-                    try {
-                        final List<Ad> ads = decodeResponses(requests, responses);
-                        Runnable adsRunner = new Runnable() {
-                            @Override
-                            public void run() {
-                                responseHandler.onAds(ads);
-                            }
-                        };
-                        mainHandler.post(adsRunner);
-                    } catch (Exception ex) {
-                        CSNLog.e("Failed to decode ad responses: " + ex);
+            if(msg.getAdRequestsCount() > 0) {
+                client.getAds(msg, new Client.AdResponseHandler() {
+                    @Override
+                    public void onResponse(Csnmessages.AdResponses responses) {
+                        try {
+                            final List<Ad> ads = decodeResponses(requests, responses);
+                            Runnable adsRunner = new Runnable() {
+                                @Override
+                                public void run() {
+                                    responseHandler.onAds(ads);
+                                }
+                            };
+                            mainHandler.post(adsRunner);
+                        } catch (Exception ex) {
+                            CSNLog.e("Failed to decode ad responses: " + ex);
+                            mainHandler.post(nullAdsRunner);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure() {
                         mainHandler.post(nullAdsRunner);
                     }
-                }
-
-                @Override
-                public void onFailure() {
-                    mainHandler.post(nullAdsRunner);
-                }
-            });
+                });
+            } else {
+                mainHandler.post(nullAdsRunner);
+            }
         } catch (Exception ex) {
             CSNLog.e("Failed to encode ad requests: " + ex);
             mainHandler.post(nullAdsRunner);
@@ -194,13 +199,11 @@ public class AdsController {
         visMonitor = new VisibilityMonitor(reportEngine);
         popUp = new SecondaryPopUp(activity, reportEngine);
         pendingAdRequests = new ArrayList<>(2);
-        loadIpAddresses();
-        loadAaid();
         resume();
     }
 
     private boolean isReady() {
-        return this.aaid != EMPTY_UUID;
+        return this.aaid != EMPTY_UUID && this.markets != null;
     }
 
     private void startPeriodicTasks() {
@@ -210,6 +213,7 @@ public class AdsController {
         final AdsController adsController = this;
         visMonitor.startMonitoring();
         periodicTimer = new Timer("CommuteStream AdsController", true);
+        adsController.loadMarkets();
         adsController.loadAaid();
         adsController.loadIpAddresses();
         periodicTimer.schedule(new TimerTask() {
@@ -320,6 +324,10 @@ public class AdsController {
     private Csnmessages.AdRequests buildRequestsMessage(List<AdRequest> requests) throws NoSuchAlgorithmException {
         HashMap<ByteBuffer, Csnmessages.AdRequest.Builder> requestBuilders = new HashMap();
         for(AdRequest request: requests) {
+            request.removeUnknownAgencies(markets);
+            if(request.numOfTransit() == 0) {
+                continue;
+            }
             ByteBuffer sha256 = ByteBuffer.wrap(request.sha256());
             Csnmessages.AdRequest.Builder builder = requestBuilders.get(sha256);
             if(builder == null) {
@@ -371,6 +379,24 @@ public class AdsController {
                     .setStopId(stop.getStopID()).build());
         }
         return builder;
+    }
+
+    private void loadMarkets() {
+        final AdsController controller = this;
+        this.client.getMarkets(new Client.MarketsHandler() {
+            @Override
+            public void onResponse(HashSet<String> markets) {
+                controller.setMarkets(markets);
+            }
+
+            @Override
+            public void onFailure() {
+            }
+        });
+    }
+
+    private synchronized void setMarkets(HashSet<String> markets) {
+        this.markets = markets;
     }
 
     private void loadIpAddresses() {

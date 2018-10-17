@@ -4,7 +4,11 @@ import com.commutestream.nativeads.protobuf.Csnmessages.AdResponses;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdRequests;
 import com.commutestream.nativeads.protobuf.Csnmessages.AdReports;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.IOException;
+import java.util.HashSet;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -43,23 +47,33 @@ public class HttpClient implements Client {
         mClient = new OkHttpClient.Builder().addInterceptor(new HttpLogger()).build();
     }
 
-    private void performRequest(Request request, Callback callback) {
+    private void performSyncRequest(Request request, Callback callback) {
         Call call = mClient.newCall(request);
-        if(!mAsync) {
+        try {
+            Response response = call.execute();
             try {
-                Response response = call.execute();
-                try {
-                    callback.onResponse(call, response);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                callback.onResponse(call, response);
             } catch (IOException e) {
-                callback.onFailure(call, e);
+                e.printStackTrace();
             }
-        } else {
-            call.enqueue(callback);
+        } catch (IOException e) {
+            callback.onFailure(call, e);
         }
     }
+
+    private void performAsyncRequest(Request request, Callback callback) {
+        Call call = mClient.newCall(request);
+        call.enqueue(callback);
+    }
+
+    private void performRequest(Request request, Callback callback) {
+        if (!mAsync) {
+            performSyncRequest(request, callback);
+        } else {
+            performAsyncRequest(request, callback);
+        }
+    }
+
 
     @Override
     public void getAds(AdRequests requests, final AdResponseHandler handler) {
@@ -108,6 +122,45 @@ public class HttpClient implements Client {
             public void onResponse(Call call, Response response) throws IOException {
                 if(response.code() == 204) {
                     handler.onResponse();
+                } else {
+                    handler.onFailure();
+                }
+            }
+        };
+        performRequest(request, callback);
+    }
+
+    @Override
+    public void getMarkets(final MarketsHandler handler) {
+        HttpUrl url = mBaseURL.newBuilder("/v2/markets")
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .get()
+                .build();
+        Callback callback = new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                handler.onFailure();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if(response.code() == 200) {
+                    JSONArray json;
+                    try {
+                        json = new JSONArray(response.body().string());
+                        HashSet<String> markets = new HashSet<>();
+                        int n = json.length();
+                        for(int i = 0; i < n; i++) {
+                            markets.add(json.getString(i));
+                        }
+                        handler.onResponse(markets);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        handler.onFailure();
+                        return;
+                    }
                 } else {
                     handler.onFailure();
                 }
