@@ -13,15 +13,15 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.commutestream.nativeads.components.ActionKind;
 import com.commutestream.nativeads.components.HeroKind;
@@ -41,7 +41,6 @@ import com.commutestream.nativeads.components.SecondaryActionComponent;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.security.Security;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
