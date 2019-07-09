@@ -344,17 +344,17 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               agencyId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -374,6 +374,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_fieldAccessorTable
@@ -416,6 +417,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -425,6 +427,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAgencyIdBytes().isEmpty()) {
@@ -433,6 +436,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -456,11 +460,10 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency) obj;
 
-      boolean result = true;
-      result = result && getAgencyId()
-          .equals(other.getAgencyId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getAgencyId()
+          .equals(other.getAgencyId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -547,6 +550,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -554,6 +558,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -577,6 +582,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_fieldAccessorTable
@@ -599,6 +605,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         agencyId_ = "";
@@ -606,15 +613,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitAgency_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency build() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency result = buildPartial();
         if (!result.isInitialized()) {
@@ -623,6 +633,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency(this);
         result.agencyId_ = agencyId_;
@@ -630,32 +641,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency)other);
@@ -676,10 +694,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -766,11 +786,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -792,6 +814,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<TransitAgency>
         PARSER = new com.google.protobuf.AbstractParser<TransitAgency>() {
+      @java.lang.Override
       public TransitAgency parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -809,6 +832,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -880,13 +904,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -897,6 +914,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               routeId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -916,6 +940,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_fieldAccessorTable
@@ -992,6 +1017,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1001,6 +1027,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAgencyIdBytes().isEmpty()) {
@@ -1012,6 +1039,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1038,13 +1066,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute) obj;
 
-      boolean result = true;
-      result = result && getAgencyId()
-          .equals(other.getAgencyId());
-      result = result && getRouteId()
-          .equals(other.getRouteId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getAgencyId()
+          .equals(other.getAgencyId())) return false;
+      if (!getRouteId()
+          .equals(other.getRouteId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1133,6 +1160,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1140,6 +1168,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1163,6 +1192,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_fieldAccessorTable
@@ -1185,6 +1215,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         agencyId_ = "";
@@ -1194,15 +1225,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitRoute_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute build() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute result = buildPartial();
         if (!result.isInitialized()) {
@@ -1211,6 +1245,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute(this);
         result.agencyId_ = agencyId_;
@@ -1219,32 +1254,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute)other);
@@ -1269,10 +1311,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1428,11 +1472,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1454,6 +1500,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<TransitRoute>
         PARSER = new com.google.protobuf.AbstractParser<TransitRoute>() {
+      @java.lang.Override
       public TransitRoute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1471,6 +1518,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1553,13 +1601,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1576,6 +1617,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               stopId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1595,6 +1643,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_fieldAccessorTable
@@ -1705,6 +1754,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1714,6 +1764,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getAgencyIdBytes().isEmpty()) {
@@ -1728,6 +1779,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1757,15 +1809,14 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.TransitStop other = (com.commutestream.nativeads.protobuf.Csnmessages.TransitStop) obj;
 
-      boolean result = true;
-      result = result && getAgencyId()
-          .equals(other.getAgencyId());
-      result = result && getRouteId()
-          .equals(other.getRouteId());
-      result = result && getStopId()
-          .equals(other.getStopId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getAgencyId()
+          .equals(other.getAgencyId())) return false;
+      if (!getRouteId()
+          .equals(other.getRouteId())) return false;
+      if (!getStopId()
+          .equals(other.getStopId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1856,6 +1907,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1863,6 +1915,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1886,6 +1939,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_fieldAccessorTable
@@ -1908,6 +1962,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         agencyId_ = "";
@@ -1919,15 +1974,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_TransitStop_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop build() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitStop result = buildPartial();
         if (!result.isInitialized()) {
@@ -1936,6 +1994,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.TransitStop result = new com.commutestream.nativeads.protobuf.Csnmessages.TransitStop(this);
         result.agencyId_ = agencyId_;
@@ -1945,32 +2004,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.TransitStop) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.TransitStop)other);
@@ -1999,10 +2065,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2227,11 +2295,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2253,6 +2323,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<TransitStop>
         PARSER = new com.google.protobuf.AbstractParser<TransitStop>() {
+      @java.lang.Override
       public TransitStop parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2270,6 +2341,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.TransitStop getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2303,8 +2375,6 @@ public final class Csnmessages {
       super(builder);
     }
     private Location() {
-      lat_ = 0D;
-      lon_ = 0D;
     }
 
     @java.lang.Override
@@ -2331,13 +2401,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 17: {
 
               lat_ = input.readDouble();
@@ -2346,6 +2409,13 @@ public final class Csnmessages {
             case 25: {
 
               lon_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2365,6 +2435,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Location_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Location_fieldAccessorTable
@@ -2391,6 +2462,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2400,6 +2472,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (lat_ != 0D) {
@@ -2411,6 +2484,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2439,17 +2513,14 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.Location other = (com.commutestream.nativeads.protobuf.Csnmessages.Location) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLat())
-          == java.lang.Double.doubleToLongBits(
-              other.getLat()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLon())
-          == java.lang.Double.doubleToLongBits(
-              other.getLon()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Double.doubleToLongBits(getLat())
+          != java.lang.Double.doubleToLongBits(
+              other.getLat())) return false;
+      if (java.lang.Double.doubleToLongBits(getLon())
+          != java.lang.Double.doubleToLongBits(
+              other.getLon())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2540,6 +2611,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2547,6 +2619,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Location prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2570,6 +2643,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Location_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Location_fieldAccessorTable
@@ -2592,6 +2666,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         lat_ = 0D;
@@ -2601,15 +2676,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Location_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Location getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.Location.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Location build() {
         com.commutestream.nativeads.protobuf.Csnmessages.Location result = buildPartial();
         if (!result.isInitialized()) {
@@ -2618,6 +2696,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Location buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.Location result = new com.commutestream.nativeads.protobuf.Csnmessages.Location(this);
         result.lat_ = lat_;
@@ -2626,32 +2705,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Location) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Location)other);
@@ -2674,10 +2760,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2747,11 +2835,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2773,6 +2863,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<Location>
         PARSER = new com.google.protobuf.AbstractParser<Location>() {
+      @java.lang.Override
       public Location parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2790,6 +2881,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.Location getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2851,7 +2943,6 @@ public final class Csnmessages {
       super(builder);
     }
     private LocationComponent() {
-      componentId_ = 0L;
       name_ = "";
       address_ = "";
     }
@@ -2880,13 +2971,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -2917,6 +3001,13 @@ public final class Csnmessages {
               address_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2934,6 +3025,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationComponent_fieldAccessorTable
@@ -3040,6 +3132,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3049,6 +3142,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -3066,6 +3160,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3100,20 +3195,19 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && (hasLocation() == other.hasLocation());
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (hasLocation() != other.hasLocation()) return false;
       if (hasLocation()) {
-        result = result && getLocation()
-            .equals(other.getLocation());
+        if (!getLocation()
+            .equals(other.getLocation())) return false;
       }
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getAddress()
-          .equals(other.getAddress());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3209,6 +3303,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3216,6 +3311,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3239,6 +3335,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationComponent_fieldAccessorTable
@@ -3261,6 +3358,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -3278,15 +3376,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LocationComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -3295,6 +3396,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent(this);
         result.componentId_ = componentId_;
@@ -3309,32 +3411,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent)other);
@@ -3365,10 +3474,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3413,7 +3524,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Location location_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Location location_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder> locationBuilder_;
       /**
@@ -3667,11 +3778,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3693,6 +3806,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<LocationComponent>
         PARSER = new com.google.protobuf.AbstractParser<LocationComponent>() {
+      @java.lang.Override
       public LocationComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3710,6 +3824,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3757,10 +3872,8 @@ public final class Csnmessages {
       super(builder);
     }
     private HeroComponent() {
-      componentId_ = 0L;
       kind_ = 0;
       blob_ = com.google.protobuf.ByteString.EMPTY;
-      interactive_ = false;
     }
 
     @java.lang.Override
@@ -3787,13 +3900,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -3815,6 +3921,13 @@ public final class Csnmessages {
               interactive_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3832,6 +3945,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeroComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeroComponent_fieldAccessorTable
@@ -3860,6 +3974,7 @@ public final class Csnmessages {
      * <code>.google.protobuf.HeroKind kind = 2;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.HeroKind getKind() {
+      @SuppressWarnings("deprecation")
       com.commutestream.nativeads.protobuf.Csnmessages.HeroKind result = com.commutestream.nativeads.protobuf.Csnmessages.HeroKind.valueOf(kind_);
       return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeroKind.UNRECOGNIZED : result;
     }
@@ -3883,6 +3998,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3892,6 +4008,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -3909,6 +4026,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3945,16 +4063,15 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && kind_ == other.kind_;
-      result = result && getBlob()
-          .equals(other.getBlob());
-      result = result && (getInteractive()
-          == other.getInteractive());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (kind_ != other.kind_) return false;
+      if (!getBlob()
+          .equals(other.getBlob())) return false;
+      if (getInteractive()
+          != other.getInteractive()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4049,6 +4166,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4056,6 +4174,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4079,6 +4198,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeroComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeroComponent_fieldAccessorTable
@@ -4101,6 +4221,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -4114,15 +4235,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeroComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -4131,6 +4255,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent(this);
         result.componentId_ = componentId_;
@@ -4141,32 +4266,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent)other);
@@ -4195,10 +4327,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4262,6 +4396,7 @@ public final class Csnmessages {
        * <code>.google.protobuf.HeroKind kind = 2;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.HeroKind getKind() {
+        @SuppressWarnings("deprecation")
         com.commutestream.nativeads.protobuf.Csnmessages.HeroKind result = com.commutestream.nativeads.protobuf.Csnmessages.HeroKind.valueOf(kind_);
         return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeroKind.UNRECOGNIZED : result;
       }
@@ -4341,11 +4476,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4367,6 +4504,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<HeroComponent>
         PARSER = new com.google.protobuf.AbstractParser<HeroComponent>() {
+      @java.lang.Override
       public HeroComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4384,6 +4522,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4454,7 +4593,6 @@ public final class Csnmessages {
       super(builder);
     }
     private ActionComponent() {
-      componentId_ = 0L;
       kind_ = 0;
       url_ = "";
       title_ = "";
@@ -4484,13 +4622,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -4527,6 +4658,13 @@ public final class Csnmessages {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4544,6 +4682,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ActionComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ActionComponent_fieldAccessorTable
@@ -4572,6 +4711,7 @@ public final class Csnmessages {
      * <code>.google.protobuf.ActionKind kind = 2;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.ActionKind getKind() {
+      @SuppressWarnings("deprecation")
       com.commutestream.nativeads.protobuf.Csnmessages.ActionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ActionKind.valueOf(kind_);
       return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ActionKind.UNRECOGNIZED : result;
     }
@@ -4666,6 +4806,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4675,6 +4816,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -4695,6 +4837,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4733,21 +4876,20 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && kind_ == other.kind_;
-      result = result && getUrl()
-          .equals(other.getUrl());
-      result = result && getTitle()
-          .equals(other.getTitle());
-      result = result && (hasColors() == other.hasColors());
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (kind_ != other.kind_) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (hasColors() != other.hasColors()) return false;
       if (hasColors()) {
-        result = result && getColors()
-            .equals(other.getColors());
+        if (!getColors()
+            .equals(other.getColors())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4845,6 +4987,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4852,6 +4995,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4875,6 +5019,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ActionComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ActionComponent_fieldAccessorTable
@@ -4897,6 +5042,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -4916,15 +5062,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ActionComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -4933,6 +5082,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent(this);
         result.componentId_ = componentId_;
@@ -4948,32 +5098,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent)other);
@@ -5007,10 +5164,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5074,6 +5233,7 @@ public final class Csnmessages {
        * <code>.google.protobuf.ActionKind kind = 2;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.ActionKind getKind() {
+        @SuppressWarnings("deprecation")
         com.commutestream.nativeads.protobuf.Csnmessages.ActionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ActionKind.valueOf(kind_);
         return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ActionKind.UNRECOGNIZED : result;
       }
@@ -5237,7 +5397,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> colorsBuilder_;
       /**
@@ -5353,11 +5513,13 @@ public final class Csnmessages {
         }
         return colorsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5379,6 +5541,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<ActionComponent>
         PARSER = new com.google.protobuf.AbstractParser<ActionComponent>() {
+      @java.lang.Override
       public ActionComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5396,6 +5559,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5429,7 +5593,6 @@ public final class Csnmessages {
       super(builder);
     }
     private LogoComponent() {
-      componentId_ = 0L;
       image_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -5457,13 +5620,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -5472,6 +5628,13 @@ public final class Csnmessages {
             case 18: {
 
               image_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5491,6 +5654,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LogoComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LogoComponent_fieldAccessorTable
@@ -5517,6 +5681,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5526,6 +5691,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -5537,6 +5703,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5565,13 +5732,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getImage()
-          .equals(other.getImage());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5661,6 +5827,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5668,6 +5835,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5691,6 +5859,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LogoComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LogoComponent_fieldAccessorTable
@@ -5713,6 +5882,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -5722,15 +5892,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_LogoComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -5739,6 +5912,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent(this);
         result.componentId_ = componentId_;
@@ -5747,32 +5921,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent)other);
@@ -5795,10 +5976,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5871,11 +6054,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5897,6 +6082,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<LogoComponent>
         PARSER = new com.google.protobuf.AbstractParser<LogoComponent>() {
+      @java.lang.Override
       public LogoComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5914,6 +6100,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5952,7 +6139,6 @@ public final class Csnmessages {
       super(builder);
     }
     private HeadlineComponent() {
-      componentId_ = 0L;
       headline_ = "";
     }
 
@@ -5980,13 +6166,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -5996,6 +6175,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               headline_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6015,6 +6201,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeadlineComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeadlineComponent_fieldAccessorTable
@@ -6066,6 +6253,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6075,6 +6263,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -6086,6 +6275,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6113,13 +6303,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getHeadline()
-          .equals(other.getHeadline());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!getHeadline()
+          .equals(other.getHeadline())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6209,6 +6398,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6216,6 +6406,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6239,6 +6430,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeadlineComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeadlineComponent_fieldAccessorTable
@@ -6261,6 +6453,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -6270,15 +6463,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_HeadlineComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -6287,6 +6483,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent(this);
         result.componentId_ = componentId_;
@@ -6295,32 +6492,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent)other);
@@ -6344,10 +6548,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6460,11 +6666,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6486,6 +6694,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<HeadlineComponent>
         PARSER = new com.google.protobuf.AbstractParser<HeadlineComponent>() {
+      @java.lang.Override
       public HeadlineComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6503,6 +6712,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6541,7 +6751,6 @@ public final class Csnmessages {
       super(builder);
     }
     private BodyComponent() {
-      componentId_ = 0L;
       body_ = "";
     }
 
@@ -6569,13 +6778,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -6585,6 +6787,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               body_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6604,6 +6813,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_BodyComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_BodyComponent_fieldAccessorTable
@@ -6655,6 +6865,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6664,6 +6875,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -6675,6 +6887,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6702,13 +6915,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getBody()
-          .equals(other.getBody());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!getBody()
+          .equals(other.getBody())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6798,6 +7010,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6805,6 +7018,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6828,6 +7042,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_BodyComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_BodyComponent_fieldAccessorTable
@@ -6850,6 +7065,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -6859,15 +7075,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_BodyComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -6876,6 +7095,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent(this);
         result.componentId_ = componentId_;
@@ -6884,32 +7104,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent)other);
@@ -6933,10 +7160,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7049,11 +7278,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7075,6 +7306,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<BodyComponent>
         PARSER = new com.google.protobuf.AbstractParser<BodyComponent>() {
+      @java.lang.Override
       public BodyComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7092,6 +7324,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7130,7 +7363,6 @@ public final class Csnmessages {
       super(builder);
     }
     private AdvertiserComponent() {
-      componentId_ = 0L;
       advertiser_ = "";
     }
 
@@ -7158,13 +7390,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -7174,6 +7399,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               advertiser_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7193,6 +7425,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdvertiserComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdvertiserComponent_fieldAccessorTable
@@ -7244,6 +7477,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7253,6 +7487,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -7264,6 +7499,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7291,13 +7527,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getAdvertiser()
-          .equals(other.getAdvertiser());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!getAdvertiser()
+          .equals(other.getAdvertiser())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7387,6 +7622,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7394,6 +7630,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7417,6 +7654,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdvertiserComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdvertiserComponent_fieldAccessorTable
@@ -7439,6 +7677,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -7448,15 +7687,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdvertiserComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -7465,6 +7707,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent(this);
         result.componentId_ = componentId_;
@@ -7473,32 +7716,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent)other);
@@ -7522,10 +7772,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7638,11 +7890,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7664,6 +7918,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdvertiserComponent>
         PARSER = new com.google.protobuf.AbstractParser<AdvertiserComponent>() {
+      @java.lang.Override
       public AdvertiserComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7681,6 +7936,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7719,9 +7975,6 @@ public final class Csnmessages {
       super(builder);
     }
     private Color() {
-      red_ = 0;
-      green_ = 0;
-      blue_ = 0;
     }
 
     @java.lang.Override
@@ -7748,13 +8001,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               red_ = input.readUInt32();
@@ -7768,6 +8014,13 @@ public final class Csnmessages {
             case 24: {
 
               blue_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7787,6 +8040,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_fieldAccessorTable
@@ -7822,6 +8076,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7831,6 +8086,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (red_ != 0) {
@@ -7845,6 +8101,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7877,15 +8134,14 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.Color other = (com.commutestream.nativeads.protobuf.Csnmessages.Color) obj;
 
-      boolean result = true;
-      result = result && (getRed()
-          == other.getRed());
-      result = result && (getGreen()
-          == other.getGreen());
-      result = result && (getBlue()
-          == other.getBlue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRed()
+          != other.getRed()) return false;
+      if (getGreen()
+          != other.getGreen()) return false;
+      if (getBlue()
+          != other.getBlue()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7976,6 +8232,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7983,6 +8240,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Color prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8006,6 +8264,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_fieldAccessorTable
@@ -8028,6 +8287,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         red_ = 0;
@@ -8039,15 +8299,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Color_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Color getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.Color.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Color build() {
         com.commutestream.nativeads.protobuf.Csnmessages.Color result = buildPartial();
         if (!result.isInitialized()) {
@@ -8056,6 +8319,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Color buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.Color result = new com.commutestream.nativeads.protobuf.Csnmessages.Color(this);
         result.red_ = red_;
@@ -8065,32 +8329,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Color) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Color)other);
@@ -8116,10 +8387,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8215,11 +8488,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8241,6 +8516,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<Color>
         PARSER = new com.google.protobuf.AbstractParser<Color>() {
+      @java.lang.Override
       public Color parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8258,6 +8534,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.Color getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8333,13 +8610,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder subBuilder = null;
               if (background_ != null) {
@@ -8366,6 +8636,13 @@ public final class Csnmessages {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8383,6 +8660,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Colors_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Colors_fieldAccessorTable
@@ -8433,6 +8711,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8442,6 +8721,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (background_ != null) {
@@ -8453,6 +8733,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8481,19 +8762,18 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.Colors other = (com.commutestream.nativeads.protobuf.Csnmessages.Colors) obj;
 
-      boolean result = true;
-      result = result && (hasBackground() == other.hasBackground());
+      if (hasBackground() != other.hasBackground()) return false;
       if (hasBackground()) {
-        result = result && getBackground()
-            .equals(other.getBackground());
+        if (!getBackground()
+            .equals(other.getBackground())) return false;
       }
-      result = result && (hasForeground() == other.hasForeground());
+      if (hasForeground() != other.hasForeground()) return false;
       if (hasForeground()) {
-        result = result && getForeground()
-            .equals(other.getForeground());
+        if (!getForeground()
+            .equals(other.getForeground())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8586,6 +8866,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8593,6 +8874,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Colors prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8616,6 +8898,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Colors_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Colors_fieldAccessorTable
@@ -8638,6 +8921,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (backgroundBuilder_ == null) {
@@ -8655,15 +8939,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Colors_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors build() {
         com.commutestream.nativeads.protobuf.Csnmessages.Colors result = buildPartial();
         if (!result.isInitialized()) {
@@ -8672,6 +8959,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.Colors buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.Colors result = new com.commutestream.nativeads.protobuf.Csnmessages.Colors(this);
         if (backgroundBuilder_ == null) {
@@ -8688,32 +8976,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Colors) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Colors)other);
@@ -8736,10 +9031,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8758,7 +9055,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Color background_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Color background_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> backgroundBuilder_;
       /**
@@ -8875,7 +9172,7 @@ public final class Csnmessages {
         return backgroundBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Color foreground_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Color foreground_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Color, com.commutestream.nativeads.protobuf.Csnmessages.Color.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorOrBuilder> foregroundBuilder_;
       /**
@@ -8991,11 +9288,13 @@ public final class Csnmessages {
         }
         return foregroundBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9017,6 +9316,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<Colors>
         PARSER = new com.google.protobuf.AbstractParser<Colors>() {
+      @java.lang.Override
       public Colors parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9034,6 +9334,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.Colors getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9082,7 +9383,6 @@ public final class Csnmessages {
       super(builder);
     }
     private SecondaryActionComponent() {
-      componentId_ = 0L;
       title_ = "";
       subtitle_ = "";
     }
@@ -9111,13 +9411,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -9133,6 +9426,13 @@ public final class Csnmessages {
               java.lang.String s = input.readStringRequireUtf8();
 
               subtitle_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9152,6 +9452,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SecondaryActionComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SecondaryActionComponent_fieldAccessorTable
@@ -9237,6 +9538,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9246,6 +9548,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -9260,6 +9563,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9290,15 +9594,14 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && getTitle()
-          .equals(other.getTitle());
-      result = result && getSubtitle()
-          .equals(other.getSubtitle());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (!getSubtitle()
+          .equals(other.getSubtitle())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9390,6 +9693,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9397,6 +9701,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9420,6 +9725,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SecondaryActionComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SecondaryActionComponent_fieldAccessorTable
@@ -9442,6 +9748,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -9453,15 +9760,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_SecondaryActionComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -9470,6 +9780,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent(this);
         result.componentId_ = componentId_;
@@ -9479,32 +9790,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent)other);
@@ -9532,10 +9850,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9717,11 +10037,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9743,6 +10065,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<SecondaryActionComponent>
         PARSER = new com.google.protobuf.AbstractParser<SecondaryActionComponent>() {
+      @java.lang.Override
       public SecondaryActionComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9760,6 +10083,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9788,7 +10112,6 @@ public final class Csnmessages {
       super(builder);
     }
     private ViewComponent() {
-      componentId_ = 0L;
     }
 
     @java.lang.Override
@@ -9815,16 +10138,16 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9844,6 +10167,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_fieldAccessorTable
@@ -9861,6 +10185,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9870,6 +10195,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (componentId_ != 0L) {
@@ -9878,6 +10204,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9902,11 +10229,10 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent other = (com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9994,6 +10320,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10001,6 +10328,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10024,6 +10352,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_fieldAccessorTable
@@ -10046,6 +10375,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -10053,15 +10383,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ViewComponent_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent build() {
         com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent result = buildPartial();
         if (!result.isInitialized()) {
@@ -10070,6 +10403,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent result = new com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent(this);
         result.componentId_ = componentId_;
@@ -10077,32 +10411,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent)other);
@@ -10122,10 +10463,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10169,11 +10512,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10195,6 +10540,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<ViewComponent>
         PARSER = new com.google.protobuf.AbstractParser<ViewComponent>() {
+      @java.lang.Override
       public ViewComponent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10212,6 +10558,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10379,6 +10726,10 @@ public final class Csnmessages {
     com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder getHeroOrBuilder();
   }
   /**
+   * <pre>
+   *Deprecated, See Ad type
+   * </pre>
+   *
    * Protobuf type {@code google.protobuf.NativeAd}
    */
   public  static final class NativeAd extends
@@ -10391,9 +10742,6 @@ public final class Csnmessages {
       super(builder);
     }
     private NativeAd() {
-      requestId_ = 0L;
-      adId_ = 0L;
-      versionId_ = 0L;
       actions_ = java.util.Collections.emptyList();
     }
 
@@ -10421,13 +10769,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               requestId_ = input.readUInt64();
@@ -10457,7 +10798,7 @@ public final class Csnmessages {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -10569,6 +10910,13 @@ public final class Csnmessages {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10577,7 +10925,7 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
         }
         this.unknownFields = unknownFields.build();
@@ -10589,6 +10937,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_NativeAd_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_NativeAd_fieldAccessorTable
@@ -10849,6 +11198,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10858,6 +11208,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (requestId_ != 0L) {
@@ -10902,6 +11253,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10974,62 +11326,61 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.NativeAd other = (com.commutestream.nativeads.protobuf.Csnmessages.NativeAd) obj;
 
-      boolean result = true;
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && (getAdId()
-          == other.getAdId());
-      result = result && (getVersionId()
-          == other.getVersionId());
-      result = result && (hasColors() == other.hasColors());
+      if (getRequestId()
+          != other.getRequestId()) return false;
+      if (getAdId()
+          != other.getAdId()) return false;
+      if (getVersionId()
+          != other.getVersionId()) return false;
+      if (hasColors() != other.hasColors()) return false;
       if (hasColors()) {
-        result = result && getColors()
-            .equals(other.getColors());
+        if (!getColors()
+            .equals(other.getColors())) return false;
       }
-      result = result && getActionsList()
-          .equals(other.getActionsList());
-      result = result && (hasView() == other.hasView());
+      if (!getActionsList()
+          .equals(other.getActionsList())) return false;
+      if (hasView() != other.hasView()) return false;
       if (hasView()) {
-        result = result && getView()
-            .equals(other.getView());
+        if (!getView()
+            .equals(other.getView())) return false;
       }
-      result = result && (hasSecondaryActionScreen() == other.hasSecondaryActionScreen());
+      if (hasSecondaryActionScreen() != other.hasSecondaryActionScreen()) return false;
       if (hasSecondaryActionScreen()) {
-        result = result && getSecondaryActionScreen()
-            .equals(other.getSecondaryActionScreen());
+        if (!getSecondaryActionScreen()
+            .equals(other.getSecondaryActionScreen())) return false;
       }
-      result = result && (hasLogo() == other.hasLogo());
+      if (hasLogo() != other.hasLogo()) return false;
       if (hasLogo()) {
-        result = result && getLogo()
-            .equals(other.getLogo());
+        if (!getLogo()
+            .equals(other.getLogo())) return false;
       }
-      result = result && (hasHeadline() == other.hasHeadline());
+      if (hasHeadline() != other.hasHeadline()) return false;
       if (hasHeadline()) {
-        result = result && getHeadline()
-            .equals(other.getHeadline());
+        if (!getHeadline()
+            .equals(other.getHeadline())) return false;
       }
-      result = result && (hasBody() == other.hasBody());
+      if (hasBody() != other.hasBody()) return false;
       if (hasBody()) {
-        result = result && getBody()
-            .equals(other.getBody());
+        if (!getBody()
+            .equals(other.getBody())) return false;
       }
-      result = result && (hasAdvertiser() == other.hasAdvertiser());
+      if (hasAdvertiser() != other.hasAdvertiser()) return false;
       if (hasAdvertiser()) {
-        result = result && getAdvertiser()
-            .equals(other.getAdvertiser());
+        if (!getAdvertiser()
+            .equals(other.getAdvertiser())) return false;
       }
-      result = result && (hasLocation() == other.hasLocation());
+      if (hasLocation() != other.hasLocation()) return false;
       if (hasLocation()) {
-        result = result && getLocation()
-            .equals(other.getLocation());
+        if (!getLocation()
+            .equals(other.getLocation())) return false;
       }
-      result = result && (hasHero() == other.hasHero());
+      if (hasHero() != other.hasHero()) return false;
       if (hasHero()) {
-        result = result && getHero()
-            .equals(other.getHero());
+        if (!getHero()
+            .equals(other.getHero())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11163,6 +11514,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11170,6 +11522,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.NativeAd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11182,6 +11535,10 @@ public final class Csnmessages {
       return builder;
     }
     /**
+     * <pre>
+     *Deprecated, See Ad type
+     * </pre>
+     *
      * Protobuf type {@code google.protobuf.NativeAd}
      */
     public static final class Builder extends
@@ -11193,6 +11550,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_NativeAd_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_NativeAd_fieldAccessorTable
@@ -11216,6 +11574,7 @@ public final class Csnmessages {
           getActionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         requestId_ = 0L;
@@ -11287,15 +11646,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_NativeAd_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd build() {
         com.commutestream.nativeads.protobuf.Csnmessages.NativeAd result = buildPartial();
         if (!result.isInitialized()) {
@@ -11304,6 +11666,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.NativeAd result = new com.commutestream.nativeads.protobuf.Csnmessages.NativeAd(this);
         int from_bitField0_ = bitField0_;
@@ -11317,7 +11680,7 @@ public final class Csnmessages {
           result.colors_ = colorsBuilder_.build();
         }
         if (actionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             actions_ = java.util.Collections.unmodifiableList(actions_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -11370,32 +11733,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.NativeAd) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.NativeAd)other);
@@ -11474,10 +11844,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11575,7 +11947,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> colorsBuilder_;
       /**
@@ -11695,7 +12067,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_ =
         java.util.Collections.emptyList();
       private void ensureActionsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>(actions_);
           bitField0_ |= 0x00000010;
          }
@@ -11924,7 +12296,7 @@ public final class Csnmessages {
           actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder>(
                   actions_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           actions_ = null;
@@ -11932,7 +12304,7 @@ public final class Csnmessages {
         return actionsBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder> viewBuilder_;
       /**
@@ -12049,7 +12421,7 @@ public final class Csnmessages {
         return viewBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder> secondaryActionScreenBuilder_;
       /**
@@ -12166,7 +12538,7 @@ public final class Csnmessages {
         return secondaryActionScreenBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder> logoBuilder_;
       /**
@@ -12283,7 +12655,7 @@ public final class Csnmessages {
         return logoBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent headline_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent headline_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder> headlineBuilder_;
       /**
@@ -12400,7 +12772,7 @@ public final class Csnmessages {
         return headlineBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent body_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent body_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder> bodyBuilder_;
       /**
@@ -12517,7 +12889,7 @@ public final class Csnmessages {
         return bodyBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent advertiser_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent advertiser_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder> advertiserBuilder_;
       /**
@@ -12634,7 +13006,7 @@ public final class Csnmessages {
         return advertiserBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent location_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent location_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder> locationBuilder_;
       /**
@@ -12751,7 +13123,7 @@ public final class Csnmessages {
         return locationBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent hero_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent hero_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder> heroBuilder_;
       /**
@@ -12867,11 +13239,13 @@ public final class Csnmessages {
         }
         return heroBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12893,6 +13267,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<NativeAd>
         PARSER = new com.google.protobuf.AbstractParser<NativeAd>() {
+      @java.lang.Override
       public NativeAd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12910,7 +13285,2664 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.NativeAd getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.Ad)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 ad_id = 1;</code>
+     */
+    long getAdId();
+
+    /**
+     * <code>uint64 version_id = 2;</code>
+     */
+    long getVersionId();
+
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    boolean hasColors();
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors();
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder();
+
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> 
+        getActionsList();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index);
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    int getActionsCount();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+        getActionsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+        int index);
+
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    boolean hasView();
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView();
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder();
+
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    boolean hasSecondaryActionScreen();
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen();
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder();
+
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    boolean hasLogo();
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo();
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder();
+
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    boolean hasHeadline();
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline();
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder();
+
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    boolean hasBody();
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody();
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder();
+
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    boolean hasAdvertiser();
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser();
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder();
+
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    boolean hasLocation();
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation();
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder();
+
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    boolean hasHero();
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent getHero();
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder getHeroOrBuilder();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.Ad}
+   */
+  public  static final class Ad extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.Ad)
+      AdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Ad.newBuilder() to construct.
+    private Ad(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Ad() {
+      actions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Ad(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              adId_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              versionId_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder subBuilder = null;
+              if (colors_ != null) {
+                subBuilder = colors_.toBuilder();
+              }
+              colors_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.Colors.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(colors_);
+                colors_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              actions_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder subBuilder = null;
+              if (view_ != null) {
+                subBuilder = view_.toBuilder();
+              }
+              view_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(view_);
+                view_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder subBuilder = null;
+              if (secondaryActionScreen_ != null) {
+                subBuilder = secondaryActionScreen_.toBuilder();
+              }
+              secondaryActionScreen_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondaryActionScreen_);
+                secondaryActionScreen_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder subBuilder = null;
+              if (logo_ != null) {
+                subBuilder = logo_.toBuilder();
+              }
+              logo_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logo_);
+                logo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder subBuilder = null;
+              if (headline_ != null) {
+                subBuilder = headline_.toBuilder();
+              }
+              headline_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(headline_);
+                headline_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder subBuilder = null;
+              if (body_ != null) {
+                subBuilder = body_.toBuilder();
+              }
+              body_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(body_);
+                body_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder subBuilder = null;
+              if (advertiser_ != null) {
+                subBuilder = advertiser_.toBuilder();
+              }
+              advertiser_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(advertiser_);
+                advertiser_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder subBuilder = null;
+              if (location_ != null) {
+                subBuilder = location_.toBuilder();
+              }
+              location_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(location_);
+                location_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder subBuilder = null;
+              if (hero_ != null) {
+                subBuilder = hero_.toBuilder();
+              }
+              hero_ = input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hero_);
+                hero_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          actions_ = java.util.Collections.unmodifiableList(actions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Ad_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Ad_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.Ad.class, com.commutestream.nativeads.protobuf.Csnmessages.Ad.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int AD_ID_FIELD_NUMBER = 1;
+    private long adId_;
+    /**
+     * <code>uint64 ad_id = 1;</code>
+     */
+    public long getAdId() {
+      return adId_;
+    }
+
+    public static final int VERSION_ID_FIELD_NUMBER = 2;
+    private long versionId_;
+    /**
+     * <code>uint64 version_id = 2;</code>
+     */
+    public long getVersionId() {
+      return versionId_;
+    }
+
+    public static final int COLORS_FIELD_NUMBER = 3;
+    private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    public boolean hasColors() {
+      return colors_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
+      return colors_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+    }
+    /**
+     * <code>.google.protobuf.Colors colors = 3;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
+      return getColors();
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 4;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_;
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+        int index) {
+      return actions_.get(index);
+    }
+
+    public static final int VIEW_FIELD_NUMBER = 5;
+    private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_;
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    public boolean hasView() {
+      return view_ != null;
+    }
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView() {
+      return view_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+    }
+    /**
+     * <code>.google.protobuf.ViewComponent view = 5;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder() {
+      return getView();
+    }
+
+    public static final int SECONDARY_ACTION_SCREEN_FIELD_NUMBER = 6;
+    private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_;
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    public boolean hasSecondaryActionScreen() {
+      return secondaryActionScreen_ != null;
+    }
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen() {
+      return secondaryActionScreen_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance() : secondaryActionScreen_;
+    }
+    /**
+     * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder() {
+      return getSecondaryActionScreen();
+    }
+
+    public static final int LOGO_FIELD_NUMBER = 7;
+    private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_;
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    public boolean hasLogo() {
+      return logo_ != null;
+    }
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo() {
+      return logo_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.getDefaultInstance() : logo_;
+    }
+    /**
+     * <code>.google.protobuf.LogoComponent logo = 7;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder() {
+      return getLogo();
+    }
+
+    public static final int HEADLINE_FIELD_NUMBER = 8;
+    private com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent headline_;
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    public boolean hasHeadline() {
+      return headline_ != null;
+    }
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline() {
+      return headline_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.getDefaultInstance() : headline_;
+    }
+    /**
+     * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder() {
+      return getHeadline();
+    }
+
+    public static final int BODY_FIELD_NUMBER = 9;
+    private com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent body_;
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    public boolean hasBody() {
+      return body_ != null;
+    }
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody() {
+      return body_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.getDefaultInstance() : body_;
+    }
+    /**
+     * <code>.google.protobuf.BodyComponent body = 9;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder() {
+      return getBody();
+    }
+
+    public static final int ADVERTISER_FIELD_NUMBER = 10;
+    private com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent advertiser_;
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    public boolean hasAdvertiser() {
+      return advertiser_ != null;
+    }
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser() {
+      return advertiser_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.getDefaultInstance() : advertiser_;
+    }
+    /**
+     * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder() {
+      return getAdvertiser();
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 11;
+    private com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent location_;
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    public boolean hasLocation() {
+      return location_ != null;
+    }
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation() {
+      return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.getDefaultInstance() : location_;
+    }
+    /**
+     * <code>.google.protobuf.LocationComponent location = 11;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder() {
+      return getLocation();
+    }
+
+    public static final int HERO_FIELD_NUMBER = 12;
+    private com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent hero_;
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    public boolean hasHero() {
+      return hero_ != null;
+    }
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent getHero() {
+      return hero_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.getDefaultInstance() : hero_;
+    }
+    /**
+     * <code>.google.protobuf.HeroComponent hero = 12;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder getHeroOrBuilder() {
+      return getHero();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (adId_ != 0L) {
+        output.writeUInt64(1, adId_);
+      }
+      if (versionId_ != 0L) {
+        output.writeUInt64(2, versionId_);
+      }
+      if (colors_ != null) {
+        output.writeMessage(3, getColors());
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(4, actions_.get(i));
+      }
+      if (view_ != null) {
+        output.writeMessage(5, getView());
+      }
+      if (secondaryActionScreen_ != null) {
+        output.writeMessage(6, getSecondaryActionScreen());
+      }
+      if (logo_ != null) {
+        output.writeMessage(7, getLogo());
+      }
+      if (headline_ != null) {
+        output.writeMessage(8, getHeadline());
+      }
+      if (body_ != null) {
+        output.writeMessage(9, getBody());
+      }
+      if (advertiser_ != null) {
+        output.writeMessage(10, getAdvertiser());
+      }
+      if (location_ != null) {
+        output.writeMessage(11, getLocation());
+      }
+      if (hero_ != null) {
+        output.writeMessage(12, getHero());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (adId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, adId_);
+      }
+      if (versionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, versionId_);
+      }
+      if (colors_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getColors());
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, actions_.get(i));
+      }
+      if (view_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getView());
+      }
+      if (secondaryActionScreen_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getSecondaryActionScreen());
+      }
+      if (logo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getLogo());
+      }
+      if (headline_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getHeadline());
+      }
+      if (body_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getBody());
+      }
+      if (advertiser_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getAdvertiser());
+      }
+      if (location_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getLocation());
+      }
+      if (hero_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getHero());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.Ad)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.Ad other = (com.commutestream.nativeads.protobuf.Csnmessages.Ad) obj;
+
+      if (getAdId()
+          != other.getAdId()) return false;
+      if (getVersionId()
+          != other.getVersionId()) return false;
+      if (hasColors() != other.hasColors()) return false;
+      if (hasColors()) {
+        if (!getColors()
+            .equals(other.getColors())) return false;
+      }
+      if (!getActionsList()
+          .equals(other.getActionsList())) return false;
+      if (hasView() != other.hasView()) return false;
+      if (hasView()) {
+        if (!getView()
+            .equals(other.getView())) return false;
+      }
+      if (hasSecondaryActionScreen() != other.hasSecondaryActionScreen()) return false;
+      if (hasSecondaryActionScreen()) {
+        if (!getSecondaryActionScreen()
+            .equals(other.getSecondaryActionScreen())) return false;
+      }
+      if (hasLogo() != other.hasLogo()) return false;
+      if (hasLogo()) {
+        if (!getLogo()
+            .equals(other.getLogo())) return false;
+      }
+      if (hasHeadline() != other.hasHeadline()) return false;
+      if (hasHeadline()) {
+        if (!getHeadline()
+            .equals(other.getHeadline())) return false;
+      }
+      if (hasBody() != other.hasBody()) return false;
+      if (hasBody()) {
+        if (!getBody()
+            .equals(other.getBody())) return false;
+      }
+      if (hasAdvertiser() != other.hasAdvertiser()) return false;
+      if (hasAdvertiser()) {
+        if (!getAdvertiser()
+            .equals(other.getAdvertiser())) return false;
+      }
+      if (hasLocation() != other.hasLocation()) return false;
+      if (hasLocation()) {
+        if (!getLocation()
+            .equals(other.getLocation())) return false;
+      }
+      if (hasHero() != other.hasHero()) return false;
+      if (hasHero()) {
+        if (!getHero()
+            .equals(other.getHero())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAdId());
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionId());
+      if (hasColors()) {
+        hash = (37 * hash) + COLORS_FIELD_NUMBER;
+        hash = (53 * hash) + getColors().hashCode();
+      }
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      if (hasView()) {
+        hash = (37 * hash) + VIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getView().hashCode();
+      }
+      if (hasSecondaryActionScreen()) {
+        hash = (37 * hash) + SECONDARY_ACTION_SCREEN_FIELD_NUMBER;
+        hash = (53 * hash) + getSecondaryActionScreen().hashCode();
+      }
+      if (hasLogo()) {
+        hash = (37 * hash) + LOGO_FIELD_NUMBER;
+        hash = (53 * hash) + getLogo().hashCode();
+      }
+      if (hasHeadline()) {
+        hash = (37 * hash) + HEADLINE_FIELD_NUMBER;
+        hash = (53 * hash) + getHeadline().hashCode();
+      }
+      if (hasBody()) {
+        hash = (37 * hash) + BODY_FIELD_NUMBER;
+        hash = (53 * hash) + getBody().hashCode();
+      }
+      if (hasAdvertiser()) {
+        hash = (37 * hash) + ADVERTISER_FIELD_NUMBER;
+        hash = (53 * hash) + getAdvertiser().hashCode();
+      }
+      if (hasLocation()) {
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
+      }
+      if (hasHero()) {
+        hash = (37 * hash) + HERO_FIELD_NUMBER;
+        hash = (53 * hash) + getHero().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.Ad prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.Ad}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.Ad)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Ad_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Ad_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.Ad.class, com.commutestream.nativeads.protobuf.Csnmessages.Ad.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.Ad.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getActionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        adId_ = 0L;
+
+        versionId_ = 0L;
+
+        if (colorsBuilder_ == null) {
+          colors_ = null;
+        } else {
+          colors_ = null;
+          colorsBuilder_ = null;
+        }
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          actionsBuilder_.clear();
+        }
+        if (viewBuilder_ == null) {
+          view_ = null;
+        } else {
+          view_ = null;
+          viewBuilder_ = null;
+        }
+        if (secondaryActionScreenBuilder_ == null) {
+          secondaryActionScreen_ = null;
+        } else {
+          secondaryActionScreen_ = null;
+          secondaryActionScreenBuilder_ = null;
+        }
+        if (logoBuilder_ == null) {
+          logo_ = null;
+        } else {
+          logo_ = null;
+          logoBuilder_ = null;
+        }
+        if (headlineBuilder_ == null) {
+          headline_ = null;
+        } else {
+          headline_ = null;
+          headlineBuilder_ = null;
+        }
+        if (bodyBuilder_ == null) {
+          body_ = null;
+        } else {
+          body_ = null;
+          bodyBuilder_ = null;
+        }
+        if (advertiserBuilder_ == null) {
+          advertiser_ = null;
+        } else {
+          advertiser_ = null;
+          advertiserBuilder_ = null;
+        }
+        if (locationBuilder_ == null) {
+          location_ = null;
+        } else {
+          location_ = null;
+          locationBuilder_ = null;
+        }
+        if (heroBuilder_ == null) {
+          hero_ = null;
+        } else {
+          hero_ = null;
+          heroBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_Ad_descriptor;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.Ad getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.Ad.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.Ad build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.Ad result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.Ad buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.Ad result = new com.commutestream.nativeads.protobuf.Csnmessages.Ad(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.adId_ = adId_;
+        result.versionId_ = versionId_;
+        if (colorsBuilder_ == null) {
+          result.colors_ = colors_;
+        } else {
+          result.colors_ = colorsBuilder_.build();
+        }
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        if (viewBuilder_ == null) {
+          result.view_ = view_;
+        } else {
+          result.view_ = viewBuilder_.build();
+        }
+        if (secondaryActionScreenBuilder_ == null) {
+          result.secondaryActionScreen_ = secondaryActionScreen_;
+        } else {
+          result.secondaryActionScreen_ = secondaryActionScreenBuilder_.build();
+        }
+        if (logoBuilder_ == null) {
+          result.logo_ = logo_;
+        } else {
+          result.logo_ = logoBuilder_.build();
+        }
+        if (headlineBuilder_ == null) {
+          result.headline_ = headline_;
+        } else {
+          result.headline_ = headlineBuilder_.build();
+        }
+        if (bodyBuilder_ == null) {
+          result.body_ = body_;
+        } else {
+          result.body_ = bodyBuilder_.build();
+        }
+        if (advertiserBuilder_ == null) {
+          result.advertiser_ = advertiser_;
+        } else {
+          result.advertiser_ = advertiserBuilder_.build();
+        }
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
+        }
+        if (heroBuilder_ == null) {
+          result.hero_ = hero_;
+        } else {
+          result.hero_ = heroBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.Ad) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.Ad)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.Ad other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.Ad.getDefaultInstance()) return this;
+        if (other.getAdId() != 0L) {
+          setAdId(other.getAdId());
+        }
+        if (other.getVersionId() != 0L) {
+          setVersionId(other.getVersionId());
+        }
+        if (other.hasColors()) {
+          mergeColors(other.getColors());
+        }
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              actionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getActionsFieldBuilder() : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        if (other.hasView()) {
+          mergeView(other.getView());
+        }
+        if (other.hasSecondaryActionScreen()) {
+          mergeSecondaryActionScreen(other.getSecondaryActionScreen());
+        }
+        if (other.hasLogo()) {
+          mergeLogo(other.getLogo());
+        }
+        if (other.hasHeadline()) {
+          mergeHeadline(other.getHeadline());
+        }
+        if (other.hasBody()) {
+          mergeBody(other.getBody());
+        }
+        if (other.hasAdvertiser()) {
+          mergeAdvertiser(other.getAdvertiser());
+        }
+        if (other.hasLocation()) {
+          mergeLocation(other.getLocation());
+        }
+        if (other.hasHero()) {
+          mergeHero(other.getHero());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.Ad parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.Ad) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long adId_ ;
+      /**
+       * <code>uint64 ad_id = 1;</code>
+       */
+      public long getAdId() {
+        return adId_;
+      }
+      /**
+       * <code>uint64 ad_id = 1;</code>
+       */
+      public Builder setAdId(long value) {
+        
+        adId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 ad_id = 1;</code>
+       */
+      public Builder clearAdId() {
+        
+        adId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long versionId_ ;
+      /**
+       * <code>uint64 version_id = 2;</code>
+       */
+      public long getVersionId() {
+        return versionId_;
+      }
+      /**
+       * <code>uint64 version_id = 2;</code>
+       */
+      public Builder setVersionId(long value) {
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 version_id = 2;</code>
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.Colors colors_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> colorsBuilder_;
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public boolean hasColors() {
+        return colorsBuilder_ != null || colors_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Colors getColors() {
+        if (colorsBuilder_ == null) {
+          return colors_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+        } else {
+          return colorsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public Builder setColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
+        if (colorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          colors_ = value;
+          onChanged();
+        } else {
+          colorsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public Builder setColors(
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder builderForValue) {
+        if (colorsBuilder_ == null) {
+          colors_ = builderForValue.build();
+          onChanged();
+        } else {
+          colorsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public Builder mergeColors(com.commutestream.nativeads.protobuf.Csnmessages.Colors value) {
+        if (colorsBuilder_ == null) {
+          if (colors_ != null) {
+            colors_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.newBuilder(colors_).mergeFrom(value).buildPartial();
+          } else {
+            colors_ = value;
+          }
+          onChanged();
+        } else {
+          colorsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public Builder clearColors() {
+        if (colorsBuilder_ == null) {
+          colors_ = null;
+          onChanged();
+        } else {
+          colors_ = null;
+          colorsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder getColorsBuilder() {
+        
+        onChanged();
+        return getColorsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder getColorsOrBuilder() {
+        if (colorsBuilder_ != null) {
+          return colorsBuilder_.getMessageOrBuilder();
+        } else {
+          return colors_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors.getDefaultInstance() : colors_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Colors colors = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder> 
+          getColorsFieldBuilder() {
+        if (colorsBuilder_ == null) {
+          colorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.Colors, com.commutestream.nativeads.protobuf.Csnmessages.Colors.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ColorsOrBuilder>(
+                  getColors(),
+                  getParentForChildren(),
+                  isClean());
+          colors_ = null;
+        }
+        return colorsBuilder_;
+      }
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> actions_ =
+        java.util.Collections.emptyList();
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          actions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent>(actions_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> actionsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder setActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder setActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder addActions(com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder addActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder addActions(
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder addActions(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent> values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder getActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder getActionsOrBuilder(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder addActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.ActionComponent actions = 4;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder> 
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ActionComponentOrBuilder>(
+                  actions_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent view_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder> viewBuilder_;
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public boolean hasView() {
+        return viewBuilder_ != null || view_ != null;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent getView() {
+        if (viewBuilder_ == null) {
+          return view_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+        } else {
+          return viewBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public Builder setView(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent value) {
+        if (viewBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          view_ = value;
+          onChanged();
+        } else {
+          viewBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public Builder setView(
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder builderForValue) {
+        if (viewBuilder_ == null) {
+          view_ = builderForValue.build();
+          onChanged();
+        } else {
+          viewBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public Builder mergeView(com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent value) {
+        if (viewBuilder_ == null) {
+          if (view_ != null) {
+            view_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.newBuilder(view_).mergeFrom(value).buildPartial();
+          } else {
+            view_ = value;
+          }
+          onChanged();
+        } else {
+          viewBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public Builder clearView() {
+        if (viewBuilder_ == null) {
+          view_ = null;
+          onChanged();
+        } else {
+          view_ = null;
+          viewBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder getViewBuilder() {
+        
+        onChanged();
+        return getViewFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder getViewOrBuilder() {
+        if (viewBuilder_ != null) {
+          return viewBuilder_.getMessageOrBuilder();
+        } else {
+          return view_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.getDefaultInstance() : view_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.ViewComponent view = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder> 
+          getViewFieldBuilder() {
+        if (viewBuilder_ == null) {
+          viewBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ViewComponentOrBuilder>(
+                  getView(),
+                  getParentForChildren(),
+                  isClean());
+          view_ = null;
+        }
+        return viewBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent secondaryActionScreen_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder> secondaryActionScreenBuilder_;
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public boolean hasSecondaryActionScreen() {
+        return secondaryActionScreenBuilder_ != null || secondaryActionScreen_ != null;
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent getSecondaryActionScreen() {
+        if (secondaryActionScreenBuilder_ == null) {
+          return secondaryActionScreen_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance() : secondaryActionScreen_;
+        } else {
+          return secondaryActionScreenBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public Builder setSecondaryActionScreen(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent value) {
+        if (secondaryActionScreenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secondaryActionScreen_ = value;
+          onChanged();
+        } else {
+          secondaryActionScreenBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public Builder setSecondaryActionScreen(
+          com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder builderForValue) {
+        if (secondaryActionScreenBuilder_ == null) {
+          secondaryActionScreen_ = builderForValue.build();
+          onChanged();
+        } else {
+          secondaryActionScreenBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public Builder mergeSecondaryActionScreen(com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent value) {
+        if (secondaryActionScreenBuilder_ == null) {
+          if (secondaryActionScreen_ != null) {
+            secondaryActionScreen_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.newBuilder(secondaryActionScreen_).mergeFrom(value).buildPartial();
+          } else {
+            secondaryActionScreen_ = value;
+          }
+          onChanged();
+        } else {
+          secondaryActionScreenBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public Builder clearSecondaryActionScreen() {
+        if (secondaryActionScreenBuilder_ == null) {
+          secondaryActionScreen_ = null;
+          onChanged();
+        } else {
+          secondaryActionScreen_ = null;
+          secondaryActionScreenBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder getSecondaryActionScreenBuilder() {
+        
+        onChanged();
+        return getSecondaryActionScreenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder getSecondaryActionScreenOrBuilder() {
+        if (secondaryActionScreenBuilder_ != null) {
+          return secondaryActionScreenBuilder_.getMessageOrBuilder();
+        } else {
+          return secondaryActionScreen_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.getDefaultInstance() : secondaryActionScreen_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.SecondaryActionComponent secondary_action_screen = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder> 
+          getSecondaryActionScreenFieldBuilder() {
+        if (secondaryActionScreenBuilder_ == null) {
+          secondaryActionScreenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.SecondaryActionComponentOrBuilder>(
+                  getSecondaryActionScreen(),
+                  getParentForChildren(),
+                  isClean());
+          secondaryActionScreen_ = null;
+        }
+        return secondaryActionScreenBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent logo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder> logoBuilder_;
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public boolean hasLogo() {
+        return logoBuilder_ != null || logo_ != null;
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent getLogo() {
+        if (logoBuilder_ == null) {
+          return logo_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.getDefaultInstance() : logo_;
+        } else {
+          return logoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public Builder setLogo(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent value) {
+        if (logoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logo_ = value;
+          onChanged();
+        } else {
+          logoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public Builder setLogo(
+          com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder builderForValue) {
+        if (logoBuilder_ == null) {
+          logo_ = builderForValue.build();
+          onChanged();
+        } else {
+          logoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public Builder mergeLogo(com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent value) {
+        if (logoBuilder_ == null) {
+          if (logo_ != null) {
+            logo_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.newBuilder(logo_).mergeFrom(value).buildPartial();
+          } else {
+            logo_ = value;
+          }
+          onChanged();
+        } else {
+          logoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public Builder clearLogo() {
+        if (logoBuilder_ == null) {
+          logo_ = null;
+          onChanged();
+        } else {
+          logo_ = null;
+          logoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder getLogoBuilder() {
+        
+        onChanged();
+        return getLogoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder getLogoOrBuilder() {
+        if (logoBuilder_ != null) {
+          return logoBuilder_.getMessageOrBuilder();
+        } else {
+          return logo_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.getDefaultInstance() : logo_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.LogoComponent logo = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder> 
+          getLogoFieldBuilder() {
+        if (logoBuilder_ == null) {
+          logoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LogoComponentOrBuilder>(
+                  getLogo(),
+                  getParentForChildren(),
+                  isClean());
+          logo_ = null;
+        }
+        return logoBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent headline_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder> headlineBuilder_;
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public boolean hasHeadline() {
+        return headlineBuilder_ != null || headline_ != null;
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent getHeadline() {
+        if (headlineBuilder_ == null) {
+          return headline_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.getDefaultInstance() : headline_;
+        } else {
+          return headlineBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public Builder setHeadline(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent value) {
+        if (headlineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          headline_ = value;
+          onChanged();
+        } else {
+          headlineBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public Builder setHeadline(
+          com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder builderForValue) {
+        if (headlineBuilder_ == null) {
+          headline_ = builderForValue.build();
+          onChanged();
+        } else {
+          headlineBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public Builder mergeHeadline(com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent value) {
+        if (headlineBuilder_ == null) {
+          if (headline_ != null) {
+            headline_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.newBuilder(headline_).mergeFrom(value).buildPartial();
+          } else {
+            headline_ = value;
+          }
+          onChanged();
+        } else {
+          headlineBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public Builder clearHeadline() {
+        if (headlineBuilder_ == null) {
+          headline_ = null;
+          onChanged();
+        } else {
+          headline_ = null;
+          headlineBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder getHeadlineBuilder() {
+        
+        onChanged();
+        return getHeadlineFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder getHeadlineOrBuilder() {
+        if (headlineBuilder_ != null) {
+          return headlineBuilder_.getMessageOrBuilder();
+        } else {
+          return headline_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.getDefaultInstance() : headline_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.HeadlineComponent headline = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder> 
+          getHeadlineFieldBuilder() {
+        if (headlineBuilder_ == null) {
+          headlineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeadlineComponentOrBuilder>(
+                  getHeadline(),
+                  getParentForChildren(),
+                  isClean());
+          headline_ = null;
+        }
+        return headlineBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent body_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder> bodyBuilder_;
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public boolean hasBody() {
+        return bodyBuilder_ != null || body_ != null;
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent getBody() {
+        if (bodyBuilder_ == null) {
+          return body_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.getDefaultInstance() : body_;
+        } else {
+          return bodyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public Builder setBody(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent value) {
+        if (bodyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          body_ = value;
+          onChanged();
+        } else {
+          bodyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public Builder setBody(
+          com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder builderForValue) {
+        if (bodyBuilder_ == null) {
+          body_ = builderForValue.build();
+          onChanged();
+        } else {
+          bodyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public Builder mergeBody(com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent value) {
+        if (bodyBuilder_ == null) {
+          if (body_ != null) {
+            body_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.newBuilder(body_).mergeFrom(value).buildPartial();
+          } else {
+            body_ = value;
+          }
+          onChanged();
+        } else {
+          bodyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public Builder clearBody() {
+        if (bodyBuilder_ == null) {
+          body_ = null;
+          onChanged();
+        } else {
+          body_ = null;
+          bodyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder getBodyBuilder() {
+        
+        onChanged();
+        return getBodyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder getBodyOrBuilder() {
+        if (bodyBuilder_ != null) {
+          return bodyBuilder_.getMessageOrBuilder();
+        } else {
+          return body_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.getDefaultInstance() : body_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.BodyComponent body = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder> 
+          getBodyFieldBuilder() {
+        if (bodyBuilder_ == null) {
+          bodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.BodyComponentOrBuilder>(
+                  getBody(),
+                  getParentForChildren(),
+                  isClean());
+          body_ = null;
+        }
+        return bodyBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent advertiser_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder> advertiserBuilder_;
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public boolean hasAdvertiser() {
+        return advertiserBuilder_ != null || advertiser_ != null;
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent getAdvertiser() {
+        if (advertiserBuilder_ == null) {
+          return advertiser_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.getDefaultInstance() : advertiser_;
+        } else {
+          return advertiserBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public Builder setAdvertiser(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent value) {
+        if (advertiserBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          advertiser_ = value;
+          onChanged();
+        } else {
+          advertiserBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public Builder setAdvertiser(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder builderForValue) {
+        if (advertiserBuilder_ == null) {
+          advertiser_ = builderForValue.build();
+          onChanged();
+        } else {
+          advertiserBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public Builder mergeAdvertiser(com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent value) {
+        if (advertiserBuilder_ == null) {
+          if (advertiser_ != null) {
+            advertiser_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.newBuilder(advertiser_).mergeFrom(value).buildPartial();
+          } else {
+            advertiser_ = value;
+          }
+          onChanged();
+        } else {
+          advertiserBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public Builder clearAdvertiser() {
+        if (advertiserBuilder_ == null) {
+          advertiser_ = null;
+          onChanged();
+        } else {
+          advertiser_ = null;
+          advertiserBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder getAdvertiserBuilder() {
+        
+        onChanged();
+        return getAdvertiserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder getAdvertiserOrBuilder() {
+        if (advertiserBuilder_ != null) {
+          return advertiserBuilder_.getMessageOrBuilder();
+        } else {
+          return advertiser_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.getDefaultInstance() : advertiser_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.AdvertiserComponent advertiser = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder> 
+          getAdvertiserFieldBuilder() {
+        if (advertiserBuilder_ == null) {
+          advertiserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdvertiserComponentOrBuilder>(
+                  getAdvertiser(),
+                  getParentForChildren(),
+                  isClean());
+          advertiser_ = null;
+        }
+        return advertiserBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent location_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder> locationBuilder_;
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public boolean hasLocation() {
+        return locationBuilder_ != null || location_ != null;
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent getLocation() {
+        if (locationBuilder_ == null) {
+          return location_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.getDefaultInstance() : location_;
+        } else {
+          return locationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public Builder setLocation(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public Builder setLocation(
+          com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public Builder mergeLocation(com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent value) {
+        if (locationBuilder_ == null) {
+          if (location_ != null) {
+            location_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public Builder clearLocation() {
+        if (locationBuilder_ == null) {
+          location_ = null;
+          onChanged();
+        } else {
+          location_ = null;
+          locationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder getLocationBuilder() {
+        
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.getDefaultInstance() : location_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.LocationComponent location = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationComponentOrBuilder>(
+                  getLocation(),
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+
+      private com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent hero_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder> heroBuilder_;
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public boolean hasHero() {
+        return heroBuilder_ != null || hero_ != null;
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent getHero() {
+        if (heroBuilder_ == null) {
+          return hero_ == null ? com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.getDefaultInstance() : hero_;
+        } else {
+          return heroBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public Builder setHero(com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent value) {
+        if (heroBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hero_ = value;
+          onChanged();
+        } else {
+          heroBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public Builder setHero(
+          com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder builderForValue) {
+        if (heroBuilder_ == null) {
+          hero_ = builderForValue.build();
+          onChanged();
+        } else {
+          heroBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public Builder mergeHero(com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent value) {
+        if (heroBuilder_ == null) {
+          if (hero_ != null) {
+            hero_ =
+              com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.newBuilder(hero_).mergeFrom(value).buildPartial();
+          } else {
+            hero_ = value;
+          }
+          onChanged();
+        } else {
+          heroBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public Builder clearHero() {
+        if (heroBuilder_ == null) {
+          hero_ = null;
+          onChanged();
+        } else {
+          hero_ = null;
+          heroBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder getHeroBuilder() {
+        
+        onChanged();
+        return getHeroFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder getHeroOrBuilder() {
+        if (heroBuilder_ != null) {
+          return heroBuilder_.getMessageOrBuilder();
+        } else {
+          return hero_ == null ?
+              com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.getDefaultInstance() : hero_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.HeroComponent hero = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder> 
+          getHeroFieldBuilder() {
+        if (heroBuilder_ == null) {
+          heroBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponent.Builder, com.commutestream.nativeads.protobuf.Csnmessages.HeroComponentOrBuilder>(
+                  getHero(),
+                  getParentForChildren(),
+                  isClean());
+          hero_ = null;
+        }
+        return heroBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.Ad)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.Ad)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.Ad DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.Ad();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.Ad getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Ad>
+        PARSER = new com.google.protobuf.AbstractParser<Ad>() {
+      @java.lang.Override
+      public Ad parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Ad(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Ad> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ad> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.commutestream.nativeads.protobuf.Csnmessages.Ad getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13044,7 +16076,6 @@ public final class Csnmessages {
     }
     private AdRequest() {
       hashId_ = com.google.protobuf.ByteString.EMPTY;
-      numOfAds_ = 0;
       locations_ = java.util.Collections.emptyList();
       agencies_ = java.util.Collections.emptyList();
       routes_ = java.util.Collections.emptyList();
@@ -13075,13 +16106,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               hashId_ = input.readBytes();
@@ -13093,7 +16117,7 @@ public final class Csnmessages {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 locations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Location>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -13102,7 +16126,7 @@ public final class Csnmessages {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 agencies_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -13111,7 +16135,7 @@ public final class Csnmessages {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 routes_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -13120,12 +16144,19 @@ public final class Csnmessages {
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop>();
                 mutable_bitField0_ |= 0x00000020;
               }
               stops_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -13136,16 +16167,16 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           locations_ = java.util.Collections.unmodifiableList(locations_);
         }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           agencies_ = java.util.Collections.unmodifiableList(agencies_);
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           stops_ = java.util.Collections.unmodifiableList(stops_);
         }
         this.unknownFields = unknownFields.build();
@@ -13157,6 +16188,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequest_fieldAccessorTable
@@ -13324,6 +16356,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13333,6 +16366,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!hashId_.isEmpty()) {
@@ -13356,6 +16390,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13400,21 +16435,20 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdRequest other = (com.commutestream.nativeads.protobuf.Csnmessages.AdRequest) obj;
 
-      boolean result = true;
-      result = result && getHashId()
-          .equals(other.getHashId());
-      result = result && (getNumOfAds()
-          == other.getNumOfAds());
-      result = result && getLocationsList()
-          .equals(other.getLocationsList());
-      result = result && getAgenciesList()
-          .equals(other.getAgenciesList());
-      result = result && getRoutesList()
-          .equals(other.getRoutesList());
-      result = result && getStopsList()
-          .equals(other.getStopsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getHashId()
+          .equals(other.getHashId())) return false;
+      if (getNumOfAds()
+          != other.getNumOfAds()) return false;
+      if (!getLocationsList()
+          .equals(other.getLocationsList())) return false;
+      if (!getAgenciesList()
+          .equals(other.getAgenciesList())) return false;
+      if (!getRoutesList()
+          .equals(other.getRoutesList())) return false;
+      if (!getStopsList()
+          .equals(other.getStopsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -13519,6 +16553,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13526,6 +16561,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13553,6 +16589,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequest_fieldAccessorTable
@@ -13579,6 +16616,7 @@ public final class Csnmessages {
           getStopsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         hashId_ = com.google.protobuf.ByteString.EMPTY;
@@ -13612,15 +16650,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequest_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -13629,6 +16670,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdRequest result = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequest(this);
         int from_bitField0_ = bitField0_;
@@ -13636,7 +16678,7 @@ public final class Csnmessages {
         result.hashId_ = hashId_;
         result.numOfAds_ = numOfAds_;
         if (locationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             locations_ = java.util.Collections.unmodifiableList(locations_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -13645,7 +16687,7 @@ public final class Csnmessages {
           result.locations_ = locationsBuilder_.build();
         }
         if (agenciesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             agencies_ = java.util.Collections.unmodifiableList(agencies_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -13654,7 +16696,7 @@ public final class Csnmessages {
           result.agencies_ = agenciesBuilder_.build();
         }
         if (routesBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             routes_ = java.util.Collections.unmodifiableList(routes_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -13663,7 +16705,7 @@ public final class Csnmessages {
           result.routes_ = routesBuilder_.build();
         }
         if (stopsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             stops_ = java.util.Collections.unmodifiableList(stops_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -13676,32 +16718,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdRequest) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdRequest)other);
@@ -13828,10 +16877,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13909,7 +16960,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.Location> locations_ =
         java.util.Collections.emptyList();
       private void ensureLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           locations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.Location>(locations_);
           bitField0_ |= 0x00000004;
          }
@@ -14138,7 +17189,7 @@ public final class Csnmessages {
           locationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.Location, com.commutestream.nativeads.protobuf.Csnmessages.Location.Builder, com.commutestream.nativeads.protobuf.Csnmessages.LocationOrBuilder>(
                   locations_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           locations_ = null;
@@ -14149,7 +17200,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency> agencies_ =
         java.util.Collections.emptyList();
       private void ensureAgenciesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           agencies_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency>(agencies_);
           bitField0_ |= 0x00000008;
          }
@@ -14378,7 +17429,7 @@ public final class Csnmessages {
           agenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgency.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitAgencyOrBuilder>(
                   agencies_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           agencies_ = null;
@@ -14389,7 +17440,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute> routes_ =
         java.util.Collections.emptyList();
       private void ensureRoutesIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           routes_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute>(routes_);
           bitField0_ |= 0x00000010;
          }
@@ -14618,7 +17669,7 @@ public final class Csnmessages {
           routesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute, com.commutestream.nativeads.protobuf.Csnmessages.TransitRoute.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitRouteOrBuilder>(
                   routes_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           routes_ = null;
@@ -14629,7 +17680,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop> stops_ =
         java.util.Collections.emptyList();
       private void ensureStopsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           stops_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.TransitStop>(stops_);
           bitField0_ |= 0x00000020;
          }
@@ -14858,18 +17909,20 @@ public final class Csnmessages {
           stopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.TransitStop, com.commutestream.nativeads.protobuf.Csnmessages.TransitStop.Builder, com.commutestream.nativeads.protobuf.Csnmessages.TransitStopOrBuilder>(
                   stops_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           stops_ = null;
         }
         return stopsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -14891,6 +17944,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdRequest>
         PARSER = new com.google.protobuf.AbstractParser<AdRequest>() {
+      @java.lang.Override
       public AdRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14908,6 +17962,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15016,6 +18071,11 @@ public final class Csnmessages {
      */
     com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder getDeviceLocationsOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 protocol_version = 8;</code>
+     */
+    int getProtocolVersion();
   }
   /**
    * <pre>
@@ -15066,13 +18126,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               adUnit_ = input.readBytes();
@@ -15092,7 +18145,7 @@ public final class Csnmessages {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -15106,7 +18159,7 @@ public final class Csnmessages {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 adRequests_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -15121,12 +18174,24 @@ public final class Csnmessages {
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>();
                 mutable_bitField0_ |= 0x00000040;
               }
               deviceLocations_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              protocolVersion_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -15137,13 +18202,13 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_); // C
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           adRequests_ = java.util.Collections.unmodifiableList(adRequests_);
         }
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
           deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
         }
         this.unknownFields = unknownFields.build();
@@ -15155,6 +18220,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_fieldAccessorTable
@@ -15353,7 +18419,17 @@ public final class Csnmessages {
       return deviceLocations_.get(index);
     }
 
+    public static final int PROTOCOL_VERSION_FIELD_NUMBER = 8;
+    private int protocolVersion_;
+    /**
+     * <code>uint32 protocol_version = 8;</code>
+     */
+    public int getProtocolVersion() {
+      return protocolVersion_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -15363,6 +18439,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!adUnit_.isEmpty()) {
@@ -15386,9 +18463,13 @@ public final class Csnmessages {
       for (int i = 0; i < deviceLocations_.size(); i++) {
         output.writeMessage(7, deviceLocations_.get(i));
       }
+      if (protocolVersion_ != 0) {
+        output.writeUInt32(8, protocolVersion_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -15425,6 +18506,10 @@ public final class Csnmessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, deviceLocations_.get(i));
       }
+      if (protocolVersion_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, protocolVersion_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -15440,26 +18525,27 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdRequests other = (com.commutestream.nativeads.protobuf.Csnmessages.AdRequests) obj;
 
-      boolean result = true;
-      result = result && getAdUnit()
-          .equals(other.getAdUnit());
-      result = result && (hasDeviceId() == other.hasDeviceId());
+      if (!getAdUnit()
+          .equals(other.getAdUnit())) return false;
+      if (hasDeviceId() != other.hasDeviceId()) return false;
       if (hasDeviceId()) {
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
+        if (!getDeviceId()
+            .equals(other.getDeviceId())) return false;
       }
-      result = result && getIpAddressesList()
-          .equals(other.getIpAddressesList());
-      result = result && getTimezone()
-          .equals(other.getTimezone());
-      result = result && getAdRequestsList()
-          .equals(other.getAdRequestsList());
-      result = result && getSdkVersion()
-          .equals(other.getSdkVersion());
-      result = result && getDeviceLocationsList()
-          .equals(other.getDeviceLocationsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getIpAddressesList()
+          .equals(other.getIpAddressesList())) return false;
+      if (!getTimezone()
+          .equals(other.getTimezone())) return false;
+      if (!getAdRequestsList()
+          .equals(other.getAdRequestsList())) return false;
+      if (!getSdkVersion()
+          .equals(other.getSdkVersion())) return false;
+      if (!getDeviceLocationsList()
+          .equals(other.getDeviceLocationsList())) return false;
+      if (getProtocolVersion()
+          != other.getProtocolVersion()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -15491,6 +18577,8 @@ public final class Csnmessages {
         hash = (37 * hash) + DEVICE_LOCATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getDeviceLocationsList().hashCode();
       }
+      hash = (37 * hash) + PROTOCOL_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getProtocolVersion();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15566,6 +18654,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -15573,6 +18662,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdRequests prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -15600,6 +18690,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_fieldAccessorTable
@@ -15624,6 +18715,7 @@ public final class Csnmessages {
           getDeviceLocationsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         adUnit_ = com.google.protobuf.ByteString.EMPTY;
@@ -15652,18 +18744,23 @@ public final class Csnmessages {
         } else {
           deviceLocationsBuilder_.clear();
         }
+        protocolVersion_ = 0;
+
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdRequests_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdRequests result = buildPartial();
         if (!result.isInitialized()) {
@@ -15672,6 +18769,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdRequests result = new com.commutestream.nativeads.protobuf.Csnmessages.AdRequests(this);
         int from_bitField0_ = bitField0_;
@@ -15682,14 +18780,14 @@ public final class Csnmessages {
         } else {
           result.deviceId_ = deviceIdBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.ipAddresses_ = ipAddresses_;
         result.timezone_ = timezone_;
         if (adRequestsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             adRequests_ = java.util.Collections.unmodifiableList(adRequests_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -15699,7 +18797,7 @@ public final class Csnmessages {
         }
         result.sdkVersion_ = sdkVersion_;
         if (deviceLocationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
             bitField0_ = (bitField0_ & ~0x00000040);
           }
@@ -15707,37 +18805,45 @@ public final class Csnmessages {
         } else {
           result.deviceLocations_ = deviceLocationsBuilder_.build();
         }
+        result.protocolVersion_ = protocolVersion_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdRequests) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdRequests)other);
@@ -15825,15 +18931,20 @@ public final class Csnmessages {
             }
           }
         }
+        if (other.getProtocolVersion() != 0) {
+          setProtocolVersion(other.getProtocolVersion());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15882,7 +18993,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.DeviceID, com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder> deviceIdBuilder_;
       /**
@@ -16001,7 +19112,7 @@ public final class Csnmessages {
 
       private java.util.List<com.google.protobuf.ByteString> ipAddresses_ = java.util.Collections.emptyList();
       private void ensureIpAddressesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>(ipAddresses_);
           bitField0_ |= 0x00000004;
          }
@@ -16011,7 +19122,8 @@ public final class Csnmessages {
        */
       public java.util.List<com.google.protobuf.ByteString>
           getIpAddressesList() {
-        return java.util.Collections.unmodifiableList(ipAddresses_);
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(ipAddresses_) : ipAddresses_;
       }
       /**
        * <code>repeated bytes ip_addresses = 3;</code>
@@ -16143,7 +19255,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest> adRequests_ =
         java.util.Collections.emptyList();
       private void ensureAdRequestsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           adRequests_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdRequest>(adRequests_);
           bitField0_ |= 0x00000010;
          }
@@ -16372,7 +19484,7 @@ public final class Csnmessages {
           adRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.AdRequest, com.commutestream.nativeads.protobuf.Csnmessages.AdRequest.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestOrBuilder>(
                   adRequests_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           adRequests_ = null;
@@ -16452,7 +19564,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> deviceLocations_ =
         java.util.Collections.emptyList();
       private void ensureDeviceLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>(deviceLocations_);
           bitField0_ |= 0x00000040;
          }
@@ -16681,18 +19793,46 @@ public final class Csnmessages {
           deviceLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder>(
                   deviceLocations_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           deviceLocations_ = null;
         }
         return deviceLocationsBuilder_;
       }
+
+      private int protocolVersion_ ;
+      /**
+       * <code>uint32 protocol_version = 8;</code>
+       */
+      public int getProtocolVersion() {
+        return protocolVersion_;
+      }
+      /**
+       * <code>uint32 protocol_version = 8;</code>
+       */
+      public Builder setProtocolVersion(int value) {
+        
+        protocolVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 protocol_version = 8;</code>
+       */
+      public Builder clearProtocolVersion() {
+        
+        protocolVersion_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -16714,6 +19854,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdRequests>
         PARSER = new com.google.protobuf.AbstractParser<AdRequests>() {
+      @java.lang.Override
       public AdRequests parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16731,7 +19872,746 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdRequests getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdReferenceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 request_id = 1;</code>
+     */
+    long getRequestId();
+
+    /**
+     * <code>uint64 ad_id = 2;</code>
+     */
+    long getAdId();
+
+    /**
+     * <code>uint64 version_id = 3;</code>
+     */
+    long getVersionId();
+
+    /**
+     * <code>string url = 4;</code>
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+  }
+  /**
+   * Protobuf type {@code google.protobuf.AdReference}
+   */
+  public  static final class AdReference extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdReference)
+      AdReferenceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdReference.newBuilder() to construct.
+    private AdReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdReference() {
+      url_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdReference(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              requestId_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              adId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              versionId_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdReference.class, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder.class);
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 1;
+    private long requestId_;
+    /**
+     * <code>uint64 request_id = 1;</code>
+     */
+    public long getRequestId() {
+      return requestId_;
+    }
+
+    public static final int AD_ID_FIELD_NUMBER = 2;
+    private long adId_;
+    /**
+     * <code>uint64 ad_id = 2;</code>
+     */
+    public long getAdId() {
+      return adId_;
+    }
+
+    public static final int VERSION_ID_FIELD_NUMBER = 3;
+    private long versionId_;
+    /**
+     * <code>uint64 version_id = 3;</code>
+     */
+    public long getVersionId() {
+      return versionId_;
+    }
+
+    public static final int URL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object url_;
+    /**
+     * <code>string url = 4;</code>
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requestId_ != 0L) {
+        output.writeUInt64(1, requestId_);
+      }
+      if (adId_ != 0L) {
+        output.writeUInt64(2, adId_);
+      }
+      if (versionId_ != 0L) {
+        output.writeUInt64(3, versionId_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, url_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requestId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, requestId_);
+      }
+      if (adId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, adId_);
+      }
+      if (versionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, versionId_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, url_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReference)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdReference other = (com.commutestream.nativeads.protobuf.Csnmessages.AdReference) obj;
+
+      if (getRequestId()
+          != other.getRequestId()) return false;
+      if (getAdId()
+          != other.getAdId()) return false;
+      if (getVersionId()
+          != other.getVersionId()) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRequestId());
+      hash = (37 * hash) + AD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAdId());
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionId());
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.AdReference}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdReference)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdReference.class, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestId_ = 0L;
+
+        adId_ = 0L;
+
+        versionId_ = 0L;
+
+        url_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReference_descriptor;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReference result = new com.commutestream.nativeads.protobuf.Csnmessages.AdReference(this);
+        result.requestId_ = requestId_;
+        result.adId_ = adId_;
+        result.versionId_ = versionId_;
+        result.url_ = url_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReference) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdReference)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdReference other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdReference.getDefaultInstance()) return this;
+        if (other.getRequestId() != 0L) {
+          setRequestId(other.getRequestId());
+        }
+        if (other.getAdId() != 0L) {
+          setAdId(other.getAdId());
+        }
+        if (other.getVersionId() != 0L) {
+          setVersionId(other.getVersionId());
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdReference parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdReference) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long requestId_ ;
+      /**
+       * <code>uint64 request_id = 1;</code>
+       */
+      public long getRequestId() {
+        return requestId_;
+      }
+      /**
+       * <code>uint64 request_id = 1;</code>
+       */
+      public Builder setRequestId(long value) {
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 request_id = 1;</code>
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long adId_ ;
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public long getAdId() {
+        return adId_;
+      }
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public Builder setAdId(long value) {
+        
+        adId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 ad_id = 2;</code>
+       */
+      public Builder clearAdId() {
+        
+        adId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long versionId_ ;
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public long getVersionId() {
+        return versionId_;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder setVersionId(long value) {
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 version_id = 3;</code>
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 4;</code>
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 4;</code>
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 4;</code>
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 4;</code>
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdReference)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdReference DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdReference();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdReference getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdReference>
+        PARSER = new com.google.protobuf.AbstractParser<AdReference>() {
+      @java.lang.Override
+      public AdReference parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdReference(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReference getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16769,6 +20649,30 @@ public final class Csnmessages {
      */
     com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder getAdsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference> 
+        getAdReferencesList();
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdReference getAdReferences(int index);
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    int getAdReferencesCount();
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder> 
+        getAdReferencesOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder getAdReferencesOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -16789,6 +20693,7 @@ public final class Csnmessages {
     private AdResponse() {
       hashId_ = com.google.protobuf.ByteString.EMPTY;
       ads_ = java.util.Collections.emptyList();
+      adReferences_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -16815,25 +20720,34 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               hashId_ = input.readBytes();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 ads_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>();
                 mutable_bitField0_ |= 0x00000002;
               }
               ads_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                adReferences_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReference>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              adReferences_.add(
+                  input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdReference.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -16844,8 +20758,11 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           ads_ = java.util.Collections.unmodifiableList(ads_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          adReferences_ = java.util.Collections.unmodifiableList(adReferences_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -16856,6 +20773,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_fieldAccessorTable
@@ -16908,7 +20826,43 @@ public final class Csnmessages {
       return ads_.get(index);
     }
 
+    public static final int AD_REFERENCES_FIELD_NUMBER = 3;
+    private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference> adReferences_;
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference> getAdReferencesList() {
+      return adReferences_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder> 
+        getAdReferencesOrBuilderList() {
+      return adReferences_;
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    public int getAdReferencesCount() {
+      return adReferences_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReference getAdReferences(int index) {
+      return adReferences_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+     */
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder getAdReferencesOrBuilder(
+        int index) {
+      return adReferences_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -16918,6 +20872,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!hashId_.isEmpty()) {
@@ -16926,9 +20881,13 @@ public final class Csnmessages {
       for (int i = 0; i < ads_.size(); i++) {
         output.writeMessage(2, ads_.get(i));
       }
+      for (int i = 0; i < adReferences_.size(); i++) {
+        output.writeMessage(3, adReferences_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -16941,6 +20900,10 @@ public final class Csnmessages {
       for (int i = 0; i < ads_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, ads_.get(i));
+      }
+      for (int i = 0; i < adReferences_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, adReferences_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16957,13 +20920,14 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdResponse other = (com.commutestream.nativeads.protobuf.Csnmessages.AdResponse) obj;
 
-      boolean result = true;
-      result = result && getHashId()
-          .equals(other.getHashId());
-      result = result && getAdsList()
-          .equals(other.getAdsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getHashId()
+          .equals(other.getHashId())) return false;
+      if (!getAdsList()
+          .equals(other.getAdsList())) return false;
+      if (!getAdReferencesList()
+          .equals(other.getAdReferencesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -16978,6 +20942,10 @@ public final class Csnmessages {
       if (getAdsCount() > 0) {
         hash = (37 * hash) + ADS_FIELD_NUMBER;
         hash = (53 * hash) + getAdsList().hashCode();
+      }
+      if (getAdReferencesCount() > 0) {
+        hash = (37 * hash) + AD_REFERENCES_FIELD_NUMBER;
+        hash = (53 * hash) + getAdReferencesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -17054,6 +21022,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17061,6 +21030,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17088,6 +21058,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_fieldAccessorTable
@@ -17109,8 +21080,10 @@ public final class Csnmessages {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getAdsFieldBuilder();
+          getAdReferencesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         hashId_ = com.google.protobuf.ByteString.EMPTY;
@@ -17121,18 +21094,27 @@ public final class Csnmessages {
         } else {
           adsBuilder_.clear();
         }
+        if (adReferencesBuilder_ == null) {
+          adReferences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          adReferencesBuilder_.clear();
+        }
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponse_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -17141,13 +21123,14 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdResponse result = new com.commutestream.nativeads.protobuf.Csnmessages.AdResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.hashId_ = hashId_;
         if (adsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             ads_ = java.util.Collections.unmodifiableList(ads_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -17155,37 +21138,53 @@ public final class Csnmessages {
         } else {
           result.ads_ = adsBuilder_.build();
         }
+        if (adReferencesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            adReferences_ = java.util.Collections.unmodifiableList(adReferences_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.adReferences_ = adReferences_;
+        } else {
+          result.adReferences_ = adReferencesBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdResponse) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdResponse)other);
@@ -17226,15 +21225,43 @@ public final class Csnmessages {
             }
           }
         }
+        if (adReferencesBuilder_ == null) {
+          if (!other.adReferences_.isEmpty()) {
+            if (adReferences_.isEmpty()) {
+              adReferences_ = other.adReferences_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureAdReferencesIsMutable();
+              adReferences_.addAll(other.adReferences_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.adReferences_.isEmpty()) {
+            if (adReferencesBuilder_.isEmpty()) {
+              adReferencesBuilder_.dispose();
+              adReferencesBuilder_ = null;
+              adReferences_ = other.adReferences_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              adReferencesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAdReferencesFieldBuilder() : null;
+            } else {
+              adReferencesBuilder_.addAllMessages(other.adReferences_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17286,7 +21313,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd> ads_ =
         java.util.Collections.emptyList();
       private void ensureAdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           ads_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.NativeAd>(ads_);
           bitField0_ |= 0x00000002;
          }
@@ -17515,18 +21542,260 @@ public final class Csnmessages {
           adsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.NativeAd, com.commutestream.nativeads.protobuf.Csnmessages.NativeAd.Builder, com.commutestream.nativeads.protobuf.Csnmessages.NativeAdOrBuilder>(
                   ads_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           ads_ = null;
         }
         return adsBuilder_;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+
+      private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference> adReferences_ =
+        java.util.Collections.emptyList();
+      private void ensureAdReferencesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          adReferences_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReference>(adReferences_);
+          bitField0_ |= 0x00000004;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReference, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder> adReferencesBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference> getAdReferencesList() {
+        if (adReferencesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(adReferences_);
+        } else {
+          return adReferencesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public int getAdReferencesCount() {
+        if (adReferencesBuilder_ == null) {
+          return adReferences_.size();
+        } else {
+          return adReferencesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference getAdReferences(int index) {
+        if (adReferencesBuilder_ == null) {
+          return adReferences_.get(index);
+        } else {
+          return adReferencesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder setAdReferences(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReference value) {
+        if (adReferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdReferencesIsMutable();
+          adReferences_.set(index, value);
+          onChanged();
+        } else {
+          adReferencesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder setAdReferences(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder builderForValue) {
+        if (adReferencesBuilder_ == null) {
+          ensureAdReferencesIsMutable();
+          adReferences_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          adReferencesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder addAdReferences(com.commutestream.nativeads.protobuf.Csnmessages.AdReference value) {
+        if (adReferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdReferencesIsMutable();
+          adReferences_.add(value);
+          onChanged();
+        } else {
+          adReferencesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder addAdReferences(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReference value) {
+        if (adReferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdReferencesIsMutable();
+          adReferences_.add(index, value);
+          onChanged();
+        } else {
+          adReferencesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder addAdReferences(
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder builderForValue) {
+        if (adReferencesBuilder_ == null) {
+          ensureAdReferencesIsMutable();
+          adReferences_.add(builderForValue.build());
+          onChanged();
+        } else {
+          adReferencesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder addAdReferences(
+          int index, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder builderForValue) {
+        if (adReferencesBuilder_ == null) {
+          ensureAdReferencesIsMutable();
+          adReferences_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          adReferencesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder addAllAdReferences(
+          java.lang.Iterable<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReference> values) {
+        if (adReferencesBuilder_ == null) {
+          ensureAdReferencesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, adReferences_);
+          onChanged();
+        } else {
+          adReferencesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder clearAdReferences() {
+        if (adReferencesBuilder_ == null) {
+          adReferences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          adReferencesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public Builder removeAdReferences(int index) {
+        if (adReferencesBuilder_ == null) {
+          ensureAdReferencesIsMutable();
+          adReferences_.remove(index);
+          onChanged();
+        } else {
+          adReferencesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder getAdReferencesBuilder(
+          int index) {
+        return getAdReferencesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder getAdReferencesOrBuilder(
+          int index) {
+        if (adReferencesBuilder_ == null) {
+          return adReferences_.get(index);  } else {
+          return adReferencesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public java.util.List<? extends com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder> 
+           getAdReferencesOrBuilderList() {
+        if (adReferencesBuilder_ != null) {
+          return adReferencesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(adReferences_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder addAdReferencesBuilder() {
+        return getAdReferencesFieldBuilder().addBuilder(
+            com.commutestream.nativeads.protobuf.Csnmessages.AdReference.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder addAdReferencesBuilder(
+          int index) {
+        return getAdReferencesFieldBuilder().addBuilder(
+            index, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.AdReference ad_references = 3;</code>
+       */
+      public java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder> 
+           getAdReferencesBuilderList() {
+        return getAdReferencesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.commutestream.nativeads.protobuf.Csnmessages.AdReference, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder> 
+          getAdReferencesFieldBuilder() {
+        if (adReferencesBuilder_ == null) {
+          adReferencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.commutestream.nativeads.protobuf.Csnmessages.AdReference, com.commutestream.nativeads.protobuf.Csnmessages.AdReference.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReferenceOrBuilder>(
+                  adReferences_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          adReferences_ = null;
+        }
+        return adReferencesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -17548,6 +21817,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdResponse>
         PARSER = new com.google.protobuf.AbstractParser<AdResponse>() {
+      @java.lang.Override
       public AdResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17565,6 +21835,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17654,13 +21925,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -17668,12 +21932,19 @@ public final class Csnmessages {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 adResponses_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse>();
                 mutable_bitField0_ |= 0x00000002;
               }
               adResponses_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -17684,7 +21955,7 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           adResponses_ = java.util.Collections.unmodifiableList(adResponses_);
         }
         this.unknownFields = unknownFields.build();
@@ -17696,6 +21967,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_fieldAccessorTable
@@ -17774,6 +22046,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17783,6 +22056,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServerIdBytes().isEmpty()) {
@@ -17794,6 +22068,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17821,13 +22096,12 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdResponses other = (com.commutestream.nativeads.protobuf.Csnmessages.AdResponses) obj;
 
-      boolean result = true;
-      result = result && getServerId()
-          .equals(other.getServerId());
-      result = result && getAdResponsesList()
-          .equals(other.getAdResponsesList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getServerId()
+          .equals(other.getServerId())) return false;
+      if (!getAdResponsesList()
+          .equals(other.getAdResponsesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -17918,6 +22192,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17925,6 +22200,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdResponses prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17952,6 +22228,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_fieldAccessorTable
@@ -17975,6 +22252,7 @@ public final class Csnmessages {
           getAdResponsesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         serverId_ = "";
@@ -17988,15 +22266,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdResponses_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdResponses result = buildPartial();
         if (!result.isInitialized()) {
@@ -18005,13 +22286,14 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdResponses result = new com.commutestream.nativeads.protobuf.Csnmessages.AdResponses(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.serverId_ = serverId_;
         if (adResponsesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             adResponses_ = java.util.Collections.unmodifiableList(adResponses_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -18024,32 +22306,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdResponses) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdResponses)other);
@@ -18096,10 +22385,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18191,7 +22482,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse> adResponses_ =
         java.util.Collections.emptyList();
       private void ensureAdResponsesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           adResponses_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdResponse>(adResponses_);
           bitField0_ |= 0x00000002;
          }
@@ -18420,18 +22711,20 @@ public final class Csnmessages {
           adResponsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.AdResponse, com.commutestream.nativeads.protobuf.Csnmessages.AdResponse.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponseOrBuilder>(
                   adResponses_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           adResponses_ = null;
         }
         return adResponsesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18453,6 +22746,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdResponses>
         PARSER = new com.google.protobuf.AbstractParser<AdResponses>() {
+      @java.lang.Override
       public AdResponses parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18470,6 +22764,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdResponses getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18514,7 +22809,6 @@ public final class Csnmessages {
     private DeviceID() {
       deviceIdType_ = 0;
       deviceId_ = com.google.protobuf.ByteString.EMPTY;
-      limitTracking_ = false;
     }
 
     @java.lang.Override
@@ -18541,13 +22835,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -18562,6 +22849,13 @@ public final class Csnmessages {
             case 24: {
 
               limitTracking_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -18581,6 +22875,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceID_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceID_fieldAccessorTable
@@ -18698,6 +22993,7 @@ public final class Csnmessages {
      * <code>.google.protobuf.DeviceID.Type device_id_type = 1;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type getDeviceIdType() {
+      @SuppressWarnings("deprecation")
       com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type result = com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.valueOf(deviceIdType_);
       return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.UNRECOGNIZED : result;
     }
@@ -18721,6 +23017,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -18730,6 +23027,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (deviceIdType_ != com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.IDFA.getNumber()) {
@@ -18744,6 +23042,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -18776,14 +23075,13 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.DeviceID other = (com.commutestream.nativeads.protobuf.Csnmessages.DeviceID) obj;
 
-      boolean result = true;
-      result = result && deviceIdType_ == other.deviceIdType_;
-      result = result && getDeviceId()
-          .equals(other.getDeviceId());
-      result = result && (getLimitTracking()
-          == other.getLimitTracking());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (deviceIdType_ != other.deviceIdType_) return false;
+      if (!getDeviceId()
+          .equals(other.getDeviceId())) return false;
+      if (getLimitTracking()
+          != other.getLimitTracking()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -18875,6 +23173,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -18882,6 +23181,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.DeviceID prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -18905,6 +23205,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceID_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceID_fieldAccessorTable
@@ -18927,6 +23228,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         deviceIdType_ = 0;
@@ -18938,15 +23240,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceID_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID build() {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceID result = buildPartial();
         if (!result.isInitialized()) {
@@ -18955,6 +23260,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceID result = new com.commutestream.nativeads.protobuf.Csnmessages.DeviceID(this);
         result.deviceIdType_ = deviceIdType_;
@@ -18964,32 +23270,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.DeviceID) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.DeviceID)other);
@@ -19015,10 +23328,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -19056,6 +23371,7 @@ public final class Csnmessages {
        * <code>.google.protobuf.DeviceID.Type device_id_type = 1;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type getDeviceIdType() {
+        @SuppressWarnings("deprecation")
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type result = com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.valueOf(deviceIdType_);
         return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Type.UNRECOGNIZED : result;
       }
@@ -19135,11 +23451,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -19161,6 +23479,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<DeviceID>
         PARSER = new com.google.protobuf.AbstractParser<DeviceID>() {
+      @java.lang.Override
       public DeviceID parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -19178,6 +23497,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.DeviceID getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -19261,16 +23581,6 @@ public final class Csnmessages {
       super(builder);
     }
     private DeviceLocation() {
-      timestamp_ = 0L;
-      latitude_ = 0D;
-      longitude_ = 0D;
-      altitude_ = 0D;
-      bearing_ = 0D;
-      speed_ = 0D;
-      horizontalAccuracy_ = 0D;
-      verticalAccuracy_ = 0D;
-      bearingAccuracy_ = 0D;
-      speedAccuracy_ = 0D;
       provider_ = "";
     }
 
@@ -19298,13 +23608,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               timestamp_ = input.readUInt64();
@@ -19361,6 +23664,13 @@ public final class Csnmessages {
               provider_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -19378,6 +23688,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceLocation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceLocation_fieldAccessorTable
@@ -19510,6 +23821,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -19519,6 +23831,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (timestamp_ != 0L) {
@@ -19557,6 +23870,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -19620,49 +23934,39 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation other = (com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation) obj;
 
-      boolean result = true;
-      result = result && (getTimestamp()
-          == other.getTimestamp());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getAltitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getAltitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getBearing())
-          == java.lang.Double.doubleToLongBits(
-              other.getBearing()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getSpeed())
-          == java.lang.Double.doubleToLongBits(
-              other.getSpeed()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getHorizontalAccuracy())
-          == java.lang.Double.doubleToLongBits(
-              other.getHorizontalAccuracy()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getVerticalAccuracy())
-          == java.lang.Double.doubleToLongBits(
-              other.getVerticalAccuracy()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getBearingAccuracy())
-          == java.lang.Double.doubleToLongBits(
-              other.getBearingAccuracy()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getSpeedAccuracy())
-          == java.lang.Double.doubleToLongBits(
-              other.getSpeedAccuracy()));
-      result = result && getProvider()
-          .equals(other.getProvider());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (java.lang.Double.doubleToLongBits(getLatitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLatitude())) return false;
+      if (java.lang.Double.doubleToLongBits(getLongitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLongitude())) return false;
+      if (java.lang.Double.doubleToLongBits(getAltitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getAltitude())) return false;
+      if (java.lang.Double.doubleToLongBits(getBearing())
+          != java.lang.Double.doubleToLongBits(
+              other.getBearing())) return false;
+      if (java.lang.Double.doubleToLongBits(getSpeed())
+          != java.lang.Double.doubleToLongBits(
+              other.getSpeed())) return false;
+      if (java.lang.Double.doubleToLongBits(getHorizontalAccuracy())
+          != java.lang.Double.doubleToLongBits(
+              other.getHorizontalAccuracy())) return false;
+      if (java.lang.Double.doubleToLongBits(getVerticalAccuracy())
+          != java.lang.Double.doubleToLongBits(
+              other.getVerticalAccuracy())) return false;
+      if (java.lang.Double.doubleToLongBits(getBearingAccuracy())
+          != java.lang.Double.doubleToLongBits(
+              other.getBearingAccuracy())) return false;
+      if (java.lang.Double.doubleToLongBits(getSpeedAccuracy())
+          != java.lang.Double.doubleToLongBits(
+              other.getSpeedAccuracy())) return false;
+      if (!getProvider()
+          .equals(other.getProvider())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -19779,6 +24083,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -19786,6 +24091,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -19809,6 +24115,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceLocation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceLocation_fieldAccessorTable
@@ -19831,6 +24138,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         timestamp_ = 0L;
@@ -19858,15 +24166,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_DeviceLocation_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation build() {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation result = buildPartial();
         if (!result.isInitialized()) {
@@ -19875,6 +24186,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation result = new com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation(this);
         result.timestamp_ = timestamp_;
@@ -19892,32 +24204,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation)other);
@@ -19968,10 +24287,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20318,11 +24639,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -20344,6 +24667,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<DeviceLocation>
         PARSER = new com.google.protobuf.AbstractParser<DeviceLocation>() {
+      @java.lang.Override
       public DeviceLocation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20361,6 +24685,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -20398,7 +24723,6 @@ public final class Csnmessages {
       super(builder);
     }
     private ComponentInteraction() {
-      deviceTime_ = 0L;
       kind_ = 0;
     }
 
@@ -20426,13 +24750,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               deviceTime_ = input.readUInt64();
@@ -20442,6 +24759,13 @@ public final class Csnmessages {
               int rawValue = input.readEnum();
 
               kind_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -20461,6 +24785,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable
@@ -20489,11 +24814,13 @@ public final class Csnmessages {
      * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
      */
     public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind getKind() {
+      @SuppressWarnings("deprecation")
       com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.valueOf(kind_);
       return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -20503,6 +24830,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (deviceTime_ != 0L) {
@@ -20514,6 +24842,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -20542,12 +24871,11 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction other = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction) obj;
 
-      boolean result = true;
-      result = result && (getDeviceTime()
-          == other.getDeviceTime());
-      result = result && kind_ == other.kind_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getDeviceTime()
+          != other.getDeviceTime()) return false;
+      if (kind_ != other.kind_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -20637,6 +24965,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -20644,6 +24973,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -20667,6 +24997,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable
@@ -20689,6 +25020,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         deviceTime_ = 0L;
@@ -20698,15 +25030,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentInteraction_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction build() {
         com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction result = buildPartial();
         if (!result.isInitialized()) {
@@ -20715,6 +25050,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction result = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction(this);
         result.deviceTime_ = deviceTime_;
@@ -20723,32 +25059,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction)other);
@@ -20771,10 +25114,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20838,6 +25183,7 @@ public final class Csnmessages {
        * <code>.google.protobuf.ComponentInteractionKind kind = 2;</code>
        */
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind getKind() {
+        @SuppressWarnings("deprecation")
         com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind result = com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.valueOf(kind_);
         return result == null ? com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionKind.UNRECOGNIZED : result;
       }
@@ -20862,11 +25208,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -20888,6 +25236,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<ComponentInteraction>
         PARSER = new com.google.protobuf.AbstractParser<ComponentInteraction>() {
+      @java.lang.Override
       public ComponentInteraction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20905,6 +25254,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -20993,11 +25343,8 @@ public final class Csnmessages {
       super(builder);
     }
     private ComponentReport() {
-      componentId_ = 0L;
-      visibilityEpoch_ = 0L;
-      visibilitySampleCount_ = 0L;
-      viewVisibilitySamples_ = java.util.Collections.emptyList();
-      deviceVisibilitySamples_ = java.util.Collections.emptyList();
+      viewVisibilitySamples_ = emptyLongList();
+      deviceVisibilitySamples_ = emptyLongList();
       interactions_ = java.util.Collections.emptyList();
     }
 
@@ -21025,13 +25372,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               componentId_ = input.readUInt64();
@@ -21048,54 +25388,61 @@ public final class Csnmessages {
               break;
             }
             case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                viewVisibilitySamples_ = newLongList();
                 mutable_bitField0_ |= 0x00000008;
               }
-              viewVisibilitySamples_.add(input.readUInt64());
+              viewVisibilitySamples_.addLong(input.readUInt64());
               break;
             }
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                viewVisibilitySamples_ = newLongList();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
-                viewVisibilitySamples_.add(input.readUInt64());
+                viewVisibilitySamples_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
               break;
             }
             case 40: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                deviceVisibilitySamples_ = newLongList();
                 mutable_bitField0_ |= 0x00000010;
               }
-              deviceVisibilitySamples_.add(input.readUInt64());
+              deviceVisibilitySamples_.addLong(input.readUInt64());
               break;
             }
             case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
+                deviceVisibilitySamples_ = newLongList();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
-                deviceVisibilitySamples_.add(input.readUInt64());
+                deviceVisibilitySamples_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 interactions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction>();
                 mutable_bitField0_ |= 0x00000020;
               }
               interactions_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -21106,13 +25453,13 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          viewVisibilitySamples_ = java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          viewVisibilitySamples_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          deviceVisibilitySamples_ = java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          deviceVisibilitySamples_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           interactions_ = java.util.Collections.unmodifiableList(interactions_);
         }
         this.unknownFields = unknownFields.build();
@@ -21124,6 +25471,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_fieldAccessorTable
@@ -21160,7 +25508,7 @@ public final class Csnmessages {
     }
 
     public static final int VIEW_VISIBILITY_SAMPLES_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Long> viewVisibilitySamples_;
+    private com.google.protobuf.Internal.LongList viewVisibilitySamples_;
     /**
      * <code>repeated uint64 view_visibility_samples = 4;</code>
      */
@@ -21178,12 +25526,12 @@ public final class Csnmessages {
      * <code>repeated uint64 view_visibility_samples = 4;</code>
      */
     public long getViewVisibilitySamples(int index) {
-      return viewVisibilitySamples_.get(index);
+      return viewVisibilitySamples_.getLong(index);
     }
     private int viewVisibilitySamplesMemoizedSerializedSize = -1;
 
     public static final int DEVICE_VISIBILITY_SAMPLES_FIELD_NUMBER = 5;
-    private java.util.List<java.lang.Long> deviceVisibilitySamples_;
+    private com.google.protobuf.Internal.LongList deviceVisibilitySamples_;
     /**
      * <code>repeated uint64 device_visibility_samples = 5;</code>
      */
@@ -21201,7 +25549,7 @@ public final class Csnmessages {
      * <code>repeated uint64 device_visibility_samples = 5;</code>
      */
     public long getDeviceVisibilitySamples(int index) {
-      return deviceVisibilitySamples_.get(index);
+      return deviceVisibilitySamples_.getLong(index);
     }
     private int deviceVisibilitySamplesMemoizedSerializedSize = -1;
 
@@ -21241,6 +25589,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -21250,6 +25599,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -21267,14 +25617,14 @@ public final class Csnmessages {
         output.writeUInt32NoTag(viewVisibilitySamplesMemoizedSerializedSize);
       }
       for (int i = 0; i < viewVisibilitySamples_.size(); i++) {
-        output.writeUInt64NoTag(viewVisibilitySamples_.get(i));
+        output.writeUInt64NoTag(viewVisibilitySamples_.getLong(i));
       }
       if (getDeviceVisibilitySamplesList().size() > 0) {
         output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(deviceVisibilitySamplesMemoizedSerializedSize);
       }
       for (int i = 0; i < deviceVisibilitySamples_.size(); i++) {
-        output.writeUInt64NoTag(deviceVisibilitySamples_.get(i));
+        output.writeUInt64NoTag(deviceVisibilitySamples_.getLong(i));
       }
       for (int i = 0; i < interactions_.size(); i++) {
         output.writeMessage(6, interactions_.get(i));
@@ -21282,6 +25632,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -21303,7 +25654,7 @@ public final class Csnmessages {
         int dataSize = 0;
         for (int i = 0; i < viewVisibilitySamples_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(viewVisibilitySamples_.get(i));
+            .computeUInt64SizeNoTag(viewVisibilitySamples_.getLong(i));
         }
         size += dataSize;
         if (!getViewVisibilitySamplesList().isEmpty()) {
@@ -21317,7 +25668,7 @@ public final class Csnmessages {
         int dataSize = 0;
         for (int i = 0; i < deviceVisibilitySamples_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(deviceVisibilitySamples_.get(i));
+            .computeUInt64SizeNoTag(deviceVisibilitySamples_.getLong(i));
         }
         size += dataSize;
         if (!getDeviceVisibilitySamplesList().isEmpty()) {
@@ -21346,21 +25697,20 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport other = (com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport) obj;
 
-      boolean result = true;
-      result = result && (getComponentId()
-          == other.getComponentId());
-      result = result && (getVisibilityEpoch()
-          == other.getVisibilityEpoch());
-      result = result && (getVisibilitySampleCount()
-          == other.getVisibilitySampleCount());
-      result = result && getViewVisibilitySamplesList()
-          .equals(other.getViewVisibilitySamplesList());
-      result = result && getDeviceVisibilitySamplesList()
-          .equals(other.getDeviceVisibilitySamplesList());
-      result = result && getInteractionsList()
-          .equals(other.getInteractionsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getComponentId()
+          != other.getComponentId()) return false;
+      if (getVisibilityEpoch()
+          != other.getVisibilityEpoch()) return false;
+      if (getVisibilitySampleCount()
+          != other.getVisibilitySampleCount()) return false;
+      if (!getViewVisibilitySamplesList()
+          .equals(other.getViewVisibilitySamplesList())) return false;
+      if (!getDeviceVisibilitySamplesList()
+          .equals(other.getDeviceVisibilitySamplesList())) return false;
+      if (!getInteractionsList()
+          .equals(other.getInteractionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -21466,6 +25816,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -21473,6 +25824,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -21496,6 +25848,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_fieldAccessorTable
@@ -21519,6 +25872,7 @@ public final class Csnmessages {
           getInteractionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         componentId_ = 0L;
@@ -21527,9 +25881,9 @@ public final class Csnmessages {
 
         visibilitySampleCount_ = 0L;
 
-        viewVisibilitySamples_ = java.util.Collections.emptyList();
+        viewVisibilitySamples_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000008);
-        deviceVisibilitySamples_ = java.util.Collections.emptyList();
+        deviceVisibilitySamples_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000010);
         if (interactionsBuilder_ == null) {
           interactions_ = java.util.Collections.emptyList();
@@ -21540,15 +25894,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_ComponentReport_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport build() {
         com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport result = buildPartial();
         if (!result.isInitialized()) {
@@ -21557,6 +25914,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport result = new com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport(this);
         int from_bitField0_ = bitField0_;
@@ -21564,18 +25922,18 @@ public final class Csnmessages {
         result.componentId_ = componentId_;
         result.visibilityEpoch_ = visibilityEpoch_;
         result.visibilitySampleCount_ = visibilitySampleCount_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          viewVisibilitySamples_ = java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+        if (((bitField0_ & 0x00000008) != 0)) {
+          viewVisibilitySamples_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.viewVisibilitySamples_ = viewVisibilitySamples_;
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          deviceVisibilitySamples_ = java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+        if (((bitField0_ & 0x00000010) != 0)) {
+          deviceVisibilitySamples_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.deviceVisibilitySamples_ = deviceVisibilitySamples_;
         if (interactionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             interactions_ = java.util.Collections.unmodifiableList(interactions_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -21588,32 +25946,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport)other);
@@ -21685,10 +26050,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -21786,10 +26153,10 @@ public final class Csnmessages {
         return this;
       }
 
-      private java.util.List<java.lang.Long> viewVisibilitySamples_ = java.util.Collections.emptyList();
+      private com.google.protobuf.Internal.LongList viewVisibilitySamples_ = emptyLongList();
       private void ensureViewVisibilitySamplesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          viewVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>(viewVisibilitySamples_);
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          viewVisibilitySamples_ = mutableCopy(viewVisibilitySamples_);
           bitField0_ |= 0x00000008;
          }
       }
@@ -21798,7 +26165,8 @@ public final class Csnmessages {
        */
       public java.util.List<java.lang.Long>
           getViewVisibilitySamplesList() {
-        return java.util.Collections.unmodifiableList(viewVisibilitySamples_);
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(viewVisibilitySamples_) : viewVisibilitySamples_;
       }
       /**
        * <code>repeated uint64 view_visibility_samples = 4;</code>
@@ -21810,7 +26178,7 @@ public final class Csnmessages {
        * <code>repeated uint64 view_visibility_samples = 4;</code>
        */
       public long getViewVisibilitySamples(int index) {
-        return viewVisibilitySamples_.get(index);
+        return viewVisibilitySamples_.getLong(index);
       }
       /**
        * <code>repeated uint64 view_visibility_samples = 4;</code>
@@ -21818,7 +26186,7 @@ public final class Csnmessages {
       public Builder setViewVisibilitySamples(
           int index, long value) {
         ensureViewVisibilitySamplesIsMutable();
-        viewVisibilitySamples_.set(index, value);
+        viewVisibilitySamples_.setLong(index, value);
         onChanged();
         return this;
       }
@@ -21827,7 +26195,7 @@ public final class Csnmessages {
        */
       public Builder addViewVisibilitySamples(long value) {
         ensureViewVisibilitySamplesIsMutable();
-        viewVisibilitySamples_.add(value);
+        viewVisibilitySamples_.addLong(value);
         onChanged();
         return this;
       }
@@ -21846,16 +26214,16 @@ public final class Csnmessages {
        * <code>repeated uint64 view_visibility_samples = 4;</code>
        */
       public Builder clearViewVisibilitySamples() {
-        viewVisibilitySamples_ = java.util.Collections.emptyList();
+        viewVisibilitySamples_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
 
-      private java.util.List<java.lang.Long> deviceVisibilitySamples_ = java.util.Collections.emptyList();
+      private com.google.protobuf.Internal.LongList deviceVisibilitySamples_ = emptyLongList();
       private void ensureDeviceVisibilitySamplesIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          deviceVisibilitySamples_ = new java.util.ArrayList<java.lang.Long>(deviceVisibilitySamples_);
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          deviceVisibilitySamples_ = mutableCopy(deviceVisibilitySamples_);
           bitField0_ |= 0x00000010;
          }
       }
@@ -21864,7 +26232,8 @@ public final class Csnmessages {
        */
       public java.util.List<java.lang.Long>
           getDeviceVisibilitySamplesList() {
-        return java.util.Collections.unmodifiableList(deviceVisibilitySamples_);
+        return ((bitField0_ & 0x00000010) != 0) ?
+                 java.util.Collections.unmodifiableList(deviceVisibilitySamples_) : deviceVisibilitySamples_;
       }
       /**
        * <code>repeated uint64 device_visibility_samples = 5;</code>
@@ -21876,7 +26245,7 @@ public final class Csnmessages {
        * <code>repeated uint64 device_visibility_samples = 5;</code>
        */
       public long getDeviceVisibilitySamples(int index) {
-        return deviceVisibilitySamples_.get(index);
+        return deviceVisibilitySamples_.getLong(index);
       }
       /**
        * <code>repeated uint64 device_visibility_samples = 5;</code>
@@ -21884,7 +26253,7 @@ public final class Csnmessages {
       public Builder setDeviceVisibilitySamples(
           int index, long value) {
         ensureDeviceVisibilitySamplesIsMutable();
-        deviceVisibilitySamples_.set(index, value);
+        deviceVisibilitySamples_.setLong(index, value);
         onChanged();
         return this;
       }
@@ -21893,7 +26262,7 @@ public final class Csnmessages {
        */
       public Builder addDeviceVisibilitySamples(long value) {
         ensureDeviceVisibilitySamplesIsMutable();
-        deviceVisibilitySamples_.add(value);
+        deviceVisibilitySamples_.addLong(value);
         onChanged();
         return this;
       }
@@ -21912,7 +26281,7 @@ public final class Csnmessages {
        * <code>repeated uint64 device_visibility_samples = 5;</code>
        */
       public Builder clearDeviceVisibilitySamples() {
-        deviceVisibilitySamples_ = java.util.Collections.emptyList();
+        deviceVisibilitySamples_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
@@ -21921,7 +26290,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction> interactions_ =
         java.util.Collections.emptyList();
       private void ensureInteractionsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           interactions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction>(interactions_);
           bitField0_ |= 0x00000020;
          }
@@ -22150,18 +26519,20 @@ public final class Csnmessages {
           interactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteraction.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentInteractionOrBuilder>(
                   interactions_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           interactions_ = null;
         }
         return interactionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -22183,6 +26554,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<ComponentReport>
         PARSER = new com.google.protobuf.AbstractParser<ComponentReport>() {
+      @java.lang.Override
       public ComponentReport parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22200,6 +26572,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -22228,7 +26601,6 @@ public final class Csnmessages {
       super(builder);
     }
     private AdImpression() {
-      deviceTime_ = 0L;
     }
 
     @java.lang.Override
@@ -22255,16 +26627,16 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               deviceTime_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -22284,6 +26656,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_fieldAccessorTable
@@ -22301,6 +26674,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22310,6 +26684,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (deviceTime_ != 0L) {
@@ -22318,6 +26693,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -22342,11 +26718,10 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdImpression other = (com.commutestream.nativeads.protobuf.Csnmessages.AdImpression) obj;
 
-      boolean result = true;
-      result = result && (getDeviceTime()
-          == other.getDeviceTime());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getDeviceTime()
+          != other.getDeviceTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -22434,6 +26809,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -22441,6 +26817,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -22464,6 +26841,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_fieldAccessorTable
@@ -22486,6 +26864,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         deviceTime_ = 0L;
@@ -22493,15 +26872,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdImpression_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdImpression result = buildPartial();
         if (!result.isInitialized()) {
@@ -22510,6 +26892,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdImpression result = new com.commutestream.nativeads.protobuf.Csnmessages.AdImpression(this);
         result.deviceTime_ = deviceTime_;
@@ -22517,32 +26900,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdImpression) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdImpression)other);
@@ -22562,10 +26952,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22609,11 +27001,13 @@ public final class Csnmessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -22635,6 +27029,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdImpression>
         PARSER = new com.google.protobuf.AbstractParser<AdImpression>() {
+      @java.lang.Override
       public AdImpression parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22652,6 +27047,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdImpression getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -22738,9 +27134,6 @@ public final class Csnmessages {
       super(builder);
     }
     private AdReport() {
-      requestId_ = 0L;
-      adId_ = 0L;
-      versionId_ = 0L;
       components_ = java.util.Collections.emptyList();
       impressions_ = java.util.Collections.emptyList();
     }
@@ -22769,13 +27162,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               requestId_ = input.readUInt64();
@@ -22792,7 +27178,7 @@ public final class Csnmessages {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 components_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -22801,12 +27187,19 @@ public final class Csnmessages {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 impressions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression>();
                 mutable_bitField0_ |= 0x00000010;
               }
               impressions_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -22817,10 +27210,10 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           components_ = java.util.Collections.unmodifiableList(components_);
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           impressions_ = java.util.Collections.unmodifiableList(impressions_);
         }
         this.unknownFields = unknownFields.build();
@@ -22832,6 +27225,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReport_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReport_fieldAccessorTable
@@ -22938,6 +27332,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22947,6 +27342,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (requestId_ != 0L) {
@@ -22967,6 +27363,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -23007,19 +27404,18 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdReport other = (com.commutestream.nativeads.protobuf.Csnmessages.AdReport) obj;
 
-      boolean result = true;
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && (getAdId()
-          == other.getAdId());
-      result = result && (getVersionId()
-          == other.getVersionId());
-      result = result && getComponentsList()
-          .equals(other.getComponentsList());
-      result = result && getImpressionsList()
-          .equals(other.getImpressionsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRequestId()
+          != other.getRequestId()) return false;
+      if (getAdId()
+          != other.getAdId()) return false;
+      if (getVersionId()
+          != other.getVersionId()) return false;
+      if (!getComponentsList()
+          .equals(other.getComponentsList())) return false;
+      if (!getImpressionsList()
+          .equals(other.getImpressionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -23121,6 +27517,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -23128,6 +27525,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdReport prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -23151,6 +27549,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReport_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReport_fieldAccessorTable
@@ -23175,6 +27574,7 @@ public final class Csnmessages {
           getImpressionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         requestId_ = 0L;
@@ -23198,15 +27598,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReport_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdReport.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReport build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdReport result = buildPartial();
         if (!result.isInitialized()) {
@@ -23215,6 +27618,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReport buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdReport result = new com.commutestream.nativeads.protobuf.Csnmessages.AdReport(this);
         int from_bitField0_ = bitField0_;
@@ -23223,7 +27627,7 @@ public final class Csnmessages {
         result.adId_ = adId_;
         result.versionId_ = versionId_;
         if (componentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             components_ = java.util.Collections.unmodifiableList(components_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -23232,7 +27636,7 @@ public final class Csnmessages {
           result.components_ = componentsBuilder_.build();
         }
         if (impressionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             impressions_ = java.util.Collections.unmodifiableList(impressions_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -23245,32 +27649,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReport) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdReport)other);
@@ -23348,10 +27759,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -23452,7 +27865,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport> components_ =
         java.util.Collections.emptyList();
       private void ensureComponentsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           components_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport>(components_);
           bitField0_ |= 0x00000008;
          }
@@ -23681,7 +28094,7 @@ public final class Csnmessages {
           componentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.ComponentReportOrBuilder>(
                   components_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           components_ = null;
@@ -23692,7 +28105,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression> impressions_ =
         java.util.Collections.emptyList();
       private void ensureImpressionsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           impressions_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdImpression>(impressions_);
           bitField0_ |= 0x00000010;
          }
@@ -23921,18 +28334,20 @@ public final class Csnmessages {
           impressionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.AdImpression, com.commutestream.nativeads.protobuf.Csnmessages.AdImpression.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdImpressionOrBuilder>(
                   impressions_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           impressions_ = null;
         }
         return impressionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -23954,6 +28369,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdReport>
         PARSER = new com.google.protobuf.AbstractParser<AdReport>() {
+      @java.lang.Override
       public AdReport parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -23971,6 +28387,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdReport getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -24101,7 +28518,6 @@ public final class Csnmessages {
       adUnit_ = com.google.protobuf.ByteString.EMPTY;
       timezone_ = "";
       ipAddresses_ = java.util.Collections.emptyList();
-      deviceTime_ = 0L;
       adReports_ = java.util.Collections.emptyList();
       sdkVersion_ = "";
       deviceLocations_ = java.util.Collections.emptyList();
@@ -24131,13 +28547,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               adUnit_ = input.readBytes();
@@ -24163,7 +28572,7 @@ public final class Csnmessages {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -24176,7 +28585,7 @@ public final class Csnmessages {
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 adReports_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReport>();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -24191,12 +28600,19 @@ public final class Csnmessages {
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>();
                 mutable_bitField0_ |= 0x00000080;
               }
               deviceLocations_.add(
                   input.readMessage(com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -24207,13 +28623,13 @@ public final class Csnmessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_); // C
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           adReports_ = java.util.Collections.unmodifiableList(adReports_);
         }
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
           deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
         }
         this.unknownFields = unknownFields.build();
@@ -24225,6 +28641,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_fieldAccessorTable
@@ -24433,6 +28850,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -24442,6 +28860,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!adUnit_.isEmpty()) {
@@ -24471,6 +28890,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -24526,28 +28946,27 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdReports other = (com.commutestream.nativeads.protobuf.Csnmessages.AdReports) obj;
 
-      boolean result = true;
-      result = result && getAdUnit()
-          .equals(other.getAdUnit());
-      result = result && (hasDeviceId() == other.hasDeviceId());
+      if (!getAdUnit()
+          .equals(other.getAdUnit())) return false;
+      if (hasDeviceId() != other.hasDeviceId()) return false;
       if (hasDeviceId()) {
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
+        if (!getDeviceId()
+            .equals(other.getDeviceId())) return false;
       }
-      result = result && getTimezone()
-          .equals(other.getTimezone());
-      result = result && getIpAddressesList()
-          .equals(other.getIpAddressesList());
-      result = result && (getDeviceTime()
-          == other.getDeviceTime());
-      result = result && getAdReportsList()
-          .equals(other.getAdReportsList());
-      result = result && getSdkVersion()
-          .equals(other.getSdkVersion());
-      result = result && getDeviceLocationsList()
-          .equals(other.getDeviceLocationsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTimezone()
+          .equals(other.getTimezone())) return false;
+      if (!getIpAddressesList()
+          .equals(other.getIpAddressesList())) return false;
+      if (getDeviceTime()
+          != other.getDeviceTime()) return false;
+      if (!getAdReportsList()
+          .equals(other.getAdReportsList())) return false;
+      if (!getSdkVersion()
+          .equals(other.getSdkVersion())) return false;
+      if (!getDeviceLocationsList()
+          .equals(other.getDeviceLocationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -24657,6 +29076,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -24664,6 +29084,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdReports prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -24687,6 +29108,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_fieldAccessorTable
@@ -24711,6 +29133,7 @@ public final class Csnmessages {
           getDeviceLocationsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         adUnit_ = com.google.protobuf.ByteString.EMPTY;
@@ -24744,15 +29167,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdReports_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReports getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdReports.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReports build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdReports result = buildPartial();
         if (!result.isInitialized()) {
@@ -24761,6 +29187,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdReports buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdReports result = new com.commutestream.nativeads.protobuf.Csnmessages.AdReports(this);
         int from_bitField0_ = bitField0_;
@@ -24772,14 +29199,14 @@ public final class Csnmessages {
           result.deviceId_ = deviceIdBuilder_.build();
         }
         result.timezone_ = timezone_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           ipAddresses_ = java.util.Collections.unmodifiableList(ipAddresses_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.ipAddresses_ = ipAddresses_;
         result.deviceTime_ = deviceTime_;
         if (adReportsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             adReports_ = java.util.Collections.unmodifiableList(adReports_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -24789,7 +29216,7 @@ public final class Csnmessages {
         }
         result.sdkVersion_ = sdkVersion_;
         if (deviceLocationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             deviceLocations_ = java.util.Collections.unmodifiableList(deviceLocations_);
             bitField0_ = (bitField0_ & ~0x00000080);
           }
@@ -24802,32 +29229,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdReports) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdReports)other);
@@ -24923,10 +29357,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -24975,7 +29411,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.DeviceID deviceId_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.DeviceID, com.commutestream.nativeads.protobuf.Csnmessages.DeviceID.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceIDOrBuilder> deviceIdBuilder_;
       /**
@@ -25163,7 +29599,7 @@ public final class Csnmessages {
 
       private java.util.List<com.google.protobuf.ByteString> ipAddresses_ = java.util.Collections.emptyList();
       private void ensureIpAddressesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           ipAddresses_ = new java.util.ArrayList<com.google.protobuf.ByteString>(ipAddresses_);
           bitField0_ |= 0x00000008;
          }
@@ -25173,7 +29609,8 @@ public final class Csnmessages {
        */
       public java.util.List<com.google.protobuf.ByteString>
           getIpAddressesList() {
-        return java.util.Collections.unmodifiableList(ipAddresses_);
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(ipAddresses_) : ipAddresses_;
       }
       /**
        * <code>repeated bytes ip_addresses = 4;</code>
@@ -25262,7 +29699,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.AdReport> adReports_ =
         java.util.Collections.emptyList();
       private void ensureAdReportsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           adReports_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.AdReport>(adReports_);
           bitField0_ |= 0x00000020;
          }
@@ -25491,7 +29928,7 @@ public final class Csnmessages {
           adReportsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.AdReport, com.commutestream.nativeads.protobuf.Csnmessages.AdReport.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdReportOrBuilder>(
                   adReports_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           adReports_ = null;
@@ -25571,7 +30008,7 @@ public final class Csnmessages {
       private java.util.List<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation> deviceLocations_ =
         java.util.Collections.emptyList();
       private void ensureDeviceLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           deviceLocations_ = new java.util.ArrayList<com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation>(deviceLocations_);
           bitField0_ |= 0x00000080;
          }
@@ -25800,18 +30237,20 @@ public final class Csnmessages {
           deviceLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocation.Builder, com.commutestream.nativeads.protobuf.Csnmessages.DeviceLocationOrBuilder>(
                   deviceLocations_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           deviceLocations_ = null;
         }
         return deviceLocationsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -25833,6 +30272,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdReports>
         PARSER = new com.google.protobuf.AbstractParser<AdReports>() {
+      @java.lang.Override
       public AdReports parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -25850,6 +30290,7 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdReports getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -25925,13 +30366,6 @@ public final class Csnmessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder subBuilder = null;
               if (requests_ != null) {
@@ -25958,6 +30392,13 @@ public final class Csnmessages {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -25975,6 +30416,7 @@ public final class Csnmessages {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_fieldAccessorTable
@@ -26025,6 +30467,7 @@ public final class Csnmessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -26034,6 +30477,7 @@ public final class Csnmessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (requests_ != null) {
@@ -26045,6 +30489,7 @@ public final class Csnmessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -26073,19 +30518,18 @@ public final class Csnmessages {
       }
       com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction other = (com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction) obj;
 
-      boolean result = true;
-      result = result && (hasRequests() == other.hasRequests());
+      if (hasRequests() != other.hasRequests()) return false;
       if (hasRequests()) {
-        result = result && getRequests()
-            .equals(other.getRequests());
+        if (!getRequests()
+            .equals(other.getRequests())) return false;
       }
-      result = result && (hasResponses() == other.hasResponses());
+      if (hasResponses() != other.hasResponses()) return false;
       if (hasResponses()) {
-        result = result && getResponses()
-            .equals(other.getResponses());
+        if (!getResponses()
+            .equals(other.getResponses())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -26178,6 +30622,7 @@ public final class Csnmessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -26185,6 +30630,7 @@ public final class Csnmessages {
     public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -26208,6 +30654,7 @@ public final class Csnmessages {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_fieldAccessorTable
@@ -26230,6 +30677,7 @@ public final class Csnmessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (requestsBuilder_ == null) {
@@ -26247,15 +30695,18 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdTransaction_descriptor;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction getDefaultInstanceForType() {
         return com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction build() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction result = buildPartial();
         if (!result.isInitialized()) {
@@ -26264,6 +30715,7 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction buildPartial() {
         com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction result = new com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction(this);
         if (requestsBuilder_ == null) {
@@ -26280,32 +30732,39 @@ public final class Csnmessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction) {
           return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction)other);
@@ -26328,10 +30787,12 @@ public final class Csnmessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -26350,7 +30811,7 @@ public final class Csnmessages {
         return this;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.AdRequests requests_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdRequests requests_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.AdRequests, com.commutestream.nativeads.protobuf.Csnmessages.AdRequests.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdRequestsOrBuilder> requestsBuilder_;
       /**
@@ -26467,7 +30928,7 @@ public final class Csnmessages {
         return requestsBuilder_;
       }
 
-      private com.commutestream.nativeads.protobuf.Csnmessages.AdResponses responses_ = null;
+      private com.commutestream.nativeads.protobuf.Csnmessages.AdResponses responses_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.commutestream.nativeads.protobuf.Csnmessages.AdResponses, com.commutestream.nativeads.protobuf.Csnmessages.AdResponses.Builder, com.commutestream.nativeads.protobuf.Csnmessages.AdResponsesOrBuilder> responsesBuilder_;
       /**
@@ -26583,11 +31044,13 @@ public final class Csnmessages {
         }
         return responsesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -26609,6 +31072,7 @@ public final class Csnmessages {
 
     private static final com.google.protobuf.Parser<AdTransaction>
         PARSER = new com.google.protobuf.AbstractParser<AdTransaction>() {
+      @java.lang.Override
       public AdTransaction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -26626,7 +31090,677 @@ public final class Csnmessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.commutestream.nativeads.protobuf.Csnmessages.AdTransaction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdUnitSettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.protobuf.AdUnitSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool enabled = 1;</code>
+     */
+    boolean getEnabled();
+
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    java.util.List<java.lang.String>
+        getAgenciesList();
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    int getAgenciesCount();
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    java.lang.String getAgencies(int index);
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgenciesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code google.protobuf.AdUnitSettings}
+   */
+  public  static final class AdUnitSettings extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.protobuf.AdUnitSettings)
+      AdUnitSettingsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AdUnitSettings.newBuilder() to construct.
+    private AdUnitSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AdUnitSettings() {
+      agencies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AdUnitSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              enabled_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                agencies_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              agencies_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          agencies_ = agencies_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdUnitSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdUnitSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.class, com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_;
+    /**
+     * <code>bool enabled = 1;</code>
+     */
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int AGENCIES_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList agencies_;
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAgenciesList() {
+      return agencies_;
+    }
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    public int getAgenciesCount() {
+      return agencies_.size();
+    }
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    public java.lang.String getAgencies(int index) {
+      return agencies_.get(index);
+    }
+    /**
+     * <code>repeated string agencies = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgenciesBytes(int index) {
+      return agencies_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      for (int i = 0; i < agencies_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agencies_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, enabled_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < agencies_.size(); i++) {
+          dataSize += computeStringSizeNoTag(agencies_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAgenciesList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings)) {
+        return super.equals(obj);
+      }
+      com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings other = (com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings) obj;
+
+      if (getEnabled()
+          != other.getEnabled()) return false;
+      if (!getAgenciesList()
+          .equals(other.getAgenciesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnabled());
+      if (getAgenciesCount() > 0) {
+        hash = (37 * hash) + AGENCIES_FIELD_NUMBER;
+        hash = (53 * hash) + getAgenciesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code google.protobuf.AdUnitSettings}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.protobuf.AdUnitSettings)
+        com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdUnitSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdUnitSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.class, com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.Builder.class);
+      }
+
+      // Construct using com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        enabled_ = false;
+
+        agencies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.internal_static_google_protobuf_AdUnitSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings getDefaultInstanceForType() {
+        return com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings build() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings buildPartial() {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings result = new com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.enabled_ = enabled_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          agencies_ = agencies_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.agencies_ = agencies_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings) {
+          return mergeFrom((com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings other) {
+        if (other == com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings.getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (!other.agencies_.isEmpty()) {
+          if (agencies_.isEmpty()) {
+            agencies_ = other.agencies_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAgenciesIsMutable();
+            agencies_.addAll(other.agencies_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean enabled_ ;
+      /**
+       * <code>bool enabled = 1;</code>
+       */
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       * <code>bool enabled = 1;</code>
+       */
+      public Builder setEnabled(boolean value) {
+        
+        enabled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool enabled = 1;</code>
+       */
+      public Builder clearEnabled() {
+        
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList agencies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureAgenciesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          agencies_ = new com.google.protobuf.LazyStringArrayList(agencies_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAgenciesList() {
+        return agencies_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public int getAgenciesCount() {
+        return agencies_.size();
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public java.lang.String getAgencies(int index) {
+        return agencies_.get(index);
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgenciesBytes(int index) {
+        return agencies_.getByteString(index);
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public Builder setAgencies(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAgenciesIsMutable();
+        agencies_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public Builder addAgencies(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAgenciesIsMutable();
+        agencies_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public Builder addAllAgencies(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAgenciesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, agencies_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public Builder clearAgencies() {
+        agencies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string agencies = 2;</code>
+       */
+      public Builder addAgenciesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureAgenciesIsMutable();
+        agencies_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.protobuf.AdUnitSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.protobuf.AdUnitSettings)
+    private static final com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings();
+    }
+
+    public static com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdUnitSettings>
+        PARSER = new com.google.protobuf.AbstractParser<AdUnitSettings>() {
+      @java.lang.Override
+      public AdUnitSettings parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AdUnitSettings(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdUnitSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdUnitSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.commutestream.nativeads.protobuf.Csnmessages.AdUnitSettings getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -26713,6 +31847,11 @@ public final class Csnmessages {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_NativeAd_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_Ad_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_Ad_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_AdRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -26722,6 +31861,11 @@ public final class Csnmessages {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdRequests_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_AdReference_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_AdReference_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_protobuf_AdResponse_descriptor;
   private static final 
@@ -26772,6 +31916,11 @@ public final class Csnmessages {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_protobuf_AdTransaction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_protobuf_AdUnitSettings_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_protobuf_AdUnitSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -26823,60 +31972,79 @@ public final class Csnmessages {
       "rtiser\030\013 \001(\0132$.google.protobuf.Advertise" +
       "rComponent\0224\n\010location\030\014 \001(\0132\".google.pr" +
       "otobuf.LocationComponent\022,\n\004hero\030\r \001(\0132\036" +
+      ".google.protobuf.HeroComponent\"\255\004\n\002Ad\022\r\n" +
+      "\005ad_id\030\001 \001(\004\022\022\n\nversion_id\030\002 \001(\004\022\'\n\006colo" +
+      "rs\030\003 \001(\0132\027.google.protobuf.Colors\0221\n\007act" +
+      "ions\030\004 \003(\0132 .google.protobuf.ActionCompo" +
+      "nent\022,\n\004view\030\005 \001(\0132\036.google.protobuf.Vie" +
+      "wComponent\022J\n\027secondary_action_screen\030\006 " +
+      "\001(\0132).google.protobuf.SecondaryActionCom" +
+      "ponent\022,\n\004logo\030\007 \001(\0132\036.google.protobuf.L" +
+      "ogoComponent\0224\n\010headline\030\010 \001(\0132\".google." +
+      "protobuf.HeadlineComponent\022,\n\004body\030\t \001(\013" +
+      "2\036.google.protobuf.BodyComponent\0228\n\nadve" +
+      "rtiser\030\n \001(\0132$.google.protobuf.Advertise" +
+      "rComponent\0224\n\010location\030\013 \001(\0132\".google.pr" +
+      "otobuf.LocationComponent\022,\n\004hero\030\014 \001(\0132\036" +
       ".google.protobuf.HeroComponent\"\354\001\n\tAdReq" +
       "uest\022\017\n\007hash_id\030\001 \001(\014\022\022\n\nnum_of_ads\030\002 \001(" +
       "\r\022,\n\tlocations\030\003 \003(\0132\031.google.protobuf.L" +
       "ocation\0220\n\010agencies\030\004 \003(\0132\036.google.proto" +
       "buf.TransitAgency\022-\n\006routes\030\005 \003(\0132\035.goog" +
       "le.protobuf.TransitRoute\022+\n\005stops\030\006 \003(\0132" +
-      "\034.google.protobuf.TransitStop\"\364\001\n\nAdRequ" +
+      "\034.google.protobuf.TransitStop\"\216\002\n\nAdRequ" +
       "ests\022\017\n\007ad_unit\030\001 \001(\014\022,\n\tdevice_id\030\002 \001(\013" +
       "2\031.google.protobuf.DeviceID\022\024\n\014ip_addres" +
       "ses\030\003 \003(\014\022\020\n\010timezone\030\004 \001(\t\022/\n\013ad_reques" +
       "ts\030\005 \003(\0132\032.google.protobuf.AdRequest\022\023\n\013" +
       "sdk_version\030\006 \001(\t\0229\n\020device_locations\030\007 " +
-      "\003(\0132\037.google.protobuf.DeviceLocation\"E\n\n" +
-      "AdResponse\022\017\n\007hash_id\030\001 \001(\014\022&\n\003ads\030\002 \003(\013" +
-      "2\031.google.protobuf.NativeAd\"S\n\013AdRespons" +
-      "es\022\021\n\tserver_id\030\001 \001(\t\0221\n\014ad_responses\030\002 " +
-      "\003(\0132\033.google.protobuf.AdResponse\"\211\001\n\010Dev" +
-      "iceID\0226\n\016device_id_type\030\001 \001(\0162\036.google.p" +
-      "rotobuf.DeviceID.Type\022\021\n\tdevice_id\030\002 \001(\014" +
-      "\022\026\n\016limit_tracking\030\003 \001(\010\"\032\n\004Type\022\010\n\004IDFA" +
-      "\020\000\022\010\n\004AAID\020\001\"\366\001\n\016DeviceLocation\022\021\n\ttimes" +
-      "tamp\030\001 \001(\004\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongitud" +
-      "e\030\003 \001(\001\022\020\n\010altitude\030\004 \001(\001\022\017\n\007bearing\030\005 \001" +
-      "(\001\022\r\n\005speed\030\006 \001(\001\022\033\n\023horizontal_accuracy" +
-      "\030\007 \001(\001\022\031\n\021vertical_accuracy\030\010 \001(\001\022\030\n\020bea" +
-      "ring_accuracy\030\t \001(\001\022\026\n\016speed_accuracy\030\n " +
-      "\001(\001\022\020\n\010provider\030\013 \001(\t\"d\n\024ComponentIntera" +
-      "ction\022\023\n\013device_time\030\001 \001(\004\0227\n\004kind\030\002 \001(\016" +
-      "2).google.protobuf.ComponentInteractionK" +
-      "ind\"\343\001\n\017ComponentReport\022\024\n\014component_id\030" +
-      "\001 \001(\004\022\030\n\020visibility_epoch\030\002 \001(\004\022\037\n\027visib" +
-      "ility_sample_count\030\003 \001(\004\022\037\n\027view_visibil" +
-      "ity_samples\030\004 \003(\004\022!\n\031device_visibility_s" +
-      "amples\030\005 \003(\004\022;\n\014interactions\030\006 \003(\0132%.goo" +
-      "gle.protobuf.ComponentInteraction\"#\n\014AdI" +
-      "mpression\022\023\n\013device_time\030\001 \001(\004\"\253\001\n\010AdRep" +
-      "ort\022\022\n\nrequest_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022" +
-      "\n\nversion_id\030\003 \001(\004\0224\n\ncomponents\030\004 \003(\0132 " +
-      ".google.protobuf.ComponentReport\0222\n\013impr" +
-      "essions\030\005 \003(\0132\035.google.protobuf.AdImpres" +
-      "sion\"\206\002\n\tAdReports\022\017\n\007ad_unit\030\001 \001(\014\022,\n\td" +
-      "evice_id\030\002 \001(\0132\031.google.protobuf.DeviceI" +
-      "D\022\020\n\010timezone\030\003 \001(\t\022\024\n\014ip_addresses\030\004 \003(" +
-      "\014\022\023\n\013device_time\030\005 \001(\004\022-\n\nad_reports\030\006 \003" +
-      "(\0132\031.google.protobuf.AdReport\022\023\n\013sdk_ver" +
-      "sion\030\007 \001(\t\0229\n\020device_locations\030\010 \003(\0132\037.g" +
-      "oogle.protobuf.DeviceLocation\"o\n\rAdTrans" +
-      "action\022-\n\010requests\030\001 \001(\0132\033.google.protob" +
-      "uf.AdRequests\022/\n\tresponses\030\002 \001(\0132\034.googl" +
-      "e.protobuf.AdResponses*\037\n\010HeroKind\022\t\n\005Im" +
-      "age\020\000\022\010\n\004HTML\020\001*\025\n\nActionKind\022\007\n\003Url\020\000*#" +
-      "\n\030ComponentInteractionKind\022\007\n\003Tap\020\000B-\n$c" +
-      "om.commutestream.nativeads.protobuf\242\002\004CS" +
-      "NPb\006proto3"
+      "\003(\0132\037.google.protobuf.DeviceLocation\022\030\n\020" +
+      "protocol_version\030\010 \001(\r\"Q\n\013AdReference\022\022\n" +
+      "\nrequest_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004\022\022\n\nvers" +
+      "ion_id\030\003 \001(\004\022\013\n\003url\030\004 \001(\t\"z\n\nAdResponse\022" +
+      "\017\n\007hash_id\030\001 \001(\014\022&\n\003ads\030\002 \003(\0132\031.google.p" +
+      "rotobuf.NativeAd\0223\n\rad_references\030\003 \003(\0132" +
+      "\034.google.protobuf.AdReference\"S\n\013AdRespo" +
+      "nses\022\021\n\tserver_id\030\001 \001(\t\0221\n\014ad_responses\030" +
+      "\002 \003(\0132\033.google.protobuf.AdResponse\"\211\001\n\010D" +
+      "eviceID\0226\n\016device_id_type\030\001 \001(\0162\036.google" +
+      ".protobuf.DeviceID.Type\022\021\n\tdevice_id\030\002 \001" +
+      "(\014\022\026\n\016limit_tracking\030\003 \001(\010\"\032\n\004Type\022\010\n\004ID" +
+      "FA\020\000\022\010\n\004AAID\020\001\"\366\001\n\016DeviceLocation\022\021\n\ttim" +
+      "estamp\030\001 \001(\004\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongit" +
+      "ude\030\003 \001(\001\022\020\n\010altitude\030\004 \001(\001\022\017\n\007bearing\030\005" +
+      " \001(\001\022\r\n\005speed\030\006 \001(\001\022\033\n\023horizontal_accura" +
+      "cy\030\007 \001(\001\022\031\n\021vertical_accuracy\030\010 \001(\001\022\030\n\020b" +
+      "earing_accuracy\030\t \001(\001\022\026\n\016speed_accuracy\030" +
+      "\n \001(\001\022\020\n\010provider\030\013 \001(\t\"d\n\024ComponentInte" +
+      "raction\022\023\n\013device_time\030\001 \001(\004\0227\n\004kind\030\002 \001" +
+      "(\0162).google.protobuf.ComponentInteractio" +
+      "nKind\"\343\001\n\017ComponentReport\022\024\n\014component_i" +
+      "d\030\001 \001(\004\022\030\n\020visibility_epoch\030\002 \001(\004\022\037\n\027vis" +
+      "ibility_sample_count\030\003 \001(\004\022\037\n\027view_visib" +
+      "ility_samples\030\004 \003(\004\022!\n\031device_visibility" +
+      "_samples\030\005 \003(\004\022;\n\014interactions\030\006 \003(\0132%.g" +
+      "oogle.protobuf.ComponentInteraction\"#\n\014A" +
+      "dImpression\022\023\n\013device_time\030\001 \001(\004\"\253\001\n\010AdR" +
+      "eport\022\022\n\nrequest_id\030\001 \001(\004\022\r\n\005ad_id\030\002 \001(\004" +
+      "\022\022\n\nversion_id\030\003 \001(\004\0224\n\ncomponents\030\004 \003(\013" +
+      "2 .google.protobuf.ComponentReport\0222\n\013im" +
+      "pressions\030\005 \003(\0132\035.google.protobuf.AdImpr" +
+      "ession\"\206\002\n\tAdReports\022\017\n\007ad_unit\030\001 \001(\014\022,\n" +
+      "\tdevice_id\030\002 \001(\0132\031.google.protobuf.Devic" +
+      "eID\022\020\n\010timezone\030\003 \001(\t\022\024\n\014ip_addresses\030\004 " +
+      "\003(\014\022\023\n\013device_time\030\005 \001(\004\022-\n\nad_reports\030\006" +
+      " \003(\0132\031.google.protobuf.AdReport\022\023\n\013sdk_v" +
+      "ersion\030\007 \001(\t\0229\n\020device_locations\030\010 \003(\0132\037" +
+      ".google.protobuf.DeviceLocation\"o\n\rAdTra" +
+      "nsaction\022-\n\010requests\030\001 \001(\0132\033.google.prot" +
+      "obuf.AdRequests\022/\n\tresponses\030\002 \001(\0132\034.goo" +
+      "gle.protobuf.AdResponses\"3\n\016AdUnitSettin" +
+      "gs\022\017\n\007enabled\030\001 \001(\010\022\020\n\010agencies\030\002 \003(\t*\037\n" +
+      "\010HeroKind\022\t\n\005Image\020\000\022\010\n\004HTML\020\001*\025\n\nAction" +
+      "Kind\022\007\n\003Url\020\000*#\n\030ComponentInteractionKin" +
+      "d\022\007\n\003Tap\020\000B-\n$com.commutestream.nativead" +
+      "s.protobuf\242\002\004CSNPb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26986,78 +32154,96 @@ public final class Csnmessages {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_NativeAd_descriptor,
         new java.lang.String[] { "RequestId", "AdId", "VersionId", "Colors", "Actions", "View", "SecondaryActionScreen", "Logo", "Headline", "Body", "Advertiser", "Location", "Hero", });
-    internal_static_google_protobuf_AdRequest_descriptor =
+    internal_static_google_protobuf_Ad_descriptor =
       getDescriptor().getMessageTypes().get(16);
+    internal_static_google_protobuf_Ad_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_Ad_descriptor,
+        new java.lang.String[] { "AdId", "VersionId", "Colors", "Actions", "View", "SecondaryActionScreen", "Logo", "Headline", "Body", "Advertiser", "Location", "Hero", });
+    internal_static_google_protobuf_AdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_google_protobuf_AdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdRequest_descriptor,
         new java.lang.String[] { "HashId", "NumOfAds", "Locations", "Agencies", "Routes", "Stops", });
     internal_static_google_protobuf_AdRequests_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_google_protobuf_AdRequests_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdRequests_descriptor,
-        new java.lang.String[] { "AdUnit", "DeviceId", "IpAddresses", "Timezone", "AdRequests", "SdkVersion", "DeviceLocations", });
+        new java.lang.String[] { "AdUnit", "DeviceId", "IpAddresses", "Timezone", "AdRequests", "SdkVersion", "DeviceLocations", "ProtocolVersion", });
+    internal_static_google_protobuf_AdReference_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_google_protobuf_AdReference_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdReference_descriptor,
+        new java.lang.String[] { "RequestId", "AdId", "VersionId", "Url", });
     internal_static_google_protobuf_AdResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_google_protobuf_AdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdResponse_descriptor,
-        new java.lang.String[] { "HashId", "Ads", });
+        new java.lang.String[] { "HashId", "Ads", "AdReferences", });
     internal_static_google_protobuf_AdResponses_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_google_protobuf_AdResponses_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdResponses_descriptor,
         new java.lang.String[] { "ServerId", "AdResponses", });
     internal_static_google_protobuf_DeviceID_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_google_protobuf_DeviceID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DeviceID_descriptor,
         new java.lang.String[] { "DeviceIdType", "DeviceId", "LimitTracking", });
     internal_static_google_protobuf_DeviceLocation_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_google_protobuf_DeviceLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_DeviceLocation_descriptor,
         new java.lang.String[] { "Timestamp", "Latitude", "Longitude", "Altitude", "Bearing", "Speed", "HorizontalAccuracy", "VerticalAccuracy", "BearingAccuracy", "SpeedAccuracy", "Provider", });
     internal_static_google_protobuf_ComponentInteraction_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_google_protobuf_ComponentInteraction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_ComponentInteraction_descriptor,
         new java.lang.String[] { "DeviceTime", "Kind", });
     internal_static_google_protobuf_ComponentReport_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_google_protobuf_ComponentReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_ComponentReport_descriptor,
         new java.lang.String[] { "ComponentId", "VisibilityEpoch", "VisibilitySampleCount", "ViewVisibilitySamples", "DeviceVisibilitySamples", "Interactions", });
     internal_static_google_protobuf_AdImpression_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_google_protobuf_AdImpression_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdImpression_descriptor,
         new java.lang.String[] { "DeviceTime", });
     internal_static_google_protobuf_AdReport_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_google_protobuf_AdReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdReport_descriptor,
         new java.lang.String[] { "RequestId", "AdId", "VersionId", "Components", "Impressions", });
     internal_static_google_protobuf_AdReports_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_google_protobuf_AdReports_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdReports_descriptor,
         new java.lang.String[] { "AdUnit", "DeviceId", "Timezone", "IpAddresses", "DeviceTime", "AdReports", "SdkVersion", "DeviceLocations", });
     internal_static_google_protobuf_AdTransaction_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_google_protobuf_AdTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_protobuf_AdTransaction_descriptor,
         new java.lang.String[] { "Requests", "Responses", });
+    internal_static_google_protobuf_AdUnitSettings_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_google_protobuf_AdUnitSettings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_protobuf_AdUnitSettings_descriptor,
+        new java.lang.String[] { "Enabled", "Agencies", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

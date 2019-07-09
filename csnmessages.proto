@@ -32,7 +32,6 @@ message LocationComponent {
   string address = 4;
 }
 
-
 enum HeroKind {
   Image = 0;
   HTML = 1;
@@ -98,6 +97,7 @@ message ViewComponent {
   uint64 component_id = 1;
 }
 
+//Deprecated, See Ad type
 message NativeAd {
   uint64 request_id = 1;
   uint64 ad_id = 2;
@@ -112,6 +112,21 @@ message NativeAd {
   AdvertiserComponent advertiser = 11;
   LocationComponent location = 12;
   HeroComponent hero = 13;
+}
+
+message Ad {
+  uint64 ad_id = 1;
+  uint64 version_id = 2;
+  Colors colors = 3;
+  repeated ActionComponent actions = 4;
+  ViewComponent view = 5;
+  SecondaryActionComponent secondary_action_screen = 6;
+  LogoComponent logo = 7;
+  HeadlineComponent headline = 8;
+  BodyComponent body = 9;
+  AdvertiserComponent advertiser = 10;
+  LocationComponent location = 11;
+  HeroComponent hero = 12;
 }
 
 // AdRequest contains a hash_id which is the hash everything but the num_of_ads 
@@ -133,12 +148,21 @@ message AdRequests {
   repeated AdRequest ad_requests = 5;
   string sdk_version = 6;
   repeated DeviceLocation device_locations = 7;
+  uint32 protocol_version = 8;
+}
+
+message AdReference {
+    uint64 request_id = 1;
+    uint64 ad_id = 2;
+    uint64 version_id = 3;
+    string url = 4;
 }
 
 // AdResponse is a mapping between an AdRequest hash_id and the set of ads
 message AdResponse {
   bytes hash_id = 1;
   repeated NativeAd ads = 2;
+  repeated AdReference ad_references = 3;
 }
 
 // AdResponses returns a mapping of ad context hashes to a set of ads.
@@ -215,4 +239,9 @@ message AdReports {
 message AdTransaction {
   AdRequests requests = 1;
   AdResponses responses = 2;
+}
+
+message AdUnitSettings {
+  bool enabled = 1;
+  repeated string agencies = 2;
 }
