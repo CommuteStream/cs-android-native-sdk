@@ -402,18 +402,16 @@ public class AdsController {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Info adInfo = null;
                 try {
-                    adInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
-
+                    Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
+                    final String aaidStr = adInfo.getId();
+                    final UUID aaid = UUID.fromString(aaidStr);
+                    final boolean limitTracking = adInfo.isLimitAdTrackingEnabled();
+                    controller.setDeviceInfo(aaid,limitTracking);
                 } catch(Exception ex) {
                     CSNLog.e("Error getting Advertising ID: " + ex.getMessage());
                 }
 
-                final String aaidStr = adInfo.getId();
-                final UUID aaid = UUID.fromString(aaidStr);
-                final boolean limitTracking = adInfo.isLimitAdTrackingEnabled();
-                controller.setDeviceInfo(aaid,limitTracking);
             }
         }).start();
     }
